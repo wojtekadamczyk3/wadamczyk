@@ -2,7 +2,10 @@ site_name: My Docs
 theme: 
   name: material
 
-
+nav:
+  - Home: index.md
+  - "QIP1 Intuition":
+      - "Chapter 1: Intention":qip1_intuition/ch0_intention.md
 
 # Plugins (optional)
 plugins:
