@@ -3,6 +3,7 @@
 ## 1.1. Hilbert spaces:
 
 **Hilbert Space**:
+
 - Hilbert space is a _vector space_ $\mathcal{H}$ over $\mathbb{C}$ that is equipped with a _complete_ _inner product_. 
 - This definition has 3 keywords: 
     - Vector space - is well known, 
@@ -24,12 +25,15 @@ $$
 > Ignore the concept of homomorphism and endomorphism - its just a bit fancier way to say linear map, and it definitely makes it more difficult to follow the lecture notes.
 
 **Dual Spaces**:
+
 - Dual space $\mathcal{H^*}$ of a $\mathcal{H}$ is the space of linear maps $\mathcal{H} \rightarrow \mathbb{C}$. That is, an element $\phi \in \mathcal{H^*}$ defines a map $\varphi: \psi \mapsto \varphi(\psi) \in \mathbb{C}$ for every $\psi \in \mathcal{H}$, such that 
 
 $$
 \varphi: a \psi_1+b \psi_2 \mapsto a \varphi\left(\psi_1\right)+b \varphi\left(\psi_2\right)
 $$
+
 - One of the dual space $\mathcal{H^*}$ is for instance the inner product $(\phi, \quad) \in \mathcal{H}^*$ for $\phi \in \mathcal{H}$, where 
+
 $$
 (\phi, \quad): \psi \mapsto(\phi, \psi)
 $$
@@ -59,6 +63,7 @@ Dirac denotes element of $\mathcal{H}$ as $\left|\psi\right>$ _'ket'_, and an el
 
 ## 1.4. Composite systems:
 **Tensor Product**
+
 - _Tensor product_ $\mathcal{H}_1 \otimes \mathcal{H}_2$ is a vector space over $\mathbb{C}$ spanned by all pairs of elements $\left|e_a\right> \otimes\left|f_\alpha\right>$, where $\left|e_a\right> \in \mathcal{H_1}$, $\left|f_\alpha\right> \in \mathcal{H_2}$
 - It is not true that a general element of $\mathcal{H}_1 \otimes \mathcal{H}_2$ necessarily takes the form $\left|\psi_1\right>\otimes\left|\psi_2\right>$
 - Rahter, a general element may be written as $\left|\Psi\right>=\sum_{a, \alpha} r_{a \alpha}\left|e_a\right> \otimes\left|f_\alpha\right>$

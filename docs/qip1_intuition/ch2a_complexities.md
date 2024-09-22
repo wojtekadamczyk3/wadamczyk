@@ -51,6 +51,7 @@ Here I will introduce commonly used term _efficient_ algorithm is such that it c
 - **NP-complete**: A problem is said to be NP-complete if it is in NP and any other problem in NP can be reduced to it in polynomial time.
 
 Some facts:
+
 - $\mathbf{P} \subset \mathbf{B P P}$
 - $\mathbf{P} \subset \mathbf{N P} \subset \mathbf{P S P A C E}$
 - It is not known whether $\mathbf{B P P} \subset \mathbf{N P}$
