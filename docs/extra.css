@@ -1,9 +1,0 @@
-/* Hide the right-hand column */
-.md-content__right {
-    display: none;
-}
-
-/* Expand the main content to take up the full width */
-.md-content {
-    grid-template-columns: minmax(0, 1fr) !important;
-}
