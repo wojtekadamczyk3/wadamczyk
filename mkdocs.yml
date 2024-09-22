@@ -16,6 +16,10 @@ nav:
 plugins:
   - search
 
+extra_css:
+  - 'extra.css'
+
+
 # Markdown Extensions
 markdown_extensions:
   - attr_list
