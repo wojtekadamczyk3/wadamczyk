@@ -3,6 +3,7 @@ My plan is to share my edited notes that I made whilst preparing for the teachin
 In case of any queries and feedback, don't hesitate to contact me (wadamczyk@phys.ethz.ch)
 
 **Resources**: Which I used to write my notes - There is a lot of re-writing and paraphrasing, which I havent cited next to the sentence, as it would be inefficient.
+
 - Principles of Quantum Mechanics (David Skinner) [[1]](https://www.damtp.cam.ac.uk/user/dbs26/PQM.html)
 - Quantum Information Processing (J.P.Home) [2]
 - Quantum Information and Computation (Richard Jozsa)[[3]](https://www.qi.damtp.cam.ac.uk/files/PartIIIQC/Part%202%20QIC%20lecturenotes.pdf)
