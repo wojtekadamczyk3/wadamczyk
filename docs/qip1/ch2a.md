@@ -25,6 +25,8 @@ if both $f(n)=O(g(n))$ and $f(n)=\Omega(g(n))$.
 > 
 > - $\begin{array}{r}O(2 g(n)) \text { is the same as } O(g(n)) \\ O\left(\log _{10} n\right) \text { is the same as } O(\ln n) \\ O\left(n^2+50 n+36\right) \text { is the same as } O\left(n^2\right) \\ O\left(n^2\right) \text { is contained in } O\left(n^3\right) \\ O\left(2^n\right) \text { is contained in } O\left(3^n\right) \\ O(\log n) \text { is contained in } O(\sqrt{n})\end{array}$
 
+Above is taken from [4]
+
 ## 2.2. Algorithms Efficiency:
 How efficient an algorithm is can be measured in the amount of resources that are needed to solve a problem of size _n_.
 - Time complexity deals with the number of computational steps required for solving the problem

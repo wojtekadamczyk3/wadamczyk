@@ -14,13 +14,13 @@ theme:
 
 
 nav:
-  - Home: index.md
+  - Abstract: index.md
   - "Teaching":
-    - "QIP1 Intuition":
+    - "Quantum Information Processing - Concepts":
       - "Chapter 0: Introduction": qip1/ch0.md
-      - "Chapter 1a: Hilbert Space and Dirac Notation": qip1_intuition/ch1a.md
-      - "Chapter 1b: Toolbox": qip1_intuition/ch1b.md
-      - "Chapter 2a: Complexities and Quantum Circuits": qip1_intuition/ch2a.md
+      - "Chapter 1a: Hilbert Space and Dirac Notation": qip1/ch1a.md
+      - "Chapter 1b: Toolbox": qip1/ch1b.md
+      - "Chapter 2a: Complexities and Quantum Circuits": qip1/ch2a.md
 
 # Plugins (optional)
 plugins:
