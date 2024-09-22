@@ -555,12 +555,16 @@
 
 <h1 id="chapter-1a-hilbert-spaces-dirac-notation-operators-and-postulates">Chapter 1a: Hilbert spaces, Dirac Notation, Operators, and Postulates</h1>
 <h2 id="11-hilbert-spaces">1.1. Hilbert spaces:</h2>
-<p><strong>Hilbert Space</strong>:
-- Hilbert space is a <em>vector space</em> <span class="arithmatex">\(\mathcal{H}\)</span> over <span class="arithmatex">\(\mathbb{C}\)</span> that is equipped with a <em>complete</em> <em>inner product</em>. 
-- This definition has 3 keywords: 
-    - Vector space - is well known, 
-    - Complete - is just a hedge against infinite Hilbert Spaces (unimportant)
-    - Inner Product is a map <span class="arithmatex">\((\quad,\quad): \mathcal{H} \times \mathcal{H} \rightarrow \mathbb{C}\)</span> that obeys</p>
+<p><strong>Hilbert Space</strong>:</p>
+<ul>
+<li>Hilbert space is a <em>vector space</em> <span class="arithmatex">\(\mathcal{H}\)</span> over <span class="arithmatex">\(\mathbb{C}\)</span> that is equipped with a <em>complete</em> <em>inner product</em>. </li>
+<li>This definition has 3 keywords: <ul>
+<li>Vector space - is well known, </li>
+<li>Complete - is just a hedge against infinite Hilbert Spaces (unimportant)</li>
+<li>Inner Product is a map <span class="arithmatex">\((\quad,\quad): \mathcal{H} \times \mathcal{H} \rightarrow \mathbb{C}\)</span> that obeys</li>
+</ul>
+</li>
+</ul>
 <div class="arithmatex">\[
 \begin{aligned}
 \text { conjugate symmetry } &amp; (\phi, \psi)=\overline{(\psi, \phi)} \\
@@ -576,13 +580,17 @@
 <blockquote>
 <p>Ignore the concept of homomorphism and endomorphism - its just a bit fancier way to say linear map, and it definitely makes it more difficult to follow the lecture notes.</p>
 </blockquote>
-<p><strong>Dual Spaces</strong>:
-- Dual space <span class="arithmatex">\(\mathcal{H^*}\)</span> of a <span class="arithmatex">\(\mathcal{H}\)</span> is the space of linear maps <span class="arithmatex">\(\mathcal{H} \rightarrow \mathbb{C}\)</span>. That is, an element <span class="arithmatex">\(\phi \in \mathcal{H^*}\)</span> defines a map <span class="arithmatex">\(\varphi: \psi \mapsto \varphi(\psi) \in \mathbb{C}\)</span> for every <span class="arithmatex">\(\psi \in \mathcal{H}\)</span>, such that </p>
+<p><strong>Dual Spaces</strong>:</p>
+<ul>
+<li>Dual space <span class="arithmatex">\(\mathcal{H^*}\)</span> of a <span class="arithmatex">\(\mathcal{H}\)</span> is the space of linear maps <span class="arithmatex">\(\mathcal{H} \rightarrow \mathbb{C}\)</span>. That is, an element <span class="arithmatex">\(\phi \in \mathcal{H^*}\)</span> defines a map <span class="arithmatex">\(\varphi: \psi \mapsto \varphi(\psi) \in \mathbb{C}\)</span> for every <span class="arithmatex">\(\psi \in \mathcal{H}\)</span>, such that </li>
+</ul>
 <div class="arithmatex">\[
 \varphi: a \psi_1+b \psi_2 \mapsto a \varphi\left(\psi_1\right)+b \varphi\left(\psi_2\right)
-$$
-- One of the dual space $\mathcal{H^*}$ is for instance the inner product $(\phi, \quad) \in \mathcal{H}^*$ for $\phi \in \mathcal{H}$, where 
-$$
+\]</div>
+<ul>
+<li>One of the dual space <span class="arithmatex">\(\mathcal{H^*}\)</span> is for instance the inner product <span class="arithmatex">\((\phi, \quad) \in \mathcal{H}^*\)</span> for <span class="arithmatex">\(\phi \in \mathcal{H}\)</span>, where </li>
+</ul>
+<div class="arithmatex">\[
 (\phi, \quad): \psi \mapsto(\phi, \psi)
 \]</div>
 <h2 id="12-dirac-notation">1.2. Dirac Notation:</h2>
@@ -612,13 +620,15 @@ $$
 <li>An operator <span class="arithmatex">\(\Pi\)</span> is called <em>Projector</em> if <span class="arithmatex">\(\Pi\Pi= \Pi\)</span></li>
 </ul>
 <h2 id="14-composite-systems">1.4. Composite systems:</h2>
-<p><strong>Tensor Product</strong>
-- <em>Tensor product</em> <span class="arithmatex">\(\mathcal{H}_1 \otimes \mathcal{H}_2\)</span> is a vector space over <span class="arithmatex">\(\mathbb{C}\)</span> spanned by all pairs of elements <span class="arithmatex">\(\left|e_a\right&gt; \otimes\left|f_\alpha\right&gt;\)</span>, where <span class="arithmatex">\(\left|e_a\right&gt; \in \mathcal{H_1}\)</span>, <span class="arithmatex">\(\left|f_\alpha\right&gt; \in \mathcal{H_2}\)</span>
-- It is not true that a general element of <span class="arithmatex">\(\mathcal{H}_1 \otimes \mathcal{H}_2\)</span> necessarily takes the form <span class="arithmatex">\(\left|\psi_1\right&gt;\otimes\left|\psi_2\right&gt;\)</span>
-- Rahter, a general element may be written as <span class="arithmatex">\(\left|\Psi\right&gt;=\sum_{a, \alpha} r_{a \alpha}\left|e_a\right&gt; \otimes\left|f_\alpha\right&gt;\)</span>
-- Elements of the form <span class="arithmatex">\(\left|\psi_1\right&gt;\otimes\left|\psi_2\right&gt;\)</span> are called simple, and the elements of the form <span class="arithmatex">\(\left|\Psi\right&gt;=\sum_{a, \alpha} r_{a \alpha}\left|e_a\right&gt; \otimes\left|f_\alpha\right&gt;\)</span> are refered as entangled
-- <span class="arithmatex">\(\left&lt;\alpha\otimes\beta|\alpha'\otimes\beta'\right&gt; := \left&lt;\alpha|\alpha'\right&gt;\left&lt;\beta|\beta'\right&gt;\)</span>
-- <span class="arithmatex">\(\left( S_\alpha \otimes T_\beta \right)\left(\alpha \otimes \beta\right) = \left(S_\alpha\alpha\right)\otimes\left(T_\beta\beta\right)\)</span> - apologies for being slightly sloppy - I think it is understandable what I mean though</p>
+<p><strong>Tensor Product</strong></p>
+<ul>
+<li><em>Tensor product</em> <span class="arithmatex">\(\mathcal{H}_1 \otimes \mathcal{H}_2\)</span> is a vector space over <span class="arithmatex">\(\mathbb{C}\)</span> spanned by all pairs of elements <span class="arithmatex">\(\left|e_a\right&gt; \otimes\left|f_\alpha\right&gt;\)</span>, where <span class="arithmatex">\(\left|e_a\right&gt; \in \mathcal{H_1}\)</span>, <span class="arithmatex">\(\left|f_\alpha\right&gt; \in \mathcal{H_2}\)</span></li>
+<li>It is not true that a general element of <span class="arithmatex">\(\mathcal{H}_1 \otimes \mathcal{H}_2\)</span> necessarily takes the form <span class="arithmatex">\(\left|\psi_1\right&gt;\otimes\left|\psi_2\right&gt;\)</span></li>
+<li>Rahter, a general element may be written as <span class="arithmatex">\(\left|\Psi\right&gt;=\sum_{a, \alpha} r_{a \alpha}\left|e_a\right&gt; \otimes\left|f_\alpha\right&gt;\)</span></li>
+<li>Elements of the form <span class="arithmatex">\(\left|\psi_1\right&gt;\otimes\left|\psi_2\right&gt;\)</span> are called simple, and the elements of the form <span class="arithmatex">\(\left|\Psi\right&gt;=\sum_{a, \alpha} r_{a \alpha}\left|e_a\right&gt; \otimes\left|f_\alpha\right&gt;\)</span> are refered as entangled</li>
+<li><span class="arithmatex">\(\left&lt;\alpha\otimes\beta|\alpha'\otimes\beta'\right&gt; := \left&lt;\alpha|\alpha'\right&gt;\left&lt;\beta|\beta'\right&gt;\)</span></li>
+<li><span class="arithmatex">\(\left( S_\alpha \otimes T_\beta \right)\left(\alpha \otimes \beta\right) = \left(S_\alpha\alpha\right)\otimes\left(T_\beta\beta\right)\)</span> - apologies for being slightly sloppy - I think it is understandable what I mean though</li>
+</ul>
 <h2 id="15-postulates-of-quantum-mechanics">1.5. Postulates of Quantum Mechanics:</h2>
 <ul>
 <li><strong>(1) A <em>quantum system</em> A</strong> is associated with complex Hilber space <span class="arithmatex">\(\mathcal{H}\)</span>. <strong>A <em>physical state</em></strong> of an isolated system is represented by a normalised vector <span class="arithmatex">\(\left|\psi\right&gt; \in \mathcal{H}\)</span>, which is unique up to a phase factor</li>

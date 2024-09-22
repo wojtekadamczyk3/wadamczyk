@@ -541,13 +541,21 @@
 <p><strong>Example Quantum circuit</strong></p>
 <p><img alt="image info" src="quantum_circuit_ch1.png" /> </p>
 <p>corresponds to unitary operator <span class="arithmatex">\(\left(V \otimes \mathbb{I}\right)\left(\mathbb{I}\otimes U\right)\left(H\otimes\mathbb{I}\otimes Z\right)\)</span> applied to three qubits followed by a Z-measurement of the first qubit</p>
-<p><strong>Common Gates</strong>
-- Haddamard Gate:
-    - <span class="arithmatex">\(H=\frac{1}{\sqrt{2}}\left(\begin{array}{cc}1 &amp; 1 \\ 1 &amp; -1\end{array}\right)=\left|+\right&gt;\left&lt; 0\right|+\left|-\right&gt; \left&lt;1\right|=\left| 0\right&gt;\left&lt;+\right|+\left| 1\right&gt;\left&lt;-\right|\)</span>
-- Controlled-U Gate:
-    - <span class="arithmatex">\(\mathrm{C} U=\left|0\right&gt;\left&lt;0\right|\otimes \mathrm{id}+\left| 1\right&gt;\left&lt;1\right| \otimes U\)</span>
-- Controlled-Not Gate:
-    - <span class="arithmatex">\(\mathrm{CNOT}=\left(\begin{array}{llll}1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 0\end{array}\right)=\left|0 \right&gt;\left&lt; 0\right| \otimes \mathbb{I}+\left|1\right&gt;\left&lt;1\right| \otimes X\)</span></p>
+<p><strong>Common Gates</strong></p>
+<ul>
+<li>Haddamard Gate:<ul>
+<li><span class="arithmatex">\(H=\frac{1}{\sqrt{2}}\left(\begin{array}{cc}1 &amp; 1 \\ 1 &amp; -1\end{array}\right)=\left|+\right&gt;\left&lt; 0\right|+\left|-\right&gt; \left&lt;1\right|=\left| 0\right&gt;\left&lt;+\right|+\left| 1\right&gt;\left&lt;-\right|\)</span></li>
+</ul>
+</li>
+<li>Controlled-U Gate:<ul>
+<li><span class="arithmatex">\(\mathrm{C} U=\left|0\right&gt;\left&lt;0\right|\otimes \mathrm{id}+\left| 1\right&gt;\left&lt;1\right| \otimes U\)</span></li>
+</ul>
+</li>
+<li>Controlled-Not Gate:<ul>
+<li><span class="arithmatex">\(\mathrm{CNOT}=\left(\begin{array}{llll}1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; 1 &amp; 0\end{array}\right)=\left|0 \right&gt;\left&lt; 0\right| \otimes \mathbb{I}+\left|1\right&gt;\left&lt;1\right| \otimes X\)</span></li>
+</ul>
+</li>
+</ul>
 
 
 
