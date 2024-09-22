@@ -43,6 +43,7 @@ In quantum mechanics quite often we often switch basis. This is because intrinsi
 
 Dirac denotes element of $\mathcal{H}$ as $\left|\psi\right>$ _'ket'_, and an element of the dual space is written as $\mathcal{H^*}$ as $\left<\psi\right|$ _'bra'_. The inner product between two states $\left|\psi\right>, \left|\phi\right> \in \mathcal{H}$ is written as $\left<\psi|\phi\right>$.
 > In notes the bra-ket notation is introduced using homomorphisms (linear maps). I find it unecessary.
+
 - The advantage of using bra-ket notation is:
     - We can talk about multiple things at the same time - Dirac notation is effectively just a label that points to an abstract object in the Hilbert space. We don't need to specify whether the variable is contineous, or if it is a vector or a function.
     - Allows us to label states by their eigenvalues
@@ -78,4 +79,5 @@ Dirac denotes element of $\mathcal{H}$ as $\left|\psi\right>$ _'ket'_, and an el
 - **(4) Measurement** - A projective measurement on a quantum system with outcomes labelled ${x}_x$ is associated with a set of projectors ${\Pi_x}x$ satisfying $\sum_x \Pi_x = \mathbb{I}$. 
     - Probability of getting outcome x when measuring state $\left|\psi\right> is given by the Born rule: $Pr[x \mid \psi]=\left\langle\psi\left|\Pi_x\right| \psi\right\rangle$
     - Post-measurement state is given the outcome x is $\left|\psi_x^{\prime}\right>=\frac{1}{\sqrt{\operatorname{Pr}[x \mid \psi]}} \Pi_x\left|\psi\right>=\frac{\Pi_x\left|\psi\right>}{\sqrt{\left\langle\psi\left|\Pi_x\right| \psi\right\rangle}}$
+
 
