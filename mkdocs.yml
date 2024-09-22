@@ -2,13 +2,12 @@ site_name: Wojtek's Personal Page
 use_directory_urls: false
 theme: 
   name: material
-
   features:
     - navigation.indexes
 nav:
   - Home: index.md
   - "QIP1 Intuition":
-      - "Chapter 0: Intention":qip1_intuition/ch0_intention.md
+    - "Chapter 0: Intention": qip1_intuition/ch0_intention.md
 
 # Plugins (optional)
 plugins:
