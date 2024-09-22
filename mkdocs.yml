@@ -8,6 +8,9 @@ nav:
   - Home: index.md
   - "QIP1 Intuition":
     - "Chapter 0: Intention": qip1_intuition/ch0_intention.md
+    - "Chapter 1a: Hilber Space and Dirac Notation": qip1_intuition/ch1a_hilbert_dirac.md
+    - "Chapter 1b: Quantum States and Measurements": qip1_intuition/ch1b_tools.md
+    - "Chapter 2a: Complexities and Quantum Circuits": qip1_intuition/ch2a_complexities.md
 
 # Plugins (optional)
 plugins:
