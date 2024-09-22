@@ -9,6 +9,8 @@
       
       
       
+        <link rel="prev" href="ch1b.html">
+      
       
       
       <link rel="icon" href="../assets/atom_fav.png">
@@ -16,7 +18,7 @@
     
     
       
-        <title>Chapter 2: Computational Complexity: - wadamczyk's space</title>
+        <title>Chapter 2a: Complexities and Quantum Circuits - wadamczyk's space</title>
       
     
     
@@ -101,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter 2: Computational Complexity:
+              Chapter 2a: Complexities and Quantum Circuits
             
           </span>
         </div>
@@ -175,7 +177,7 @@
   
     
   
-  Home
+  Abstract
 
       </a>
     </li>
@@ -185,16 +187,20 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="ch0.html" class="md-tabs__link">
           
   
@@ -254,7 +260,7 @@
         
   
   <span class="md-ellipsis">
-    Home
+    Abstract
   </span>
   
 
@@ -267,23 +273,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -294,7 +305,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Teaching
@@ -305,6 +316,8 @@
                 
   
   
+    
+  
   
   
     
@@ -314,28 +327,28 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
-    QIP1 Intuition
+    Quantum Information Processing - Concepts
   </span>
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
-            QIP1 Intuition
+            Quantum Information Processing - Concepts
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -367,7 +380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../qip1_intuition/ch1a.md" class="md-nav__link">
+      <a href="ch1a.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -388,7 +401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../qip1_intuition/ch1b.md" class="md-nav__link">
+      <a href="ch1b.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -406,10 +419,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../qip1_intuition/ch2a.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Chapter 2a: Complexities and Quantum Circuits
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="ch2a.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -418,6 +451,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-big-o-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Big O notation:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-algorithms-efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. Algorithms Efficiency:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-what-is-the-deal-with-quantum-computers" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3. What is the deal with Quantum Computers?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-complexity-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4. Complexity Classes:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -485,6 +574,7 @@ if both <span class="arithmatex">\(f(n)=O(g(n))\)</span> and <span class="arithm
 <li><span class="arithmatex">\(\begin{array}{r}O(2 g(n)) \text { is the same as } O(g(n)) \\ O\left(\log _{10} n\right) \text { is the same as } O(\ln n) \\ O\left(n^2+50 n+36\right) \text { is the same as } O\left(n^2\right) \\ O\left(n^2\right) \text { is contained in } O\left(n^3\right) \\ O\left(2^n\right) \text { is contained in } O\left(3^n\right) \\ O(\log n) \text { is contained in } O(\sqrt{n})\end{array}\)</span></li>
 </ul>
 </blockquote>
+<p>Above is taken from [4]</p>
 <h2 id="22-algorithms-efficiency">2.2. Algorithms Efficiency:</h2>
 <p>How efficient an algorithm is can be measured in the amount of resources that are needed to solve a problem of size <em>n</em>.
 - Time complexity deals with the number of computational steps required for solving the problem
