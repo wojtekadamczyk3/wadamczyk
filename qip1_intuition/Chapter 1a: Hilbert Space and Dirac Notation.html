@@ -1,0 +1,492 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.36">
+    
+    
+      
+        <title>Chapter 1a: Hilbert spaces, Dirac Notation, Operators, and Postulates - Wojtek's Personal Page</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.06209087.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-1a-hilbert-spaces-dirac-notation-operators-and-postulates" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="Wojtek&#39;s Personal Page" class="md-header__button md-logo" aria-label="Wojtek's Personal Page" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Wojtek's Personal Page
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 1a: Hilbert spaces, Dirac Notation, Operators, and Postulates
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="Wojtek&#39;s Personal Page" class="md-nav__button md-logo" aria-label="Wojtek's Personal Page" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Wojtek's Personal Page
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    QIP1 Intuition
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            QIP1 Intuition
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch0_intention.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 0: Intention
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11-hilbert-spaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1. Hilbert spaces:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-dirac-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2. Dirac Notation:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3. Operators:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-composite-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4. Composite systems:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-postulates-of-quantum-mechanics" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5. Postulates of Quantum Mechanics:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="chapter-1a-hilbert-spaces-dirac-notation-operators-and-postulates">Chapter 1a: Hilbert spaces, Dirac Notation, Operators, and Postulates</h1>
+<h2 id="11-hilbert-spaces">1.1. Hilbert spaces:</h2>
+<p><strong>Hilbert Space</strong>:
+- Hilbert space is a <em>vector space</em> <span class="arithmatex">\(\mathcal{H}\)</span> over <span class="arithmatex">\(\mathbb{C}\)</span> that is equipped with a <em>complete</em> <em>inner product</em>. 
+- This definition has 3 keywords: 
+    - Vector space - is well known, 
+    - Complete - is just a hedge against infinite Hilbert Spaces (unimportant)
+    - Inner Product is a map <span class="arithmatex">\((\quad,\quad): \mathcal{H} \times \mathcal{H} \rightarrow \mathbb{C}\)</span> that obeys</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\text { conjugate symmetry } &amp; (\phi, \psi)=\overline{(\psi, \phi)} \\
+\text { linearity } &amp; (\phi, a \psi)=a(\phi, \psi) \\
+\text { additivity } &amp; (\phi, \psi+\chi)=(\phi, \psi)+(\phi, \chi) \\
+\text { positive-definiteness } &amp; (\psi, \psi) \geq 0 \forall \psi \in \mathcal{H}
+\end{aligned}
+\]</div>
+<ul>
+<li>Metric of <span class="arithmatex">\(\mathcal{H}\)</span> is defined by the norm <span class="arithmatex">\(\|\psi\| \equiv \sqrt{(\psi, \psi)}\)</span></li>
+<li>Quantum states can be represented as a vectors <span class="arithmatex">\(\psi \in \mathcal{H}\)</span></li>
+</ul>
+<blockquote>
+<p>Ignore the concept of homomorphism and endomorphism - its just a bit fancier way to say linear map, and it definitely makes it more difficult to follow the lecture notes.</p>
+</blockquote>
+<p><strong>Dual Spaces</strong>:
+- Dual space <span class="arithmatex">\(\mathcal{H^*}\)</span> of a <span class="arithmatex">\(\mathcal{H}\)</span> is the space of linear maps <span class="arithmatex">\(\mathcal{H} \rightarrow \mathbb{C}\)</span>. That is, an element <span class="arithmatex">\(\phi \in \mathcal{H^*}\)</span> defines a map <span class="arithmatex">\(\varphi: \psi \mapsto \varphi(\psi) \in \mathbb{C}\)</span> for every <span class="arithmatex">\(\psi \in \mathcal{H}\)</span>, such that </p>
+<div class="arithmatex">\[
+\varphi: a \psi_1+b \psi_2 \mapsto a \varphi\left(\psi_1\right)+b \varphi\left(\psi_2\right)
+$$
+- One of the dual space $\mathcal{H^*}$ is for instance the inner product $(\phi, \quad) \in \mathcal{H}^*$ for $\phi \in \mathcal{H}$, where 
+$$
+(\phi, \quad): \psi \mapsto(\phi, \psi)
+\]</div>
+<h2 id="12-dirac-notation">1.2. Dirac Notation:</h2>
+<p>In quantum mechanics quite often we often switch basis. This is because intrinsically any measurement causes a collapse onto the measurement basis. Because of this we want to have a notation that allows us to work with multiple basis at the same time, and not get confused. Dirac notation (empirically) provides this clarity. It is difficult to formally define the notation, and quite often when one does it, they get confused (unless they are deep down in theory). Therefore I would propose to learn it through learning the basic few properties and then trying things out. When thinking whether some operation is legal or not - ask me or your friends. Through discussion you will get deeper understanding of the concept. </p>
+<p>Dirac denotes element of <span class="arithmatex">\(\mathcal{H}\)</span> as <span class="arithmatex">\(\left|\psi\right&gt;\)</span> <em>'ket'</em>, and an element of the dual space is written as <span class="arithmatex">\(\mathcal{H^*}\)</span> as <span class="arithmatex">\(\left&lt;\psi\right|\)</span> <em>'bra'</em>. The inner product between two states <span class="arithmatex">\(\left|\psi\right&gt;, \left|\phi\right&gt; \in \mathcal{H}\)</span> is written as <span class="arithmatex">\(\left&lt;\psi|\phi\right&gt;\)</span>.</p>
+<blockquote>
+<p>In notes the bra-ket notation is introduced using homomorphisms (linear maps). I find it unecessary.
+- The advantage of using bra-ket notation is:
+    - We can talk about multiple things at the same time - Dirac notation is effectively just a label that points to an abstract object in the Hilbert space. We don't need to specify whether the variable is contineous, or if it is a vector or a function.
+    - Allows us to label states by their eigenvalues
+    - Somehow it is more natural and causes less confusion</p>
+</blockquote>
+<h2 id="13-operators">1.3. Operators:</h2>
+<ul>
+<li>A <em>linear operator</em> A is a map <span class="arithmatex">\(A : \mathcal{H} \rightarrow \mathcal{H}\)</span> that is compatible with the vector space structure <span class="arithmatex">\(A(c_1\left|\phi_1\right&gt; + c_2\left|\phi_2\right&gt;) = c_1A\left|\phi_1\right&gt; + c_2A\left|\phi_2\right&gt;\)</span></li>
+<li>All operators in Quantum Mechanics are linear, hence we will call them just 'operators'</li>
+<li>Operators form algebra<ul>
+<li>Sum: <span class="arithmatex">\((\alpha A+\beta B):\left|\phi\right&gt; \mapsto \alpha A\left|\phi\right&gt;+\beta B\left|\phi\right&gt;\)</span></li>
+<li>Product: <span class="arithmatex">\(A B: \phi \mapsto A \circ B\left|\phi\right&gt;=A(B\left|\phi\right&gt;)\)</span></li>
+<li><em>Commutator</em>: <span class="arithmatex">\([A, B]=A B-B A\)</span></li>
+</ul>
+</li>
+<li>A state <span class="arithmatex">\(\psi \in \mathcal{H}\)</span> is said to be an <em>eigenstate</em> of an operator A if <span class="arithmatex">\(A\left|\psi\right&gt; = a_\psi\left|\psi\right&gt;\)</span> with an associated <em>eigenvalue</em> '<span class="arithmatex">\(a_\psi\)</span>'.</li>
+<li><em>Adjoint</em> <span class="arithmatex">\(A^\dagger\)</span> of an operator <span class="arithmatex">\(A\)</span> is defined as <span class="arithmatex">\(\left&lt;\phi\right|A^{\dagger}\left| \psi\right&gt;=\overline{\left&lt;\psi\right|A\left| \phi\right&gt;} \quad\)</span></li>
+<li>An operator <span class="arithmatex">\(Q\)</span> is called <em>Hermitian</em> if <span class="arithmatex">\(Q^\dagger=Q\)</span></li>
+<li>An operator <span class="arithmatex">\(U\)</span> is called <em>Unitary</em> if <span class="arithmatex">\(U^\dagger U= U U^\dagger = \mathbb{I}\)</span></li>
+<li>An operator <span class="arithmatex">\(\Pi\)</span> is called <em>Projector</em> if <span class="arithmatex">\(\Pi\Pi= \Pi\)</span></li>
+</ul>
+<h2 id="14-composite-systems">1.4. Composite systems:</h2>
+<p><strong>Tensor Product</strong>
+- <em>Tensor product</em> <span class="arithmatex">\(\mathcal{H}_1 \otimes \mathcal{H}_2\)</span> is a vector space over <span class="arithmatex">\(\mathbb{C}\)</span> spanned by all pairs of elements <span class="arithmatex">\(\left|e_a\right&gt; \otimes\left|f_\alpha\right&gt;\)</span>, where <span class="arithmatex">\(\left|e_a\right&gt; \in \mathcal{H_1}\)</span>, <span class="arithmatex">\(\left|f_\alpha\right&gt; \in \mathcal{H_2}\)</span>
+- It is not true that a general element of <span class="arithmatex">\(\mathcal{H}_1 \otimes \mathcal{H}_2\)</span> necessarily takes the form <span class="arithmatex">\(\left|\psi_1\right&gt;\otimes\left|\psi_2\right&gt;\)</span>
+- Rahter, a general element may be written as <span class="arithmatex">\(\left|\Psi\right&gt;=\sum_{a, \alpha} r_{a \alpha}\left|e_a\right&gt; \otimes\left|f_\alpha\right&gt;\)</span>
+- Elements of the form <span class="arithmatex">\(\left|\psi_1\right&gt;\otimes\left|\psi_2\right&gt;\)</span> are called simple, and the elements of the form <span class="arithmatex">\(\left|\Psi\right&gt;=\sum_{a, \alpha} r_{a \alpha}\left|e_a\right&gt; \otimes\left|f_\alpha\right&gt;\)</span> are refered as entangled
+- <span class="arithmatex">\(\left&lt;\alpha\otimes\beta|\alpha'\otimes\beta'\right&gt; := \left&lt;\alpha|\alpha'\right&gt;\left&lt;\beta|\beta'\right&gt;\)</span>
+- <span class="arithmatex">\(\left( S_\alpha \otimes T_\beta \right)\left(\alpha \otimes \beta\right) = \left(S_\alpha\alpha\right)\otimes\left(T_\beta\beta\right)\)</span> - apologies for being slightly sloppy - I think it is understandable what I mean though</p>
+<h2 id="15-postulates-of-quantum-mechanics">1.5. Postulates of Quantum Mechanics:</h2>
+<ul>
+<li><strong>(1) A <em>quantum system</em> A</strong> is associated with complex Hilber space <span class="arithmatex">\(\mathcal{H}\)</span>. <strong>A <em>physical state</em></strong> of an isolated system is represented by a normalised vector <span class="arithmatex">\(\left|\psi\right&gt; \in \mathcal{H}\)</span>, which is unique up to a phase factor</li>
+<li><strong>(2) The evolution</strong> of an isolated quantum system is reversible. In this formalism this corresponds to unitary evolution of the form <span class="arithmatex">\(\left|\psi\right&gt; \mapsto U\left|\psi\right&gt;\)</span> for <span class="arithmatex">\(U \in \mathcal{U}(\mathcal{H})\)</span>, i.e. <span class="arithmatex">\(U^{\dagger} U=U U^{\dagger}=\mathbb{I}\)</span>. The unitary is unique up to a phase factor</li>
+<li><strong>(3) Composite system</strong> - For two quantum system A, and B with associated Hilber spaces <span class="arithmatex">\(\mathcal{H_A}\)</span> and <span class="arithmatex">\(\mathcal{H_B}\)</span> the Hilbert space <span class="arithmatex">\(\mathcal{H_{AB}}\)</span> associated with the composite system AB is isomorphic to the tensor product <span class="arithmatex">\(\mathcal{H_A}\otimes\mathcal{H_B}\)</span>. For unitary operation on the subsystem we use: <span class="arithmatex">\(U_A \otimes \mathbb{I}_B\left|i j\right&gt;_{A B} \equiv U_A\left|i j\right&gt;_{A B}\)</span></li>
+<li><strong>(4) Measurement</strong> - A projective measurement on a quantum system with outcomes labelled <span class="arithmatex">\({x}_x\)</span> is associated with a set of projectors <span class="arithmatex">\({\Pi_x}x\)</span> satisfying <span class="arithmatex">\(\sum_x \Pi_x = \mathbb{I}\)</span>. <ul>
+<li>Probability of getting outcome x when measuring state $\left|\psi\right&gt; is given by the Born rule: <span class="arithmatex">\(Pr[x \mid \psi]=\left\langle\psi\left|\Pi_x\right| \psi\right\rangle\)</span></li>
+<li>Post-measurement state is given the outcome x is <span class="arithmatex">\(\left|\psi_x^{\prime}\right&gt;=\frac{1}{\sqrt{\operatorname{Pr}[x \mid \psi]}} \Pi_x\left|\psi\right&gt;=\frac{\Pi_x\left|\psi\right&gt;}{\sqrt{\left\langle\psi\left|\Pi_x\right| \psi\right\rangle}}\)</span></li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.indexes"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
