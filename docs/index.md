@@ -1,17 +1,4 @@
-# Welcome to MkDocs
+# Abstract
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Thoughts are transient, and to make them stay in place the author tried to capture them in the form of text. Both silly and less-silly thoughts were written. It was observed that whilst writing the author was achieving slightly better understanding of the topics written. The enjoyment of the readers is still to be investigated.
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
