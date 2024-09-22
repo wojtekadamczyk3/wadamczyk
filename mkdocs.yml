@@ -4,6 +4,7 @@ theme:
   name: material
   features:
     - navigation.indexes
+    - navigation.top
 nav:
   - Home: index.md
   - "QIP1 Intuition":
@@ -22,6 +23,8 @@ extra_css:
 
 # Markdown Extensions
 markdown_extensions:
+  - toc:
+      permalink: false
   - attr_list
   - md_in_html
   - admonition
