@@ -9,6 +9,8 @@
       
       
       
+        <link rel="prev" href="ch1b_tools.html">
+      
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -16,7 +18,7 @@
     
     
       
-        <title>Chapter 1a: Hilbert spaces, Dirac Notation, Operators, and Postulates - Wojtek's Personal Page</title>
+        <title>Chapter 2a: Complexities and Quantum Circuits - Wojtek's Personal Page</title>
       
     
     
@@ -58,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#chapter-1a-hilbert-spaces-dirac-notation-operators-and-postulates" class="md-skip">
+        <a href="#chapter-2-computational-complexity" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter 1a: Hilbert spaces, Dirac Notation, Operators, and Postulates
+              Chapter 2a: Complexities and Quantum Circuits
             
           </span>
         </div>
@@ -204,21 +206,29 @@
       
   
   
+    
   
   
+  
     
     
+      
+        
+      
+        
+      
+        
       
         
       
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -232,7 +242,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             QIP1 Intuition
@@ -255,6 +265,145 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch1a_hilbert_dirac.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 1a: Hilber Space and Dirac Notation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch1b_tools.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 1b: Quantum States and Measurements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Chapter 2a: Complexities and Quantum Circuits
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="ch2a_complexities.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 2a: Complexities and Quantum Circuits
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-big-o-notation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Big O notation:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-algorithms-efficiency" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. Algorithms Efficiency:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-what-is-the-deal-with-quantum-computers" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3. What is the deal with Quantum Computers?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-complexity-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4. Complexity Classes:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -294,45 +443,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#11-hilbert-spaces" class="md-nav__link">
+  <a href="#21-big-o-notation" class="md-nav__link">
     <span class="md-ellipsis">
-      1.1. Hilbert spaces:
+      2.1. Big O notation:
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#12-dirac-notation" class="md-nav__link">
+  <a href="#22-algorithms-efficiency" class="md-nav__link">
     <span class="md-ellipsis">
-      1.2. Dirac Notation:
+      2.2. Algorithms Efficiency:
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#13-operators" class="md-nav__link">
+  <a href="#23-what-is-the-deal-with-quantum-computers" class="md-nav__link">
     <span class="md-ellipsis">
-      1.3. Operators:
+      2.3. What is the deal with Quantum Computers?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#14-composite-systems" class="md-nav__link">
+  <a href="#24-complexity-classes" class="md-nav__link">
     <span class="md-ellipsis">
-      1.4. Composite systems:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#15-postulates-of-quantum-mechanics" class="md-nav__link">
-    <span class="md-ellipsis">
-      1.5. Postulates of Quantum Mechanics:
+      2.4. Complexity Classes:
     </span>
   </a>
   
@@ -353,83 +493,61 @@
                   
 
 
-<h1 id="chapter-1a-hilbert-spaces-dirac-notation-operators-and-postulates">Chapter 1a: Hilbert spaces, Dirac Notation, Operators, and Postulates</h1>
-<h2 id="11-hilbert-spaces">1.1. Hilbert spaces:</h2>
-<p><strong>Hilbert Space</strong>:
-- Hilbert space is a <em>vector space</em> <span class="arithmatex">\(\mathcal{H}\)</span> over <span class="arithmatex">\(\mathbb{C}\)</span> that is equipped with a <em>complete</em> <em>inner product</em>. 
-- This definition has 3 keywords: 
-    - Vector space - is well known, 
-    - Complete - is just a hedge against infinite Hilbert Spaces (unimportant)
-    - Inner Product is a map <span class="arithmatex">\((\quad,\quad): \mathcal{H} \times \mathcal{H} \rightarrow \mathbb{C}\)</span> that obeys</p>
-<div class="arithmatex">\[
-\begin{aligned}
-\text { conjugate symmetry } &amp; (\phi, \psi)=\overline{(\psi, \phi)} \\
-\text { linearity } &amp; (\phi, a \psi)=a(\phi, \psi) \\
-\text { additivity } &amp; (\phi, \psi+\chi)=(\phi, \psi)+(\phi, \chi) \\
-\text { positive-definiteness } &amp; (\psi, \psi) \geq 0 \forall \psi \in \mathcal{H}
-\end{aligned}
-\]</div>
+<h1 id="chapter-2-computational-complexity">Chapter 2: Computational Complexity:</h1>
+<h2 id="21-big-o-notation">2.1. Big O notation:</h2>
 <ul>
-<li>Metric of <span class="arithmatex">\(\mathcal{H}\)</span> is defined by the norm <span class="arithmatex">\(\|\psi\| \equiv \sqrt{(\psi, \psi)}\)</span></li>
-<li>Quantum states can be represented as a vectors <span class="arithmatex">\(\psi \in \mathcal{H}\)</span></li>
-</ul>
-<blockquote>
-<p>Ignore the concept of homomorphism and endomorphism - its just a bit fancier way to say linear map, and it definitely makes it more difficult to follow the lecture notes.</p>
-</blockquote>
-<p><strong>Dual Spaces</strong>:
-- Dual space <span class="arithmatex">\(\mathcal{H^*}\)</span> of a <span class="arithmatex">\(\mathcal{H}\)</span> is the space of linear maps <span class="arithmatex">\(\mathcal{H} \rightarrow \mathbb{C}\)</span>. That is, an element <span class="arithmatex">\(\phi \in \mathcal{H^*}\)</span> defines a map <span class="arithmatex">\(\varphi: \psi \mapsto \varphi(\psi) \in \mathbb{C}\)</span> for every <span class="arithmatex">\(\psi \in \mathcal{H}\)</span>, such that </p>
-<div class="arithmatex">\[
-\varphi: a \psi_1+b \psi_2 \mapsto a \varphi\left(\psi_1\right)+b \varphi\left(\psi_2\right)
-$$
-- One of the dual space $\mathcal{H^*}$ is for instance the inner product $(\phi, \quad) \in \mathcal{H}^*$ for $\phi \in \mathcal{H}$, where 
-$$
-(\phi, \quad): \psi \mapsto(\phi, \psi)
-\]</div>
-<h2 id="12-dirac-notation">1.2. Dirac Notation:</h2>
-<p>In quantum mechanics quite often we often switch basis. This is because intrinsically any measurement causes a collapse onto the measurement basis. Because of this we want to have a notation that allows us to work with multiple basis at the same time, and not get confused. Dirac notation (empirically) provides this clarity. It is difficult to formally define the notation, and quite often when one does it, they get confused (unless they are deep down in theory). Therefore I would propose to learn it through learning the basic few properties and then trying things out. When thinking whether some operation is legal or not - ask me or your friends. Through discussion you will get deeper understanding of the concept. </p>
-<p>Dirac denotes element of <span class="arithmatex">\(\mathcal{H}\)</span> as <span class="arithmatex">\(\left|\psi\right&gt;\)</span> <em>'ket'</em>, and an element of the dual space is written as <span class="arithmatex">\(\mathcal{H^*}\)</span> as <span class="arithmatex">\(\left&lt;\psi\right|\)</span> <em>'bra'</em>. The inner product between two states <span class="arithmatex">\(\left|\psi\right&gt;, \left|\phi\right&gt; \in \mathcal{H}\)</span> is written as <span class="arithmatex">\(\left&lt;\psi|\phi\right&gt;\)</span>.</p>
-<blockquote>
-<p>In notes the bra-ket notation is introduced using homomorphisms (linear maps). I find it unecessary.
-- The advantage of using bra-ket notation is:
-    - We can talk about multiple things at the same time - Dirac notation is effectively just a label that points to an abstract object in the Hilbert space. We don't need to specify whether the variable is contineous, or if it is a vector or a function.
-    - Allows us to label states by their eigenvalues
-    - Somehow it is more natural and causes less confusion</p>
-</blockquote>
-<h2 id="13-operators">1.3. Operators:</h2>
-<ul>
-<li>A <em>linear operator</em> A is a map <span class="arithmatex">\(A : \mathcal{H} \rightarrow \mathcal{H}\)</span> that is compatible with the vector space structure <span class="arithmatex">\(A(c_1\left|\phi_1\right&gt; + c_2\left|\phi_2\right&gt;) = c_1A\left|\phi_1\right&gt; + c_2A\left|\phi_2\right&gt;\)</span></li>
-<li>All operators in Quantum Mechanics are linear, hence we will call them just 'operators'</li>
-<li>Operators form algebra<ul>
-<li>Sum: <span class="arithmatex">\((\alpha A+\beta B):\left|\phi\right&gt; \mapsto \alpha A\left|\phi\right&gt;+\beta B\left|\phi\right&gt;\)</span></li>
-<li>Product: <span class="arithmatex">\(A B: \phi \mapsto A \circ B\left|\phi\right&gt;=A(B\left|\phi\right&gt;)\)</span></li>
-<li><em>Commutator</em>: <span class="arithmatex">\([A, B]=A B-B A\)</span></li>
-</ul>
+<li>
+<p><span class="arithmatex">\(f(n)=o(g(n))\)</span> and say that <span class="arithmatex">\(f\)</span> grows slower than <span class="arithmatex">\(g\)</span>
+if <span class="arithmatex">\(\forall c&gt;0 \exists n_0&gt;0\)</span> such that for all <span class="arithmatex">\(n \geq n_0: f(n) \leq c g(n)\)</span>,</p>
 </li>
-<li>A state <span class="arithmatex">\(\psi \in \mathcal{H}\)</span> is said to be an <em>eigenstate</em> of an operator A if <span class="arithmatex">\(A\left|\psi\right&gt; = a_\psi\left|\psi\right&gt;\)</span> with an associated <em>eigenvalue</em> '<span class="arithmatex">\(a_\psi\)</span>'.</li>
-<li><em>Adjoint</em> <span class="arithmatex">\(A^\dagger\)</span> of an operator <span class="arithmatex">\(A\)</span> is defined as <span class="arithmatex">\(\left&lt;\phi\right|A^{\dagger}\left| \psi\right&gt;=\overline{\left&lt;\psi\right|A\left| \phi\right&gt;} \quad\)</span></li>
-<li>An operator <span class="arithmatex">\(Q\)</span> is called <em>Hermitian</em> if <span class="arithmatex">\(Q^\dagger=Q\)</span></li>
-<li>An operator <span class="arithmatex">\(U\)</span> is called <em>Unitary</em> if <span class="arithmatex">\(U^\dagger U= U U^\dagger = \mathbb{I}\)</span></li>
-<li>An operator <span class="arithmatex">\(\Pi\)</span> is called <em>Projector</em> if <span class="arithmatex">\(\Pi\Pi= \Pi\)</span></li>
-</ul>
-<h2 id="14-composite-systems">1.4. Composite systems:</h2>
-<p><strong>Tensor Product</strong>
-- <em>Tensor product</em> <span class="arithmatex">\(\mathcal{H}_1 \otimes \mathcal{H}_2\)</span> is a vector space over <span class="arithmatex">\(\mathbb{C}\)</span> spanned by all pairs of elements <span class="arithmatex">\(\left|e_a\right&gt; \otimes\left|f_\alpha\right&gt;\)</span>, where <span class="arithmatex">\(\left|e_a\right&gt; \in \mathcal{H_1}\)</span>, <span class="arithmatex">\(\left|f_\alpha\right&gt; \in \mathcal{H_2}\)</span>
-- It is not true that a general element of <span class="arithmatex">\(\mathcal{H}_1 \otimes \mathcal{H}_2\)</span> necessarily takes the form <span class="arithmatex">\(\left|\psi_1\right&gt;\otimes\left|\psi_2\right&gt;\)</span>
-- Rahter, a general element may be written as <span class="arithmatex">\(\left|\Psi\right&gt;=\sum_{a, \alpha} r_{a \alpha}\left|e_a\right&gt; \otimes\left|f_\alpha\right&gt;\)</span>
-- Elements of the form <span class="arithmatex">\(\left|\psi_1\right&gt;\otimes\left|\psi_2\right&gt;\)</span> are called simple, and the elements of the form <span class="arithmatex">\(\left|\Psi\right&gt;=\sum_{a, \alpha} r_{a \alpha}\left|e_a\right&gt; \otimes\left|f_\alpha\right&gt;\)</span> are refered as entangled
-- <span class="arithmatex">\(\left&lt;\alpha\otimes\beta|\alpha'\otimes\beta'\right&gt; := \left&lt;\alpha|\alpha'\right&gt;\left&lt;\beta|\beta'\right&gt;\)</span>
-- <span class="arithmatex">\(\left( S_\alpha \otimes T_\beta \right)\left(\alpha \otimes \beta\right) = \left(S_\alpha\alpha\right)\otimes\left(T_\beta\beta\right)\)</span> - apologies for being slightly sloppy - I think it is understandable what I mean though</p>
-<h2 id="15-postulates-of-quantum-mechanics">1.5. Postulates of Quantum Mechanics:</h2>
-<ul>
-<li><strong>(1) A <em>quantum system</em> A</strong> is associated with complex Hilber space <span class="arithmatex">\(\mathcal{H}\)</span>. <strong>A <em>physical state</em></strong> of an isolated system is represented by a normalised vector <span class="arithmatex">\(\left|\psi\right&gt; \in \mathcal{H}\)</span>, which is unique up to a phase factor</li>
-<li><strong>(2) The evolution</strong> of an isolated quantum system is reversible. In this formalism this corresponds to unitary evolution of the form <span class="arithmatex">\(\left|\psi\right&gt; \mapsto U\left|\psi\right&gt;\)</span> for <span class="arithmatex">\(U \in \mathcal{U}(\mathcal{H})\)</span>, i.e. <span class="arithmatex">\(U^{\dagger} U=U U^{\dagger}=\mathbb{I}\)</span>. The unitary is unique up to a phase factor</li>
-<li><strong>(3) Composite system</strong> - For two quantum system A, and B with associated Hilber spaces <span class="arithmatex">\(\mathcal{H_A}\)</span> and <span class="arithmatex">\(\mathcal{H_B}\)</span> the Hilbert space <span class="arithmatex">\(\mathcal{H_{AB}}\)</span> associated with the composite system AB is isomorphic to the tensor product <span class="arithmatex">\(\mathcal{H_A}\otimes\mathcal{H_B}\)</span>. For unitary operation on the subsystem we use: <span class="arithmatex">\(U_A \otimes \mathbb{I}_B\left|i j\right&gt;_{A B} \equiv U_A\left|i j\right&gt;_{A B}\)</span></li>
-<li><strong>(4) Measurement</strong> - A projective measurement on a quantum system with outcomes labelled <span class="arithmatex">\({x}_x\)</span> is associated with a set of projectors <span class="arithmatex">\({\Pi_x}x\)</span> satisfying <span class="arithmatex">\(\sum_x \Pi_x = \mathbb{I}\)</span>. <ul>
-<li>Probability of getting outcome x when measuring state $\left|\psi\right&gt; is given by the Born rule: <span class="arithmatex">\(Pr[x \mid \psi]=\left\langle\psi\left|\Pi_x\right| \psi\right\rangle\)</span></li>
-<li>Post-measurement state is given the outcome x is <span class="arithmatex">\(\left|\psi_x^{\prime}\right&gt;=\frac{1}{\sqrt{\operatorname{Pr}[x \mid \psi]}} \Pi_x\left|\psi\right&gt;=\frac{\Pi_x\left|\psi\right&gt;}{\sqrt{\left\langle\psi\left|\Pi_x\right| \psi\right\rangle}}\)</span></li>
-</ul>
+<li>
+<p><span class="arithmatex">\(f(n)=O(g(n))\)</span> and say that <span class="arithmatex">\(f\)</span> does not grow significantly faster than <span class="arithmatex">\(g\)</span>
+if <span class="arithmatex">\(\exists c&gt;0\)</span> and <span class="arithmatex">\(n_0&gt;0\)</span> such that for all <span class="arithmatex">\(n \geq n_0: f(n) \leq c g(n)\)</span>,</p>
+</li>
+<li>
+<p><span class="arithmatex">\(f(n)=\Omega(g(n))\)</span> and say that <span class="arithmatex">\(f\)</span> does not grow significantly slower than <span class="arithmatex">\(g\)</span>
+if <span class="arithmatex">\(\exists c&gt;0\)</span> and <span class="arithmatex">\(n_0&gt;0\)</span> such that for all <span class="arithmatex">\(n \geq n_0: c g(n) \leq f(n)\)</span>,</p>
+</li>
+<li>
+<p><span class="arithmatex">\(f(n)=\Theta(g(n))\)</span> and say that <span class="arithmatex">\(f\)</span> grows as fast as <span class="arithmatex">\(g\)</span>
+if both <span class="arithmatex">\(f(n)=O(g(n))\)</span> and <span class="arithmatex">\(f(n)=\Omega(g(n))\)</span>.</p>
 </li>
 </ul>
+<blockquote>
+<p>Formally, define <span class="arithmatex">\(f(n)=O(g(n))\)</span> provided <span class="arithmatex">\(|f(n)| \leq c|g(n)|\)</span> as <span class="arithmatex">\(n \rightarrow \infty\)</span>
+- <span class="arithmatex">\(|f(n)|\)</span> is bounded for some constant 𝑐 and all suﬀiciently large 𝑛.
+- Intuitively, look at the most significant term.
+- Ignore constant factors as they seldom dominate and are often transitory</p>
+<p>For example: consider <span class="arithmatex">\(𝑛^2\)</span> instead of <span class="arithmatex">\(3𝑛^2 + 34𝑛 + 433\)</span>:
+- The cost of a program is usually a complicated formula. Often we should consider only the most significant term. If the cost is <span class="arithmatex">\(𝑛^2 + 99𝑛 + 900\)</span> for an input of size <span class="arithmatex">\(𝑛\)</span>, then the <span class="arithmatex">\(𝑛^2\)</span> term will eventually dominate, even though <span class="arithmatex">\(99𝑛\)</span> is bigger for <span class="arithmatex">\(𝑛 &lt; 99\)</span>. The constant term 900 may look big, but it is soon dominated by <span class="arithmatex">\(𝑛^2\)</span>.</p>
+<p>Simple Facts about O Notation:</p>
+<ul>
+<li><span class="arithmatex">\(\begin{array}{r}O(2 g(n)) \text { is the same as } O(g(n)) \\ O\left(\log _{10} n\right) \text { is the same as } O(\ln n) \\ O\left(n^2+50 n+36\right) \text { is the same as } O\left(n^2\right) \\ O\left(n^2\right) \text { is contained in } O\left(n^3\right) \\ O\left(2^n\right) \text { is contained in } O\left(3^n\right) \\ O(\log n) \text { is contained in } O(\sqrt{n})\end{array}\)</span></li>
+</ul>
+</blockquote>
+<h2 id="22-algorithms-efficiency">2.2. Algorithms Efficiency:</h2>
+<p>How efficient an algorithm is can be measured in the amount of resources that are needed to solve a problem of size <em>n</em>.
+- Time complexity deals with the number of computational steps required for solving the problem
+- Space complexity deals with the amount of RAM that is needed to solve the problem</p>
+<p>As you can imagine O-Notation is very handy in this case - where we can easily compare two algorithms</p>
+<p>We don't care in this case whether each time-step will take 1minute or 1ms, as for sufficiently large problem it wont matter. If we can make the algorithm more efficient, there will exist a n, for which the slow computer will be solving problem of size <em>n</em> faster.</p>
+<h2 id="23-what-is-the-deal-with-quantum-computers">2.3. What is the deal with Quantum Computers?</h2>
+<p>Well, I like this question a lot, because it motivates the whole course. And to understand whats the answer to this question we need to understand the algorithmic complexities. I feel like a lot of people miss-understand what is the real benefit of quantum computers. For example if you ask a random person on a street why are quantum computers usefull - they will probably mark you as a weirdo and ignore you. If you ask a random student in ETH why are quantum computers useful, they will not be able to tell you exactly except mumbling something about parallel nature of computing. This is not entirely right.</p>
+<p>What is fundamental about q.computing is that due to the extra laws of physics that we can use, we can manipulate information in a new way (on top of the old way). This means that we can design a new algorithms that use those properties that change the complexities of the algorithms. In this course we will show how few of the algorithms change their complexities due to the quantum computing. </p>
+<p>Here I will introduce commonly used term <em>efficient</em> algorithm is such that it can solve the problem in the polynomial time - i.e. <span class="arithmatex">\(O(n^m)\)</span></p>
+<h2 id="24-complexity-classes">2.4. Complexity Classes:</h2>
+<ul>
+<li><strong>P</strong>: The class of decision problems that can be solved in polynomial time on a classical computer.</li>
+<li><strong>BPP</strong>: The class of decision problems that can be solved by a probabilistic algorithm in polynomial time on a classical computer with failure probability at most <span class="arithmatex">\(\frac{1}{3}\)</span> for all possible inputs.</li>
+<li><strong>NP</strong>: The class of decision problems such that, if the answer is ‘yes’, there is a proof of this which can be verified in polynomial time on a classical computer.</li>
+<li><strong>PSPACE</strong>: The class of decision problems that can be solved in polynomial space on a classical computer.</li>
+<li><strong>NP-complete</strong>: A problem is said to be NP-complete if it is in NP and any other problem in NP can be reduced to it in polynomial time.</li>
+</ul>
+<p>Some facts:
+- <span class="arithmatex">\(\mathbf{P} \subset \mathbf{B P P}\)</span>
+- <span class="arithmatex">\(\mathbf{P} \subset \mathbf{N P} \subset \mathbf{P S P A C E}\)</span>
+- It is not known whether <span class="arithmatex">\(\mathbf{B P P} \subset \mathbf{N P}\)</span>
+- Factorisation is not known and not believed to be <strong>NP</strong>-<em>complete</em></p>
 
 
 
