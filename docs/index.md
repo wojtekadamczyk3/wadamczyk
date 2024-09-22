@@ -1,3 +1,3 @@
 # Abstract
 
-Thoughts are transient, and to make them stay in place the author tried to capture them in the form of text. Both silly and less-silly thoughts were written. It was observed that whilst writing the author was achieving slightly better understanding of the topics he was writing about. The enjoyment of the readers is still to be investigated.
+Thoughts are fleeting, and to keep them from slipping away, the author attempted to capture them in writing. Both silly and more serious thoughts were recorded. It became apparent that, while writing, the author gained a slightly better understanding of the topics at hand. Whether readers find it enjoyable remains to be seen.
