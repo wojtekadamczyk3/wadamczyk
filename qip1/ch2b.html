@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../index.html">
-      
-      
-        <link rel="next" href="ch1a.html">
       
       
       <link rel="icon" href="../assets/atom_fav.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>Chapter 0: Introduction - wadamczyk's space</title>
+        <title>Chapter 2b: Universal gates and algorithms - wadamczyk's space</title>
       
     
     
@@ -72,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#chapter-0-introduction" class="md-skip">
+        <a href="#chapter-2b-universal-gates-and-algorithms" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter 0: Introduction
+              Chapter 2b: Universal gates and algorithms
             
           </span>
         </div>
@@ -189,20 +185,16 @@
         
   
   
-    
-  
   
     
     
       
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="ch0.html" class="md-tabs__link">
           
   
@@ -275,28 +267,23 @@
       
   
   
-    
   
   
-  
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -307,7 +294,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Teaching
@@ -318,8 +305,6 @@
                 
   
   
-    
-  
   
   
     
@@ -329,11 +314,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
         
           
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
@@ -347,7 +332,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
             Quantum Information Processing - Concepts
@@ -358,30 +343,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Chapter 0: Introduction
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="ch0.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="ch0.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -390,35 +355,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#chapter-01-why-do-we-care-about-quantum-computing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Chapter 0.1: Why do we care about Quantum Computing
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -517,23 +453,76 @@
                   
 
 
-<p>My plan is to share my edited notes that I made whilst preparing for the teaching. I am doing it mainly in order to make sure I understand the topics, and motivate myself to be clear with explanations. I hope to give different intuition, which perhaps will be useful to some. </p>
-<p>In case of any queries and feedback, don't hesitate to contact me (wadamczyk@phys.ethz.ch)</p>
-<p><strong>Resources</strong>: Which I used to write my notes - There is a lot of re-writing and paraphrasing, which I havent cited next to the sentence (the nature of notes)</p>
+<h1 id="chapter-2b-universal-gates-and-algorithms">Chapter 2b: Universal gates and algorithms</h1>
+<h2 id="25-universal-sets-of-gates">2.5. Universal sets of gates</h2>
 <ul>
-<li><a href="https://www.damtp.cam.ac.uk/user/dbs26/PQM.html">Principles of Quantum Mechanics (David Skinner)</a> [1]</li>
-<li>Quantum Information Processing (J.P.Home) [2]</li>
-<li><a href="https://www.qi.damtp.cam.ac.uk/files/PartIIIQC/Part%202%20QIC%20lecturenotes.pdf">Quantum Information and Computation (Richard Jozsa)</a> [3]</li>
-<li><a href="https://www.cl.cam.ac.uk/teaching/2324/FoundsCS/focs-202324-v1.5.pdf">Foundations of Computer Science (Anil Madhavapeddy, Jonathan Ludlam)</a> [4]</li>
-<li>Quantum Information (C.H.W. Barnes) [5]</li>
+<li><span class="arithmatex">\(\mathcal{S}\)</span> is <em>universal set of gates for quantum computing</em> if for any <span class="arithmatex">\(n \in \mathbb{N}\)</span> an arbitrary unitary operation <span class="arithmatex">\(U \in \mathcal{U}(n)\)</span> can be implemented to arbitrary precision using only elementary gates from <span class="arithmatex">\(\mathcal{S}\)</span></li>
+<li>Elementary gates are assumed to take time <span class="arithmatex">\(O(1)\)</span></li>
+<li>Examples of the universal set of gates:<ul>
+<li><span class="arithmatex">\(\{CNOT\} \cup \mathcal{U}(2)\)</span></li>
+<li><span class="arithmatex">\(\{CNOT, H, T\}\)</span></li>
+<li><span class="arithmatex">\(\{\text{Toffoli}, H\}\)</span></li>
 </ul>
-<h1 id="chapter-0-introduction">Chapter 0: Introduction</h1>
-<p>Computation is about manipulation of information. Mathematically we can ponder on the different abstract schemes and systems to manipulate information, however, in practice we are very limited to what type of computation can we really do. <em>"Information is not a disembodied abstract entity; it is always tied to a physical representation".</em> [3] <em>"If information is represented in physical states or degrees of freedom of some physical system, then any possible act of computation, or information processing, must correspond to a physical evolution of that physical system."</em> [3] This means that the rules of the computation must obey the laws of physics.</p>
-<p>Current paradigm of computing relies on classical physics, which in result constrains what operations can we perform on the computers. <em>"But that is not our World. To the best of our current experimental knowledge, our World is a quantum, not classical."</em> [1] This gives us hope. If one carefully isolates and always consideres the whole system, we could enlarge the zoo of the operations we could perform. Extra tools could lead to different complexity classes of the algorithms that were previously not solvable by classical computers, and could aid in further understanding of the world. </p>
-<p>QIP-Implementation intends to show how can we build systems that can manipulate information using laws of quantum physics. QIP-Concepts intends to entertain the idea that we have the possibility of treating the information in a quantum way. We want to give you the grounding of exploring for yourself how does this change the paradigm of computation.</p>
-<p>In my notes I will largely <em>"ignore small formal subtleties, not because they're not interesting, but because they're a distraction from all the interesting physics we want to learn!"</em> [1]. I will actually skip some of the formalism introduced in the lecture if I feel like it hinders my own understanding of Quantum Mechanics. I am open to being criticised for it. </p>
-<h2 id="chapter-01-why-do-we-care-about-quantum-computing">Chapter 0.1: Why do we care about Quantum Computing</h2>
-<p>...</p>
+</li>
+<li>For any fixed universal set <span class="arithmatex">\(\mathcal{S}\)</span>, a generic unitary matrix on <em>n</em> qubits requires exponentially many elementary gates <em>n</em> to be implemented - this follows from the fact that an n-qubit unitary is determined by <span class="arithmatex">\(O(4^n)\)</span> real parameters</li>
+<li>Goal of quantum computing is to find efficient quantum circuits which use poly(n) qubits and poly(n) elementary gates to solve a problem on an input size <em>n</em></li>
+</ul>
+<h2 id="26-simulating-classical-circuits-leftmathbfb-p-p-subset-mathbfb-q-pright">2.6. Simulating Classical Circuits <span class="arithmatex">\(\left(\mathbf{B P P} \subset \mathbf{B Q P}\right)\)</span></h2>
+<ul>
+<li>A <em>classical circuit</em> is a sequence of logical operations that act on a small number of bits (AND, OR, NOT)</li>
+<li>We claim that quantum computation is at least as powerfull as classical computation <span class="arithmatex">\(\mathbf{B P P} \subset \mathbf{B Q P}\)</span></li>
+<li>Difficulty arises when trying to translate irreversible logical operations such as AND or OR. Quantum operations are unitary, hence reversible. This poses a problem.</li>
+<li>The crucial step in showing that one can simulate any classical circuit with a quantum circuit involves showing that any classical boolean operation (even irreversible) can be represented through reversible operation on larger space</li>
+<li>The key point is that if we operate with unitaries on a larger space, but we only look at the subspace, it will look like the operation is non-unitary, (irreversible)</li>
+<li>If <span class="arithmatex">\(f: B_m \rightarrow B_n\)</span> is a Boolean function it can be expressed in an equivalent <em>reversible</em> form <span class="arithmatex">\(\tilde{f}: B_{m+n} \rightarrow B_{m+n}\)</span>.<ul>
+<li>to do this we introduce an addition operation <span class="arithmatex">\(\oplus\)</span>, which is operation of adding mod 2</li>
+<li>for any <span class="arithmatex">\(f: B_m \rightarrow B_n\)</span> define <span class="arithmatex">\(\tilde{f}:B_{m+n}\rightarrow B_{m+n}\)</span>, where <span class="arithmatex">\(\tilde{f}(b, c)=(b, c \oplus f(b))\)</span></li>
+<li>such function is reversible, as applying the function twice results in <span class="arithmatex">\((b, c \oplus f(b) \oplus f(b)) = (b, c \oplus 0...0) = (b, c)\)</span></li>
+<li>it performs the wanted operation, because if c is initialised with <span class="arithmatex">\(c=0...0\)</span>, then <span class="arithmatex">\(\tilde{f}(b, c) = (b, f(b))\)</span></li>
+</ul>
+</li>
+<li>By replacing all (now reversible) classical gates with quantum gates and imputing computation basis states, one can obtain quantum circuit that simulates the classical one </li>
+</ul>
+<h2 id="27-oracle-for-boolean-function">2.7. Oracle for Boolean function:</h2>
+<ul>
+<li>A <em>quantum oracle for any Boolean function</em> <span class="arithmatex">\(f:B_n\rightarrow B_m\)</span> will be the quantum gate denoted <span class="arithmatex">\(O_f\)</span> on <span class="arithmatex">\(n+m\)</span> qubits defined by its action on basis states as follows 
+$$
+O_f\left|x\right&gt;\left|y\right&gt;=\left|x\right&gt;\left|y \oplus f(x)\right&gt; \quad \text { for all } x \in B_n \text { and } y \in B_m
+$$</li>
+<li>Sometimes we refer to n-qubit register <span class="arithmatex">\(\left|x\right&gt;\)</span> and the m-qubit register <span class="arithmatex">\(\left|y\right&gt;\)</span> as the <em>input</em> and <em>output</em> registers respectively</li>
+<li>
+<p>A <em>phase oracle</em> will be quantum gate denoted <span class="arithmatex">\(U_f\)</span> on <span class="arithmatex">\(n+m\)</span> qubits defined by its action on basis states as follows 
+$$
+U_f\left|x\right&gt;=(-1)^{f(x)}\left|x\right&gt;
+$$</p>
+</li>
+<li>
+<p>This can be achieved through <span class="arithmatex">\(O_f\)</span>
+$$
+O_f\left|-\right&gt;\left|x\right&gt;=O_f \frac{1}{\sqrt{2}}(\left|0\right&gt;-\left|1\right&gt;)\left|x\right&gt;=\frac{1}{\sqrt{2}}(\left|f(x)\right&gt;\left|x\right&gt;-\left|1 \oplus f(x)\right&gt;\left|x\right&gt;)=(-1)^{f(x)}\left|-\right&gt;\left|x\right&gt;
+$$</p>
+</li>
+</ul>
+<h2 id="28-deutsch-josza-dj-algorithm">2.8. Deutsch-Josza (DJ) algorithm:</h2>
+<ul>
+<li><strong>Problem:</strong> Given a function $ f : {0,1}^n \rightarrow {0, 1}$ with a promise that a function is either <em>constant</em> or <em>balanced</em> the goal is to find out whether <span class="arithmatex">\(f\)</span> is constant or balanced. <em>Balanced</em> means that it outputs 0 half of the time and 1 the other half of the time. <em>Constant</em> means that it always outputs the same thing (either 1 or 0).</li>
+<li>Classical algorithm will require exponentially many queries to <span class="arithmatex">\(f\)</span>, namely <span class="arithmatex">\(2^{n-2}\)</span> on average</li>
+<li>Quantum algorithm is able to determine whether f is constant or balanced in a single query</li>
+<li><strong>Algorithm</strong>:<ul>
+<li><img src="DJ_algorithm.png" alt="drawing" width="60%"/></li>
+<li>Which corresponds to <span class="arithmatex">\(H^{\otimes n} U_f H^{\otimes n}\left|0\right&gt;^{\otimes n}\)</span></li>
+<li>We then evaluate the probability of <span class="arithmatex">\(y = 0^n\)</span>, which is equivalent to projecting the state onto <span class="arithmatex">\(\left|0\right&gt;^{\otimes n}\)</span></li>
+<li><span class="arithmatex">\(\left&lt;0\right|^{\otimes n}H^{\otimes n} U_f H^{\otimes n}\left|0\right&gt;^{\otimes n} = \begin{cases}1, &amp; \text { if } f \text { is constant } \\ 0, &amp; \text { if } f \text { is balanced }\end{cases}\)</span> </li>
+</ul>
+</li>
+<li><strong>Explanation 1:</strong>
+    $$
+    \left&lt;0\right|^{\otimes n}H^{\otimes n} U_f H^{\otimes n}\left|0\right&gt;^{\otimes n} = \left(\frac{1}{\sqrt{2^n}} \sum_{x \in{0,1}^n}\left<x\right|\right) U_f \left(\frac{1}{\sqrt{2^n}} \sum_{x' \in\{0,1\}^n}\left|x'\right>\right) = \frac{1}{2^n} \sum_{x \in{0,1}^n}\left<x\right| U_f \left|x\right>
+    $$<ul>
+<li>Because we have equal superposition of all x-values, then if <span class="arithmatex">\(U_f\)</span> is balanced then they will all add up to 0, and if they are constant, they will add up to 1</li>
+</ul>
+</li>
+</ul>
 
 
 
