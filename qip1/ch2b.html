@@ -638,7 +638,7 @@ $$</p>
 </ul>
 <h2 id="28-deutsch-josza-dj-algorithm">2.8. Deutsch-Josza (DJ) algorithm:</h2>
 <ul>
-<li><strong>Problem:</strong> Given a function $ f : {0,1}^n \rightarrow {0, 1}$ with a promise that a function is either <em>constant</em> or <em>balanced</em> the goal is to find out whether <span class="arithmatex">\(f\)</span> is constant or balanced. <em>Balanced</em> means that it outputs 0 half of the time and 1 the other half of the time. <em>Constant</em> means that it always outputs the same thing (either 1 or 0).</li>
+<li><strong>Problem:</strong> Given a function <span class="arithmatex">\(f : \{0,1\}^n \rightarrow \{0, 1\}\)</span> with a promise that a function is either <em>constant</em> or <em>balanced</em> the goal is to find out whether <span class="arithmatex">\(f\)</span> is constant or balanced. <em>Balanced</em> means that it outputs 0 half of the time and 1 the other half of the time. <em>Constant</em> means that it always outputs the same thing (either 1 or 0).</li>
 <li>Classical algorithm will require exponentially many queries to <span class="arithmatex">\(f\)</span>, namely <span class="arithmatex">\(2^{n-2}\)</span> on average</li>
 <li>Quantum algorithm is able to determine whether f is constant or balanced in a single query</li>
 <li><strong>Algorithm</strong>:<ul>
@@ -648,14 +648,14 @@ $$</p>
 <li><span class="arithmatex">\(\left&lt;0\right|^{\otimes n}H^{\otimes n} U_f H^{\otimes n}\left|0\right&gt;^{\otimes n} = \begin{cases}1, &amp; \text { if } f \text { is constant } \\ 0, &amp; \text { if } f \text { is balanced }\end{cases}\)</span> </li>
 </ul>
 </li>
-<li><strong>Explanation 1:</strong>
-    $$
-    \left&lt;0\right|^{\otimes n}H^{\otimes n} U_f H^{\otimes n}\left|0\right&gt;^{\otimes n} = \left(\frac{1}{\sqrt{2^n}} \sum_{x \in{0,1}^n}\left<x\right|\right) U_f \left(\frac{1}{\sqrt{2^n}} \sum_{x' \in\{0,1\}^n}\left|x'\right>\right) = \frac{1}{2^n} \sum_{x \in{0,1}^n}\left<x\right| U_f \left|x\right>
-    $$<ul>
+<li><strong>Explanation 1:</strong><ul>
 <li>Because we have equal superposition of all x-values, then if <span class="arithmatex">\(U_f\)</span> is balanced then they will all add up to 0, and if they are constant, they will add up to 1</li>
 </ul>
 </li>
 </ul>
+<div class="arithmatex">\[
+\left&lt;0\right|^{\otimes n}H^{\otimes n} U_f H^{\otimes n}\left|0\right&gt;^{\otimes n} = \left(\frac{1}{\sqrt{2^n}} \sum_{x \in\{0,1\}^n}\left&lt;x\right|\right) U_f \left(\frac{1}{\sqrt{2^n}} \sum_{x' \in\{0,1\}^n}\left|x'\right&gt;\right) = \frac{1}{2^n} \sum_{x \in\{0,1\}^n}\left&lt;x\right| U_f \left|x\right&gt;
+\]</div>
 
 
 
