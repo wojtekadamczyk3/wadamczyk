@@ -18,3 +18,6 @@ Current paradigm of computing relies on classical physics, which in result const
 QIP-Implementation intends to show how can we build systems that can manipulate information using laws of quantum physics. QIP-Concepts intends to entertain the idea that we have the possibility of treating the information in a quantum way. We want to give you the grounding of exploring for yourself how does this change the paradigm of computation.
 
 In my notes I will largely _"ignore small formal subtleties, not because they're not interesting, but because they're a distraction from all the interesting physics we want to learn!"_ [1]. I will actually skip some of the formalism introduced in the lecture if I feel like it hinders my own understanding of Quantum Mechanics. I am open to being criticised for it. 
+
+## Chapter 0.1: Why do we care about Quantum Computing
+...

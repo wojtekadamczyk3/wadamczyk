@@ -1,4 +1,4 @@
-# Chapter 1a: Hilbert spaces, Dirac Notation, Operators, and Postulates
+# Chapter 1a: Principles of Quantum Mechanics
 
 ## 1.1. Hilbert spaces:
 
@@ -22,8 +22,6 @@ $$
 - Metric of $\mathcal{H}$ is defined by the norm $\|\psi\| \equiv \sqrt{(\psi, \psi)}$
 - Quantum states can be represented as a vectors $\psi \in \mathcal{H}$
 
-> Ignore the concept of homomorphism and endomorphism - its just a bit fancier way to say linear map, and it definitely makes it more difficult to follow the lecture notes.
-
 **Dual Spaces**:
 
 - Dual space $\mathcal{H^*}$ of a $\mathcal{H}$ is the space of linear maps $\mathcal{H} \rightarrow \mathbb{C}$. That is, an element $\phi \in \mathcal{H^*}$ defines a map $\varphi: \psi \mapsto \varphi(\psi) \in \mathbb{C}$ for every $\psi \in \mathcal{H}$, such that 
@@ -39,7 +37,7 @@ $$
 $$
 
 ## 1.2. Dirac Notation:
-In quantum mechanics quite often we often switch basis. This is because intrinsically any measurement causes a collapse onto the measurement basis. Because of this we want to have a notation that allows us to work with multiple basis at the same time, and not get confused. Dirac notation (empirically) provides this clarity. It is difficult to formally define the notation, and quite often when one does it, they get confused (unless they are deep down in theory). Therefore I would propose to learn it through learning the basic few properties and then trying things out. When thinking whether some operation is legal or not - ask me or your friends. Through discussion you will get deeper understanding of the concept. 
+In quantum mechanics quite often we often switch basis. This is because intrinsically any measurement causes a collapse onto the measurement basis. Because of this we want to have a notation that allows us to work with multiple basis at the same time, and not get confused. Dirac notation (empirically) provides this clarity. It is difficult to formally define the notation, and quite often when one does it, they get confused (unless they are deep down in theory). Therefore I would propose to learn it through learning the basic few properties and then trying things out. 
 
 Dirac denotes element of $\mathcal{H}$ as $\left|\psi\right>$ _'ket'_, and an element of the dual space is written as $\mathcal{H^*}$ as $\left<\psi\right|$ _'bra'_. The inner product between two states $\left|\psi\right>, \left|\phi\right> \in \mathcal{H}$ is written as $\left<\psi|\phi\right>$.
 > In notes the bra-ket notation is introduced using homomorphisms (linear maps). I find it unecessary.
@@ -79,5 +77,7 @@ Dirac denotes element of $\mathcal{H}$ as $\left|\psi\right>$ _'ket'_, and an el
 - **(4) Measurement** - A projective measurement on a quantum system with outcomes labelled ${x}_x$ is associated with a set of projectors ${\Pi_x}x$ satisfying $\sum_x \Pi_x = \mathbb{I}$. 
     - Probability of getting outcome x when measuring state $\left|\psi\right> is given by the Born rule: $Pr[x \mid \psi]=\left\langle\psi\left|\Pi_x\right| \psi\right\rangle$
     - Post-measurement state is given the outcome x is $\left|\psi_x^{\prime}\right>=\frac{1}{\sqrt{\operatorname{Pr}[x \mid \psi]}} \Pi_x\left|\psi\right>=\frac{\Pi_x\left|\psi\right>}{\sqrt{\left\langle\psi\left|\Pi_x\right| \psi\right\rangle}}$
+
+    
 
 
