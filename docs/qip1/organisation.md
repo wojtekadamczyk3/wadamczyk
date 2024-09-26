@@ -2,4 +2,4 @@
 
 ## Group Chat:
 
-![image info](groupchat.jpeg) 
+<img src="groupchat.jpeg" alt="drawing" width="30%"/>

@@ -6,6 +6,7 @@ Computational task is usually general i.e. 'given an n-bit string A (for any n),
 
 ## 2.1. Algorithm Complexity:
 How efficient an algorithm is, can be measured in the amount of resources that are needed to solve a problem of size _n_.
+
 - Time complexity deals with the number of computational steps required for solving the problem
 - Space complexity deals with the amount of RAM that is needed to solve the problem
 
@@ -13,6 +14,7 @@ Big O-Notation is very handy in this case - to easily compare two algorithms
 
 ## 2.2. Big O notation:
 Below I included definitions from P.Kammerlander lecture, for more intuitive picture go directly to the grey box:
+
 - $f(n)=o(g(n))$ and say that $f$ grows slower than $g$
 if $\forall c>0 \exists n_0>0$ such that for all $n \geq n_0: f(n) \leq c g(n)$,
 
@@ -47,6 +49,7 @@ _Decision Problem_ is a problem that can be formulated as a yes-no question of t
 
 
 **Zoo of Complexity Classes**
+
 - **P**: (Polynomial) The class of decision problems that can be solved in polynomial time on a classical computer.
 - **BPP**: (Bounded-Error probabilistic polynomial time) The class of decision problems that can be solved by a probabilistic algorithm in polynomial time on a classical computer with failure probability at most $\frac{1}{3}$ for all possible inputs.
 - **NP**: The class of decision problems such that, if the answer is ‘yes’, there is a proof of this which can be verified in polynomial time on a classical computer.
@@ -65,6 +68,7 @@ Some facts:
 
 ## 2.4. Quantum Complexity
 For quantum computers we need to somehow define the operation. Quantum computation is simply application of some unitary operator $U \in \mathcal{U}(2^n)$ to some initial state of _n_ qubit (usually $\left|0\right>=\left|00 \cdots 0\right>=\left|0^n\right>=\left|0\right>^{\otimes n}$), followed by a measurement _m_ of the qubits in the computational basis. Any $U \in \mathcal{U}(2^n)$ is composed of an elementary gate from $\mathcal{S}$.
+
 - _circuit size_ is the number of elementary gates
 - _circuit width_ is the number of s-qubits that are involved in those elementary gates
 - _circuit depth_ is the number of actual time steps needed while allowing for parallel execution of elementary gates on di erent qubits. However, the depth di ers from the size at most by a constant factor of s and is hence not relevant for the asymptotic runtime.
