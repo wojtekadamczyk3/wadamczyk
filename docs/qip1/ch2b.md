@@ -1,4 +1,4 @@
-# Chapter 2b: Universal gates and algorithms
+# Chapter 2b: Universal gates, Reversible irreversability, DJ algorithm
 
 ## 2.5. Universal sets of gates
 - $\mathcal{S}$ is _universal set of gates for quantum computing_ if for any $n \in \mathbb{N}$ an arbitrary unitary operation $U \in \mathcal{U}(n)$ can be implemented to arbitrary precision using only elementary gates from $\mathcal{S}$
