@@ -76,10 +76,13 @@ Dirac denotes element of $\mathcal{H}$ as $\left|\psi\right>$ _'ket'_, and an el
 >- Then one can write $\left|\alpha\right>_A = a_1 \left|u_1\right>_A + a_2 \left|u_2\right>_A = a_1 \begin{pmatrix} 1\\ 0 \end{pmatrix}_A + a_2 \begin{pmatrix} 0\\ 1 \end{pmatrix}_A$,
 >- and $\left|\beta\right>_B = b_1 \left|v_1\right>_B + b_2 \left|v_2\right>_B = b_1 \begin{pmatrix} 1\\ 0 \end{pmatrix}_B + b_2 \begin{pmatrix} 0\\ 1 \end{pmatrix}_B$
 >- This means that one can write 
+
 >$$
 \left|\alpha\right>_A \otimes \left|\beta\right>_B = \begin{pmatrix} a_1\\ a_2 \end{pmatrix}_A \otimes \begin{pmatrix} b_1\\ b_2 \end{pmatrix}_B = \begin{pmatrix} a_1b_1\\ a_1b_2\\ a_2b_1\\ a_2b_2 \end{pmatrix}
 $$
->- or sticking to the dirac notation:
+
+>- or sticking to the Dirac notation:
+
 >$$
 \left|\alpha\right>_A \otimes \left|\beta\right>_B = \sum_{i,j} a_i b_j \left|u_i\right>_A \otimes \left|v_j\right>_B
 $$
@@ -88,10 +91,13 @@ $$
 
 >- For operators $A$ and $B$ that live in $\mathbb{C}^2_A$ and $\mathbb{C}^2_B$ respectively, one can write $A = \sum_{i,j} a_{ij} \left|u_i\right>_A \left<u_j\right|$ and $B = \sum_{i,j} b_{ij} \left|v_i\right>_B \left<v_j\right|$
 >- This means:
+
 >$$
 A \otimes B = \sum_{i,j,k,\ell} a_{ij} b_{k\ell} \left|u_i\right>_A \otimes \left|v_k\right>_B \left<u_j\right|\otimes\left<v_\ell\right|
 $$
+
 >- or in vector form:
+
 >$$
 A \otimes B = \begin{pmatrix}
 a_{11}B & a_{12}B\\
@@ -112,6 +118,5 @@ $$
 - **(4) Measurement** - A projective measurement on a quantum system with outcomes labelled ${x}_x$ is associated with a set of projectors ${\Pi_x}x$ satisfying $\sum_x \Pi_x = \mathbb{I}$. 
     - Probability of getting outcome x when measuring state $\left|\psi\right> is given by the Born rule: $Pr[x \mid \psi]=\left\langle\psi\left|\Pi_x\right| \psi\right\rangle$
     - Post-measurement state is given the outcome x is $\left|\psi_x^{\prime}\right>=\frac{1}{\sqrt{\operatorname{Pr}[x \mid \psi]}} \Pi_x\left|\psi\right>=\frac{\Pi_x\left|\psi\right>}{\sqrt{\left\langle\psi\left|\Pi_x\right| \psi\right\rangle}}$
-
 
 
