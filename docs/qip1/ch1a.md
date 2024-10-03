@@ -78,6 +78,5 @@ Dirac denotes element of $\mathcal{H}$ as $\left|\psi\right>$ _'ket'_, and an el
     - Probability of getting outcome x when measuring state $\left|\psi\right> is given by the Born rule: $Pr[x \mid \psi]=\left\langle\psi\left|\Pi_x\right| \psi\right\rangle$
     - Post-measurement state is given the outcome x is $\left|\psi_x^{\prime}\right>=\frac{1}{\sqrt{\operatorname{Pr}[x \mid \psi]}} \Pi_x\left|\psi\right>=\frac{\Pi_x\left|\psi\right>}{\sqrt{\left\langle\psi\left|\Pi_x\right| \psi\right\rangle}}$
 
-    
 
 
