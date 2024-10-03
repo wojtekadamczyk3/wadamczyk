@@ -70,6 +70,41 @@ Dirac denotes element of $\mathcal{H}$ as $\left|\psi\right>$ _'ket'_, and an el
 - $\left<\alpha\otimes\beta|\alpha'\otimes\beta'\right> := \left<\alpha|\alpha'\right>\left<\beta|\beta'\right>$
 - $\left( S_\alpha \otimes T_\beta \right)\left(\alpha \otimes \beta\right) = \left(S_\alpha\alpha\right)\otimes\left(T_\beta\beta\right)$ - apologies for being slightly sloppy - I think it is understandable what I mean though
 
+**Tensor Product in action (states)**
+
+>- Let's as an example consider that our states $\left|\alpha\right>_A \text{ and } \left|\beta\right>_B$ live both in $\mathbb{C}^2_A$ and $\mathbb{C}^2_B$ respectively. Then we can pick orthonormal basis of $\mathbb{C}^2_A$ to be $\left\{\left|u_1\right>_A, \left|u_2\right>_A \right\}$, and of $\mathbb{C}^2_B$ to be $\left\{\left|v_1\right>_B, \left|v_2\right>_B \right\}$
+>- Then one can write $\left|\alpha\right>_A = a_1 \left|u_1\right>_A + a_2 \left|u_2\right>_A = a_1 \begin{pmatrix} 1\\ 0 \end{pmatrix}_A + a_2 \begin{pmatrix} 0\\ 1 \end{pmatrix}_A$,
+>- and $\left|\beta\right>_B = b_1 \left|v_1\right>_B + b_2 \left|v_2\right>_B = b_1 \begin{pmatrix} 1\\ 0 \end{pmatrix}_B + b_2 \begin{pmatrix} 0\\ 1 \end{pmatrix}_B$
+>- This means that one can write 
+>$$
+\left|\alpha\right>_A \otimes \left|\beta\right>_B = \begin{pmatrix} a_1\\ a_2 \end{pmatrix}_A \otimes \begin{pmatrix} b_1\\ b_2 \end{pmatrix}_B = \begin{pmatrix} a_1b_1\\ a_1b_2\\ a_2b_1\\ a_2b_2 \end{pmatrix}
+$$
+>- or sticking to the dirac notation:
+>$$
+\left|\alpha\right>_A \otimes \left|\beta\right>_B = \sum_{i,j} a_i b_j \left|u_i\right>_A \otimes \left|v_j\right>_B
+$$
+
+**Tensor Product in action (operators)**
+
+>- For operators $A$ and $B$ that live in $\mathbb{C}^2_A$ and $\mathbb{C}^2_B$ respectively, one can write $A = \sum_{i,j} a_{ij} \left|u_i\right>_A \left<u_j\right|$ and $B = \sum_{i,j} b_{ij} \left|v_i\right>_B \left<v_j\right|$
+>- This means:
+>$$
+A \otimes B = \sum_{i,j,k,\ell} a_{ij} b_{k\ell} \left|u_i\right>_A \otimes \left|v_k\right>_B \left<u_j\right|\otimes\left<v_\ell\right|
+$$
+>- or in vector form:
+>$$
+A \otimes B = \begin{pmatrix}
+a_{11}B & a_{12}B\\
+a_{21}B & a_{22}B
+\end{pmatrix} = \begin{pmatrix}
+a_{11}b_{11} & a_{11}b_{12} & a_{12}b_{11} & a_{12}b_{12}\\
+a_{11}b_{21} & a_{11}b_{22} & a_{12}b_{21} & a_{12}b_{22}\\
+a_{21}b_{11} & a_{21}b_{12} & a_{22}b_{11} & a_{22}b_{12}\\
+a_{21}b_{21} & a_{21}b_{22} & a_{22}b_{21} & a_{22}b_{22}\\
+\end{pmatrix}
+$$
+
+
 ## 1.5. Postulates of Quantum Mechanics:
 - **(1) A _quantum system_ A** is associated with complex Hilber space $\mathcal{H}$. **A _physical state_** of an isolated system is represented by a normalised vector $\left|\psi\right> \in \mathcal{H}$, which is unique up to a phase factor
 - **(2) The evolution** of an isolated quantum system is reversible. In this formalism this corresponds to unitary evolution of the form $\left|\psi\right> \mapsto U\left|\psi\right>$ for $U \in \mathcal{U}(\mathcal{H})$, i.e. $U^{\dagger} U=U U^{\dagger}=\mathbb{I}$. The unitary is unique up to a phase factor
