@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/atom_fav.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.38">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
     
     
       
@@ -449,18 +449,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#16-bell-basis" class="md-nav__link">
+  <a href="#16-bloch-sphere" class="md-nav__link">
     <span class="md-ellipsis">
-      1.6. Bell Basis
+      1.6. Bloch Sphere:
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#17-quantum-circuits" class="md-nav__link">
+  <a href="#17-bell-basis" class="md-nav__link">
     <span class="md-ellipsis">
-      1.7. Quantum Circuits
+      1.7. Bell Basis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-quantum-circuits" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.8. Quantum Circuits
     </span>
   </a>
   
@@ -569,7 +578,27 @@
 
 
 <h1 id="chapter-1b-usefull-toolbox">Chapter 1b: Usefull Toolbox</h1>
-<h2 id="16-bell-basis">1.6. Bell Basis</h2>
+<h2 id="16-bloch-sphere">1.6. Bloch Sphere:</h2>
+<ul>
+<li>Because in my class there are a lot of non-physicists I thought it would be useful to introduce the concept of the Bloch Sphere. </li>
+<li><em>Bloch Sphere</em> is just a common representation of a two level system, which allows one to think about the states and operations in a more intuitive way</li>
+<li>Normally when one thinks about how many parameters one needs to define a two level system, they can naively thing 4. In the end two level system lives in <span class="arithmatex">\(\left|\psi\right&gt; \in \mathbb{C}^2\)</span>. In different words, any <em>pure state</em> can be written as a superposition of the basis vectors <span class="arithmatex">\(\left|0\right&gt;\)</span> and <span class="arithmatex">\(\left|1\right&gt;\)</span>, where the coefficient of each of the two basis vectors is a complex number. <span class="arithmatex">\(\left|\psi\right&gt; = a_1e^{i\theta_1} \left|0\right&gt; +  a_2e^{i\theta_2} \left|1\right&gt;\)</span>. 4-parameters right?<ul>
+<li>We know, however, that the norm of a <em>pure state</em> must equal to 1, which means that $\left&lt;\psi|\psi\right&gt; = 1 $, and so <span class="arithmatex">\(\left|a_1\right|^2 + \left|a_2\right|^2=1\)</span>. This reduces the number of free parameters to 3</li>
+<li>We also know that we dont care about the global phase of a state, as it doesn't change anything about our measurement, and so we can also neglect one degree of freedom, which reduces the number of free parameters to 2</li>
+<li>This means that we can represent any 2-level quantum pure state on a unit sphere, which we will call Bloch Sphere</li>
+</ul>
+</li>
+<li>How does one parametrise something on a unit-sphere?<ul>
+<li>One can do it with angles, <span class="arithmatex">\(\theta \text{ and } \phi\)</span></li>
+<li><span class="arithmatex">\(\left|\psi\right&gt; = \cos\frac{\theta}{2} \left|0\right&gt; +  e^{i\phi}\sin{\frac{\theta}{2}} \left|1\right&gt;\)</span></li>
+<li>In such representation the probability of measuring state <span class="arithmatex">\(\left|0\right&gt;\)</span> is: <span class="arithmatex">\(\left&lt;0|\psi\right&gt; = \cos^2\frac{\theta}{2}\)</span>, and to measure state <span class="arithmatex">\(\left|1\right&gt;\)</span> is <span class="arithmatex">\(\sin^2\frac{\theta}{2}\)</span></li>
+<li><span class="arithmatex">\(\left|\psi\right&gt;\)</span> can be represented on a unit sphere as:</li>
+</ul>
+</li>
+</ul>
+<p><img alt="image info" src="bloch_sphere.png" /> 
+- Any Unitary Operator then will be some sort of rotation of this state, mapping it from one point on this sphere to another point on this sphere - you will see it in the subchapter Quantum Circuits</p>
+<h2 id="17-bell-basis">1.7. Bell Basis</h2>
 <ul>
 <li>Let <span class="arithmatex">\(\mathcal{H}_{A B}=\mathcal{H}_A \otimes \mathcal{H}_B \cong \mathbb{C}^4\)</span> be the bipartite Hilbert space of two qubits and consider the product basis of the computational bases of the qubit subsystems. For <span class="arithmatex">\(\mathcal{H_{AB}}\)</span> there exists a basis consisting of <em>maximally entangled states</em> denotes as:</li>
 </ul>
@@ -579,7 +608,7 @@
 <li>The maximally entangled states are locally convertible - there exist local operations on the subsystem B that transforms one Bell state into another Bell state.
 <span class="arithmatex">\(<span class="arithmatex">\(\left|\psi^{i j}\right&gt;=\left(\mathbb{I}_A \otimes X_B^i Z_B^j\right)\left|\psi^{00}\right&gt;\)</span>\)</span></li>
 </ul>
-<h2 id="17-quantum-circuits">1.7. Quantum Circuits</h2>
+<h2 id="18-quantum-circuits">1.8. Quantum Circuits</h2>
 <p><strong>Example Quantum circuit</strong></p>
 <p><img alt="image info" src="quantum_circuit_ch1.png" /> </p>
 <p>corresponds to unitary operator <span class="arithmatex">\(\left(V \otimes \mathbb{I}\right)\left(\mathbb{I}\otimes U\right)\left(H\otimes\mathbb{I}\otimes Z\right)\)</span> applied to three qubits followed by a Z-measurement of the first qubit</p>
@@ -665,7 +694,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.tabs", "toc.integrate"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d6f25eb3.min.js"></script>
+      <script src="../assets/javascripts/bundle.525ec568.min.js"></script>
       
         <script src="../javascripts/mathjax.js"></script>
       
