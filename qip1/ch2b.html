@@ -642,20 +642,49 @@ $$</p>
 <li>Classical algorithm will require exponentially many queries to <span class="arithmatex">\(f\)</span>, namely <span class="arithmatex">\(2^{n-2}\)</span> on average</li>
 <li>Quantum algorithm is able to determine whether f is constant or balanced in a single query</li>
 <li><strong>Algorithm</strong>:<ul>
-<li><img src="DJ_algorithm.png" alt="drawing" width="60%"/></li>
+<li><img src="ch2/DJ_algorithm.png" alt="drawing" width="60%"/></li>
 <li>Which corresponds to <span class="arithmatex">\(H^{\otimes n} U_f H^{\otimes n}\left|0\right&gt;^{\otimes n}\)</span></li>
 <li>We then evaluate the probability of <span class="arithmatex">\(y = 0^n\)</span>, which is equivalent to projecting the state onto <span class="arithmatex">\(\left|0\right&gt;^{\otimes n}\)</span></li>
 <li><span class="arithmatex">\(\left&lt;0\right|^{\otimes n}H^{\otimes n} U_f H^{\otimes n}\left|0\right&gt;^{\otimes n} = \begin{cases}1, &amp; \text { if } f \text { is constant } \\ 0, &amp; \text { if } f \text { is balanced }\end{cases}\)</span> </li>
 </ul>
 </li>
-<li><strong>Explanation 1:</strong><ul>
+<li>
+<p><strong>Explanation 1:</strong></p>
+<ul>
+<li>Here the trick is to realise that operator can act either to the right or to the left. Acting on the left massively simplifies the problem:</li>
+</ul>
+<div class="arithmatex">\[
+\left&lt;0\right|^{\otimes n}H^{\otimes n} U_f H^{\otimes n}\left|0\right&gt;^{\otimes n} = \left(\frac{1}{\sqrt{2^n}} \sum_{x \in\{0,1\}^n}\left&lt;x\right|\right) U_f \left(\frac{1}{\sqrt{2^n}} \sum_{x' \in\{0,1\}^n}\left|x'\right&gt;\right) = \frac{1}{2^n} \sum_{x \in\{0,1\}^n}\left&lt;x\right| U_f \left|x\right&gt; = \begin{cases}1, &amp; \text { if } f \text { is constant } \\ 0, &amp; \text { if } f \text { is balanced }\end{cases}
+\]</div>
+<ul>
 <li>Because we have equal superposition of all x-values, then if <span class="arithmatex">\(U_f\)</span> is balanced then they will all add up to 0, and if they are constant, they will add up to 1</li>
+<li>In fact quite often when we have some sort of symmetric situation due to the measurement - the problem massively simplifies</li>
+<li><strong>Explanation 2:</strong></li>
+<li>Second explanation is more visual approach to the problem. It requires us to think about the problem slightly differently, which initially might seem more complicated, but then it becomes easier and more natural - I think it is very useful in subsequent problems such as Grover's algorithm</li>
+<li>We can represent each n-qubit computational basis state as a number corresponding to its binary value <ul>
+<li><span class="arithmatex">\(\left|0\right&gt;_C = \left|00...0\right&gt;=\left|0\right&gt;^{\otimes n}\)</span>, </li>
+<li><span class="arithmatex">\(\left|1\right&gt;_C = \left|00...01\right&gt;\)</span>, </li>
+<li><span class="arithmatex">\(\left|2\right&gt;_C = \left|00...10\right&gt;\)</span></li>
+<li>⋮</li>
+<li><span class="arithmatex">\(\left|2^n-1\right&gt; = \left|11...1\right&gt;\)</span></li>
+</ul>
+</li>
+<li>Each quantum state <span class="arithmatex">\(\left|x\right&gt;_C\)</span> can be represented as a delta function <span class="arithmatex">\(\delta(x)\)</span> on the x-axis, where <span class="arithmatex">\(x\)</span> ranges from 0 to <span class="arithmatex">\(2^n-1\)</span>.</li>
+<li>Then let's run through the algorithm step by step:<ol>
+<li>Initially we have the state <span class="arithmatex">\(\left|0\right&gt;_C\)</span></li>
+<li><img src="ch2/DJ0.png" alt="DJ0" width="50%"/></li>
+<li>Then we apply Haddamard on the <span class="arithmatex">\(\left|0\right&gt;_C\)</span> state, which results in the equal superposition of all states in <span class="arithmatex">\(\left|x\right&gt;_C\)</span> basis</li>
+<li><img src="ch2/DJ1.png" alt="DJ1" width="50%"/></li>
+<li>Then we apply <span class="arithmatex">\(U_f\)</span> operator, which effectively flips the phase of half of the <span class="arithmatex">\(\left|x\right&gt;\)</span> states if its balanced, otherwise it flips either all or none of them</li>
+<li><img src="ch2/DJ2.png" alt="DJ2" width="50%"/></li>
+<li>Finally we project it onto the equal superposition of all <span class="arithmatex">\(\left|x\right&gt;_C\)</span> states</li>
+<li><img src="ch2/DJ3.png" alt="DJ3" width="50%"/></li>
+</ol>
+</li>
+<li>The result is that if half of the states are flipped, then when we project it onto the equal superposition of all <span class="arithmatex">\(\left|x\right&gt;_C\)</span> states, we will measure it with probability 0, and if all the states are flipped, then we will measure it with probability 1</li>
 </ul>
 </li>
 </ul>
-<div class="arithmatex">\[
-\left&lt;0\right|^{\otimes n}H^{\otimes n} U_f H^{\otimes n}\left|0\right&gt;^{\otimes n} = \left(\frac{1}{\sqrt{2^n}} \sum_{x \in\{0,1\}^n}\left&lt;x\right|\right) U_f \left(\frac{1}{\sqrt{2^n}} \sum_{x' \in\{0,1\}^n}\left|x'\right&gt;\right) = \frac{1}{2^n} \sum_{x \in\{0,1\}^n}\left&lt;x\right| U_f \left|x\right&gt;
-\]</div>
 
 
 
