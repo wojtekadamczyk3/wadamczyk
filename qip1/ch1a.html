@@ -672,6 +672,44 @@
 <li><span class="arithmatex">\(\left&lt;\alpha\otimes\beta|\alpha'\otimes\beta'\right&gt; := \left&lt;\alpha|\alpha'\right&gt;\left&lt;\beta|\beta'\right&gt;\)</span></li>
 <li><span class="arithmatex">\(\left( S_\alpha \otimes T_\beta \right)\left(\alpha \otimes \beta\right) = \left(S_\alpha\alpha\right)\otimes\left(T_\beta\beta\right)\)</span> - apologies for being slightly sloppy - I think it is understandable what I mean though</li>
 </ul>
+<p><strong>Tensor Product in action (states)</strong></p>
+<blockquote>
+<ul>
+<li>Let's as an example consider that our states <span class="arithmatex">\(\left|\alpha\right&gt;_A \text{ and } \left|\beta\right&gt;_B\)</span> live both in <span class="arithmatex">\(\mathbb{C}^2_A\)</span> and <span class="arithmatex">\(\mathbb{C}^2_B\)</span> respectively. Then we can pick orthonormal basis of <span class="arithmatex">\(\mathbb{C}^2_A\)</span> to be <span class="arithmatex">\(\left\{\left|u_1\right&gt;_A, \left|u_2\right&gt;_A \right\}\)</span>, and of <span class="arithmatex">\(\mathbb{C}^2_B\)</span> to be <span class="arithmatex">\(\left\{\left|v_1\right&gt;_B, \left|v_2\right&gt;_B \right\}\)</span></li>
+<li>Then one can write <span class="arithmatex">\(\left|\alpha\right&gt;_A = a_1 \left|u_1\right&gt;_A + a_2 \left|u_2\right&gt;_A = a_1 \begin{pmatrix} 1\\ 0 \end{pmatrix}_A + a_2 \begin{pmatrix} 0\\ 1 \end{pmatrix}_A\)</span>,</li>
+<li>and <span class="arithmatex">\(\left|\beta\right&gt;_B = b_1 \left|v_1\right&gt;_B + b_2 \left|v_2\right&gt;_B = b_1 \begin{pmatrix} 1\\ 0 \end{pmatrix}_B + b_2 \begin{pmatrix} 0\\ 1 \end{pmatrix}_B\)</span></li>
+<li>This means that one can write 
+$$
+\left|\alpha\right&gt;_A \otimes \left|\beta\right&gt;_B = \begin{pmatrix} a_1\ a_2 \end{pmatrix}_A \otimes \begin{pmatrix} b_1\ b_2 \end{pmatrix}_B = \begin{pmatrix} a_1b_1\ a_1b_2\ a_2b_1\ a_2b_2 \end{pmatrix}
+$$</li>
+<li>or sticking to the dirac notation:
+$$
+\left|\alpha\right&gt;<em i_j="i,j">A \otimes \left|\beta\right&gt;_B = \sum</em> a_i b_j \left|u_i\right&gt;_A \otimes \left|v_j\right&gt;_B
+$$</li>
+</ul>
+</blockquote>
+<p><strong>Tensor Product in action (operators)</strong></p>
+<blockquote>
+<ul>
+<li>For operators <span class="arithmatex">\(A\)</span> and <span class="arithmatex">\(B\)</span> that live in <span class="arithmatex">\(\mathbb{C}^2_A\)</span> and <span class="arithmatex">\(\mathbb{C}^2_B\)</span> respectively, one can write <span class="arithmatex">\(A = \sum_{i,j} a_{ij} \left|u_i\right&gt;_A \left&lt;u_j\right|\)</span> and <span class="arithmatex">\(B = \sum_{i,j} b_{ij} \left|v_i\right&gt;_B \left&lt;v_j\right|\)</span></li>
+<li>This means:
+$$
+A \otimes B = \sum_{i,j,k,\ell} a_{ij} b_{k\ell} \left|u_i\right&gt;<em>A \otimes \left|v_k\right&gt;_B \left&lt;u_j\right|\otimes\left&lt;v</em>\ell\right|
+$$</li>
+<li>or in vector form:
+$$
+A \otimes B = \begin{pmatrix}
+a_{11}B &amp; a_{12}B\
+a_{21}B &amp; a_{22}B
+\end{pmatrix} = \begin{pmatrix}
+a_{11}b_{11} &amp; a_{11}b_{12} &amp; a_{12}b_{11} &amp; a_{12}b_{12}\
+a_{11}b_{21} &amp; a_{11}b_{22} &amp; a_{12}b_{21} &amp; a_{12}b_{22}\
+a_{21}b_{11} &amp; a_{21}b_{12} &amp; a_{22}b_{11} &amp; a_{22}b_{12}\
+a_{21}b_{21} &amp; a_{21}b_{22} &amp; a_{22}b_{21} &amp; a_{22}b_{22}\
+\end{pmatrix}
+$$</li>
+</ul>
+</blockquote>
 <h2 id="15-postulates-of-quantum-mechanics">1.5. Postulates of Quantum Mechanics:</h2>
 <ul>
 <li><strong>(1) A <em>quantum system</em> A</strong> is associated with complex Hilber space <span class="arithmatex">\(\mathcal{H}\)</span>. <strong>A <em>physical state</em></strong> of an isolated system is represented by a normalised vector <span class="arithmatex">\(\left|\psi\right&gt; \in \mathcal{H}\)</span>, which is unique up to a phase factor</li>
