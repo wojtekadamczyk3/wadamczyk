@@ -96,7 +96,7 @@ $$
 A \otimes B = \sum_{i,j,k,\ell} a_{ij} b_{k\ell} \left|u_i\right>_A \otimes \left|v_k\right>_B \left<u_j\right|\otimes\left<v_\ell\right|
 $$
 
->- or in vector form:
+>- or in a matrix form:
 
 >$$
 A \otimes B = \begin{pmatrix}

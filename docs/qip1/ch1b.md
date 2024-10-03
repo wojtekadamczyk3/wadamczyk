@@ -30,7 +30,7 @@ $$\left|\psi^{i j}\right>=\left(\mathbb{I}_A \otimes X_B^i Z_B^j\right)\left|\ps
 ## 1.8. Quantum Circuits
 **Example Quantum circuit**
 
-![image info](quantum_circuit_ch1.png) 
+![image info](ch1/quantum_circuit_ch1.png) 
 
 corresponds to unitary operator $\left(V \otimes \mathbb{I}\right)\left(\mathbb{I}\otimes U\right)\left(H\otimes\mathbb{I}\otimes Z\right)$ applied to three qubits followed by a Z-measurement of the first qubit
 
@@ -39,15 +39,15 @@ corresponds to unitary operator $\left(V \otimes \mathbb{I}\right)\left(\mathbb{
 - Haddamard Gate:
     - $H=\frac{1}{\sqrt{2}}\left(\begin{array}{cc}1 & 1 \\ 1 & -1\end{array}\right)=\left|+\right>\left< 0\right|+\left|-\right> \left<1\right|=\left| 0\right>\left<+\right|+\left| 1\right>\left<-\right|$
     - As an orthogonal transformation in the real Euclidean plane $\mathbb{R}^2$, H is reflection in the mirror line at angle $\frac{\pi}{8}$ to the x-axis
-    ![image info](h_gate.png) 
+    ![image info](ch1/h_gate.png) 
 - X, Y, Z:
     - $X = \left(\begin{array}{ll} 0 & 1 \\ 1 & 0 \end{array}\right)$, $Z = \left(\begin{array}{ll} 1 & 0 \\ 0 & -1 \end{array}\right)$, $Y = \left(\begin{array}{ll} 0 & 1 \\ -1 & 0 \end{array}\right)$
     - X-gate
-    - ![image info](x_gate.png) 
+    - ![image info](ch1/x_gate.png) 
     - Y-gate
-    - ![image info](y_gate.png) 
+    - ![image info](ch1/y_gate.png) 
     - Z-gate
-    - ![image info](z_gate.png) 
+    - ![image info](ch1/z_gate.png) 
 - Controlled-U Gate:
     - $\mathrm{C} U=\left|0\right>\left<0\right|\otimes \mathrm{id}+\left| 1\right>\left<1\right| \otimes U$
 - Controlled-Not Gate:
