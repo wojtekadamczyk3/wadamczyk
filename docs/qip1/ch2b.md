@@ -73,7 +73,7 @@ $$
             - <img src="ch2/DJ0.png" alt="DJ0" width="50%"/>
         2. Then we apply Haddamard on the $\left|0\right>_C$ state, which results in the equal superposition of all states in $\left|x\right>_C$ basis
             - <img src="ch2/DJ1.png" alt="DJ1" width="50%"/>
-        3. Then we apply $U_f$ operator, which effectively flips the phase of half of the $\left|x\right>$ states if its balanced, otherwise it flips either all or none of them
+        3. Then we apply $U_f$ operator, which effectively flips the phase of half of the $\left|x\right>_C$ states if its balanced, otherwise it flips either all or none of them
             - <img src="ch2/DJ2.png" alt="DJ2" width="50%"/>
         4. Finally we project it onto the equal superposition of all $\left|x\right>_C$ states
             - <img src="ch2/DJ3.png" alt="DJ3" width="50%"/>

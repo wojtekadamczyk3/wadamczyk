@@ -14,7 +14,7 @@
     - In such representation the probability of measuring state $\left|0\right>$ is: $\left<0|\psi\right> = \cos^2\frac{\theta}{2}$, and to measure state $\left|1\right>$ is $\sin^2\frac{\theta}{2}$
     - $\left|\psi\right>$ can be represented on a unit sphere as:
 
-![image info](bloch_sphere.png) 
+![image info](ch1/bloch_sphere.png) 
 - Any Unitary Operator then will be some sort of rotation of this state, mapping it from one point on this sphere to another point on this sphere - you will see it in the subchapter Quantum Circuits
 
 ## 1.7. Bell Basis
