@@ -1,6 +1,6 @@
-# Chapter 2b: Universal gates, Reversible irreversability, DJ algorithm
+# Chapter 3b: Universal gates, Reversible irreversability, DJ algorithm
 
-## 2.5. Universal sets of gates
+## 3.5. Universal sets of gates
 - $\mathcal{S}$ is _universal set of gates for quantum computing_ if for any $n \in \mathbb{N}$ an arbitrary unitary operation $U \in \mathcal{U}(n)$ can be implemented to arbitrary precision using only elementary gates from $\mathcal{S}$
 - Elementary gates are assumed to take time $O(1)$
 - Examples of the universal set of gates:
@@ -10,7 +10,7 @@
 - For any fixed universal set $\mathcal{S}$, a generic unitary matrix on _n_ qubits requires exponentially many elementary gates _n_ to be implemented - this follows from the fact that an n-qubit unitary is determined by $O(4^n)$ real parameters
 - Goal of quantum computing is to find efficient quantum circuits which use poly(n) qubits and poly(n) elementary gates to solve a problem on an input size _n_
 
-## 2.6. Simulating Classical Circuits $\left(\mathbf{B P P} \subset \mathbf{B Q P}\right)$
+## 3.6. Simulating Classical Circuits $\left(\mathbf{B P P} \subset \mathbf{B Q P}\right)$
 - A _classical circuit_ is a sequence of logical operations that act on a small number of bits (AND, OR, NOT)
 - We claim that quantum computation is at least as powerfull as classical computation $\mathbf{B P P} \subset \mathbf{B Q P}$
 - Difficulty arises when trying to translate irreversible logical operations such as AND or OR. Quantum operations are unitary, hence reversible. This poses a problem.
@@ -23,7 +23,7 @@
     - it performs the wanted operation, because if c is initialised with $c=0...0$, then $\tilde{f}(b, c) = (b, f(b))$
 - By replacing all (now reversible) classical gates with quantum gates and imputing computation basis states, one can obtain quantum circuit that simulates the classical one 
 
-## 2.7. Oracle for Boolean function:
+## 3.7. Oracle for Boolean function:
 - A _quantum oracle for any Boolean function_ $f:B_n\rightarrow B_m$ will be the quantum gate denoted $O_f$ on $n+m$ qubits defined by its action on basis states as follows 
 $$
 O_f\left|x\right>\left|y\right>=\left|x\right>\left|y \oplus f(x)\right> \quad \text { for all } x \in B_n \text { and } y \in B_m
@@ -39,12 +39,12 @@ $$
 O_f\left|-\right>\left|x\right>=O_f \frac{1}{\sqrt{2}}(\left|0\right>-\left|1\right>)\left|x\right>=\frac{1}{\sqrt{2}}(\left|f(x)\right>\left|x\right>-\left|1 \oplus f(x)\right>\left|x\right>)=(-1)^{f(x)}\left|-\right>\left|x\right>
 $$
 
-## 2.8. Deutsch-Josza (DJ) algorithm:
+## 3.8. Deutsch-Josza (DJ) algorithm:
 - **Problem:** Given a function $f : \{0,1\}^n \rightarrow \{0, 1\}$ with a promise that a function is either _constant_ or _balanced_ the goal is to find out whether $f$ is constant or balanced. _Balanced_ means that it outputs 0 half of the time and 1 the other half of the time. _Constant_ means that it always outputs the same thing (either 1 or 0).
 - Classical algorithm will require exponentially many queries to $f$, namely $2^{n-2}$ on average
 - Quantum algorithm is able to determine whether f is constant or balanced in a single query
 - **Algorithm**:
-    - <img src="ch2/DJ_algorithm.png" alt="drawing" width="60%"/>
+    - <img src="ch3/DJ_algorithm.png" alt="drawing" width="60%"/>
     - Which corresponds to $H^{\otimes n} U_f H^{\otimes n}\left|0\right>^{\otimes n}$
     - We then evaluate the probability of $y = 0^n$, which is equivalent to projecting the state onto $\left|0\right>^{\otimes n}$
     - $\left<0\right|^{\otimes n}H^{\otimes n} U_f H^{\otimes n}\left|0\right>^{\otimes n} = \begin{cases}1, & \text { if } f \text { is constant } \\ 0, & \text { if } f \text { is balanced }\end{cases}$ 
@@ -70,13 +70,13 @@ $$
     - Each quantum state $\left|x\right>_C$ can be represented as a delta function $\delta(x)$ on the x-axis, where $x$ ranges from 0 to $2^n-1$.
     - Then let's run through the algorithm step by step:
         1. Initially we have the state $\left|0\right>_C$
-            - <img src="ch2/DJ0.png" alt="DJ0" width="50%"/>
+            - <img src="ch3/DJ0.png" alt="DJ0" width="50%"/>
         2. Then we apply Haddamard on the $\left|0\right>_C$ state, which results in the equal superposition of all states in $\left|x\right>_C$ basis
-            - <img src="ch2/DJ1.png" alt="DJ1" width="50%"/>
+            - <img src="ch3/DJ1.png" alt="DJ1" width="50%"/>
         3. Then we apply $U_f$ operator, which effectively flips the phase of half of the $\left|x\right>_C$ states if its balanced, otherwise it flips either all or none of them
-            - <img src="ch2/DJ2.png" alt="DJ2" width="50%"/>
+            - <img src="ch3/DJ2.png" alt="DJ2" width="50%"/>
         4. Finally we project it onto the equal superposition of all $\left|x\right>_C$ states
-            - <img src="ch2/DJ3.png" alt="DJ3" width="50%"/>
+            - <img src="ch3/DJ3.png" alt="DJ3" width="50%"/>
     - The result is that if half of the states are flipped, then when we project it onto the equal superposition of all $\left|x\right>_C$ states, we will measure it with probability 0, and if all the states are flipped, then we will measure it with probability 1
 
     

@@ -116,7 +116,7 @@ $$
 - **(2) The evolution** of an isolated quantum system is reversible. In this formalism this corresponds to unitary evolution of the form $\left|\psi\right> \mapsto U\left|\psi\right>$ for $U \in \mathcal{U}(\mathcal{H})$, i.e. $U^{\dagger} U=U U^{\dagger}=\mathbb{I}$. The unitary is unique up to a phase factor
 - **(3) Composite system** - For two quantum system A, and B with associated Hilber spaces $\mathcal{H_A}$ and $\mathcal{H_B}$ the Hilbert space $\mathcal{H_{AB}}$ associated with the composite system AB is isomorphic to the tensor product $\mathcal{H_A}\otimes\mathcal{H_B}$. For unitary operation on the subsystem we use: $U_A \otimes \mathbb{I}_B\left|i j\right>_{A B} \equiv U_A\left|i j\right>_{A B}$
 - **(4) Measurement** - A projective measurement on a quantum system with outcomes labelled ${x}_x$ is associated with a set of projectors ${\Pi_x}x$ satisfying $\sum_x \Pi_x = \mathbb{I}$. 
-    - Probability of getting outcome x when measuring state $\left|\psi\right> is given by the Born rule: $Pr[x \mid \psi]=\left\langle\psi\left|\Pi_x\right| \psi\right\rangle$
+    - Probability of getting outcome x when measuring state $\left|\psi\right>$ is given by the Born rule: $Pr[x \mid \psi]=\left\langle\psi\left|\Pi_x\right| \psi\right\rangle$
     - Post-measurement state is given the outcome x is $\left|\psi_x^{\prime}\right>=\frac{1}{\sqrt{\operatorname{Pr}[x \mid \psi]}} \Pi_x\left|\psi\right>=\frac{\Pi_x\left|\psi\right>}{\sqrt{\left\langle\psi\left|\Pi_x\right| \psi\right\rangle}}$
 
 
