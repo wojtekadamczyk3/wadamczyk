@@ -20,8 +20,9 @@ nav:
       - "Chapter 0: Introduction": qip1/ch0.md
       - "Chapter 1a: Principles of Quantum Mechanics": qip1/ch1a.md
       - "Chapter 1b: Toolbox": qip1/ch1b.md
-      - "Chapter 2a: Computational Complexity": qip1/ch2a.md
-      - "Chapter 2b: Universal gates, Reversible irreversability, DJ algorithm": qip1/ch2b.md
+      - "Chapter 2a: Quantum Information Theory": qip1/ch2a.md
+      - "Chapter 3a: Computational Complexity": qip1/ch3a.md
+      - "Chapter 3b: Universal gates, Reversible irreversability, DJ algorithm": qip1/ch3b.md
       - "organisation": qip1/organisation.md
 
 # Plugins (optional)
