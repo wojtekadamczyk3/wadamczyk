@@ -518,6 +518,54 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="2.3. Quantum Teleportation:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithm:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why it works:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why it works:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explanation-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation 1:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#explanation-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Explanation 2:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -685,16 +733,20 @@ U\left|\phi\right&gt;_A \left|0\right&gt;_B \left|M_0\right&gt;_M = \left|\phi\r
 \end{aligned}
 \]</div>
 <p><strong>Task</strong>: of the quantum teleportation is to transfer the state of <span class="arithmatex">\(\left|\alpha\right&gt;_1\)</span> to <span class="arithmatex">\(\left|\beta\right&gt;_3\)</span> by performing local operations and classical communication.</p>
-<p><strong>Algorithm</strong>:
-1. Alice performs a Bell measurement on the two qubits (Performs a projective measurement in the Bell basis)
-    <!-- 1. Alice applies CX to her qubits 1 and 2
-    2. Alice applies H to her qubit 1
-    3. Alice measures her two qbits to obtain a 2-bit string 00, 01, 10 or 11 -->
-2. Alice sends a 2-bit measurement outcome ij to Bob
-3. On receiving ij Bob applies the unitary operation <span class="arithmatex">\(Z^iX^j\)</span> to his qubit, which is then guaranteed to be in the state <span class="arithmatex">\(\left|\alpha\right&gt;_3\)</span></p>
+<h3 id="algorithm">Algorithm:</h3>
+<ol>
+<li>Alice performs a Bell measurement on the two qubits (Performs a projective measurement in the Bell basis)
+    &lt;!-- 1. Alice applies CX to her qubits 1 and 2<ol>
+<li>Alice applies H to her qubit 1</li>
+<li>Alice measures her two qbits to obtain a 2-bit string 00, 01, 10 or 11 --&gt;</li>
+</ol>
+</li>
+<li>Alice sends a 2-bit measurement outcome ij to Bob</li>
+<li>On receiving ij Bob applies the unitary operation <span class="arithmatex">\(Z^iX^j\)</span> to his qubit, which is then guaranteed to be in the state <span class="arithmatex">\(\left|\alpha\right&gt;_3\)</span></li>
+</ol>
 <p><strong>Remark</strong>: No information about <span class="arithmatex">\(\left|\alpha\right&gt;_2\)</span> is left with Alice</p>
-<p><strong>Why it works</strong>:</p>
-<p><strong>Explanation 1</strong>:</p>
+<h3 id="why-it-works">Why it works:</h3>
+<h4 id="explanation-1">Explanation 1:</h4>
 <p><em>(From explanation 1 we would like to learn about how local operations on single qubits can affect the measurement outcome of the measurement of the second qubit.)</em></p>
 <p>We can write <span class="arithmatex">\(\left|\psi\right&gt;_{AB}\)</span> as:</p>
 <div class="arithmatex">\[
@@ -715,8 +767,8 @@ U\left|\phi\right&gt;_A \left|0\right&gt;_B \left|M_0\right&gt;_M = \left|\phi\r
 \end{array}
 \]</div>
 <p>Therefore knowing the outcome of the measurement Alice can send a 2-bit string to Bob, who then applies the corresponding operation to his qubit and recovers the state <span class="arithmatex">\(\left|\alpha\right&gt;_3\)</span></p>
-<p><strong>Explanation 2</strong>:
-<em>(From this explanation we would like to learn how to perform an operation that depends on the measurement outcome.)</em></p>
+<h4 id="explanation-2">Explanation 2:</h4>
+<p><em>(From this explanation we would like to learn how to perform an operation that depends on the measurement outcome.)</em></p>
 <p>What I would like to do here is to provide slightly different explanation. I don't like Explanation 1 because it feels very brute forcy, and it doesn't provide any additional intuition about why things are, like they are. The following explanation is perhaps slightly more tricky to grasp, but I think it provides more insight.</p>
 <p><strong>E.2.1.</strong></p>
 <p>I would like to start with a simple observation. When we project the first two qubits into the state <span class="arithmatex">\(\left|\psi_{00}\right&gt;_{12}\)</span> then we get:</p>
