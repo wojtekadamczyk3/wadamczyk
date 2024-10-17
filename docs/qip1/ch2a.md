@@ -72,7 +72,7 @@ $$
 
 **Task**: of the quantum teleportation is to transfer the state of $\left|\alpha\right>_1$ to $\left|\beta\right>_3$ by performing local operations and classical communication.
 
-**Algorithm**:
+### Algorithm:
 1. Alice performs a Bell measurement on the two qubits (Performs a projective measurement in the Bell basis)
     <!-- 1. Alice applies CX to her qubits 1 and 2
     2. Alice applies H to her qubit 1
@@ -83,9 +83,9 @@ $$
 
 **Remark**: No information about $\left|\alpha\right>_2$ is left with Alice
 
-**Why it works**:
+### Why it works:
 
-**Explanation 1**:
+#### Explanation 1:
 
 _(From explanation 1 we would like to learn about how local operations on single qubits can affect the measurement outcome of the measurement of the second qubit.)_
 
@@ -113,7 +113,7 @@ $$
 
 Therefore knowing the outcome of the measurement Alice can send a 2-bit string to Bob, who then applies the corresponding operation to his qubit and recovers the state $\left|\alpha\right>_3$
 
-**Explanation 2**:
+#### Explanation 2:
 _(From this explanation we would like to learn how to perform an operation that depends on the measurement outcome.)_
 
 What I would like to do here is to provide slightly different explanation. I don't like Explanation 1 because it feels very brute forcy, and it doesn't provide any additional intuition about why things are, like they are. The following explanation is perhaps slightly more tricky to grasp, but I think it provides more insight.
