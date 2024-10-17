@@ -2,6 +2,7 @@
 
 ## 3.5. Universal sets of gates
 $\mathcal{S}$ is _universal set of gates for quantum computing_ if for any $n \in \mathbb{N}$ an arbitrary unitary operation $U \in \mathcal{U}(n)$ can be implemented to arbitrary precision using only elementary gates from $\mathcal{S}$. Elementary gates are assumed to take $O(1)$ time.
+
 - Examples of the universal set of gates:
     - $\{CNOT\} \cup \mathcal{U}(2)$
     - $\{CNOT, H, T\}$
