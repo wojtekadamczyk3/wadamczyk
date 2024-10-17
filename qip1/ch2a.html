@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/atom_fav.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -623,25 +623,25 @@
 
 
 <h1 id="chapter-2a-quantum-information">Chapter 2a: Quantum Information</h1>
-<p>Initially I didn't want to talk much about quantum information theory. In my mind there is another course that deals with it in much more detail (Quantum Information Theory). However, because of the nature of the lecture I will briefly introduce a few concepts.</p>
+<p>Initially I didn't want to talk much about quantum information theory. In my mind there is another course that deals with it in much more detail (Quantum Information Theory). However, because the lecture course covers these topics, I decided to include few ideas. I will try to keep them at a very high level and focus on their relevance to quantum algorithms.</p>
 <h2 id="21-nature-of-quantum-information">2.1. Nature of Quantum Information:</h2>
 <ul>
 <li>Quantum information is different from the classical information in a sense that the measurements corrupts the state itself</li>
 <li>We can prepare any desired <em>pure</em> state, but if we receive such pure state we cannot identify it with certainty (if we dont know how to measure it)</li>
 <li>Given a unknown quantum state <span class="arithmatex">\(\left|\psi\right&gt;\)</span> there are three basic operations that we can perform:<ul>
 <li><strong>Ancilla</strong> - take a second, known, quantum system <span class="arithmatex">\(\left|A\right&gt;\)</span> and join it with <span class="arithmatex">\(\left|\psi\right&gt;\)</span> and treat it as a composite system <span class="arithmatex">\(\left|\psi\right&gt; \otimes \left|A\right&gt;\)</span></li>
-<li><strong>Unitary</strong> - we can perform a unitary on <span class="arithmatex">\(\left|\psi\right&gt;\)</span> and obtain <span class="arithmatex">\(\left|\psi^{\prime}\right&gt; = U\left|\psi\right&gt;\)</span></li>
+<li><strong>Unitary</strong> - we can perform a unitary on <span class="arithmatex">\(\left|\psi\right&gt;\)</span> and obtain <span class="arithmatex">\(\left|\psi^{\prime}\right&gt; = U\left|\psi\right&gt;\)</span> - i.e. all your gates</li>
 <li><strong>Measurement</strong> - we can perform a measurement on <span class="arithmatex">\(\left|\psi\right&gt;\)</span>, or sub-system of it, record the outcome and retain the post-measurement state for further processing</li>
 </ul>
 </li>
-<li>Any quantum operation can be described as a composition of these three operations</li>
+<li>Any quantum operation can be described as a composition of these three operations. Quite often the algorithms used to manipulate information use all of those operations and not just gates</li>
 </ul>
 <h2 id="22-no-cloning-theorem">2.2. No-Cloning Theorem:</h2>
 <ul>
 <li>Cloning operation of a quantum state <span class="arithmatex">\(\left|\psi\right&gt;\)</span> is defined as a map <span class="arithmatex">\(\left|\psi\right&gt;_A \left|0\right&gt;_B \rightarrow \left|\psi\right&gt;_A \left|\psi\right&gt;_B\)</span></li>
 <li>We can extend it to a larger system, by adjoining ancilla to it. In this case the cloning operations can be defined as <span class="arithmatex">\(\left|\psi\right&gt;_A \left|0\right&gt;_B \left|M_0\right&gt;_M \rightarrow \left|\psi\right&gt;_A \left|\psi\right&gt;_B \left|M_\psi\right&gt;_M\)</span></li>
 <li><strong>No-Cloning Theorem</strong>: Let <span class="arithmatex">\(\mathcal{S}\)</span> be any set of states of A that contains at least one non-orthogonal state. Then there is no unitary cloning process that achieves cloning for all states in <span class="arithmatex">\(\mathcal{S}\)</span>.</li>
-<li><strong>Remark</strong>: I am presenting only proof that such there exist no unitary process, however there exist an extention of the theorem for any 3 basic operations that one can perform (Ancilla, Unitary, Measurement).</li>
+<li><strong>Remark</strong>: I am only presenting a proof of '<em>no-cloning theorem</em>' for the case where the agent is only allowed to perform unitary operations. There exists an extention of this theorem for any 3 basic operations (Ancilla, Unitary, Measurement).</li>
 </ul>
 <h3 id="proof">Proof:</h3>
 <p>Let <span class="arithmatex">\(\left|\psi\right&gt;\)</span> and <span class="arithmatex">\(\left|\phi\right&gt;\)</span> be two distinct non-orthogonal states in <span class="arithmatex">\(\mathcal{S}\)</span>. Lets assume that there exist a unitary <span class="arithmatex">\(U\)</span> that clone the states in <span class="arithmatex">\(\mathcal{S}\)</span>.</p>
@@ -654,7 +654,7 @@ U\left|\phi\right&gt;_A \left|0\right&gt;_B \left|M_0\right&gt;_M = \left|\phi\r
 \]</div>
 <p>then </p>
 <div class="arithmatex">\[
-\left&lt;M_0\right|_M\left&lt;0\right|_B\left&lt;\psi\right|_A U^\dag U\left|\phi\right&gt;_A \left|0\right&gt;_B \left|M_0\right&gt;_M = \left&lt;M_\psi\right|_M \left&lt;\psi\right|_B \left&lt;\psi\right|_A \left|\phi\right&gt;_A \left|\phi\right&gt;_B \left|M_\phi\right&gt;_M
+\left&lt;M_0\right|_M\left&lt;0\right|_B\left&lt;\psi\right|_A U^\dagger U\left|\phi\right&gt;_A \left|0\right&gt;_B \left|M_0\right&gt;_M = \left&lt;M_\psi\right|_M \left&lt;\psi\right|_B \left&lt;\psi\right|_A \left|\phi\right&gt;_A \left|\phi\right&gt;_B \left|M_\phi\right&gt;_M
 \]</div>
 <div class="arithmatex">\[
 \left&lt;M_0|M_0\right&gt;_M\left&lt;0|0\right&gt;_B\left&lt;\psi|\phi\right&gt;_A = \left&lt;M_\psi|M_\psi\right&gt;_M\left&lt;\psi|\phi\right&gt;_A\left&lt;\psi|\phi\right&gt;_B
@@ -673,11 +673,10 @@ U\left|\phi\right&gt;_A \left|0\right&gt;_B \left|M_0\right&gt;_M = \left|\phi\r
 </ul>
 <h3 id="herberts-method-of-superluminal-communication">Herbert's method of superluminal communication:</h3>
 <ul>
-<li>The no-cloning theorem was crucial for debugging the protocol of superluminal communication proposed by Herbert.
-...</li>
+<li>The no-cloning theorem was crucial for debugging the protocol of superluminal communication proposed by Herbert. See more in Richard's Jozsa notes [4].</li>
 </ul>
 <h2 id="23-quantum-teleportation">2.3. Quantum Teleportation:</h2>
-<p>Consider that Alice and Bob share an entangled Bell state <span class="arithmatex">\(\left|\phi^{+}\right&gt;_{23} = \frac{1}{\sqrt{2}}(\left|00\right&gt; + \left|11\right&gt;)_{23}\)</span>, such that each of them has one qubit. Additionally Alice has a qubit in state <span class="arithmatex">\(\left|\alpha\right&gt;_1 = a\left|0\right&gt; + b \left|1\right&gt;\)</span>. </p>
+<p>Consider that Alice and Bob share an entangled Bell state <span class="arithmatex">\(\left|\phi^{+}\right&gt;_{23} = \frac{1}{\sqrt{2}}(\left|00\right&gt; + \left|11\right&gt;)_{23}\)</span>, such that each of them has one qubit of the pair. Additionally Alice has a qubit in a state <span class="arithmatex">\(\left|\alpha\right&gt;_1 = a\left|0\right&gt; + b \left|1\right&gt;\)</span>. </p>
 <p>This means that the combined state of the system is:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -685,16 +684,18 @@ U\left|\phi\right&gt;_A \left|0\right&gt;_B \left|M_0\right&gt;_M = \left|\phi\r
 &amp; = \frac{a}{\sqrt{2}}\left|000\right&gt; + \frac{a}{\sqrt{2}}\left|011\right&gt; + \frac{b}{\sqrt{2}}\left|100\right&gt; + \frac{b}{\sqrt{2}}\left|111\right&gt;
 \end{aligned}
 \]</div>
-<p><strong>Task</strong>: of quantum teleportation is to transfer the state of <span class="arithmatex">\(\left|\alpha\right&gt;_1\)</span> to <span class="arithmatex">\(\left|\beta\right&gt;_3\)</span> by performing local operations and classical communication.</p>
+<p><strong>Task</strong>: of the quantum teleportation is to transfer the state of <span class="arithmatex">\(\left|\alpha\right&gt;_1\)</span> to <span class="arithmatex">\(\left|\beta\right&gt;_3\)</span> by performing local operations and classical communication.</p>
 <p><strong>Algorithm</strong>:
-1. Alice performs a Bell measurement on the two qubits
+1. Alice performs a Bell measurement on the two qubits (Performs a projective measurement in the Bell basis)
     <!-- 1. Alice applies CX to her qubits 1 and 2
     2. Alice applies H to her qubit 1
     3. Alice measures her two qbits to obtain a 2-bit string 00, 01, 10 or 11 -->
 2. Alice sends a 2-bit measurement outcome ij to Bob
-3. On receiving ij Bob applies the unitary operation <span class="arithmatex">\(Z^iX^j\)</span> to his qubit, which is then guaranteed to be in state <span class="arithmatex">\(\left|\alpha\right&gt;_3\)</span></p>
+3. On receiving ij Bob applies the unitary operation <span class="arithmatex">\(Z^iX^j\)</span> to his qubit, which is then guaranteed to be in the state <span class="arithmatex">\(\left|\alpha\right&gt;_3\)</span></p>
+<p><strong>Remark</strong>: No information about <span class="arithmatex">\(\left|\alpha\right&gt;_2\)</span> is left with Alice</p>
 <p><strong>Why it works</strong>:</p>
 <p><strong>Explanation 1</strong>:</p>
+<p><em>(From explanation 1 we would like to learn about how local operations on single qubits can affect the measurement outcome of the measurement of the second qubit.)</em></p>
 <p>We can write <span class="arithmatex">\(\left|\psi\right&gt;_{AB}\)</span> as:</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -714,16 +715,15 @@ U\left|\phi\right&gt;_A \left|0\right&gt;_B \left|M_0\right&gt;_M = \left|\phi\r
 \end{array}
 \]</div>
 <p>Therefore knowing the outcome of the measurement Alice can send a 2-bit string to Bob, who then applies the corresponding operation to his qubit and recovers the state <span class="arithmatex">\(\left|\alpha\right&gt;_3\)</span></p>
-<p><strong>Explanation 2</strong>:</p>
+<p><strong>Explanation 2</strong>:
+<em>(From this explanation we would like to learn how to perform an operation that depends on the measurement outcome.)</em></p>
 <p>What I would like to do here is to provide slightly different explanation. I don't like Explanation 1 because it feels very brute forcy, and it doesn't provide any additional intuition about why things are, like they are. The following explanation is perhaps slightly more tricky to grasp, but I think it provides more insight.</p>
-<p><strong>E. step (2.1.)</strong></p>
-<p>I would like to start with a simple observation:</p>
-<p>When we project the first two qubits into the state <span class="arithmatex">\(\left|\psi_{00}\right&gt;_{12}\)</span> then we get:</p>
+<p><strong>E.2.1.</strong></p>
+<p>I would like to start with a simple observation. When we project the first two qubits into the state <span class="arithmatex">\(\left|\psi_{00}\right&gt;_{12}\)</span> then we get:</p>
 <div class="arithmatex">\[
 \left&lt;\psi_{00}\right|_{12}\left|\alpha\right&gt;_1\left|\psi_{00}\right&gt;_{23} = \left|\alpha\right&gt;_3
 \]</div>
-<p>One might then ask is it true for more general case?</p>
-<p>Is this statement true for any state <span class="arithmatex">\(\left|\psi_{ij}\right&gt;_{23}\)</span>:</p>
+<p>One might then ask is it true for more general case? Is this statement true for any state <span class="arithmatex">\(\left|\psi_{ij}\right&gt;_{23}\)</span>:</p>
 <div class="arithmatex">\[
 \left&lt;\psi_{ij}\right|_{12}\left|\alpha\right&gt;_1\left|\psi_{ij}\right&gt;_{23} \stackrel{?}{=} \left|\alpha\right&gt;_3
 \]</div>
@@ -731,24 +731,19 @@ U\left|\phi\right&gt;_A \left|0\right&gt;_B \left|M_0\right&gt;_M = \left|\phi\r
 <div class="arithmatex">\[
 \left&lt;\psi_{ij}\right|_{12}\left|\alpha\right&gt;_1\left|\psi_{ij}\right&gt;_{23} = \left(\left&lt;\psi_{00}\right|_{12} X_2^i Z_2^j\right)\left|\alpha\right&gt;_1\left(X_2^i Z_2^j\left|\psi_{00}\right&gt;_{23}\right) = \left&lt;\psi_{00}\right|_{12}\left|\alpha\right&gt;_1\left|\psi_{00}\right&gt;_{23}= \left|\alpha\right&gt;_3
 \]</div>
-<ul>
-<li>
-<p>So in a way the quantum teleportation would be extreamaly trivial if we could perform a projection operation on the first two qubits. Such operations however is non-unitary and therefore we need to find a workaround.</p>
-</li>
-<li>
-<p>Something that performs a projection operation on the first two qubits is the Bell measurement. This will, however, perform a projective measurement to an arbitrary state and not just the <span class="arithmatex">\(\left|\psi_{00}\right&gt;_{12}\)</span>. </p>
-</li>
-<li>
-<p>Can we somehow combine all the operations that we can perform on a quantum states and obtain required special projection operation?</p>
-</li>
-<li>Somehow we would like to rotate the state into the basis</li>
-</ul>
-<p><strong>E. step (2.2.)</strong></p>
+<p>Wow! This means that quantum teleportation is trivial. If we could perform a projection operation on the first two qubits onto the bell state in which we prepared the pair of second and third qubit, we would simply teleport the state from a qubit 1 to a qubit 3. However, the projection operation is non-unitary and we cannot do it in a unitary way. We need to find workaround. </p>
+<p>Something that performs a projection operation on the first two qubits is the Bell measurement. This will, however, perform a projective measurement to an arbitrary state and not just the <span class="arithmatex">\(\left|\psi_{00}\right&gt;_{12}\)</span>. The measurement projects the first two qubits into {<span class="arithmatex">\(\left|\psi_{00}\right&gt;_{12}\)</span>, <span class="arithmatex">\(\left|\psi_{01}\right&gt;_{12}\)</span>, <span class="arithmatex">\(\left|\psi_{10}\right&gt;_{12}\)</span>, <span class="arithmatex">\(\left|\psi_{11}\right&gt;_{12}\)</span>}. Can we somehow know into which state it will project and perform a corresponding operation on the third qubit prior to the measurement?</p>
+<p>We know it after the measurement, but not before. Before the measurement we cannot know the state into which the measurement will project us (no hidden-variables :)). </p>
+<p><strong>E.2.2.</strong></p>
+<p>And here comes the step two: perhaps it doesn't really matter whether we do the operation on the third qubit prior to the measurement or after the measurement. And this I am showing below.</p>
 <div class="arithmatex">\[
 \left( \left&lt;\psi_{ij}\right|_{12} \otimes \mathbb{I}_3\right) \left( \mathbb{I}_{12} \otimes X_3^i Z_3^j\right) \left|\psi\right&gt;_{AB} = \left( \mathbb{I}_{12} \otimes X_3^i Z_3^j\right) \left( \left&lt;\psi_{ij}\right|_{12} \otimes \mathbb{I}_3\right) \left|\psi\right&gt;_{AB}  = \left|\alpha\right&gt;_3
 \]</div>
-<p><strong>Remark</strong>:
-- No information about <span class="arithmatex">\(\left|\alpha\right&gt;_2\)</span> is left with Alice</p>
+<p>Et voilà! It doesn't matter. This is great news, because after the measurement we know into which state we projected the Bell basis. And if we then can perform the unitaries on the qubit 3, we can achieve the same result as if we did it before the measurement.</p>
+<p><strong>E.2.3.</strong></p>
+<p>This completes the explanation. What I want to show with this explanation, that you can try to think how to build non-unitary operations on your quantum system if you include the measurement and ancilla as part of your allowed operations. This can quite often suprise you.</p>
+<p><strong>Feedback</strong>:
+<em>The explanation was coined by me through talking to others and thinking. I haven't seen it anywhere else, so I would love to refine it if you have any ideas how to improve the clarity of the delivery wadamczyk@phys.ethz.ch</em>.</p>
 
 
 
@@ -804,7 +799,7 @@ U\left|\phi\right&gt;_A \left|0\right&gt;_B \left|M_0\right&gt;_M = \left|\phi\r
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.tabs", "toc.integrate"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.525ec568.min.js"></script>
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
       
         <script src="../javascripts/mathjax.js"></script>
       
