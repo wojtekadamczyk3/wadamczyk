@@ -1,21 +1,21 @@
 # Chapter 2a: Quantum Information
 
-Initially I didn't want to talk much about quantum information theory. In my mind there is another course that deals with it in much more detail (Quantum Information Theory). However, because of the nature of the lecture I will briefly introduce a few concepts.
+Initially I didn't want to talk much about quantum information theory. In my mind there is another course that deals with it in much more detail (Quantum Information Theory). However, because the lecture course covers these topics, I decided to include few ideas. I will try to keep them at a very high level and focus on their relevance to quantum algorithms.
 
 ## 2.1. Nature of Quantum Information:
 - Quantum information is different from the classical information in a sense that the measurements corrupts the state itself
 - We can prepare any desired _pure_ state, but if we receive such pure state we cannot identify it with certainty (if we dont know how to measure it)
 - Given a unknown quantum state $\left|\psi\right>$ there are three basic operations that we can perform:
     - **Ancilla** - take a second, known, quantum system $\left|A\right>$ and join it with $\left|\psi\right>$ and treat it as a composite system $\left|\psi\right> \otimes \left|A\right>$
-    - **Unitary** - we can perform a unitary on $\left|\psi\right>$ and obtain $\left|\psi^{\prime}\right> = U\left|\psi\right>$
+    - **Unitary** - we can perform a unitary on $\left|\psi\right>$ and obtain $\left|\psi^{\prime}\right> = U\left|\psi\right>$ - i.e. all your gates
     - **Measurement** - we can perform a measurement on $\left|\psi\right>$, or sub-system of it, record the outcome and retain the post-measurement state for further processing
-- Any quantum operation can be described as a composition of these three operations
+- Any quantum operation can be described as a composition of these three operations. Quite often the algorithms used to manipulate information use all of those operations and not just gates
 
 ## 2.2. No-Cloning Theorem:
 - Cloning operation of a quantum state $\left|\psi\right>$ is defined as a map $\left|\psi\right>_A \left|0\right>_B \rightarrow \left|\psi\right>_A \left|\psi\right>_B$
 - We can extend it to a larger system, by adjoining ancilla to it. In this case the cloning operations can be defined as $\left|\psi\right>_A \left|0\right>_B \left|M_0\right>_M \rightarrow \left|\psi\right>_A \left|\psi\right>_B \left|M_\psi\right>_M$
 - **No-Cloning Theorem**: Let $\mathcal{S}$ be any set of states of A that contains at least one non-orthogonal state. Then there is no unitary cloning process that achieves cloning for all states in $\mathcal{S}$.
-- **Remark**: I am presenting only proof that such there exist no unitary process, however there exist an extention of the theorem for any 3 basic operations that one can perform (Ancilla, Unitary, Measurement).
+- **Remark**: I am only presenting a proof of '_no-cloning theorem_' for the case where the agent is only allowed to perform unitary operations. There exists an extention of this theorem for any 3 basic operations (Ancilla, Unitary, Measurement).
 
 ### Proof:
 Let $\left|\psi\right>$ and $\left|\phi\right>$ be two distinct non-orthogonal states in $\mathcal{S}$. Lets assume that there exist a unitary $U$ that clone the states in $\mathcal{S}$.
@@ -32,7 +32,7 @@ $$
 then 
 
 $$
-\left<M_0\right|_M\left<0\right|_B\left<\psi\right|_A U^\dag U\left|\phi\right>_A \left|0\right>_B \left|M_0\right>_M = \left<M_\psi\right|_M \left<\psi\right|_B \left<\psi\right|_A \left|\phi\right>_A \left|\phi\right>_B \left|M_\phi\right>_M
+\left<M_0\right|_M\left<0\right|_B\left<\psi\right|_A U^\dagger U\left|\phi\right>_A \left|0\right>_B \left|M_0\right>_M = \left<M_\psi\right|_M \left<\psi\right|_B \left<\psi\right|_A \left|\phi\right>_A \left|\phi\right>_B \left|M_\phi\right>_M
 $$
 
 
@@ -56,11 +56,10 @@ $$
 - Therefore we arrive to a contradiction, which **completes the proof**
 
 ### Herbert's method of superluminal communication:
-- The no-cloning theorem was crucial for debugging the protocol of superluminal communication proposed by Herbert.
-...
+- The no-cloning theorem was crucial for debugging the protocol of superluminal communication proposed by Herbert. See more in Richard's Jozsa notes [4].
 
 ## 2.3. Quantum Teleportation:
-Consider that Alice and Bob share an entangled Bell state $\left|\phi^{+}\right>_{23} = \frac{1}{\sqrt{2}}(\left|00\right> + \left|11\right>)_{23}$, such that each of them has one qubit. Additionally Alice has a qubit in state $\left|\alpha\right>_1 = a\left|0\right> + b \left|1\right>$. 
+Consider that Alice and Bob share an entangled Bell state $\left|\phi^{+}\right>_{23} = \frac{1}{\sqrt{2}}(\left|00\right> + \left|11\right>)_{23}$, such that each of them has one qubit of the pair. Additionally Alice has a qubit in a state $\left|\alpha\right>_1 = a\left|0\right> + b \left|1\right>$. 
 
 This means that the combined state of the system is:
 
@@ -71,19 +70,24 @@ $$
 \end{aligned}
 $$
 
-**Task**: of quantum teleportation is to transfer the state of $\left|\alpha\right>_1$ to $\left|\beta\right>_3$ by performing local operations and classical communication.
+**Task**: of the quantum teleportation is to transfer the state of $\left|\alpha\right>_1$ to $\left|\beta\right>_3$ by performing local operations and classical communication.
 
 **Algorithm**:
-1. Alice performs a Bell measurement on the two qubits
+1. Alice performs a Bell measurement on the two qubits (Performs a projective measurement in the Bell basis)
     <!-- 1. Alice applies CX to her qubits 1 and 2
     2. Alice applies H to her qubit 1
     3. Alice measures her two qbits to obtain a 2-bit string 00, 01, 10 or 11 -->
 2. Alice sends a 2-bit measurement outcome ij to Bob
-3. On receiving ij Bob applies the unitary operation $Z^iX^j$ to his qubit, which is then guaranteed to be in state $\left|\alpha\right>_3$
+3. On receiving ij Bob applies the unitary operation $Z^iX^j$ to his qubit, which is then guaranteed to be in the state $\left|\alpha\right>_3$
+
+
+**Remark**: No information about $\left|\alpha\right>_2$ is left with Alice
 
 **Why it works**:
 
 **Explanation 1**:
+
+_(From explanation 1 we would like to learn about how local operations on single qubits can affect the measurement outcome of the measurement of the second qubit.)_
 
 We can write $\left|\psi\right>_{AB}$ as:
 
@@ -110,22 +114,19 @@ $$
 Therefore knowing the outcome of the measurement Alice can send a 2-bit string to Bob, who then applies the corresponding operation to his qubit and recovers the state $\left|\alpha\right>_3$
 
 **Explanation 2**:
+_(From this explanation we would like to learn how to perform an operation that depends on the measurement outcome.)_
 
 What I would like to do here is to provide slightly different explanation. I don't like Explanation 1 because it feels very brute forcy, and it doesn't provide any additional intuition about why things are, like they are. The following explanation is perhaps slightly more tricky to grasp, but I think it provides more insight.
 
-**E. step (2.1.)**
+**E.2.1.**
 
-I would like to start with a simple observation:
-
-When we project the first two qubits into the state $\left|\psi_{00}\right>_{12}$ then we get:
+I would like to start with a simple observation. When we project the first two qubits into the state $\left|\psi_{00}\right>_{12}$ then we get:
 
 $$
 \left<\psi_{00}\right|_{12}\left|\alpha\right>_1\left|\psi_{00}\right>_{23} = \left|\alpha\right>_3
 $$
 
-One might then ask is it true for more general case?
-
-Is this statement true for any state $\left|\psi_{ij}\right>_{23}$:
+One might then ask is it true for more general case? Is this statement true for any state $\left|\psi_{ij}\right>_{23}$:
 
 $$
 \left<\psi_{ij}\right|_{12}\left|\alpha\right>_1\left|\psi_{ij}\right>_{23} \stackrel{?}{=} \left|\alpha\right>_3
@@ -137,25 +138,33 @@ $$
 \left<\psi_{ij}\right|_{12}\left|\alpha\right>_1\left|\psi_{ij}\right>_{23} = \left(\left<\psi_{00}\right|_{12} X_2^i Z_2^j\right)\left|\alpha\right>_1\left(X_2^i Z_2^j\left|\psi_{00}\right>_{23}\right) = \left<\psi_{00}\right|_{12}\left|\alpha\right>_1\left|\psi_{00}\right>_{23}= \left|\alpha\right>_3
 $$
 
-- So in a way the quantum teleportation would be extreamaly trivial if we could perform a projection operation on the first two qubits. Such operations however is non-unitary and therefore we need to find a workaround.
+Wow! This means that quantum teleportation is trivial. If we could perform a projection operation on the first two qubits onto the bell state in which we prepared the pair of second and third qubit, we would simply teleport the state from a qubit 1 to a qubit 3. However, the projection operation is non-unitary and we cannot do it in a unitary way. We need to find workaround. 
 
-- Something that performs a projection operation on the first two qubits is the Bell measurement. This will, however, perform a projective measurement to an arbitrary state and not just the $\left|\psi_{00}\right>_{12}$. 
+Something that performs a projection operation on the first two qubits is the Bell measurement. This will, however, perform a projective measurement to an arbitrary state and not just the $\left|\psi_{00}\right>_{12}$. The measurement projects the first two qubits into {$\left|\psi_{00}\right>_{12}$, $\left|\psi_{01}\right>_{12}$, $\left|\psi_{10}\right>_{12}$, $\left|\psi_{11}\right>_{12}$}. Can we somehow know into which state it will project and perform a corresponding operation on the third qubit prior to the measurement?
 
-- Can we somehow combine all the operations that we can perform on a quantum states and obtain required special projection operation?
-- Somehow we would like to rotate the state into the basis
+We know it after the measurement, but not before. Before the measurement we cannot know the state into which the measurement will project us (no hidden-variables :)). 
 
-**E. step (2.2.)**
+**E.2.2.**
+
+And here comes the step two: perhaps it doesn't really matter whether we do the operation on the third qubit prior to the measurement or after the measurement. And this I am showing below.
 
 $$
 \left( \left<\psi_{ij}\right|_{12} \otimes \mathbb{I}_3\right) \left( \mathbb{I}_{12} \otimes X_3^i Z_3^j\right) \left|\psi\right>_{AB} = \left( \mathbb{I}_{12} \otimes X_3^i Z_3^j\right) \left( \left<\psi_{ij}\right|_{12} \otimes \mathbb{I}_3\right) \left|\psi\right>_{AB}  = \left|\alpha\right>_3
 $$
 
+Et voilà! It doesn't matter. This is great news, because after the measurement we know into which state we projected the Bell basis. And if we then can perform the unitaries on the qubit 3, we can achieve the same result as if we did it before the measurement.
+
+**E.2.3.**
+
+This completes the explanation. What I want to show with this explanation, that you can try to think how to build non-unitary operations on your quantum system if you include the measurement and ancilla as part of your allowed operations. This can quite often suprise you.
+
+**Feedback**:
+_The explanation was coined by me through talking to others and thinking. I haven't seen it anywhere else, so I would love to refine it if you have any ideas how to improve the clarity of the delivery wadamczyk@phys.ethz.ch_.
 
 
 
 
-**Remark**:
-- No information about $\left|\alpha\right>_2$ is left with Alice
+
 
 
     
