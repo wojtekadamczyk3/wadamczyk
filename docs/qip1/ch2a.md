@@ -25,6 +25,7 @@ then
 $$
 U\left|\psi\right>_A \left|0\right>_B \left|M_0\right>_M = \left|\psi\right>_A \left|\psi\right>_B \left|M_\psi\right>_M
 $$
+
 $$
 U\left|\phi\right>_A \left|0\right>_B \left|M_0\right>_M = \left|\phi\right>_A \left|\phi\right>_B \left|M_\phi\right>_M
 $$
@@ -93,9 +94,9 @@ We can write $\left|\psi\right>_{AB}$ as:
 
 $$
 \begin{aligned}
-\left|\psi\right>_{AB} &= \frac{a}{\sqrt{2}}\left|000\right> + \frac{a}{\sqrt{2}}\left|011\right> + \frac{b}{\sqrt{2}}\left|100\right> + \frac{b}{\sqrt{2}}\left|111\right>\\
-&= \frac{a}{2}\left(\left|\psi_{00}\right> + \left|\psi_{01}\right>\right)\left|0\right> + \frac{a}{2}\left(\left|\psi_{10}\right> + \left|\psi_{11}\right>\right)\left|1\right> + \frac{b}{2}\left(\left|\psi_{10}\right> - \left|\psi_{11}\right>\right)\left|0\right> + \frac{b}{2}\left(\left|\psi_{00}\right> - \left|\psi_{01}\right>\right)\left|1\right> \\
-&= \left|\psi_{00}\right>\left(\frac{a}{2}\left|0\right> + \frac{b}{2}\left|1\right>\right) + \left|\psi_{01}\right>\left(\frac{a}{2}\left|0\right> - \frac{b}{2}\left|1\right>\right) + \left|\psi_{10}\right>\left(\frac{a}{2}\left|1\right> + \frac{b}{2}\left|0\right>\right) + \left|\psi_{11}\right>\left(\frac{a}{2}\left|1\right> - \frac{b}{2}\left|0\right>\right)\\
+\left|\psi\right>_{AB} &= \frac{a}{\sqrt{2}}\left|000\right>_{123} + \frac{a}{\sqrt{2}}\left|011\right>_{123} + \frac{b}{\sqrt{2}}\left|100\right>_{123} + \frac{b}{\sqrt{2}}\left|111\right>_{123}\\
+&= \frac{a}{2}\left(\left|\psi_{00}\right>_{12} + \left|\psi_{01}\right>_{12}\right)\left|0\right>_{3} + \frac{a}{2}\left(\left|\psi_{10}\right>_{12} + \left|\psi_{11}\right>_{12}\right)\left|1\right>_{3} + \frac{b}{2}\left(\left|\psi_{10}\right>_{12} - \left|\psi_{11}\right>_{12}\right)\left|0\right>_{3} + \frac{b}{2}\left(\left|\psi_{00}\right>_{12} - \left|\psi_{01}\right>_{12}\right)\left|1\right>_{3} \\
+&= \left|\psi_{00}\right>_{12}\left(\frac{a}{2}\left|0\right>_{3} + \frac{b}{2}\left|1\right>_{3}\right) + \left|\psi_{01}\right>_{12}\left(\frac{a}{2}\left|0\right>_{3} - \frac{b}{2}\left|1\right>_{3}\right) + \left|\psi_{10}\right>_{12}\left(\frac{a}{2}\left|1\right>_{3} + \frac{b}{2}\left|0\right>_{3}\right) + \left|\psi_{11}\right>_{12}\left(\frac{a}{2}\left|1\right>_{3} - \frac{b}{2}\left|0\right>_{3}\right)\\
 \end{aligned}
 $$
 
@@ -135,7 +136,7 @@ $$
 This must be true as we can write 
 
 $$
-\left<\psi_{ij}\right|_{12}\left|\alpha\right>_1\left|\psi_{ij}\right>_{23} = \left(\left<\psi_{00}\right|_{12} X_2^i Z_2^j\right)\left|\alpha\right>_1\left(X_2^i Z_2^j\left|\psi_{00}\right>_{23}\right) = \left<\psi_{00}\right|_{12}\left|\alpha\right>_1\left|\psi_{00}\right>_{23}= \left|\alpha\right>_3
+\left<\psi_{ij}\right|_{12}\left|\alpha\right>_1\left|\psi_{ij}\right>_{23} = \left(\left<\psi_{00}\right|_{12} X_2^i Z_2^j\right)\left|\alpha\right>_1\left(Z_2^i X_2^j\left|\psi_{00}\right>_{23}\right) = \left<\psi_{00}\right|_{12}\left|\alpha\right>_1\left|\psi_{00}\right>_{23}= \left|\alpha\right>_3
 $$
 
 Wow! This means that quantum teleportation is trivial. If we could perform a projection operation on the first two qubits onto the bell state in which we prepared the pair of second and third qubit, we would simply teleport the state from a qubit 1 to a qubit 3. However, the projection operation is non-unitary and we cannot do it in a unitary way. We need to find workaround. 
