@@ -12,7 +12,7 @@
         <link rel="prev" href="ch3a.html">
       
       
-        <link rel="next" href="organisation.html">
+        <link rel="next" href="ch4a.html">
       
       
       <link rel="icon" href="../assets/atom_fav.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Chapter 3b: Universal gates, Reversible irreversability, DJ algorithm - wadamczyk's space</title>
+        <title>Chapter 3b: Universal gates, Reversible irreversability, Oracle Functions - wadamczyk's space</title>
       
     
     
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter 3b: Universal gates, Reversible irreversability, DJ algorithm
+              Chapter 3b: Universal gates, Reversible irreversability, Oracle Functions
             
           </span>
         </div>
@@ -479,7 +479,7 @@
           
   
   <span class="md-ellipsis">
-    Chapter 3b: Universal gates, Reversible irreversability, DJ algorithm
+    Chapter 3b: Universal gates, Reversible irreversability, Oracle Functions
   </span>
   
 
@@ -490,7 +490,7 @@
         
   
   <span class="md-ellipsis">
-    Chapter 3b: Universal gates, Reversible irreversability, DJ algorithm
+    Chapter 3b: Universal gates, Reversible irreversability, Oracle Functions
   </span>
   
 
@@ -605,6 +605,27 @@
   
   
     <li class="md-nav__item">
+      <a href="ch4a.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 4a: DJ style algorithms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="organisation.html" class="md-nav__link">
         
   
@@ -651,11 +672,15 @@
 
 <h1 id="chapter-3b-universal-gates-reversible-irreversability-oracle-functions">Chapter 3b: Universal gates, Reversible irreversability, Oracle Functions</h1>
 <h2 id="35-universal-sets-of-gates">3.5. Universal sets of gates</h2>
-<p><span class="arithmatex">\(\mathcal{S}\)</span> is <em>universal set of gates for quantum computing</em> if for any <span class="arithmatex">\(n \in \mathbb{N}\)</span> an arbitrary unitary operation <span class="arithmatex">\(U \in \mathcal{U}(n)\)</span> can be implemented to arbitrary precision using only elementary gates from <span class="arithmatex">\(\mathcal{S}\)</span>. Elementary gates are assumed to take <span class="arithmatex">\(O(1)\)</span> time.
-- Examples of the universal set of gates:
-    - <span class="arithmatex">\(\{CNOT\} \cup \mathcal{U}(2)\)</span>
-    - <span class="arithmatex">\(\{CNOT, H, T\}\)</span>
-    - <span class="arithmatex">\(\{\text{Toffoli}, H\}\)</span></p>
+<p><span class="arithmatex">\(\mathcal{S}\)</span> is <em>universal set of gates for quantum computing</em> if for any <span class="arithmatex">\(n \in \mathbb{N}\)</span> an arbitrary unitary operation <span class="arithmatex">\(U \in \mathcal{U}(n)\)</span> can be implemented to arbitrary precision using only elementary gates from <span class="arithmatex">\(\mathcal{S}\)</span>. Elementary gates are assumed to take <span class="arithmatex">\(O(1)\)</span> time.</p>
+<ul>
+<li>Examples of the universal set of gates:<ul>
+<li><span class="arithmatex">\(\{CNOT\} \cup \mathcal{U}(2)\)</span></li>
+<li><span class="arithmatex">\(\{CNOT, H, T\}\)</span></li>
+<li><span class="arithmatex">\(\{\text{Toffoli}, H\}\)</span></li>
+</ul>
+</li>
+</ul>
 <p>For any fixed universal set <span class="arithmatex">\(\mathcal{S}\)</span>, a generic unitary matrix on <em>n</em> qubits requires exponentially many elementary gates <em>n</em> to be implemented - this follows from the fact that an n-qubit unitary is determined by <span class="arithmatex">\(O(4^n)\)</span> real parameters. Goal of quantum computing is to find efficient quantum circuits which use poly(n) qubits and poly(n) elementary gates to solve a problem on an input size <em>n</em>.</p>
 <h2 id="36-simulating-classical-circuits-on-a-quantum-machine-leftmathbfb-p-p-subset-mathbfb-q-pright">3.6. Simulating Classical Circuits on a Quantum Machine <span class="arithmatex">\(\left(\mathbf{B P P} \subset \mathbf{B Q P}\right)\)</span></h2>
 <p>A <em>classical circuit</em> is a sequence of logical operations that act on a small number of bits (AND, OR, NOT). We claim that quantum computation is at least as powerfull as classical computation <span class="arithmatex">\(\mathbf{B P P} \subset \mathbf{B Q P}\)</span>. However, the difficulty in proving it arise when we try to translate irreversible classical operations, such as AND or OR, to quantum gates.Quantum operations are unitary, hence reversible. This poses a problem:</p>

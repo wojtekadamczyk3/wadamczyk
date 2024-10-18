@@ -609,7 +609,28 @@
         
   
   <span class="md-ellipsis">
-    Chapter 3b: Universal gates, Reversible irreversability, DJ algorithm
+    Chapter 3b: Universal gates, Reversible irreversability, Oracle Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch4a.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 4a: DJ style algorithms
   </span>
   
 
@@ -696,8 +717,8 @@
 <p>then</p>
 <div class="arithmatex">\[
 U\left|\psi\right&gt;_A \left|0\right&gt;_B \left|M_0\right&gt;_M = \left|\psi\right&gt;_A \left|\psi\right&gt;_B \left|M_\psi\right&gt;_M
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 U\left|\phi\right&gt;_A \left|0\right&gt;_B \left|M_0\right&gt;_M = \left|\phi\right&gt;_A \left|\phi\right&gt;_B \left|M_\phi\right&gt;_M
 \]</div>
 <p>then </p>
@@ -751,9 +772,9 @@ U\left|\phi\right&gt;_A \left|0\right&gt;_B \left|M_0\right&gt;_M = \left|\phi\r
 <p>We can write <span class="arithmatex">\(\left|\psi\right&gt;_{AB}\)</span> as:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-\left|\psi\right&gt;_{AB} &amp;= \frac{a}{\sqrt{2}}\left|000\right&gt; + \frac{a}{\sqrt{2}}\left|011\right&gt; + \frac{b}{\sqrt{2}}\left|100\right&gt; + \frac{b}{\sqrt{2}}\left|111\right&gt;\\
-&amp;= \frac{a}{2}\left(\left|\psi_{00}\right&gt; + \left|\psi_{01}\right&gt;\right)\left|0\right&gt; + \frac{a}{2}\left(\left|\psi_{10}\right&gt; + \left|\psi_{11}\right&gt;\right)\left|1\right&gt; + \frac{b}{2}\left(\left|\psi_{10}\right&gt; - \left|\psi_{11}\right&gt;\right)\left|0\right&gt; + \frac{b}{2}\left(\left|\psi_{00}\right&gt; - \left|\psi_{01}\right&gt;\right)\left|1\right&gt; \\
-&amp;= \left|\psi_{00}\right&gt;\left(\frac{a}{2}\left|0\right&gt; + \frac{b}{2}\left|1\right&gt;\right) + \left|\psi_{01}\right&gt;\left(\frac{a}{2}\left|0\right&gt; - \frac{b}{2}\left|1\right&gt;\right) + \left|\psi_{10}\right&gt;\left(\frac{a}{2}\left|1\right&gt; + \frac{b}{2}\left|0\right&gt;\right) + \left|\psi_{11}\right&gt;\left(\frac{a}{2}\left|1\right&gt; - \frac{b}{2}\left|0\right&gt;\right)\\
+\left|\psi\right&gt;_{AB} &amp;= \frac{a}{\sqrt{2}}\left|000\right&gt;_{123} + \frac{a}{\sqrt{2}}\left|011\right&gt;_{123} + \frac{b}{\sqrt{2}}\left|100\right&gt;_{123} + \frac{b}{\sqrt{2}}\left|111\right&gt;_{123}\\
+&amp;= \frac{a}{2}\left(\left|\psi_{00}\right&gt;_{12} + \left|\psi_{01}\right&gt;_{12}\right)\left|0\right&gt;_{3} + \frac{a}{2}\left(\left|\psi_{10}\right&gt;_{12} + \left|\psi_{11}\right&gt;_{12}\right)\left|1\right&gt;_{3} + \frac{b}{2}\left(\left|\psi_{10}\right&gt;_{12} - \left|\psi_{11}\right&gt;_{12}\right)\left|0\right&gt;_{3} + \frac{b}{2}\left(\left|\psi_{00}\right&gt;_{12} - \left|\psi_{01}\right&gt;_{12}\right)\left|1\right&gt;_{3} \\
+&amp;= \left|\psi_{00}\right&gt;_{12}\left(\frac{a}{2}\left|0\right&gt;_{3} + \frac{b}{2}\left|1\right&gt;_{3}\right) + \left|\psi_{01}\right&gt;_{12}\left(\frac{a}{2}\left|0\right&gt;_{3} - \frac{b}{2}\left|1\right&gt;_{3}\right) + \left|\psi_{10}\right&gt;_{12}\left(\frac{a}{2}\left|1\right&gt;_{3} + \frac{b}{2}\left|0\right&gt;_{3}\right) + \left|\psi_{11}\right&gt;_{12}\left(\frac{a}{2}\left|1\right&gt;_{3} - \frac{b}{2}\left|0\right&gt;_{3}\right)\\
 \end{aligned}
 \]</div>
 <p>Therefore when we measure in which bell state the first two qubits are then we get the following post-measurement states:</p>
@@ -781,7 +802,7 @@ U\left|\phi\right&gt;_A \left|0\right&gt;_B \left|M_0\right&gt;_M = \left|\phi\r
 \]</div>
 <p>This must be true as we can write </p>
 <div class="arithmatex">\[
-\left&lt;\psi_{ij}\right|_{12}\left|\alpha\right&gt;_1\left|\psi_{ij}\right&gt;_{23} = \left(\left&lt;\psi_{00}\right|_{12} X_2^i Z_2^j\right)\left|\alpha\right&gt;_1\left(X_2^i Z_2^j\left|\psi_{00}\right&gt;_{23}\right) = \left&lt;\psi_{00}\right|_{12}\left|\alpha\right&gt;_1\left|\psi_{00}\right&gt;_{23}= \left|\alpha\right&gt;_3
+\left&lt;\psi_{ij}\right|_{12}\left|\alpha\right&gt;_1\left|\psi_{ij}\right&gt;_{23} = \left(\left&lt;\psi_{00}\right|_{12} X_2^i Z_2^j\right)\left|\alpha\right&gt;_1\left(Z_2^i X_2^j\left|\psi_{00}\right&gt;_{23}\right) = \left&lt;\psi_{00}\right|_{12}\left|\alpha\right&gt;_1\left|\psi_{00}\right&gt;_{23}= \left|\alpha\right&gt;_3
 \]</div>
 <p>Wow! This means that quantum teleportation is trivial. If we could perform a projection operation on the first two qubits onto the bell state in which we prepared the pair of second and third qubit, we would simply teleport the state from a qubit 1 to a qubit 3. However, the projection operation is non-unitary and we cannot do it in a unitary way. We need to find workaround. </p>
 <p>Something that performs a projection operation on the first two qubits is the Bell measurement. This will, however, perform a projective measurement to an arbitrary state and not just the <span class="arithmatex">\(\left|\psi_{00}\right&gt;_{12}\)</span>. The measurement projects the first two qubits into {<span class="arithmatex">\(\left|\psi_{00}\right&gt;_{12}\)</span>, <span class="arithmatex">\(\left|\psi_{01}\right&gt;_{12}\)</span>, <span class="arithmatex">\(\left|\psi_{10}\right&gt;_{12}\)</span>, <span class="arithmatex">\(\left|\psi_{11}\right&gt;_{12}\)</span>}. Can we somehow know into which state it will project and perform a corresponding operation on the third qubit prior to the measurement?</p>
