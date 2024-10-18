@@ -22,7 +22,8 @@ nav:
       - "Chapter 1b: Toolbox": qip1/ch1b.md
       - "Chapter 2a: Quantum Information Theory": qip1/ch2a.md
       - "Chapter 3a: Computational Complexity": qip1/ch3a.md
-      - "Chapter 3b: Universal gates, Reversible irreversability, DJ algorithm": qip1/ch3b.md
+      - "Chapter 3b: Universal gates, Reversible irreversability, Oracle Functions": qip1/ch3b.md
+      - "Chapter 4a: DJ style algorithms": qip1/ch4a.md
       - "organisation": qip1/organisation.md
 
 # Plugins (optional)
