@@ -1,6 +1,9 @@
 # Chapter 4b: Grover's Style Algorithms:
 
 ## 4.2. Grover's algorithm:
+
+[Grover's paper](https://arxiv.org/pdf/quant-ph/9605043)
+
 **Problem - Unstructured search**: Given an access to a computable function $f(x) : \{0,1\}^n \rightarrow \{0,1\}$ we want to find some $x$ such that $f(x_0) = 1$, for a unique 'marked' element $x_0\in\{1,...,N\}$.
 
 Grover's algorithm is an algorithm which has a large range of applications and is a beautiful example of how quantum mechanics allows us to speed up many problems. But, in words of Scott Aaronson,  the speed up is rather modest, as it is only quadratic. 
