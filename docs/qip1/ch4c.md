@@ -99,17 +99,17 @@ $$
 
 The circuit would look like this.
 
-<img src="ch4/not_efficient_qft_1.png" alt="drawing" width="100%"/>
+<img src="ch4/not_efficient_qft_full.png" alt="drawing" width="100%"/>
 
 But you might notice that for some of the controlled $R_d$ gates, the $d < 0$. For such gates the rotation is by a integer multiple of $2\pi$, and so effectively such gates do not contribute to the final result. We can skip applying such gates.
 
-<img src="ch4/not_efficient_qft_2.png" alt="drawing" width="100%"/>
+<img src="ch4/not_efficient_qft_truncated.png" alt="drawing" width="100%"/>
 
 Secondly what we can notice that applying a $R_0$ gate to $H \left|0\right>_i$ controlled on a j'th qubit is equivalent to applying a $H$ gate directly to the j'th qubit.
 
 i.e. 
 
-<img src="ch4/not_efficient_qft_3.png" alt="drawing" width="60%"/>
+<img src="ch4/not_efficient_qft_example.png" alt="drawing" width="60%"/>
 
 This means that we can rewrite this circuit in a much simpler form, where we reuse the original qubits.
 
