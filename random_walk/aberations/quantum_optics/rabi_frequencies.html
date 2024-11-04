@@ -1,0 +1,920 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/atom_fav.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>Light-Matter Interaction - wadamczyk's space</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#light-matter-interaction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../index.html" title="wadamczyk&#39;s space" class="md-header__button md-logo" aria-label="wadamczyk's space" data-md-component="logo">
+      
+  <img src="../../../assets/atom.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            wadamczyk's space
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Light-Matter Interaction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../index.html" class="md-tabs__link">
+        
+  
+    
+  
+  Abstract
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../qip1/ch0.html" class="md-tabs__link">
+          
+  
+  Teaching
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../quantum_optics/rabi_frequencies.md" class="md-tabs__link">
+          
+  
+  Random Walk
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../index.html" title="wadamczyk&#39;s space" class="md-nav__button md-logo" aria-label="wadamczyk's space" data-md-component="logo">
+      
+  <img src="../../../assets/atom.png" alt="logo">
+
+    </a>
+    wadamczyk's space
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Abstract
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teaching
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Teaching
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Quantum Information Processing - Concepts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Quantum Information Processing - Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qip1/ch0.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 0: Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qip1/ch1a.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 1a: Principles of Quantum Mechanics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qip1/ch1b.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 1b: Toolbox
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qip1/ch2a.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 2a: Quantum Information Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qip1/ch3a.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 3a: Computational Complexity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qip1/ch3b.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 3b: Universal gates, Reversible irreversability, Oracle Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qip1/ch4a.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 4a: DJ style algorithms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qip1/ch4b.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 4b: Grover's algorithm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qip1/ch4c.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 4c: Quantum Fourier Transform, Period Finding Algorithm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qip1/organisation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    organisation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Random Walk
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Random Walk
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Quantum Optics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Quantum Optics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quantum_optics/rabi_frequencies.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Light-Matter Interaction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="light-matter-interaction">Light-Matter Interaction</h1>
+<h2 id="rabi-frequencies">Rabi Frequencies</h2>
+<p>Rabi Frequency is the fundamental quantity regarding interaction of an atom with light. It tells us about how much coupling do we get between two eigenstates of our atom in the presence of the oscilating electric field.</p>
+<p>Given the complexities and the confusion surrounding the derivations of dipole and quadrupole Rabi frequencies, a re-derivation is presented here. In this derivation we stay in a single gauge throughout. This derivation draws from <a href="https://doi.org/10.1016/B978-0-12-744450-5.50026-8">Weissbluth book</a>.</p>
+<h4 id="minimum-coupling-hamiltonian">Minimum Coupling Hamiltonian</h4>
+<p>Consider an arbitrary electromagnetic vector field, <span class="arithmatex">\(\mathbf{A}(\mathbf{r},t)\)</span>, within the Coulomb gauge (<span class="arithmatex">\(\nabla \cdot \mathbf{A}(\mathbf{r}) = 0\)</span>) in vacuum (<span class="arithmatex">\(\phi(\mathbf{r}, t)=0\)</span>). Throughout the derivation we will assume that the field is small enough so that we can treat it as a perturbation.</p>
+<p>The minimum-coupling Hamiltonian in Coulomb's gauge is expressed as:</p>
+<div class="arithmatex">\[ 
+H=\sum_\alpha\left(\frac{\left[\mathbf{p}^{(\alpha)}-q^{(\alpha)} \mathbf{A}\left(\mathbf{x}^{(\alpha)}, t\right)\right]^2}{2 m^{(\alpha)}}\right)+H_F+V_{\text{Coul}}  +\frac{e \hbar}{2 m c} \boldsymbol{\sigma} \cdot \boldsymbol{\nabla} \times \mathbf{A}
+\]</div>
+<p>where <span class="arithmatex">\(H_F\)</span> represents the free field energy (<span class="arithmatex">\(H_F=\frac{1}{2} \int \mathrm{d}^3 r\left(\epsilon_0 \mathbf{E}^2(\mathbf{r}, t)+\frac{1}{\mu_0} \mathbf{B}^2(\mathbf{r}, t)\right)\)</span>) and <span class="arithmatex">\(V_{\text{Coul}}\)</span> contains terms defining the atomic state, including Coulomb interactions and spin-orbit coupling.</p>
+<p>Focusing on electron dynamics rather than absolute energy levels allows us to neglect constant energy terms <span class="arithmatex">\(H_F\)</span> and <span class="arithmatex">\(\varepsilon_{\text{Coul}}^\alpha\)</span>, keeping only the terms that depend on <span class="arithmatex">\(\mathbf{x}_\alpha\)</span> or <span class="arithmatex">\(\mathbf{p}_\alpha\)</span>. Coulomb's Gauge <span class="arithmatex">\(\nabla \cdot \mathbf{A}(\mathbf{r}) = 0\)</span> ensures that <span class="arithmatex">\(\mathbf{p}_\alpha\)</span> and <span class="arithmatex">\(\mathbf{A}(\mathbf{x}_\alpha, t)\)</span> commute, so we can rewrite <span class="arithmatex">\({H}\)</span> as:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+H &amp;=\sum_\alpha\left(\frac{\left[\mathbf{p}^{(\alpha)}-q^{(\alpha)} \mathbf{A}\left(\mathbf{x}^{(\alpha)}, t\right)\right]^2}{2 m^{(\alpha)}}\right)+V_{\text {Coul }} + \frac{e \hbar}{2 m c} \boldsymbol{\sigma} \cdot \boldsymbol{\nabla} \times \mathbf{A}
+\\&amp;=\sum_\alpha \frac{\mathbf{p^{(\alpha)}}^2}{2 m^{(\alpha)}}+V_{\text {Coul }}+\sum_\alpha\left(-\frac{q^{(\alpha)} \mathbf{p}^{(\alpha)} \cdot \mathbf{A}\left(\mathbf{x}^{(\alpha)}, t\right)}{m^{(\alpha)}}+\frac{{q^{(\alpha)}}^2\mathbf{A}\left(\mathbf{x}^{(\alpha)}, t\right)^2}{2 m^{(\alpha)}}\right) + 
+\frac{e \hbar}{2 m c} \boldsymbol{\sigma} \cdot \boldsymbol{\nabla} \times \mathbf{A}
+\end{aligned}
+\]</div>
+<p>Neglecting less dominant terms of the interaction Hamiltonian <span class="arithmatex">\(\frac{q_\alpha^2\mathbf{A}\left(\mathbf{x}_\alpha, t\right)^2}{2 m_\alpha}\)</span> and <span class="arithmatex">\(\frac{e \hbar}{2 m c} \boldsymbol{\sigma} \cdot \boldsymbol{\nabla} \times \mathbf{A}\)</span>, and grouping them together we get:</p>
+<div class="arithmatex">\[ 
+\begin{aligned}
+&amp;H = H_0 + H_I \\
+&amp;H_0 = \sum_\alpha \frac{\mathbf{p^{(\alpha)}}^2}{2 m^{(\alpha)}}+V_{\text {Coul }} = \sum_i \mathcal{E}_i\left|i\right&gt;\left&lt; i\right| \\
+&amp;H_I = \sum_\alpha-q^{(\alpha)} \mathbf{\dot{x}}^{(\alpha)} \cdot \mathbf{A}\left(\mathbf{x}^{(\alpha)}, t\right)
+\end{aligned}
+\]</div>
+<p><span class="arithmatex">\(\mathbf{x} = \mathbf{R} + \mathbf{r}\)</span>, where <span class="arithmatex">\(\mathbf{R}\)</span> is a postion of the nucleus and <span class="arithmatex">\(\mathbf{r}\)</span> is position of an electron relative to the nucleus. Using Born-Oppenheimer approximation we can write <span class="arithmatex">\(\mathbf{\dot{x}} = \mathbf{\dot{r}}\)</span> neglecting <span class="arithmatex">\(\mathbf{\dot{R}}\)</span>.</p>
+<div class="arithmatex">\[
+H_I = \sum_\alpha-q_\alpha \mathbf{\dot{r}}_\alpha \cdot \mathbf{A}\left(\mathbf{R}+\mathbf{r}_\alpha, t\right)
+\]</div>
+<h4 id="multipole-expansion">Multipole expansion</h4>
+<p>Taylor expanding <span class="arithmatex">\(\mathbf{A}(\mathbf{R}+\mathbf{r}_\alpha, t)\)</span>, we get:</p>
+<div class="arithmatex">\[
+H_I = \sum_\alpha-q_\alpha \dot{r}^{(\alpha)}_{\mu} \left(A^\mu\left(\mathbf{R}, t\right) + \partial^\nu A^\mu\left(\mathbf{R}, t\right)r^{(\alpha)}_{\nu} \right)
+\]</div>
+<p>From now on, Lets define <span class="arithmatex">\(A^\mu = A^\mu(\mathbf{R}, t)\)</span> </p>
+<div class="arithmatex">\[
+\begin{aligned}
+H_I &amp;= \sum_{\alpha, i, j} |i\rangle\left\langle i\left|e \dot{r}^{(\alpha)}_{\mu} \left(A^\mu + \partial^\nu A^\mu r^{(\alpha)}_{\nu} + ...\right) \right| j\right\rangle\langle j| \\
+&amp;= \sum_{\alpha, i, j} \left( |i\rangle\left\langle i\left|e \dot{r}^{(\alpha)}_{\mu} A^\mu\right| j\right\rangle\langle j| + |i\rangle\left\langle i\left|e \dot{r}^{(\alpha)}_{\mu} \partial^\nu A^\mu r^{(\alpha)}_{\nu} \right| j\right\rangle\langle j| + ... \right) \\
+&amp;= \sum_{\alpha, i, j} \left( e A^\mu|i\rangle\left\langle i\left| \dot{r}^{(\alpha)}_{\mu} \right| j\right\rangle\langle j| + e\partial^\nu A^\mu |i\rangle\left\langle i\left| \dot{r}^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu} \right| j\right\rangle\langle j| + ... \right)
+\end{aligned}
+\]</div>
+<p>As in the end we would like to see how the light field interacts with consecutive terms of the multipole expansion formed by the atom, we need to get rid of <span class="arithmatex">\(\dot{r}_\mu^{(\alpha)}\)</span>.</p>
+<p>As <span class="arithmatex">\(\left[ r_\mu, p^2 \right] = 2i \hbar p_\mu\)</span>, then <span class="arithmatex">\(i \hbar \dot{r}_\mu=\left[r_\mu, H_0\right]\)</span></p>
+<p>Lets then solve consecutive terms of the Taylor expansion</p>
+<h5 id="0th-order-term">0th Order term:</h5>
+<div class="arithmatex">\[
+\begin{aligned}
+\left\langle i\left| \dot{r}^{(\alpha)}_{\mu} \right| j\right\rangle &amp;=
+-\frac{i}{\hbar} \left\langle i\left| [r^{(\alpha)}_{\mu}, H_0] \right| j\right\rangle  
+\\&amp;= -\frac{i}{\hbar} \left\langle i\left|r^{(\alpha)}_{\mu} H_0 - H_0 r^{(\alpha)}_{\mu} \right| j\right\rangle 
+\\&amp;= -i \left\langle i\left|r^{(\alpha)}_{\mu} \omega_j - \omega_i r^{(\alpha)}_{\mu} \right| j\right\rangle 
+\\&amp;= i \omega_{0} \left\langle i\left| r^{(\alpha)}_{\mu} \right| j\right\rangle
+\end{aligned}
+\]</div>
+<p>, where <span class="arithmatex">\(\omega_{0} = \omega_i-\omega_j\)</span></p>
+<h5 id="1st-order-term">1st Order term:</h5>
+<div class="arithmatex">\[
+\begin{aligned}
+\left\langle i\left| \dot{r}^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu} \right| j\right\rangle 
+&amp;= -\frac{i}{\hbar}\left\langle i\left| [r^{(\alpha)}_{\mu}, H_0]  r^{(\alpha)}_{\nu} \right| j\right\rangle 
+\\&amp;=-\frac{i}{\hbar}\left\langle i\left| r^{(\alpha)}_{\mu}H_0r_\nu^{(\alpha)} - H_0r^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu} \right| j\right\rangle
+\end{aligned}
+\]</div>
+<p>This is more tricky, because now we need to to commute <span class="arithmatex">\(H_0\)</span> with <span class="arithmatex">\(r_\nu^{(\alpha)}\)</span> which as a result would give us <span class="arithmatex">\(\dot{r}^{(\alpha)}_{\mu}\)</span> again. Instead what we can do we can split the problem into symmetric and anti-symmetric part hoping it will get easier. </p>
+<div class="arithmatex">\[
+\left\langle i\left| \dot{r}^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu} \right| j\right\rangle =
+\frac{1}{2}\left\langle i\left| \dot{r}^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu} +   r^{(\alpha)}_{\nu} \dot{r}^{(\alpha)}_{\mu} \right| j\right\rangle +
+\frac{1}{2}\left\langle i\left| \dot{r}^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu} -   r^{(\alpha)}_{\nu} \dot{r}^{(\alpha)}_{\mu} \right| j\right\rangle
+\]</div>
+<p>Lets solve the symmetric and antisymmetric part separately:</p>
+<p>Symmetric part:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\frac{1}{2}\left\langle i\left| \dot{r}^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu} +   r^{(\alpha)}_{\nu} \dot{r}^{(\alpha)}_{\mu} \right| j\right\rangle &amp;= 
+\frac{-i}{2\hbar}\left\langle i\left| [r^{(\alpha)}_{\mu}, H_0]  r^{(\alpha)}_{\nu} +   r^{(\alpha)}_{\nu} [r^{(\alpha)}_{\mu}, H_0] \right| j\right\rangle \\&amp;= 
+\frac{-i}{2\hbar}\left\langle i\left| -H_0r^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu} +   r^{(\alpha)}_{\nu} r^{(\alpha)}_{\mu}H_0 \right| j\right\rangle \\&amp;= 
+\frac{1}{2}i\omega_{0}\left\langle i\left| r^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu}  \right| j\right\rangle
+\end{aligned}
+\]</div>
+<p>Anti-symmetric part:</p>
+<div class="arithmatex">\[
+\begin{aligned} \frac{1}{2} \partial^\nu A^\mu \left\langle i\left| \dot{r}^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu} -   r^{(\alpha)}_{\nu} \dot{r}^{(\alpha)}_{\mu} \right| j\right\rangle &amp;= \frac{1}{2} \varepsilon^{i \mu \nu}\varepsilon_{i}^{j k} \partial_j A_k \left\langle i\left| \dot{r}^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu} \right| j\right\rangle \\&amp;= 
+\frac{1}{2} \varepsilon_{i}^{j k} \partial_j A_k \left\langle i\left| \varepsilon^{i \mu \nu}\dot{r}^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu} \right| j\right\rangle \\&amp;= 
+\frac{1}{2} \hbar \varepsilon_{i}^{j k} \partial_j A_k \left\langle i\left| L^i \right| j\right\rangle
+\end{aligned}
+\]</div>
+<p>Therefore one can re-write 1st Order term as:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+e \partial^\nu A^\mu\left\langle i\left| \dot{r}^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu} \right| j\right\rangle =
+\frac{1}{2} ie\omega_0 \partial^\nu A^\mu \left\langle i\left| r^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu}  \right| j\right\rangle +
+\frac{1}{2} \hbar e \varepsilon_{i}^{j k} \partial_j A_k \left\langle i\left| L^i \right| j\right\rangle
+\end{aligned}
+\]</div>
+<p>, where the first term corresponds to the electric quadrupole coupling and the second term corresponds to magnetic dipole coupling</p>
+<p>Collecting all the terms up to the 1st Order of Taylor expansion of <span class="arithmatex">\(A_\mu\)</span>, we get:</p>
+<div class="arithmatex">\[
+H_I =  \sum_{\alpha, i, j} |i\rangle\left( \underbrace{i e \omega_{0} A^\mu\left\langle i\left| r^{(\alpha)}_{\mu} \right| j\right\rangle }_\text{Electric Dipole} + 
+\underbrace{\frac{1}{2} ie\omega_0 \partial^\nu A^\mu \left\langle i\left| r^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu}  \right| j\right\rangle}_\text{Electric Quadrupole} +
+\underbrace{\frac{1}{2} \hbar e \varepsilon_{i}^{j k} \partial_j A_k \left\langle i\left| L^i \right| j\right\rangle}_\text{Magnetic Dipole} + ... \right) \langle j|
+\]</div>
+<h4 id="constraining-a-vector-field">Constraining A-vector field:</h4>
+<p>Let's constrain our choice of <span class="arithmatex">\(\mathbf{A}\)</span> vector-field. In the end what we are interested in is an electric field <span class="arithmatex">\(\mathbf{E}\)</span> oscilating at single frequency <span class="arithmatex">\(\omega\)</span>. As the electric field is an observable, it must be real, and so <span class="arithmatex">\(\tilde{E}(\mathbf{x}, -\omega)\)</span> =  <span class="arithmatex">\(\tilde{E}^\dagger(\mathbf{x}, \omega)\)</span>, and so it can be written as: <span class="arithmatex">\(\mathbf{E}=\frac{1}{2}\left(\mathbf{E}(\mathbf{x})e^{-i\omega_lt}+\mathbf{E}^{\dagger}(\mathbf{x})e^{i\omega_lt}\right)\)</span>. </p>
+<p>Working in vacuum in Coulombs gauge we can write <span class="arithmatex">\(\mathbf{E} = -\frac{\partial \mathbf{A}}{\partial t}\)</span>, hence</p>
+<div class="arithmatex">\[
+\mathbf{A} =\frac{1}{2}\left(\left(\frac{1}{i\omega_l}\mathbf{E}(\mathbf{x})\right)e^{-i\omega_lt} + \left(\frac{1}{i\omega_l}\mathbf{E}(\mathbf{x})\right)^{\dagger}e^{i\omega_lt}\right) = \frac{1}{2}\left(\mathbf{A}(\mathbf{x})e^{-i\omega_lt} + \mathbf{A}^{\dagger}(\mathbf{x})e^{i\omega_lt}\right)
+\]</div>
+<p>The interaction then can be written as:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+H_I &amp;= \sum_{\alpha, i, j} \left|i\right&gt; \left&lt; i\left|e \mathbf{\dot{r}}^{(\alpha)} \mathbf{A} \right| j\right&gt; \left&lt; j\right| \\
+&amp;= \sum_{\alpha, i, j} \left|i\right&gt; \frac{1}{2} \left( \left&lt; i\left|e \mathbf{\dot{r}}^{(\alpha)} \mathbf{A}(\mathbf{x}) \right| j\right&gt; e^{-i\omega_lt}
++ \left&lt; i\left|e \mathbf{\dot{r}}^{(\alpha)} \mathbf{A}^{\dagger}(\mathbf{x}) \right| j\right&gt; e^{i\omega_lt} \right) \left&lt; j \right| \\
+&amp;= \sum_{\alpha, i, j} \left|i\right&gt; \frac{\hbar}{2} \left(\Omega_{ij} e^{-i\omega_lt}
++ \Omega^\dagger_{ij} e^{i\omega_lt} \right) \left&lt; j\right| 
+\end{aligned}
+\]</div>
+<p>, where Rabi Frequency is defined as follows:</p>
+<div class="arithmatex">\[
+\hbar\Omega_{i j}= \left&lt; i\left|e \mathbf{\dot{r}}^{(\alpha)} \mathbf{A}(\mathbf{x}) \right| j\right&gt;
+\]</div>
+<p>As we saw, we can decompose it through the Taylor expansion into the consecutive terms corresponding to different nature of the transition. Usually only one of the coupling types is dominant and the other can be neglected. The dominant type depends on the nature of the transition and the electric field structure.</p>
+<p><span class="arithmatex">\(\Omega_{i j}= \begin{cases}
+\frac{e\omega_{0}}{\hbar\omega_l}E^\mu\left\langle i\left| r^{(\alpha)}_{\mu} \right| j\right\rangle &amp; (\mathrm{E1})
+\\  \frac{e\omega_0}{2\hbar\omega_l} \partial^\nu E^\mu \left\langle i\left| r^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu}  \right| j\right\rangle &amp; (\mathrm{E2})\\
+\frac{1}{2} e \varepsilon_{\theta}^{\beta \gamma} \partial_\beta A_\gamma \left\langle i\left| L^\theta \right| j\right\rangle &amp; (\mathrm{M1})\\
+\end{cases}\)</span></p>
+<h4 id="final-remarks">Final Remarks:</h4>
+<p>This is the final expression of the Rabi-frequencies. As far as we are interested in only electric multipole expansion we took all required terms from the dirac equation. We worked in vacuum and in Coulomb gauge. Not switching the gauge allowed us to not to make any mistakes that arise from working in multiple gauges. </p>
+<p>Other common derivation is using PZW Gauge, which naturally has a form of multipole expansion. I, however, prefered not to work in it, as from what I have seen it wasn't a popular choice of understanding the problem. Coulomb's gauge was a preffered choice, however for many they missed a step to split the first Taylor expansion term into symmetric and antisymmetric part, which forced them to fudge a factor of 1/2. </p>
+<p>It is important to note that the above derivation is valid for the cases when the interaction is weak, and so the perturbation theory is applicable. This is because <span class="arithmatex">\(i \hbar \dot{r}_\mu=\left[r_\mu, H_0\right]\)</span> uses this assumption. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "navigation.tabs", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

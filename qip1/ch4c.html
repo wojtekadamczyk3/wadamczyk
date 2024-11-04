@@ -217,6 +217,33 @@
   
 
       
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../random_walk/quantum_optics/rabi_frequencies.md" class="md-tabs__link">
+          
+  
+  Random Walk
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -646,6 +673,118 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Random Walk
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Random Walk
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Quantum Optics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Quantum Optics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../random_walk/quantum_optics/rabi_frequencies.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Light-Matter Interaction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -758,12 +897,9 @@ R_d:=\left(\begin{array}{cc}
 <li>Apply the <span class="arithmatex">\(H^{\otimes n}\)</span> gate to the n-register: $\left|0\right&gt;_m\left|+\right&gt;_n = H_n\left|0\right&gt;_m\left|0\right&gt;_n $</li>
 <li>Apply the bit oracle <span class="arithmatex">\(O_f\)</span>: <span class="arithmatex">\(\left|0\right&gt;_m\left|+\right&gt;_n \rightarrow \sum_{x_0=0}^{r-1} \left|f(x_0)\right&gt;_m\left(\left|x_0\right&gt; + \left|x_0+r\right&gt; + \left|x_0+2r\right&gt; + ... \right)_n\)</span></li>
 <li>Measure the m-register getting a result <span class="arithmatex">\(f(x_0)\)</span> and collapsing the n-register into a superposition of states <span class="arithmatex">\(\left|period\right&gt; =  \left|x_0\right&gt;+ \left|x_0+r\right&gt; + \left|x_0+2r\right&gt; + ...\)</span></li>
-<li>Apply the QFT to the n-register: </li>
+<li>Apply the QFT to the n-register: <span class="arithmatex">\(\mathcal{Q}_{2^n}\left|per\right&gt; = \sum_{k=0}^{r-1} \left|kN/r\right&gt;\)</span></li>
+<li>Measure the n-register and get the value of <span class="arithmatex">\(r\)</span></li>
 </ol>
-<p>$$
-\mathcal{Q}<em k="0">{2^n}\left|per\right&gt; = \sum</em> \left|kN/r\right&gt;
-$$
-5. Measure the n-register and get the value of }^{r-1<span class="arithmatex">\(r\)</span></p>
 <p><img src="ch4/jozsa_period_finding.png" alt="drawing" width="100%"/></p>
 <p><strong>Post Processing</strong>:</p>
 <p><strong>Complexity</strong>:</p>
