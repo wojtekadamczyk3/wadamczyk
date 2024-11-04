@@ -142,11 +142,7 @@ Now you might think, that is perfect. If I measure this n-register enough times 
 1. Apply the $H^{\otimes n}$ gate to the n-register: $\left|0\right>_m\left|+\right>_n = H_n\left|0\right>_m\left|0\right>_n $
 2. Apply the bit oracle $O_f$: $\left|0\right>_m\left|+\right>_n \rightarrow \sum_{x_0=0}^{r-1} \left|f(x_0)\right>_m\left(\left|x_0\right> + \left|x_0+r\right> + \left|x_0+2r\right> + ... \right)_n$
 3. Measure the m-register getting a result $f(x_0)$ and collapsing the n-register into a superposition of states $\left|period\right> =  \left|x_0\right>+ \left|x_0+r\right> + \left|x_0+2r\right> + ...$
-4. Apply the QFT to the n-register: 
-
-$$
-\mathcal{Q}_{2^n}\left|per\right> = \sum_{k=0}^{r-1} \left|kN/r\right>
-$$
+4. Apply the QFT to the n-register: $\mathcal{Q}_{2^n}\left|per\right> = \sum_{k=0}^{r-1} \left|kN/r\right>$
 5. Measure the n-register and get the value of $r$
 
 
