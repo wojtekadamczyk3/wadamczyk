@@ -733,8 +733,8 @@ R_d:=\left(\begin{array}{cc}
 0 &amp; e^{\pi i / 2^d}
 \end{array}\right)
 \]</div>
-<p>The circuit would look like this:
-<img src="ch4/not_efficient_qft_1.png" alt="drawing" width="100%"/></p>
+<p>The circuit would look like this:</p>
+<p><img src="ch4/not_efficient_qft_1.png" alt="drawing" width="100%"/></p>
 <p>But you might notice that for some of the controlled <span class="arithmatex">\(R_d\)</span> gates, the <span class="arithmatex">\(d &lt; 0\)</span>. For such gates the rotation is by a integer multiple of <span class="arithmatex">\(2\pi\)</span>, and so effectively such gates do not contribute to the final result. We can skip applying such gates.</p>
 <p><img src="ch4/not_efficient_qft_2.png" alt="drawing" width="100%"/></p>
 <p>Secondly what we can notice that applying a <span class="arithmatex">\(R_0\)</span> gate to <span class="arithmatex">\(H \left|0\right&gt;_i\)</span> controlled on a j'th qubit is equivalent to applying a <span class="arithmatex">\(H\)</span> gate directly to the j'th qubit.</p>
