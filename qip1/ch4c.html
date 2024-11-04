@@ -873,12 +873,12 @@ R_d:=\left(\begin{array}{cc}
 \end{array}\right)
 \]</div>
 <p>The circuit would look like this.</p>
-<p><img src="ch4/not_efficient_qft_1.png" alt="drawing" width="100%"/></p>
+<p><img src="ch4/not_efficient_qft_full.png" alt="drawing" width="100%"/></p>
 <p>But you might notice that for some of the controlled <span class="arithmatex">\(R_d\)</span> gates, the <span class="arithmatex">\(d &lt; 0\)</span>. For such gates the rotation is by a integer multiple of <span class="arithmatex">\(2\pi\)</span>, and so effectively such gates do not contribute to the final result. We can skip applying such gates.</p>
-<p><img src="ch4/not_efficient_qft_2.png" alt="drawing" width="100%"/></p>
+<p><img src="ch4/not_efficient_qft_truncated.png" alt="drawing" width="100%"/></p>
 <p>Secondly what we can notice that applying a <span class="arithmatex">\(R_0\)</span> gate to <span class="arithmatex">\(H \left|0\right&gt;_i\)</span> controlled on a j'th qubit is equivalent to applying a <span class="arithmatex">\(H\)</span> gate directly to the j'th qubit.</p>
 <p>i.e. </p>
-<p><img src="ch4/not_efficient_qft_3.png" alt="drawing" width="60%"/></p>
+<p><img src="ch4/not_efficient_qft_example.png" alt="drawing" width="60%"/></p>
 <p>This means that we can rewrite this circuit in a much simpler form, where we reuse the original qubits.</p>
 <p><img src="ch4/qft_circuit.png" alt="drawing" width="100%"/></p>
 <p>As you can see the order of the outputs is reversed relative to the input. The original order can be restored by using n/2 SWAP operations.</p>
