@@ -99,6 +99,7 @@ $$
 
 
 The circuit would look like this:
+
 <img src="ch4/not_efficient_qft_1.png" alt="drawing" width="100%"/>
 
 But you might notice that for some of the controlled $R_d$ gates, the $d < 0$. For such gates the rotation is by a integer multiple of $2\pi$, and so effectively such gates do not contribute to the final result. We can skip applying such gates.
@@ -113,8 +114,6 @@ i.e.
 
 
 This means that we can rewrite this circuit in a much simpler form, where we reuse the original qubits.
-
-
 
 <img src="ch4/qft_circuit.png" alt="drawing" width="100%"/>
 
