@@ -97,8 +97,7 @@ R_d:=\left(\begin{array}{cc}
 \end{array}\right)
 $$
 
-
-The circuit would look like this:
+The circuit would look like this.
 
 <img src="ch4/not_efficient_qft_1.png" alt="drawing" width="100%"/>
 
@@ -111,7 +110,6 @@ Secondly what we can notice that applying a $R_0$ gate to $H \left|0\right>_i$ c
 i.e. 
 
 <img src="ch4/not_efficient_qft_3.png" alt="drawing" width="60%"/>
-
 
 This means that we can rewrite this circuit in a much simpler form, where we reuse the original qubits.
 
