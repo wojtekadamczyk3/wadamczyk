@@ -113,7 +113,7 @@ i.e.
 
 This means that we can rewrite this circuit in a much simpler form, where we reuse the original qubits.
 
-<img src="ch4/qft_circuit.png" alt="drawing" width="100%"/>
+<img src="ch4/qft_circuit_notes.png" alt="drawing" width="100%"/>
 
 As you can see the order of the outputs is reversed relative to the input. The original order can be restored by using n/2 SWAP operations.
 
