@@ -27,6 +27,9 @@ nav:
       - "Chapter 4b: Grover's algorithm": qip1/ch4b.md
       - "Chapter 4c: Quantum Fourier Transform, Period Finding Algorithm": qip1/ch4c.md
       - "organisation": qip1/organisation.md
+  - "Random Walk":
+    - "Quantum Optics":
+      - "Light-Matter Interaction": random_walk/quantum_optics/rabi_frequencies.md
 
 # Plugins (optional)
 plugins:
