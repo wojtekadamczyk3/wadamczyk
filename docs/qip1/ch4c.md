@@ -133,7 +133,7 @@ The goal is to find the period $r$ of the function $f$.
 
 So the algorithm runs in a following way. We first start with $n+m$ qubits. Then we prepare a superposition of all basis states $\{\left|x\right> \}$ on the $n$ qubits. We then apply a bit oracle $O_f$, which entangles n qubits with m qubits - effectively grouping the $\{ x_0, x_0+r, x_0+2r, ... \}$ together and associating them with some value in the m-register $f(x_0)$. Upon measuring the m-register we get a value of $f(x_0)$, which collapses the n-register into a superposition of states $\{ \left|x_0\right>, \left|x_0+r\right>, \left|x_0+2r\right>, ... \}$.
 
-Now you might think, that is perfect. If I measure this n-register enough times then I will definitely find the value of $r$. You will, however, stop being that excited after you notice that after measuring the m-register for the second time the n-register collapses into a superposition of $\{ \left|x_0'\right>, \left|x_0'+r\right>, \left|x_0'+2r\right>, ... \}$ and so on. Damn! We got different numbers! To make sure that we are insensitive to the value of $x_0$ we need to apply QFT to the n-register. After applying QFT we always end up in the superpiosition of the periods which are multiples of $r$ and invariant to the value of $f(x_0)$ being measured during the first measurement.
+Now you might think - this is it! If I measure this n-register enough times, then I will definitely find the value of $r$. You will realise upon measuring the m-register for the second time that the n-register collapses into a superposition of $\{ \left|x_0'\right>, \left|x_0'+r\right>, \left|x_0'+2r\right>, ... \}$ and so on. Damn! We got different numbers! To make sure that we are insensitive to the value of $x_0$ we need to apply QFT to the n-register. After applying QFT we always end up in the superpiosition of the periods which are multiples of $r$ and invariant to the value of $f(x_0)$ being measured during the first measurement.
 
 **Step by step state evolution**:
 
@@ -146,21 +146,19 @@ Now you might think, that is perfect. If I measure this n-register enough times 
 
 <img src="ch4/jozsa_period_finding.png" alt="drawing" width="100%"/>
 
+
 **Post Processing**:
+So now the measurement of the n-register will give us values of $c = kN/r$. Is this enough to find the value of $r$? With help comes number theory.
 
-**Complexity**:
-<!-- Theorem 1 (Coprimality theorem) The number of integers less than r that are coprimeto r grows as O(r/log log r) with increasing r. Hence if k0 < r is chosen at random
+There are two options:
 
-$$
-\operatorname{prob}\left(k_0 \text { coprime to } r\right) \approx O((r / \log \log r) / r)=O(1 / \log \log r) \text {. }
-$$
+1. _k and r are co-prime to each other_ -  it means that $\frac{k}{r}$ is the irreducible fraction, which means that by finding irreducible fraction of $\frac{c}{N}$ gives us directly the values of $k$ and $r$. Simple!
+2. _k and r aren't co-prime to each other_ - it means that $k$, and $r$ share a common factor, and so the irreducible fraction of $\frac{c}{N}$ will give us some $\frac{k/m}{r/m}$.
 
-Lemma 1: If a single trial has success probability p and we repeat the trial M times independently then for any constant 0 < 1 - \epsilon   < 1:
+This means that each time we can simply test, whether $f(x_0)=f(x_0+r)$ and if not, discard the result and try again.
 
-$$
-\operatorname{prob(at~least~one~success~in~} M \text { trials) }>1-\epsilon \text { if } M=\frac{-\log \epsilon}{p}
-$$
+**Theorem 1**:(Coprimality theorem) The number of integers less than r that are co-prime to r grows as $O(\frac{r}{\log \log r})$ with increasing r. Hence if $k < r$ is chosen at random, then the probability that $k$ is co-prime to $r$ is $O(\frac{1}{\log \log r})$.
 
-$$
-\text { so to achieve any constant level } 1-\epsilon \text { of success probability, } O(1 / p) \text { trials suffice. }
-$$ -->
+As each measurement is independent then repeating the whole process $O(\log \log r)<O(\log \log N)$ times gives us the result with constant probability.
+
+## 4.6 Phase Estimation Algorithm:
