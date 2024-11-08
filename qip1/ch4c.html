@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/atom_fav.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
@@ -628,6 +628,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#46-phase-estimation-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.6 Phase Estimation Algorithm:
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -891,7 +900,7 @@ R_d:=\left(\begin{array}{cc}
 <p><strong>Algorithm</strong>:</p>
 <p><img src="ch4/period_finding_algorithm_circuit.png" alt="drawing" width="100%"/></p>
 <p>So the algorithm runs in a following way. We first start with <span class="arithmatex">\(n+m\)</span> qubits. Then we prepare a superposition of all basis states <span class="arithmatex">\(\{\left|x\right&gt; \}\)</span> on the <span class="arithmatex">\(n\)</span> qubits. We then apply a bit oracle <span class="arithmatex">\(O_f\)</span>, which entangles n qubits with m qubits - effectively grouping the <span class="arithmatex">\(\{ x_0, x_0+r, x_0+2r, ... \}\)</span> together and associating them with some value in the m-register <span class="arithmatex">\(f(x_0)\)</span>. Upon measuring the m-register we get a value of <span class="arithmatex">\(f(x_0)\)</span>, which collapses the n-register into a superposition of states <span class="arithmatex">\(\{ \left|x_0\right&gt;, \left|x_0+r\right&gt;, \left|x_0+2r\right&gt;, ... \}\)</span>.</p>
-<p>Now you might think, that is perfect. If I measure this n-register enough times then I will definitely find the value of <span class="arithmatex">\(r\)</span>. You will, however, stop being that excited after you notice that after measuring the m-register for the second time the n-register collapses into a superposition of <span class="arithmatex">\(\{ \left|x_0'\right&gt;, \left|x_0'+r\right&gt;, \left|x_0'+2r\right&gt;, ... \}\)</span> and so on. Damn! We got different numbers! To make sure that we are insensitive to the value of <span class="arithmatex">\(x_0\)</span> we need to apply QFT to the n-register. After applying QFT we always end up in the superpiosition of the periods which are multiples of <span class="arithmatex">\(r\)</span> and invariant to the value of <span class="arithmatex">\(f(x_0)\)</span> being measured during the first measurement.</p>
+<p>Now you might think - this is it! If I measure this n-register enough times, then I will definitely find the value of <span class="arithmatex">\(r\)</span>. You will realise upon measuring the m-register for the second time that the n-register collapses into a superposition of <span class="arithmatex">\(\{ \left|x_0'\right&gt;, \left|x_0'+r\right&gt;, \left|x_0'+2r\right&gt;, ... \}\)</span> and so on. Damn! We got different numbers! To make sure that we are insensitive to the value of <span class="arithmatex">\(x_0\)</span> we need to apply QFT to the n-register. After applying QFT we always end up in the superpiosition of the periods which are multiples of <span class="arithmatex">\(r\)</span> and invariant to the value of <span class="arithmatex">\(f(x_0)\)</span> being measured during the first measurement.</p>
 <p><strong>Step by step state evolution</strong>:</p>
 <ol>
 <li>Apply the <span class="arithmatex">\(H^{\otimes n}\)</span> gate to the n-register: $\left|0\right&gt;_m\left|+\right&gt;_n = H_n\left|0\right&gt;_m\left|0\right&gt;_n $</li>
@@ -901,23 +910,17 @@ R_d:=\left(\begin{array}{cc}
 <li>Measure the n-register and get the value of <span class="arithmatex">\(r\)</span></li>
 </ol>
 <p><img src="ch4/jozsa_period_finding.png" alt="drawing" width="100%"/></p>
-<p><strong>Post Processing</strong>:</p>
-<p><strong>Complexity</strong>:</p>
-<!-- Theorem 1 (Coprimality theorem) The number of integers less than r that are coprimeto r grows as O(r/log log r) with increasing r. Hence if k0 < r is chosen at random
-
-$$
-\operatorname{prob}\left(k_0 \text { coprime to } r\right) \approx O((r / \log \log r) / r)=O(1 / \log \log r) \text {. }
-$$
-
-Lemma 1: If a single trial has success probability p and we repeat the trial M times independently then for any constant 0 < 1 - \epsilon   < 1:
-
-$$
-\operatorname{prob(at~least~one~success~in~} M \text { trials) }>1-\epsilon \text { if } M=\frac{-\log \epsilon}{p}
-$$
-
-$$
-\text { so to achieve any constant level } 1-\epsilon \text { of success probability, } O(1 / p) \text { trials suffice. }
-$$ -->
+<p><strong>Post Processing</strong>:
+So now the measurement of the n-register will give us values of <span class="arithmatex">\(c = kN/r\)</span>. Is this enough to find the value of <span class="arithmatex">\(r\)</span>? With help comes number theory.</p>
+<p>There are two options:</p>
+<ol>
+<li><em>k and r are co-prime to each other</em> -  it means that <span class="arithmatex">\(\frac{k}{r}\)</span> is the irreducible fraction, which means that by finding irreducible fraction of <span class="arithmatex">\(\frac{c}{N}\)</span> gives us directly the values of <span class="arithmatex">\(k\)</span> and <span class="arithmatex">\(r\)</span>. Simple!</li>
+<li><em>k and r aren't co-prime to each other</em> - it means that <span class="arithmatex">\(k\)</span>, and <span class="arithmatex">\(r\)</span> share a common factor, and so the irreducible fraction of <span class="arithmatex">\(\frac{c}{N}\)</span> will give us some <span class="arithmatex">\(\frac{k/m}{r/m}\)</span>.</li>
+</ol>
+<p>This means that each time we can simply test, whether <span class="arithmatex">\(f(x_0)=f(x_0+r)\)</span> and if not, discard the result and try again.</p>
+<p><strong>Theorem 1</strong>:(Coprimality theorem) The number of integers less than r that are co-prime to r grows as <span class="arithmatex">\(O(\frac{r}{\log \log r})\)</span> with increasing r. Hence if <span class="arithmatex">\(k &lt; r\)</span> is chosen at random, then the probability that <span class="arithmatex">\(k\)</span> is co-prime to <span class="arithmatex">\(r\)</span> is <span class="arithmatex">\(O(\frac{1}{\log \log r})\)</span>.</p>
+<p>As each measurement is independent then repeating the whole process <span class="arithmatex">\(O(\log \log r)&lt;O(\log \log N)\)</span> times gives us the result with constant probability.</p>
+<h2 id="46-phase-estimation-algorithm">4.6 Phase Estimation Algorithm:</h2>
 
 
 
