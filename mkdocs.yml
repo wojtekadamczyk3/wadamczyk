@@ -26,6 +26,7 @@ nav:
       - "Chapter 4a: DJ style algorithms": qip1/ch4a.md
       - "Chapter 4b: Grover's algorithm": qip1/ch4b.md
       - "Chapter 4c: Quantum Fourier Transform, Period Finding Algorithm": qip1/ch4c.md
+      - "Chapter 5: Shor's Algorithm": qip1/ch5.md
       - "organisation": qip1/organisation.md
   - "Random Walk":
     - "Quantum Optics":
