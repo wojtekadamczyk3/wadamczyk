@@ -650,11 +650,26 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#54-circuit" class="md-nav__link">
+  <a href="#54-efficient-implementation-of-period-finding-of-ak-pmodn" class="md-nav__link">
     <span class="md-ellipsis">
-      5.4. Circuit:
+      5.4. Efficient implementation of period finding of \(a^k \pmod{N}\):
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="5.4. Efficient implementation of period finding of \(a^k \pmod{N}\):">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#541-efficient-implementation-of-fx-ax-pmodn" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4.1. Efficient implementation of \(f(x) = a^x \pmod{N}\):
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -831,35 +846,54 @@
 
 
 <h1 id="chapter-5-shors-algorithm">Chapter 5: Shor's Algorithm:</h1>
+<p>Shor's algorithm is probably one of the most famous quantum algorithms, and the reason for interest of various militaries around the world in quantum computing. It is connected to RSA encryption, which basically is the foundation of the internet privacy as we know it. Breaking it, would have huge implications on everything we do. Breaking RSA can be reduced to factoring large numbers.</p>
 <h2 id="51-introduction">5.1 Introduction:</h2>
 <p><strong>Problem:</strong> Given an integer <span class="arithmatex">\(N\)</span>, output a factor <span class="arithmatex">\(1 &lt; K &lt; N\)</span>. with any chosen constant level of probability <span class="arithmatex">\((1-\epsilon)\)</span>, and the algorithm will run in polynomial time <span class="arithmatex">\(O(n^3)\)</span>.</p>
 <h2 id="52-factoring-as-a-periodicity-problem">5.2. Factoring as a periodicity problem:</h2>
-<p><strong>Theorem</strong>: (<em>Euler's theorem</em>) If <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(N\)</span> are coprime, then there is a least power <span class="arithmatex">\(1&lt;r&lt;N\)</span> such that <span class="arithmatex">\(a^r\equiv 1 \pmod{N}\)</span>.</p>
-<p>Then we can show that <span class="arithmatex">\(f(k) = a^k \pmod{N}\)</span> is periodic with period <span class="arithmatex">\(r\)</span>. This is because <span class="arithmatex">\(f(k + r) = a^{k+r} \pmod{N} = a^k a^r \pmod{N} = a^k \pmod{N} = f(k)\)</span>.</p>
-<p>Suppose we find the period <span class="arithmatex">\(r\)</span> of <span class="arithmatex">\(f(k)\)</span> and this period <span class="arithmatex">\(r\)</span> is even. Then we can re-write our original statement as:</p>
+<p>The approach we will take is to transform the factoring problem into a periodicity problem. And then we will show that we can solve the periodicity problem efficiently with a quantum algorithm.</p>
+<p><strong>Theorem</strong>: (<em>Euler's theorem</em>) If <span class="arithmatex">\(a\)</span> and <span class="arithmatex">\(N\)</span> are coprime, then there is a least power <span class="arithmatex">\(1&lt;r&lt;N\)</span> such that <span class="arithmatex">\(a^r\equiv 1 \pmod{N}\)</span>. This <span class="arithmatex">\(r\)</span> is called the order of <span class="arithmatex">\(a\)</span> mod <span class="arithmatex">\(N\)</span>.</p>
+<p>Using Euler's theorem we can show that <span class="arithmatex">\(f(k) = a^k \pmod{N}\)</span> is periodic with period <span class="arithmatex">\(r\)</span>. This is because </p>
+<div class="arithmatex">\[
+f(k + r) = a^{k+r} \pmod{N} = a^k a^r \pmod{N} = a^k \pmod{N} = f(k)
+\]</div>
+<p>Suppose that we find the period <span class="arithmatex">\(r\)</span> of <span class="arithmatex">\(f(k)\)</span> and this period <span class="arithmatex">\(r\)</span> is even. Then we can re-write our original statement as:</p>
 <div class="arithmatex">\[
 a^r - 1 = (a^{r/2} - 1)(a^{r/2} + 1) \equiv 0 \pmod{N}
 \]</div>
-<p><span class="arithmatex">\(N\)</span> does not divide <span class="arithmatex">\(a^{r/2} - 1\)</span>, therefore <span class="arithmatex">\(N\)</span> must either 
- - divide <span class="arithmatex">\(a^{r/2} + 1\)</span> 
- - or it must partly divide into <span class="arithmatex">\(a^{r/2} + 1\)</span> and partly into <span class="arithmatex">\(a^{r/2} - 1\)</span></p>
-<p>Therefore if it partly divides into <span class="arithmatex">\(a^{r/2} + 1\)</span> we can use classically efficient euclids algorithm <span class="arithmatex">\(gcd(a^{r/2} + 1, N)\)</span> to find a non-trivial factor of <span class="arithmatex">\(N\)</span>.</p>
-<p>So we have shown that if we pick <span class="arithmatex">\(a\)</span> at random then if we by chance of luck also find that <span class="arithmatex">\(r\)</span> is even, and <span class="arithmatex">\(a^{r/2}+1\)</span> is not divisible by <span class="arithmatex">\(N\)</span>, then we can classically find a non-trivial factor of <span class="arithmatex">\(N\)</span>.</p>
-<p><strong>Theorem</strong>: Suppose <span class="arithmatex">\(N\)</span> is odd and not a power of a prime. If <span class="arithmatex">\(a&lt;N\)</span> is chosen unifromly at random with gcd(a,N)=1 then <span class="arithmatex">\(Prob(\text{r is even and } a^{r/2}\not\equiv -1 \pmod{N})\)</span> is at least <span class="arithmatex">\(1/2\)</span>.</p>
+<p><span class="arithmatex">\(N\)</span> does not divide <span class="arithmatex">\(a^{r/2} - 1\)</span>, therefore <span class="arithmatex">\(N\)</span> must either (a) divide <span class="arithmatex">\(a^{r/2} + 1\)</span> or (b) partly divide into <span class="arithmatex">\(a^{r/2} + 1\)</span> and partly into <span class="arithmatex">\(a^{r/2} - 1\)</span>. If it partly divides into <span class="arithmatex">\(a^{r/2} + 1\)</span>, we can use classically efficient euclids algorithm <span class="arithmatex">\(gcd(a^{r/2} + 1, N)\)</span> to find a non-trivial factor of <span class="arithmatex">\(N\)</span>. Therefore, if we pick <span class="arithmatex">\(a\)</span> at random then, assuming <span class="arithmatex">\(r\)</span> is even and <span class="arithmatex">\(a^{r/2}+1\)</span> is not divisible by <span class="arithmatex">\(N\)</span>, we can classically find a non-trivial factor of <span class="arithmatex">\(N\)</span>.</p>
+<p><strong>Theorem</strong>: Suppose <span class="arithmatex">\(N\)</span> is odd and not a power of a prime. If <span class="arithmatex">\(a&lt;N\)</span> is chosen uniformly at random with <span class="arithmatex">\(gcd(a,N)=1\)</span> then <span class="arithmatex">\(Prob(\text{r is even and } a^{r/2}\not\equiv -1 \pmod{N})\)</span> is at least <span class="arithmatex">\(1/2\)</span>.</p>
 <h2 id="53-algorithm">5.3. Algorithm:</h2>
+<p><img src="ch5/shors.png" alt="drawing" width="100%"/></p>
 <ol>
-<li>Is N even? If so, output 2 and stop (efficient classical algorithm)</li>
-<li>Check whether N is a prime power (efficient classical algorithm)</li>
-<li>Choose <span class="arithmatex">\(a\)</span> at random from 1 to <span class="arithmatex">\(N-1\)</span> and compute <span class="arithmatex">\(gcd(a,N)\)</span>. If <span class="arithmatex">\(gcd(a,N) \neq 1\)</span> then we are done. (efficient classical algorithm)</li>
-<li>If s=1 find the period r of the sequence <span class="arithmatex">\(a^k \pmod{N}\)</span> (quantum part)</li>
-<li>If r is odd, go back to step 3</li>
-<li>If <span class="arithmatex">\(a^{r/2} \equiv -1 \pmod{N}\)</span> go back to step 3 (efficient classical algorithm)</li>
-<li>Otherwise <span class="arithmatex">\(gcd(a^{r/2} + 1, N)\)</span> and <span class="arithmatex">\(gcd(a^{r/2} - 1, N)\)</span> are non-trivial factors of <span class="arithmatex">\(N\)</span> (efficient classical algorithm)</li>
+<li>Is N even? If so, output 2 and stop</li>
+<li>Choose <span class="arithmatex">\(a\)</span> at random from 1 to <span class="arithmatex">\(N-1\)</span> and compute <span class="arithmatex">\(gcd(a,N)\)</span>. If <span class="arithmatex">\(gcd(a,N) \neq 1\)</span> then we are done.</li>
+<li>If s=1 find the period r of the sequence <span class="arithmatex">\(a^k \pmod{N}\)</span>. If r is odd or <span class="arithmatex">\(a^{r/2} \equiv -1 \pmod{N}\)</span>, then go back to step 2.</li>
+<li>Otherwise <span class="arithmatex">\(gcd(a^{r/2} + 1, N)\)</span> and <span class="arithmatex">\(gcd(a^{r/2} - 1, N)\)</span> are non-trivial factors of <span class="arithmatex">\(N\)</span>.</li>
 </ol>
-<h2 id="54-circuit">5.4. Circuit:</h2>
+<p>As you can see already here, everything about solving this problem boils down to the efficient implementation of fidning the period of r of <span class="arithmatex">\(a^x \pmod{N}\)</span>. Following section will show how can we do it efficiently with a quantum algorithm.</p>
+<h2 id="54-efficient-implementation-of-period-finding-of-ak-pmodn">5.4. Efficient implementation of period finding of <span class="arithmatex">\(a^k \pmod{N}\)</span>:</h2>
 <p>In the end what we need to do is to find the period <span class="arithmatex">\(r\)</span> of the sequence <span class="arithmatex">\(a^k \pmod{N}\)</span>. The circuit should be the same as the one for period finding algorithm. What we want to show is that each block of this circuit can be implemented efficiently.</p>
 <p><img src="ch4/period_finding_algorithm_circuit.png" alt="drawing" width="100%"/></p>
-<p>We have already shown that the QFT can be implemented efficiently. The bit oracle <span class="arithmatex">\(O_f\)</span> can be implemented efficiently if we have a circuit for <span class="arithmatex">\(f(k) = a^k \pmod{N}\)</span>.</p>
+<p>We have already shown that the QFT can be implemented efficiently in terms of query complexity. If we want to know whether the algorithm can be efficient in terms of time-complexity, we need to consider how we can implement the bit oracle <span class="arithmatex">\(O_f\)</span> efficiently. Efficient oracle <span class="arithmatex">\(O_f\)</span> is equivalent to efficient implementation of <span class="arithmatex">\(f(k) = a^k \pmod{N}\)</span>.</p>
+<h3 id="541-efficient-implementation-of-fx-ax-pmodn">5.4.1. Efficient implementation of <span class="arithmatex">\(f(x) = a^x \pmod{N}\)</span>:</h3>
+<p>Using binary representation of <span class="arithmatex">\(x\)</span> we can write:</p>
+<div class="arithmatex">\[
+x=x_{m-1} \cdot 2^{m-1}+x_{m-2} \cdot 2^{m-2}+\ldots+x_0
+\]</div>
+<p>therefore</p>
+<div class="arithmatex">\[
+a^x\pmod{N}=\left(a^{2^{m-1}}\right)^{x_{m-1}}\left(a^{2^{m-2}}\right)^{x_{m-2}} \ldots(a)^{x_0}\pmod{N}
+\]</div>
+<p>we can write it recursively as:</p>
+<div class="arithmatex">\[
+a^{2j} \pmod{N} = \left(a^{2j-1}\right)^2 \pmod{N}
+\]</div>
+<p>This somewhat means that we can reuse the result of the previous computation to compute the next power of <span class="arithmatex">\(a\)</span>. This means that </p>
+<p><img src="ch5/efficient_shors_oracle.png" alt="drawing" width="100%"/></p>
+<p>Therefore if we prepare the first register in the state <span class="arithmatex">\(\sum_{x=0}^{N-1} \left|x\right&gt;\)</span>, and the second register in the state <span class="arithmatex">\(\left|1\right&gt;\)</span>, then we will end up with the state:</p>
+<div class="arithmatex">\[
+\sum_{x=0}^{N-1} \left|x\right&gt;\left|1\right&gt; \rightarrow \sum_{x=0}^{N-1} \left|x\right&gt; \left|a^x \bmod{N}\right&gt;
+\]</div>
 
 
 
