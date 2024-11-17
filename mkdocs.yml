@@ -32,7 +32,8 @@ nav:
   - "Random Walk":
     - "Quantum Optics":
       - "Light-Matter Interaction": random_walk/quantum_optics/rabi_frequencies.md
-      - "Aberation propagator": random_walk/aberations/aberations_propagator.md
+    - "Classical Optics":
+      - "Aberation propagator": random_walk/classical_optics/aberations_propagator.md
 
 # Plugins (optional)
 plugins:
