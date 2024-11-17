@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../../qip1/organisation.html">
+        <link rel="prev" href="../quantum_optics/rabi_frequencies.html">
       
-      
-        <link rel="next" href="../aberations/aberations_propagator.html">
       
       
       <link rel="icon" href="../../assets/atom_fav.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>Light-Matter Interaction - wadamczyk's space</title>
+        <title>Aberation propagator - wadamczyk's space</title>
       
     
     
@@ -72,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#light-matter-interaction" class="md-skip">
+        <a href="#aberations-as-a-function-of-amplitude-and-phase-mask" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Light-Matter Interaction
+              Aberation propagator
             
           </span>
         </div>
@@ -230,7 +228,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="rabi_frequencies.html" class="md-tabs__link">
+        <a href="../quantum_optics/rabi_frequencies.html" class="md-tabs__link">
           
   
   Random Walk
@@ -728,6 +726,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum_optics/rabi_frequencies.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Light-Matter Interaction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -744,18 +763,18 @@
           
   
   <span class="md-ellipsis">
-    Light-Matter Interaction
+    Aberation propagator
   </span>
   
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="rabi_frequencies.html" class="md-nav__link md-nav__link--active">
+      <a href="aberations_propagator.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    Light-Matter Interaction
+    Aberation propagator
   </span>
   
 
@@ -777,77 +796,56 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rabi-frequencies" class="md-nav__link">
+  <a href="#0-introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      Rabi Frequencies
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Rabi Frequencies">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#minimum-coupling-hamiltonian" class="md-nav__link">
-    <span class="md-ellipsis">
-      Minimum Coupling Hamiltonian
+      0. Introduction
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#multipole-expansion" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#1-single-surface-lens" class="md-nav__link">
     <span class="md-ellipsis">
-      Multipole expansion
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Multipole expansion">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#0th-order-term" class="md-nav__link">
-    <span class="md-ellipsis">
-      0th Order term:
+      1. Single Surface Lens:
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#1st-order-term" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#2-the-wave-equation-and-concept-of-propagators" class="md-nav__link">
     <span class="md-ellipsis">
-      1st Order term:
+      2. The Wave Equation and concept of propagators:
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#constraining-a-vector-field" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#3-representing-field-as-a-matrix" class="md-nav__link">
     <span class="md-ellipsis">
-      Constraining A-vector field:
+      3. Representing field as a matrix:
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#final-remarks" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#4-can-we-do-not-wavefront-calibration-but-rather-propagator-calibration" class="md-nav__link">
     <span class="md-ellipsis">
-      Final Remarks:
+      4. Can we do not wavefront calibration, but rather propagator calibration?
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#reversible-neural-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reversible Neural Network
+    </span>
+  </a>
   
 </li>
       
@@ -855,27 +853,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../aberations/aberations_propagator.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Aberation propagator
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -911,140 +888,73 @@
                   
 
 
-<h1 id="light-matter-interaction">Light-Matter Interaction</h1>
-<h2 id="rabi-frequencies">Rabi Frequencies</h2>
-<p>Rabi Frequency is the fundamental quantity regarding interaction of an atom with light. It tells us about how much coupling do we get between two eigenstates of our atom in the presence of the oscilating electric field.</p>
-<p>Given the complexities and the confusion surrounding the derivations of dipole and quadrupole Rabi frequencies, a re-derivation is presented here. In this derivation we stay in a single gauge throughout. This derivation draws from <a href="https://doi.org/10.1016/B978-0-12-744450-5.50026-8">Weissbluth book</a>.</p>
-<h4 id="minimum-coupling-hamiltonian">Minimum Coupling Hamiltonian</h4>
-<p>Consider an arbitrary electromagnetic vector field, <span class="arithmatex">\(\mathbf{A}(\mathbf{r},t)\)</span>, within the Coulomb gauge (<span class="arithmatex">\(\nabla \cdot \mathbf{A}(\mathbf{r}) = 0\)</span>) in vacuum (<span class="arithmatex">\(\phi(\mathbf{r}, t)=0\)</span>). Throughout the derivation we will assume that the field is small enough so that we can treat it as a perturbation.</p>
-<p>The minimum-coupling Hamiltonian in Coulomb's gauge is expressed as:</p>
-<div class="arithmatex">\[ 
-H=\sum_\alpha\left(\frac{\left[\mathbf{p}^{(\alpha)}-q^{(\alpha)} \mathbf{A}\left(\mathbf{x}^{(\alpha)}, t\right)\right]^2}{2 m^{(\alpha)}}\right)+H_F+V_{\text{Coul}}  +\frac{e \hbar}{2 m c} \boldsymbol{\sigma} \cdot \boldsymbol{\nabla} \times \mathbf{A}
+<h1 id="aberations-as-a-function-of-amplitude-and-phase-mask">Aberations as a function of Amplitude and Phase Mask:</h1>
+<h2 id="0-introduction">0. Introduction</h2>
+<ul>
+<li>In optical systems, aberrations are deviations from the ideal behavior of light propagation through lenses or other optical elements. These aberrations depend on various factors, including the position and angle at which a beam enters an optical component.</li>
+<li>Traditionally, we consider how the position and angle of incidence affect aberrations in a single lens, however in the context of holography it is insightfull to rephrase the problem in terms of phase and amplitude field just before the lens and ask how those affect the abberation map. </li>
+</ul>
+<h2 id="1-single-surface-lens">1. Single Surface Lens:</h2>
+<p>To gain intuition about aberrations, lets follow the analysis from the Physics III notes by Jonathan Home @ ETH Zurich. Consider a collimated beam hitting a single-surface lens perpendicularly to the lens normal.</p>
+<p><img alt="image info" src="single_surface_lens.png" /> </p>
+<p>The total optical path taken for the ray starting at hieght <em>h</em> is:</p>
+<div class="arithmatex">\[
+n_1 g(h)+n_2\left(h^2+(f-g(h))^2\right)^{1 / 2}
 \]</div>
-<p>where <span class="arithmatex">\(H_F\)</span> represents the free field energy (<span class="arithmatex">\(H_F=\frac{1}{2} \int \mathrm{d}^3 r\left(\epsilon_0 \mathbf{E}^2(\mathbf{r}, t)+\frac{1}{\mu_0} \mathbf{B}^2(\mathbf{r}, t)\right)\)</span>) and <span class="arithmatex">\(V_{\text{Coul}}\)</span> contains terms defining the atomic state, including Coulomb interactions and spin-orbit coupling.</p>
-<p>Focusing on electron dynamics rather than absolute energy levels allows us to neglect constant energy terms <span class="arithmatex">\(H_F\)</span> and <span class="arithmatex">\(\varepsilon_{\text{Coul}}^\alpha\)</span>, keeping only the terms that depend on <span class="arithmatex">\(\mathbf{x}_\alpha\)</span> or <span class="arithmatex">\(\mathbf{p}_\alpha\)</span>. Coulomb's Gauge <span class="arithmatex">\(\nabla \cdot \mathbf{A}(\mathbf{r}) = 0\)</span> ensures that <span class="arithmatex">\(\mathbf{p}_\alpha\)</span> and <span class="arithmatex">\(\mathbf{A}(\mathbf{x}_\alpha, t)\)</span> commute, so we can rewrite <span class="arithmatex">\({H}\)</span> as:</p>
+<p>To ensure constructive interference for all rays (regardless of <em>h</em>), we need to find the stationary points of the optical path length with repsect to <em>h</em>. </p>
+<div class="arithmatex">\[
+n_1 g^{\prime}(h)+\frac{n_2\left(2 h-2(f-g(h)) g^{\prime}(h)\right)}{2\left(h^2+(f-g(h))^2\right)^{1 / 2}}=0
+\]</div>
+<p>Solutions to this equations are not simple, and as a result it is very tricky to manufacture perfect shape. Therefore, we often use spherical lenses, which are easier to produce but introduce imperfections.</p>
+<p>For a spherical lens, the surface profile is:</p>
+<div class="arithmatex">\[
+g(h)=R-\sqrt{\left(R^2-h^2\right)} \approx \frac{h^2}{2 R}+O\left[h^4\right]
+\]</div>
+<p>The focal length <span class="arithmatex">\(f\)</span> for this lens is:</p>
+<div class="arithmatex">\[
+f=\frac{R}{\left(1-\frac{n_1}{n_2}\right)}
+\]</div>
+<p>However, spherical lenses introduce spherical aberration because the optical path difference is not perfectly corrected. The extra phase acquired by a beam entering at height <span class="arithmatex">\(h\)</span> is approximately:</p>
+<div class="arithmatex">\[
+\frac{n_2+\frac{2 n_2^2}{n_1-n_2}+\frac{\left(n_1-n_2\right)\left(n_2-n_1\right)^3}{n_2^2}}{8} \frac{h^3}{f^3} h
+\]</div>
+<p>This analysis assumes a plane wave entering with a flat phase front. To understand the imperfections introduced when the phase front isn't flat, we would need to perform a similar analysis for each possible phase mask — a complex and challenging problem.</p>
+<h2 id="2-the-wave-equation-and-concept-of-propagators">2. The Wave Equation and concept of propagators:</h2>
+<p>Electromagnetic field can be modelled as a complex field <span class="arithmatex">\(U(x, y, z)\)</span> that follows Helmholz equation <span class="arithmatex">\(\nabla^2 U(\boldsymbol{r})=-\frac{\omega^2}{v^2} U(\boldsymbol{r})\)</span>.</p>
+<p>We can transform <span class="arithmatex">\(U\)</span> into Fourier space:</p>
 <div class="arithmatex">\[
 \begin{aligned}
-H &amp;=\sum_\alpha\left(\frac{\left[\mathbf{p}^{(\alpha)}-q^{(\alpha)} \mathbf{A}\left(\mathbf{x}^{(\alpha)}, t\right)\right]^2}{2 m^{(\alpha)}}\right)+V_{\text {Coul }} + \frac{e \hbar}{2 m c} \boldsymbol{\sigma} \cdot \boldsymbol{\nabla} \times \mathbf{A}
-\\&amp;=\sum_\alpha \frac{\mathbf{p^{(\alpha)}}^2}{2 m^{(\alpha)}}+V_{\text {Coul }}+\sum_\alpha\left(-\frac{q^{(\alpha)} \mathbf{p}^{(\alpha)} \cdot \mathbf{A}\left(\mathbf{x}^{(\alpha)}, t\right)}{m^{(\alpha)}}+\frac{{q^{(\alpha)}}^2\mathbf{A}\left(\mathbf{x}^{(\alpha)}, t\right)^2}{2 m^{(\alpha)}}\right) + 
-\frac{e \hbar}{2 m c} \boldsymbol{\sigma} \cdot \boldsymbol{\nabla} \times \mathbf{A}
+\tilde{U}\left(k_x, k_y ; z\right) &amp; =\frac{1}{2 \pi} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} U(x, y, z) \exp \left[-\mathrm{i}\left(k_x x+k_y y\right)\right] \mathrm{d} x \mathrm{~d} y 
 \end{aligned}
 \]</div>
-<p>Neglecting less dominant terms of the interaction Hamiltonian <span class="arithmatex">\(\frac{q_\alpha^2\mathbf{A}\left(\mathbf{x}_\alpha, t\right)^2}{2 m_\alpha}\)</span> and <span class="arithmatex">\(\frac{e \hbar}{2 m c} \boldsymbol{\sigma} \cdot \boldsymbol{\nabla} \times \mathbf{A}\)</span>, and grouping them together we get:</p>
-<div class="arithmatex">\[ 
-\begin{aligned}
-&amp;H = H_0 + H_I \\
-&amp;H_0 = \sum_\alpha \frac{\mathbf{p^{(\alpha)}}^2}{2 m^{(\alpha)}}+V_{\text {Coul }} = \sum_i \mathcal{E}_i\left|i\right&gt;\left&lt; i\right| \\
-&amp;H_I = \sum_\alpha-q^{(\alpha)} \mathbf{\dot{x}}^{(\alpha)} \cdot \mathbf{A}\left(\mathbf{x}^{(\alpha)}, t\right)
-\end{aligned}
-\]</div>
-<p><span class="arithmatex">\(\mathbf{x} = \mathbf{R} + \mathbf{r}\)</span>, where <span class="arithmatex">\(\mathbf{R}\)</span> is a postion of the nucleus and <span class="arithmatex">\(\mathbf{r}\)</span> is position of an electron relative to the nucleus. Using Born-Oppenheimer approximation we can write <span class="arithmatex">\(\mathbf{\dot{x}} = \mathbf{\dot{r}}\)</span> neglecting <span class="arithmatex">\(\mathbf{\dot{R}}\)</span>.</p>
+<p>, where the Helmholz equation would takes form</p>
 <div class="arithmatex">\[
-H_I = \sum_\alpha-q_\alpha \mathbf{\dot{r}}_\alpha \cdot \mathbf{A}\left(\mathbf{R}+\mathbf{r}_\alpha, t\right)
+\frac{d^2 \tilde{U}}{d z^2}+\left(k^2-k_x^2-k_y^2\right) \tilde{U}\left(k_x, k_y ; z\right)=0
 \]</div>
-<h4 id="multipole-expansion">Multipole expansion</h4>
-<p>Taylor expanding <span class="arithmatex">\(\mathbf{A}(\mathbf{R}+\mathbf{r}_\alpha, t)\)</span>, we get:</p>
+<p>The solution is:</p>
 <div class="arithmatex">\[
-H_I = \sum_\alpha-q_\alpha \dot{r}^{(\alpha)}_{\mu} \left(A^\mu\left(\mathbf{R}, t\right) + \partial^\nu A^\mu\left(\mathbf{R}, t\right)r^{(\alpha)}_{\nu} \right)
+\tilde{U}\left(k_x, k_y ; z\right)=\tilde{U}\left(k_x, k_y ; 0\right) \exp \left(\mathrm{i} \sqrt{k^2-k_x^2-k_y^2} z\right)=\tilde{U}\left(k_x, k_y ; 0\right) \mathcal{H}\left(k_x, k_y, z\right)
 \]</div>
-<p>From now on, Lets define <span class="arithmatex">\(A^\mu = A^\mu(\mathbf{R}, t)\)</span> </p>
+<p>, where <span class="arithmatex">\(\mathcal{H}\left(k_x, k_y, z\right)\)</span> is a Helmholz propagator.</p>
+<p><strong>Propagators:</strong></p>
+<p>Using Green's theorem and the Fresnel-Kirchhoff diffraction formula, we can relate the field at any plane <span class="arithmatex">\(z=z_0\)</span> to a field at <span class="arithmatex">\(z=0\)</span> thrugh a propagator <span class="arithmatex">\(\tau(x,y,z_0,x',y',0)\)</span>. Then we can write that </p>
+<div class="arithmatex">\[U(x, y, z_0) = \int\int dx' dy' \left(\tau(x,y,z_0,x',y',0) U(x, y, 0) \right)
+\]</div>
+<p>In free space, it's advantageous to work in Fourier space due to the linearity of the equations, which reduces computational complexity.</p>
+<p>When introducing a phase mask, multiplication in real space corresponds to convolution in Fourier space. This means the operation is linear in real space but becomes more intricate in Fourier space.</p>
+<p>In general, the transformation can be expressed using the propagator <span class="arithmatex">\(\tau(x,y,z,x',y',z')\)</span>. </p>
+<h2 id="3-representing-field-as-a-matrix">3. Representing field as a matrix:</h2>
+<p>To facilitate numerical computations, we can discretize the field and represent it as a matrix. The field becomes a rank-2 tensor <span class="arithmatex">\(U_{nm}\)</span>, and the propagator becomes a rank-4 tensor <span class="arithmatex">\(\tau_{klnm}\)</span>. The relationship between the fields at different planes is:</p>
 <div class="arithmatex">\[
-\begin{aligned}
-H_I &amp;= \sum_{\alpha, i, j} |i\rangle\left\langle i\left|e \dot{r}^{(\alpha)}_{\mu} \left(A^\mu + \partial^\nu A^\mu r^{(\alpha)}_{\nu} + ...\right) \right| j\right\rangle\langle j| \\
-&amp;= \sum_{\alpha, i, j} \left( |i\rangle\left\langle i\left|e \dot{r}^{(\alpha)}_{\mu} A^\mu\right| j\right\rangle\langle j| + |i\rangle\left\langle i\left|e \dot{r}^{(\alpha)}_{\mu} \partial^\nu A^\mu r^{(\alpha)}_{\nu} \right| j\right\rangle\langle j| + ... \right) \\
-&amp;= \sum_{\alpha, i, j} \left( e A^\mu|i\rangle\left\langle i\left| \dot{r}^{(\alpha)}_{\mu} \right| j\right\rangle\langle j| + e\partial^\nu A^\mu |i\rangle\left\langle i\left| \dot{r}^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu} \right| j\right\rangle\langle j| + ... \right)
-\end{aligned}
+U_{kl} = \tau_{klnm} U_{nm}
 \]</div>
-<p>As in the end we would like to see how the light field interacts with consecutive terms of the multipole expansion formed by the atom, we need to get rid of <span class="arithmatex">\(\dot{r}_\mu^{(\alpha)}\)</span>.</p>
-<p>As <span class="arithmatex">\(\left[ r_\mu, p^2 \right] = 2i \hbar p_\mu\)</span>, then <span class="arithmatex">\(i \hbar \dot{r}_\mu=\left[r_\mu, H_0\right]\)</span></p>
-<p>Lets then solve consecutive terms of the Taylor expansion</p>
-<h5 id="0th-order-term">0th Order term:</h5>
+<p>We can define aberrations <span class="arithmatex">\(\tau^{\Delta}_{klnm}\)</span>, as a difference in the actual propagator, <span class="arithmatex">\(\tau_{klnm}\)</span>, and the ideal (aberation-free) propagator, <span class="arithmatex">\(\tau^0_{klnm}\)</span>.</p>
 <div class="arithmatex">\[
-\begin{aligned}
-\left\langle i\left| \dot{r}^{(\alpha)}_{\mu} \right| j\right\rangle &amp;=
--\frac{i}{\hbar} \left\langle i\left| [r^{(\alpha)}_{\mu}, H_0] \right| j\right\rangle  
-\\&amp;= -\frac{i}{\hbar} \left\langle i\left|r^{(\alpha)}_{\mu} H_0 - H_0 r^{(\alpha)}_{\mu} \right| j\right\rangle 
-\\&amp;= -i \left\langle i\left|r^{(\alpha)}_{\mu} \omega_j - \omega_i r^{(\alpha)}_{\mu} \right| j\right\rangle 
-\\&amp;= i \omega_{0} \left\langle i\left| r^{(\alpha)}_{\mu} \right| j\right\rangle
-\end{aligned}
+\tau^{\Delta}_{klnm} = \tau_{klnm} - \tau^0_{klnm}
 \]</div>
-<p>, where <span class="arithmatex">\(\omega_{0} = \omega_i-\omega_j\)</span></p>
-<h5 id="1st-order-term">1st Order term:</h5>
-<div class="arithmatex">\[
-\begin{aligned}
-\left\langle i\left| \dot{r}^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu} \right| j\right\rangle 
-&amp;= -\frac{i}{\hbar}\left\langle i\left| [r^{(\alpha)}_{\mu}, H_0]  r^{(\alpha)}_{\nu} \right| j\right\rangle 
-\\&amp;=-\frac{i}{\hbar}\left\langle i\left| r^{(\alpha)}_{\mu}H_0r_\nu^{(\alpha)} - H_0r^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu} \right| j\right\rangle
-\end{aligned}
-\]</div>
-<p>This is more tricky, because now we need to to commute <span class="arithmatex">\(H_0\)</span> with <span class="arithmatex">\(r_\nu^{(\alpha)}\)</span> which as a result would give us <span class="arithmatex">\(\dot{r}^{(\alpha)}_{\mu}\)</span> again. Instead what we can do we can split the problem into symmetric and anti-symmetric part hoping it will get easier. </p>
-<div class="arithmatex">\[
-\left\langle i\left| \dot{r}^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu} \right| j\right\rangle =
-\frac{1}{2}\left\langle i\left| \dot{r}^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu} +   r^{(\alpha)}_{\nu} \dot{r}^{(\alpha)}_{\mu} \right| j\right\rangle +
-\frac{1}{2}\left\langle i\left| \dot{r}^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu} -   r^{(\alpha)}_{\nu} \dot{r}^{(\alpha)}_{\mu} \right| j\right\rangle
-\]</div>
-<p>Lets solve the symmetric and antisymmetric part separately:</p>
-<p>Symmetric part:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-\frac{1}{2}\left\langle i\left| \dot{r}^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu} +   r^{(\alpha)}_{\nu} \dot{r}^{(\alpha)}_{\mu} \right| j\right\rangle &amp;= 
-\frac{-i}{2\hbar}\left\langle i\left| [r^{(\alpha)}_{\mu}, H_0]  r^{(\alpha)}_{\nu} +   r^{(\alpha)}_{\nu} [r^{(\alpha)}_{\mu}, H_0] \right| j\right\rangle \\&amp;= 
-\frac{-i}{2\hbar}\left\langle i\left| -H_0r^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu} +   r^{(\alpha)}_{\nu} r^{(\alpha)}_{\mu}H_0 \right| j\right\rangle \\&amp;= 
-\frac{1}{2}i\omega_{0}\left\langle i\left| r^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu}  \right| j\right\rangle
-\end{aligned}
-\]</div>
-<p>Anti-symmetric part:</p>
-<div class="arithmatex">\[
-\begin{aligned} \frac{1}{2} \partial^\nu A^\mu \left\langle i\left| \dot{r}^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu} -   r^{(\alpha)}_{\nu} \dot{r}^{(\alpha)}_{\mu} \right| j\right\rangle &amp;= \frac{1}{2} \varepsilon^{i \mu \nu}\varepsilon_{i}^{j k} \partial_j A_k \left\langle i\left| \dot{r}^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu} \right| j\right\rangle \\&amp;= 
-\frac{1}{2} \varepsilon_{i}^{j k} \partial_j A_k \left\langle i\left| \varepsilon^{i \mu \nu}\dot{r}^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu} \right| j\right\rangle \\&amp;= 
-\frac{1}{2} \hbar \varepsilon_{i}^{j k} \partial_j A_k \left\langle i\left| L^i \right| j\right\rangle
-\end{aligned}
-\]</div>
-<p>Therefore one can re-write 1st Order term as:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-e \partial^\nu A^\mu\left\langle i\left| \dot{r}^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu} \right| j\right\rangle =
-\frac{1}{2} ie\omega_0 \partial^\nu A^\mu \left\langle i\left| r^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu}  \right| j\right\rangle +
-\frac{1}{2} \hbar e \varepsilon_{i}^{j k} \partial_j A_k \left\langle i\left| L^i \right| j\right\rangle
-\end{aligned}
-\]</div>
-<p>, where the first term corresponds to the electric quadrupole coupling and the second term corresponds to magnetic dipole coupling</p>
-<p>Collecting all the terms up to the 1st Order of Taylor expansion of <span class="arithmatex">\(A_\mu\)</span>, we get:</p>
-<div class="arithmatex">\[
-H_I =  \sum_{\alpha, i, j} |i\rangle\left( \underbrace{i e \omega_{0} A^\mu\left\langle i\left| r^{(\alpha)}_{\mu} \right| j\right\rangle }_\text{Electric Dipole} + 
-\underbrace{\frac{1}{2} ie\omega_0 \partial^\nu A^\mu \left\langle i\left| r^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu}  \right| j\right\rangle}_\text{Electric Quadrupole} +
-\underbrace{\frac{1}{2} \hbar e \varepsilon_{i}^{j k} \partial_j A_k \left\langle i\left| L^i \right| j\right\rangle}_\text{Magnetic Dipole} + ... \right) \langle j|
-\]</div>
-<h4 id="constraining-a-vector-field">Constraining A-vector field:</h4>
-<p>Let's constrain our choice of <span class="arithmatex">\(\mathbf{A}\)</span> vector-field. In the end what we are interested in is an electric field <span class="arithmatex">\(\mathbf{E}\)</span> oscilating at single frequency <span class="arithmatex">\(\omega\)</span>. As the electric field is an observable, it must be real, and so <span class="arithmatex">\(\tilde{E}(\mathbf{x}, -\omega)\)</span> =  <span class="arithmatex">\(\tilde{E}^\dagger(\mathbf{x}, \omega)\)</span>, and so it can be written as: <span class="arithmatex">\(\mathbf{E}=\frac{1}{2}\left(\mathbf{E}(\mathbf{x})e^{-i\omega_lt}+\mathbf{E}^{\dagger}(\mathbf{x})e^{i\omega_lt}\right)\)</span>. </p>
-<p>Working in vacuum in Coulombs gauge we can write <span class="arithmatex">\(\mathbf{E} = -\frac{\partial \mathbf{A}}{\partial t}\)</span>, hence</p>
-<div class="arithmatex">\[
-\mathbf{A} =\frac{1}{2}\left(\left(\frac{1}{i\omega_l}\mathbf{E}(\mathbf{x})\right)e^{-i\omega_lt} + \left(\frac{1}{i\omega_l}\mathbf{E}(\mathbf{x})\right)^{\dagger}e^{i\omega_lt}\right) = \frac{1}{2}\left(\mathbf{A}(\mathbf{x})e^{-i\omega_lt} + \mathbf{A}^{\dagger}(\mathbf{x})e^{i\omega_lt}\right)
-\]</div>
-<p>The interaction then can be written as:</p>
-<div class="arithmatex">\[
-\begin{aligned}
-H_I &amp;= \sum_{\alpha, i, j} \left|i\right&gt; \left&lt; i\left|e \mathbf{\dot{r}}^{(\alpha)} \mathbf{A} \right| j\right&gt; \left&lt; j\right| \\
-&amp;= \sum_{\alpha, i, j} \left|i\right&gt; \frac{1}{2} \left( \left&lt; i\left|e \mathbf{\dot{r}}^{(\alpha)} \mathbf{A}(\mathbf{x}) \right| j\right&gt; e^{-i\omega_lt}
-+ \left&lt; i\left|e \mathbf{\dot{r}}^{(\alpha)} \mathbf{A}^{\dagger}(\mathbf{x}) \right| j\right&gt; e^{i\omega_lt} \right) \left&lt; j \right| \\
-&amp;= \sum_{\alpha, i, j} \left|i\right&gt; \frac{\hbar}{2} \left(\Omega_{ij} e^{-i\omega_lt}
-+ \Omega^\dagger_{ij} e^{i\omega_lt} \right) \left&lt; j\right| 
-\end{aligned}
-\]</div>
-<p>, where Rabi Frequency is defined as follows:</p>
-<div class="arithmatex">\[
-\hbar\Omega_{i j}= \left&lt; i\left|e \mathbf{\dot{r}}^{(\alpha)} \mathbf{A}(\mathbf{x}) \right| j\right&gt;
-\]</div>
-<p>As we saw, we can decompose it through the Taylor expansion into the consecutive terms corresponding to different nature of the transition. Usually only one of the coupling types is dominant and the other can be neglected. The dominant type depends on the nature of the transition and the electric field structure.</p>
-<p><span class="arithmatex">\(\Omega_{i j}= \begin{cases}
-\frac{e\omega_{0}}{\hbar\omega_l}E^\mu\left\langle i\left| r^{(\alpha)}_{\mu} \right| j\right\rangle &amp; (\mathrm{E1})
-\\  \frac{e\omega_0}{2\hbar\omega_l} \partial^\nu E^\mu \left\langle i\left| r^{(\alpha)}_{\mu}  r^{(\alpha)}_{\nu}  \right| j\right\rangle &amp; (\mathrm{E2})\\
-\frac{1}{2} e \varepsilon_{\theta}^{\beta \gamma} \partial_\beta A_\gamma \left\langle i\left| L^\theta \right| j\right\rangle &amp; (\mathrm{M1})\\
-\end{cases}\)</span></p>
-<h4 id="final-remarks">Final Remarks:</h4>
-<p>This is the final expression of the Rabi-frequencies. As far as we are interested in only electric multipole expansion we took all required terms from the dirac equation. We worked in vacuum and in Coulomb gauge. Not switching the gauge allowed us to not to make any mistakes that arise from working in multiple gauges. </p>
-<p>Other common derivation is using PZW Gauge, which naturally has a form of multipole expansion. I, however, prefered not to work in it, as from what I have seen it wasn't a popular choice of understanding the problem. Coulomb's gauge was a preffered choice, however for many they missed a step to split the first Taylor expansion term into symmetric and antisymmetric part, which forced them to fudge a factor of 1/2. </p>
-<p>It is important to note that the above derivation is valid for the cases when the interaction is weak, and so the perturbation theory is applicable. This is because <span class="arithmatex">\(i \hbar \dot{r}_\mu=\left[r_\mu, H_0\right]\)</span> uses this assumption. </p>
+<h2 id="4-can-we-do-not-wavefront-calibration-but-rather-propagator-calibration">4. Can we do not wavefront calibration, but rather propagator calibration?</h2>
+<p>Why was I thinking about this in the first place is my interest in the paper 'Rapid stochastic spatial light modulator calibration and pixel crosstalk optimisation'. I was wondering whether instead of learning the wavefront mask, we could learn the whole propagator. </p>
+<h2 id="reversible-neural-network">Reversible Neural Network</h2>
 
 
 
