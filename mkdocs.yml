@@ -34,6 +34,9 @@ nav:
       - "Light-Matter Interaction": random_walk/quantum_optics/rabi_frequencies.md
     - "Classical Optics":
       - "Aberation propagator": random_walk/classical_optics/aberations_propagator.md
+  - "Projects":
+    - "MUD": https://itsmud.com
+    - "Atomphys": https://github.com/tiqi-group/atomphys/tree/tiqi-main
 
 # Plugins (optional)
 plugins:
