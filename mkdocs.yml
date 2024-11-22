@@ -28,6 +28,7 @@ nav:
       - "Chapter 4c: Quantum Fourier Transform, Period Finding Algorithm": qip1/ch4c.md
       - "Chapter 5: Shor's Algorithm": qip1/ch5.md
       - "Chapter 6: Open Quantum Systems": qip1/ch6.md
+      - "Chapter 7: Quantum Error Correction": qip1/ch7.md
       - "organisation": qip1/organisation.md
   - "Random Walk":
     - "Quantum Optics":
