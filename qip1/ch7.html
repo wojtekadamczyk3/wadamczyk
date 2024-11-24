@@ -682,6 +682,39 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#70-redundancy-for-qubits" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.0. Redundancy for qubits:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.0. Redundancy for qubits:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#701-knill-laflamme-condition-constraints-the-separation" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.0.1. Knill-Laflamme condition constraints the separation:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#702-how-large-hilbert-space-do-we-need-to-correct-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.0.2. How large Hilbert space do we need to correct errors:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#71-the-three-qubit-bit-flip-code" class="md-nav__link">
     <span class="md-ellipsis">
       7.1. The Three Qubit Bit Flip Code:
@@ -977,9 +1010,25 @@
 
 
 <h1 id="chapter-7-quantum-error-correction">Chapter 7: Quantum Error Correction:</h1>
-<p>At this moment we are far from reliable quantum hardware. Any quantum state that we engineer is very fragile if left alone, and even more fragile when we perform any operations on it. The fragility of things is not so distant to our understanding and we can easily comprehend that if we deal with something fragile, we better should create few copies of it, and somehow use this redundancy to our advantage. </p>
+<p>At this moment we are far from reliable quantum hardware. Any quantum state that we engineer is very fragile if left alone, and even more fragile when we perform any operations on it. The fragility of things is not so distant to our understanding and we can easily comprehend. If we deal with something fragile, we better should work with a few copies of it(in case one of them brakes). This somehow points to using a redundancy. </p>
 <p>For quantum world this is even more important, as we store information in the superposition of quantum states. This means that any disturbance to any qubit hurts us even more. This is because it equally affects all the superpositioned states. And if we use some sort of interference for our algorithms we are screwed, because it will be even more affected. </p>
 <p>Therefore we need to understand both the nature of errors, and think about the strategies to protect our quantum information from them. As mentioned above already a strategy of creating a redundancy could be helpful. In this chapter we will explore those redundancies. It is important to note that somewhat in quantum world we need to be careful with the measurements on the redundant systems, as they might collapse the superposition. So we need to take a special care of that and perform only the measurements that can tell us about the errors, but simultaneously leave the logical information unchanged. </p>
+<p>In this write-up I want first to introduce the intuition behind error correction and only then introduce the mathematical formalism.</p>
+<h2 id="70-redundancy-for-qubits">7.0. Redundancy for qubits:</h2>
+<p>Let's first consider what does it mean that our qubit is encoded in a redundant space. Consider a space with 4 distinct states. If we want to encode a binary information, then we have too many states than we need. But let's consider the following situation, which is illustrated on the diagram below. We have 4-distinct states and some errors that move us from one state to another. This errors can be arbitrary, but in our case we consider that they only can follow the grey lines.</p>
+<p><img src="ch7/4d_hilbert_space.png" alt="drawing" width="50%"/></p>
+<p>On the diagram above you can see 4 black dots, each corresponding to a distinct state. Those dots are connected to each other by grey lines, which stand for the errors that can act on our system. This means that if we did encode the information in the 0(blue) and 3(red) states, then a single error would not be able to change the information from blue to red. In fact we could even find out where did this error come from, which means that we haven't lost any information due to this error. However if the second error happened then we couldn't distinguish anymore what was the initial state. Therefore we need to do some sort of active error correction. What it means is that we should keep measuring the states of the system to learn whether an error happened, and if it did, then we should reverse it. By doing this we can contineously allow the system to stay in the blue and red states that carry the information. This is nice. The aspect of being able to measure whether the error happened without learning anything about the logical information will be discussed later.</p>
+<h3 id="701-knill-laflamme-condition-constraints-the-separation">7.0.1. Knill-Laflamme condition constraints the separation:</h3>
+<p>Seeing the space of states and how the errors act on it allow us to understand whether we will be able to correct the errors or not. Consider following example:</p>
+<p><img src="ch7/3d_hilbert_space.png" alt="drawing" width="50%"/></p>
+<p>In this example the error <span class="arithmatex">\(E_1\)</span> moves the state from 0 to 1, and the error <span class="arithmatex">\(E_2\)</span> moves the state from 2 to 1. In this case if error occured, we cannot tell whether it was <span class="arithmatex">\(E_1\)</span> or <span class="arithmatex">\(E_2\)</span> that happened. This means that we cannot correct the error.</p>
+<p>This example can be more formally stated as the Knill-Laflamme condition. Which states that for the errors to be distinguishable, the following condition should be met:</p>
+<div class="arithmatex">\[
+{ }_L\left&lt; j\right| E_b^{\dagger} E_a\left|i\right&gt;_L=0 \quad \forall a, b \text { and } i \neq j
+\]</div>
+<p>If this condition is met, it means we can distinguish between the errors, and so we are able to correct them. The Knill-Laflamme condition is a necessary and sufficient condition for the errors to be corrected.</p>
+<p>What it means as well is that if we prepared any state in the logical space of <span class="arithmatex">\(\left|\psi\right&gt;_L = \alpha\left|0\right&gt;_L + \beta\left|1\right&gt;_L\)</span>, then the error followed by the error measurement and correction should not affect both <span class="arithmatex">\(\alpha\)</span> and <span class="arithmatex">\(\beta\)</span>. If Knill-Laflamme condition isn't met, then we can see how alpha and beta will be mixed together.</p>
+<h3 id="702-how-large-hilbert-space-do-we-need-to-correct-errors">7.0.2. How large Hilbert space do we need to correct errors:</h3>
 <h2 id="71-the-three-qubit-bit-flip-code">7.1. The Three Qubit Bit Flip Code:</h2>
 <p><img src="ch7/1d_bitflip.png" alt="drawing" width="100%"/>
 <img src="ch7/2d_bitflip.png" alt="drawing" width="100%"/>
