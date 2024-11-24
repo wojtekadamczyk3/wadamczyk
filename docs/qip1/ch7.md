@@ -1,6 +1,6 @@
 # Chapter 7: Quantum Error Correction:
 
-At this moment we are far from reliable quantum hardware. Any quantum state that we engineer is very fragile if left alone, and even more fragile when we perform any operations on it. The fragility of things is not so distant to our understanding and we can easily comprehend. If we deal with something fragile, we better should work with a few copies of it(in case one of them brakes). This somehow points to using a redundancy. 
+At this moment we are far from reliable quantum hardware. Any quantum state that we engineer is very fragile if left alone, and even more fragile when we perform any operations on it. The fragility of things is not so distant to our understanding and we can easily comprehend. If we deal with something fragile, we better should work with a few copies of it(in case one of them breakes). This somehow points to using a redundancy. 
 
 For quantum world this is even more important, as we store information in the superposition of quantum states. This means that any disturbance to any qubit hurts us even more. This is because it equally affects all the superpositioned states. And if we use some sort of interference for our algorithms we are screwed, because it will be even more affected. 
 
@@ -20,7 +20,7 @@ On the diagram above you can see 4 black dots, each corresponding to a distinct 
 
 Seeing the space of states and how the errors act on it allow us to understand whether we will be able to correct the errors or not. Consider following example:
 
-<img src="ch7/3d_hilbert_space.png" alt="drawing" width="50%"/>
+<img src="ch7/3d_hilbert_space.png" alt="drawing" width="100%"/>
 
 In this example the error $E_1$ moves the state from 0 to 1, and the error $E_2$ moves the state from 2 to 1. In this case if error occured, we cannot tell whether it was $E_1$ or $E_2$ that happened. This means that we cannot correct the error.
 
@@ -34,12 +34,16 @@ If this condition is met, it means we can distinguish between the errors, and so
 
 What it means as well is that if we prepared any state in the logical space of $\left|\psi\right>_L = \alpha\left|0\right>_L + \beta\left|1\right>_L$, then the error followed by the error measurement and correction should not affect both $\alpha$ and $\beta$. If Knill-Laflamme condition isn't met, then we can see how alpha and beta will be mixed together.
 
-### 7.0.2. How large Hilbert space do we need to correct errors:
+Whils't thinking diagrametically about both cases, we can see that the Knill-Laflamme condition is met in the first case and not met in the second one. What is different about those two is that in order for the K-L condition to be met logical 0 (blue) cannot be connected to a state, to which logical 1 (red) is connected. 
+
+### 7.0.2. How large Hilbert space do we need to correct for errors:
+
+So then the natural next question comes to mind. How many nodes of separation do we need to correct for errors? If we want to be able to correct for states where only single error happened, then we need to have at least two nodes of separation. 
+
+In order to have this larger hilbert space, we either need to have more qubits or use qudits. Consider that the only error channel that we need to consider is a bit flip channel. In this case if we use $n$ qubits to encode a logical state, then we have n possible non-logical qubit states into which each one of our 
 
 
-
-
-
+<img src="ch7/required_hilbert_space.png" alt="drawing" width="100%"/>
 
 
 
