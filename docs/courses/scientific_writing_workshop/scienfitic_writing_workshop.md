@@ -55,6 +55,7 @@ Initially when writing a paper it is useful to follow some sort of structure. On
 ### Tips for Each Section
 
 #### Introduction
+
 - should give a context of the written work, but also general context for the whole field. It should be specific to the work, so don't try to introduce the whole field if its not relevant to the work. It also should also briefly introduce the findings of the work and how can they relate to the field. 
 - Introduction should start with broad context and then go more specific:
   - Context: What is known, and what isn't. Where your study comes in?
@@ -63,23 +64,25 @@ Initially when writing a paper it is useful to follow some sort of structure. On
 - If you're stuck, a useful trick is to start off by plagiarizing (if others do work very similar to yours). You can collect the patches, and then you can be inspired by them to write your own introduction. But here you need to be very careful about it. It is easy to forget what you have copied and then you can end up plagarising other people's work. It is useful to mark what you have copied and what you have written yourself.
 
 #### Methods
+
 - Key Questions to ask:
-  - What details help the reader understand how you obtained your results?
-  - Methods section are very varied depending on the journal and the field. Therefore if you are writing a method section, you should ask yourself about how are the methods written in both of those two contexts. It might be that the journal has a separate section for methods, or it might be that it is added as a supplement. You should also ask yourself what a common person in your field would expect to see in the methods section.
+    - What details help the reader understand how you obtained your results?
+    - Methods section are very varied depending on the journal and the field. Therefore if you are writing a method section, you should ask yourself about how are the methods written in both of those two contexts. It might be that the journal has a separate section for methods, or it might be that it is added as a supplement. You should also ask yourself what a common person in your field would expect to see in the methods section.
 - It is common for people to by accident self-plagarise if they are including methods that are featured in other papers of theirs. Be careful about it.
 - If there is not enough material for a methods section - exclude it - many journals do not require it.
 
 #### Results
 - Key Questions to ask:
-  - What conclusions do I want to draw?
-  - What data is crucial to draw those conclusions?
-  - What figures do I need to present the data?
+    - What conclusions do I want to draw?
+    - What data is crucial to draw those conclusions?
+    - What figures do I need to present the data?
 - Often quite easy way to write results section is to be guided by the plots. Think about what do you want to show and how in terms of the plots that should create a story line, and then work with text around the plots. 
 - It is important to note that now it is customatory to allow the reader to read the plot and fully understand it without the need to read the text (Figures need to be independently understandable.)
 - In the results when you are including a lot of numerical data - read it aloud - is it easy to read? If not, think how you can change it. 
 - Quite often people are scared to comment on the data in the results section, as they want to include it in the discussion. But then it somehow creates gaps in the results section. It is fine to comment on the data in both section. In general repetition is fine as soon as it is not overdone. Feel free to comment on the data in both sections.
 
 #### Discussion
+
 - Discussion should be opposite to the introduction, it should start more specific and then go more broadly. 
   - Recap the findings, 
   - Then focus on the most important findings, what are puzzling outcomes, limitations, open questions
