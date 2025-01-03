@@ -66,7 +66,7 @@ $$
 we can write it recursively as:
 
 $$
-a^{2j} \pmod{N} = \left(a^{2j-1}\right)^2 \pmod{N}
+a^{2^j} \pmod{N} = \left(a^{2^{j-1}}\right)^2 \pmod{N}
 $$
 
 This somewhat means that we can reuse the result of the previous computation to compute the next power of $a$. This means that 
