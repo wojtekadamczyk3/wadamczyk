@@ -119,38 +119,38 @@ Initially when writing a paper it is useful to follow some sort of structure. On
 - "Expensive real estate" - Similarly to paragraphs, the beggining and the end of the sentence are the most important part of it. Readers often skip the middle of the sentences. Therefore one should put the most important information in the beggining and the end of the sentence.
 - "Old before new" - Start sentence with something familiar (make a connection to the previous sentence), and then end with emphasis on known information or introduce a new information (this rule is more for reviews, when you are re-writting sentences)
 - Prioritise clarity of a message of a sentence:
-  - Can you identify sentences' subject-verb-object core? Is it obscured or is it visible?
-  - How long is the sentence? Don't be scared to use long sentences, but sometimes it can reduce the clarity of the sentence.
+    - Can you identify sentences' subject-verb-object core? Is it obscured or is it visible?
+    - How long is the sentence? Don't be scared to use long sentences, but sometimes it can reduce the clarity of the sentence.
 - "Lullaby effect" - Connection between sentences:
-  - "Compared to", "Moreover"...
-  - What kind of verbs are you using. And here one has to be careful not to use always the same verb, as it can cause something called _lullaby effect_.
+    - "Compared to", "Moreover"...
+    - What kind of verbs are you using. And here one has to be careful not to use always the same verb, as it can cause something called _lullaby effect_.
 - Tenses and voice:
-  - Different tenses may be used, but frequent changes will confuse the reader.
-  - Tenses have meaning: 
-    - Too much future tense in outlook = unrealistic. 
-    - Too much present tense = i'm certain 
-  - Active vs Passive Voice: Be moderate, both are OK, but use passive only with good reason.
+    - Different tenses may be used, but frequent changes will confuse the reader.
+    - Tenses have meaning: 
+      - Too much future tense in outlook = unrealistic. 
+      - Too much present tense = i'm certain 
+    - Active vs Passive Voice: Be moderate, both are OK, but use passive only with good reason.
 
 ### Chapter 5.1. Sentences - unecessary complexity
 - Confusion verbs:
-  - It is common for people to use ambiguous verbs, such as 'novel' or 'utilize'. It is better to use more specific verbs, such as 'new' or 'use'.
+    - It is common for people to use ambiguous verbs, such as 'novel' or 'utilize'. It is better to use more specific verbs, such as 'new' or 'use'.
 - Misplaced modifiers:
-  - Very common mistake in papers
-  - <span style="color: red">"Rising 24000 meters into the atmosphere in only 15 minutes, scientists estimated the height of the ash cloud." vs "As scientists estimated, the ash cloud rose 24000 meters into the atmosphere in only 15 minutes."</span>
+    - Very common mistake in papers
+    - <span style="color: red">"Rising 24000 meters into the atmosphere in only 15 minutes, scientists estimated the height of the ash cloud." vs "As scientists estimated, the ash cloud rose 24000 meters into the atmosphere in only 15 minutes."</span>
 - Nominalisations:
-  - <span style="color: red">"The stripping of the rainforests" vs "If the rainforest is stripped"</span>
+    - <span style="color: red">"The stripping of the rainforests" vs "If the rainforest is stripped"</span>
 - This and that:
-  - Because people are really scared of reperitions, they often use this and that. This quite often causes confusion, as the text is then not refering clearly to one thing. When you use this, you need to make sure that it is clear what you are referring to.
+    - Because people are really scared of reperitions, they often use this and that. This quite often causes confusion, as the text is then not refering clearly to one thing. When you use this, you need to make sure that it is clear what you are referring to.
 - Technical words vs jargon:
-  - Jargon is a unjustified use of technical words. It is useful to use technical words when they are justified.
+    - Jargon is a unjustified use of technical words. It is useful to use technical words when they are justified.
 
 ## Chapter 6: Best Practices:
 - There is no need for hype and firsts:
-  - Avoid: breakthrough, holy grail, smoking gun, paradigm shift
-  - Make sure to hedge claims to enhance your credibility (To the best of our knowledge, this is the first demonstration...) - objectivelly you are never sure if you are the first to do something.
+    - Avoid: breakthrough, holy grail, smoking gun, paradigm shift
+    - Make sure to hedge claims to enhance your credibility (To the best of our knowledge, this is the first demonstration...) - objectivelly you are never sure if you are the first to do something.
 - Acronyms:
-  - Shouldn't be used too densely
-  - Use the common ones from the field
+    - Shouldn't be used too densely
+    - Use the common ones from the field
 - Figures
     - Refer to them in right order
     - Caption needs to be exhaustive: you shouldn't need to read the text
