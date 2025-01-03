@@ -1053,7 +1053,7 @@ a^x\pmod{N}=\left(a^{2^{m-1}}\right)^{x_{m-1}}\left(a^{2^{m-2}}\right)^{x_{m-2}}
 \]</div>
 <p>we can write it recursively as:</p>
 <div class="arithmatex">\[
-a^{2j} \pmod{N} = \left(a^{2j-1}\right)^2 \pmod{N}
+a^{2^j} \pmod{N} = \left(a^{2^{j-1}}\right)^2 \pmod{N}
 \]</div>
 <p>This somewhat means that we can reuse the result of the previous computation to compute the next power of <span class="arithmatex">\(a\)</span>. This means that </p>
 <p><img src="ch5/efficient_shors_oracle.png" alt="drawing" width="100%"/></p>
