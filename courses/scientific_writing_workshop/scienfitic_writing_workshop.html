@@ -1,0 +1,1498 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../random_walk/classical_optics/aberations/aberations_propagator.html">
+      
+      
+        <link rel="next" href="../../projects/list_of_projects.html">
+      
+      
+      <link rel="icon" href="../../assets/atom_fav.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+    
+    
+      
+        <title>Scientific Writing Workshop - wadamczyk's space</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-1-why-write-about-your-research" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="wadamczyk&#39;s space" class="md-header__button md-logo" aria-label="wadamczyk's space" data-md-component="logo">
+      
+  <img src="../../assets/atom.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            wadamczyk's space
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Scientific Writing Workshop
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../index.html" class="md-tabs__link">
+        
+  
+    
+  
+  Abstract
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../qip1/ch0.html" class="md-tabs__link">
+          
+  
+  Teaching
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../random_walk/quantum_optics/rabi_frequencies.html" class="md-tabs__link">
+          
+  
+  Random Walk
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="scienfitic_writing_workshop.html" class="md-tabs__link">
+          
+  
+  Courses
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../projects/list_of_projects.html" class="md-tabs__link">
+        
+  
+    
+  
+  Projects
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="wadamczyk&#39;s space" class="md-nav__button md-logo" aria-label="wadamczyk's space" data-md-component="logo">
+      
+  <img src="../../assets/atom.png" alt="logo">
+
+    </a>
+    wadamczyk's space
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Abstract
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teaching
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Teaching
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Quantum Information Processing - Concepts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Quantum Information Processing - Concepts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qip1/ch0.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 0: Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qip1/ch1a.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 1a: Principles of Quantum Mechanics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qip1/ch1b.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 1b: Toolbox
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qip1/ch2a.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 2a: Quantum Information Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qip1/ch3a.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 3a: Computational Complexity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qip1/ch3b.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 3b: Universal gates, Reversible irreversability, Oracle Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qip1/ch4a.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 4a: DJ style algorithms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qip1/ch4b.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 4b: Grover's algorithm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qip1/ch4c.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 4c: Quantum Fourier Transform, Period Finding Algorithm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qip1/ch5.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 5: Shor's Algorithm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qip1/ch6.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 6: Open Quantum Systems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qip1/ch7.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 7: Quantum Error Correction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qip1/ch8.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 8: Stabiliser Formalism
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../qip1/organisation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    organisation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Random Walk
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Random Walk
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Quantum Optics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Quantum Optics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../random_walk/quantum_optics/rabi_frequencies.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Light-Matter Interaction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Classical Optics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Classical Optics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../random_walk/classical_optics/aberations/aberations_propagator.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aberation propagator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Courses
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Courses
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Scientific Writing Workshop
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="scienfitic_writing_workshop.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Scientific Writing Workshop
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-1-why-write-about-your-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 1: Why write about your research?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 1: Why write about your research?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#writing-with-intent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Writing with Intent
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional Questions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-2-what-makes-a-good-paper" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 2: What Makes a 'Good' Paper?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 2: What Makes a 'Good' Paper?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#characteristics-of-a-bad-paper" class="md-nav__link">
+    <span class="md-ellipsis">
+      Characteristics of a "Bad" Paper
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#characteristics-of-a-good-paper" class="md-nav__link">
+    <span class="md-ellipsis">
+      Characteristics of a "Good" Paper
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-3-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 3: Structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 3: Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tips-for-each-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips for Each Section
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tips for Each Section">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Methods
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Results
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discussion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-4-zoom-paragraphs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 4: Zoom - Paragraphs:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-5-zoom-sentences" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 5: Zoom - Sentences:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 5: Zoom - Sentences:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chapter-51-sentences-unecessary-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 5.1. Sentences - unecessary complexity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-6-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chapter 6: Best Practices:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#random-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Random Tips:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/list_of_projects.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Scientific Writing Workshop</h1>
+
+<p><em>This summary is based on the workshop on Scientific Writing given by Gaia Doneti. It is a paraphrased note, written together with Moritz Fontboté Schmidt, and extended with additional thoughts. Feel free to contribute directly via GitLab or contact wadamczyk@phys.ethz.ch</em>.</p>
+<h2 id="chapter-1-why-write-about-your-research">Chapter 1: Why write about your research?</h2>
+<p>Before starting with the course, it is important to reflect on why writing matters. As humans, and especially as scientists, our role is to deeply understand ideas, experiment with them, and share them with others. Writing enables us to:</p>
+<ol>
+<li>Help others understand ideas quicker than we did.</li>
+<li>Allow others to verify and correct our understanding.</li>
+<li>Enable others to make more educated guesses about the future direction of research.</li>
+</ol>
+<h3 id="writing-with-intent">Writing with Intent</h3>
+<p>Writing should always be intentional and aligned with the specific goal. To achieve this, ask yourself:</p>
+<ul>
+<li><strong>What is my main message?</strong> What do I want the reader to understand after reading my text?</li>
+<li><strong>Who is my audience?</strong> How do I deliver the message effectively to this audience?</li>
+<li><strong>What do I want the reader to take home?</strong> How should their understanding of the topic change?</li>
+<li><strong>What misconceptions do I want to avoid?</strong> Identify potential misunderstandings or overstatements to ensure clarity.</li>
+</ul>
+<h3 id="additional-questions">Additional Questions</h3>
+<ul>
+<li><strong>What type of paper am I writing?</strong> Understand the common types of papers (e.g., review, technical) and align your writing to the expectations of that category.</li>
+</ul>
+<h2 id="chapter-2-what-makes-a-good-paper">Chapter 2: What Makes a 'Good' Paper?</h2>
+<h3 id="characteristics-of-a-bad-paper">Characteristics of a "Bad" Paper</h3>
+<p>A "bad" paper is one that the reader struggles to follow. This often happens when:</p>
+<ul>
+<li>Too much prior knowledge is assumed, making the paper inaccessible.</li>
+<li>Ambiguities obscure the message.</li>
+<li>The focus is on "selling" rather than "communicating" the research.</li>
+</ul>
+<h3 id="characteristics-of-a-good-paper">Characteristics of a "Good" Paper</h3>
+<p>A "good" paper avoids these pitfalls. Instead:</p>
+<ul>
+<li><strong>Notation:</strong> Use notation consistent with the standard literature.</li>
+<li><strong>Clarity:</strong> Ensure that the writing is unambiguous.</li>
+<li><strong>Communication:</strong> Focus on conveying ideas clearly, not on overselling them.</li>
+</ul>
+<h2 id="chapter-3-structure">Chapter 3: Structure</h2>
+<p>Initially when writing a paper it is useful to follow some sort of structure. One commonly used framework is <strong>IMRaD</strong> (Introduction, Methods, Results, and Discussion), which follows the inverted-vase model:</p>
+<div style="text-align: center">
+<img src="assets/inverted_vase_imrad.png" alt="drawing" width="60%"/>
+</div>
+
+<ul>
+<li><strong>Introduction:</strong> Broad context narrowing to the specific research question.</li>
+<li><strong>Methods:</strong> Detailed explanation of the approach.</li>
+<li><strong>Results:</strong> Presentation of findings guided by key figures.</li>
+<li><strong>Discussion:</strong> Recap findings, discuss limitations, and connect to the broader field.</li>
+</ul>
+<h3 id="tips-for-each-section">Tips for Each Section</h3>
+<h4 id="introduction">Introduction</h4>
+<ul>
+<li>should give a context of the written work, but also general context for the whole field. It should be specific to the work, so don't try to introduce the whole field if its not relevant to the work. It also should also briefly introduce the findings of the work and how can they relate to the field. </li>
+<li>Introduction should start with broad context and then go more specific:</li>
+<li>Context: What is known, and what isn't. Where your study comes in?</li>
+<li>Focus: Literature review, rationale and objectives of your work?</li>
+<li>Findings: A preview (optional)</li>
+<li>If you're stuck, a useful trick is to start off by plagiarizing (if others do work very similar to yours). You can collect the patches, and then you can be inspired by them to write your own introduction. But here you need to be very careful about it. It is easy to forget what you have copied and then you can end up plagarising other people's work. It is useful to mark what you have copied and what you have written yourself.</li>
+</ul>
+<h4 id="methods">Methods</h4>
+<ul>
+<li>Key Questions to ask:</li>
+<li>What details help the reader understand how you obtained your results?</li>
+<li>Methods section are very varied depending on the journal and the field. Therefore if you are writing a method section, you should ask yourself about how are the methods written in both of those two contexts. It might be that the journal has a separate section for methods, or it might be that it is added as a supplement. You should also ask yourself what a common person in your field would expect to see in the methods section.</li>
+<li>It is common for people to by accident self-plagarise if they are including methods that are featured in other papers of theirs. Be careful about it.</li>
+<li>If there is not enough material for a methods section - exclude it - many journals do not require it.</li>
+</ul>
+<h4 id="results">Results</h4>
+<ul>
+<li>Key Questions to ask:</li>
+<li>What conclusions do I want to draw?</li>
+<li>What data is crucial to draw those conclusions?</li>
+<li>What figures do I need to present the data?</li>
+<li>Often quite easy way to write results section is to be guided by the plots. Think about what do you want to show and how in terms of the plots that should create a story line, and then work with text around the plots. </li>
+<li>It is important to note that now it is customatory to allow the reader to read the plot and fully understand it without the need to read the text (Figures need to be independently understandable.)</li>
+<li>In the results when you are including a lot of numerical data - read it aloud - is it easy to read? If not, think how you can change it. </li>
+<li>Quite often people are scared to comment on the data in the results section, as they want to include it in the discussion. But then it somehow creates gaps in the results section. It is fine to comment on the data in both section. In general repetition is fine as soon as it is not overdone. Feel free to comment on the data in both sections.</li>
+</ul>
+<h4 id="discussion">Discussion</h4>
+<ul>
+<li>Discussion should be opposite to the introduction, it should start more specific and then go more broadly. </li>
+<li>Recap the findings, </li>
+<li>Then focus on the most important findings, what are puzzling outcomes, limitations, open questions</li>
+<li>Outlook</li>
+<li>Similarily to the results section you can follow the inverted-vase model (by first doing a recap, then focus on the most important findings, and then talk more generally about the outlook).</li>
+<li>Include the limitations of the work in the discussion.</li>
+</ul>
+<p><strong>General tips:</strong></p>
+<ul>
+<li>Repetition in papers is good quite often it makes the paper more readable.</li>
+<li>Storytelling - Galia argues we overuse the concept. By focusing too much on the story-telling it makes us less scientists and more a seller. </li>
+</ul>
+<h2 id="chapter-4-zoom-paragraphs">Chapter 4: Zoom - Paragraphs:</h2>
+<p><strong>Tips:</strong></p>
+<ul>
+<li>Paragraph should correspond to one idea. The idea should be clear and distinct from other paragraphs. To make sure that the paragraph corresponds to one idea it is useful to use topic sentences, and then during the revision ponder whether you are convaying the idea.</li>
+<li>It is common in readers that they put the most attention to the beginning and the end of the paragraph. Gaia compared the beggining and the end of the paragraph to a most expensive real estate. Use it wisely. This is where the reader's attention is.</li>
+<li>Parallelism / repetition can help with coherence (don't overdo).</li>
+<li>Use topic sentences to guide you during revision. (Highlight them?)</li>
+<li>Organisational scheme: It is useful to use some sort of organisational scheme when writing paragraphs. It can be spatial or temporal, general to specific, expected to un-expected, familiar to unfamiliar. By having some sort of structure it is easier for the reader to follow the text. You are in the same boat as the reader, both of you want the reader to understand the text.</li>
+</ul>
+<p><strong>Red flags:</strong></p>
+<ul>
+<li>Paragraphs that widely vary in length</li>
+<li>Paragraphs that start with however, despite</li>
+<li>Redundancies</li>
+</ul>
+<h2 id="chapter-5-zoom-sentences">Chapter 5: Zoom - Sentences:</h2>
+<p><strong>Tips:</strong></p>
+<ul>
+<li>"Expensive real estate" - Similarly to paragraphs, the beggining and the end of the sentence are the most important part of it. Readers often skip the middle of the sentences. Therefore one should put the most important information in the beggining and the end of the sentence.</li>
+<li>"Old before new" - Start sentence with something familiar (make a connection to the previous sentence), and then end with emphasis on known information or introduce a new information (this rule is more for reviews, when you are re-writting sentences)</li>
+<li>Prioritise clarity of a message of a sentence:</li>
+<li>Can you identify sentences' subject-verb-object core? Is it obscured or is it visible?</li>
+<li>How long is the sentence? Don't be scared to use long sentences, but sometimes it can reduce the clarity of the sentence.</li>
+<li>"Lullaby effect" - Connection between sentences:</li>
+<li>"Compared to", "Moreover"...</li>
+<li>What kind of verbs are you using. And here one has to be careful not to use always the same verb, as it can cause something called <em>lullaby effect</em>.</li>
+<li>Tenses and voice:</li>
+<li>Different tenses may be used, but frequent changes will confuse the reader.</li>
+<li>Tenses have meaning: <ul>
+<li>Too much future tense in outlook = unrealistic. </li>
+<li>Too much present tense = i'm certain </li>
+</ul>
+</li>
+<li>Active vs Passive Voice: Be moderate, both are OK, but use passive only with good reason.</li>
+</ul>
+<h3 id="chapter-51-sentences-unecessary-complexity">Chapter 5.1. Sentences - unecessary complexity</h3>
+<ul>
+<li>Confusion verbs:</li>
+<li>It is common for people to use ambiguous verbs, such as 'novel' or 'utilize'. It is better to use more specific verbs, such as 'new' or 'use'.</li>
+<li>Misplaced modifiers:</li>
+<li>Very common mistake in papers</li>
+<li><span style="color: red">"Rising 24000 meters into the atmosphere in only 15 minutes, scientists estimated the height of the ash cloud." vs "As scientists estimated, the ash cloud rose 24000 meters into the atmosphere in only 15 minutes."</span></li>
+<li>Nominalisations:</li>
+<li><span style="color: red">"The stripping of the rainforests" vs "If the rainforest is stripped"</span></li>
+<li>This and that:</li>
+<li>Because people are really scared of reperitions, they often use this and that. This quite often causes confusion, as the text is then not refering clearly to one thing. When you use this, you need to make sure that it is clear what you are referring to.</li>
+<li>Technical words vs jargon:</li>
+<li>Jargon is a unjustified use of technical words. It is useful to use technical words when they are justified.</li>
+</ul>
+<h2 id="chapter-6-best-practices">Chapter 6: Best Practices:</h2>
+<ul>
+<li>There is no need for hype and firsts:</li>
+<li>Avoid: breakthrough, holy grail, smoking gun, paradigm shift</li>
+<li>Make sure to hedge claims to enhance your credibility (To the best of our knowledge, this is the first demonstration...) - objectivelly you are never sure if you are the first to do something.</li>
+<li>Acronyms:</li>
+<li>Shouldn't be used too densely</li>
+<li>Use the common ones from the field</li>
+<li>Figures<ul>
+<li>Refer to them in right order</li>
+<li>Caption needs to be exhaustive: you shouldn't need to read the text</li>
+</ul>
+</li>
+<li>References<ul>
+<li>cite papers that are usefull - recent vs older?</li>
+<li>context dependent - cite an idea vs cite the explanation</li>
+<li>I liked how Gaia was talking about being very mindfull what we refer to. The trick is somehow to be a curator that curates the best references for the others to use</li>
+</ul>
+</li>
+<li>Beyond the main text - dont use suplementary material as a dump</li>
+</ul>
+<h2 id="random-tips">Random Tips:</h2>
+<ul>
+<li>Blank page fear - copy random things</li>
+<li>clarity of citations - which one should i cite</li>
+<li>repetition of points is fine</li>
+</ul>
+<!-- 
+## Chapter 7: Abstracts:
+- keywords for google
+- convince someone to take a closer look @ your paper
+- Miniaturised papers (Mirror) and not summary
+- Knows its audience
+- Drafted first - pper revewed later
+- Choice between what you say or what you dont say - concious decision
+- Needs to have a clear idea about target audience
+
+### Style of abstracts:
+- Overview, Technical, Assertive, Peculiar
+- Choosing style: andwers questions, main message of the paper - target audience, target journal defines the style for abstract
+
+
+_Fun fact:  abstracts were not written by authors back in the day_
+
+- They are not a formality or waste of time.
+  -> what may convince someone to take a closer look
+  -> they are searchable
+  -> "display windows"
+
+  <div class="highlight"><pre><span></span><code>Area          Key findings
+
+               Implications
+</code></pre></div>
+
+- Miniaturized papers
+  -> more about what is left out than what is included
+  -> know your audience (more than paper!)
+  -> may be drafted first, revised last
+
+- Styles of abstracts:
+  -> overview: past work, outlook
+  -> technical (common in physics): report of work
+  -> assertive (e.g. Supermancy): promotional abstract
+  -> peculiar (that's our style)
+
+Questions: main message? target audience? target journal? community style?
+
+## Chapter 8: The tip of the paper iceaberg
+- What are the most visible bits of a paper -> Title & Abstract -  -->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.tabs", "toc.integrate"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
