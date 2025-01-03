@@ -1135,16 +1135,18 @@ x=x_{m-1} \cdot 2^{m-1}+x_{m-2} \cdot 2^{m-2}+\ldots+x_0
 <div class="arithmatex">\[
 a^x\pmod{N}=\left(a^{2^{m-1}}\right)^{x_{m-1}}\left(a^{2^{m-2}}\right)^{x_{m-2}} \ldots(a)^{x_0}\pmod{N}
 \]</div>
-<p>we can write it recursively as:</p>
+<p>, and as each <span class="arithmatex">\(x_i\)</span> is either 0 or 1, therefore we will be either multiplying or not the result of the previous step by <span class="arithmatex">\(a^{2^i}\)</span>. We can implement it as a multiplication by <span class="arithmatex">\(a^{2^i}\)</span> controlled on the qubit <span class="arithmatex">\(x_i\)</span>. This is equivalent to the following circuit:</p>
+<p><img src="ch5/efficient_shors_oracle.png" alt="drawing" width="100%"/></p>
+<p>Therefore if we prepare the first register in the state <span class="arithmatex">\(\sum_{x=0}^{N-1} \left|x\right&gt;\)</span>, and the second register in the state <span class="arithmatex">\(\left|1\right&gt;\)</span>, then we will end up with the state after applicaion for the circuit above:</p>
+<div class="arithmatex">\[
+\sum_{x=0}^{N-1} \left|x\right&gt;\left|1\right&gt; \rightarrow \sum_{x=0}^{N-1} \left|x\right&gt; \left|a^x \bmod{N}\right&gt;
+\]</div>
+<p><strong>Comment</strong>:</p>
+<p>Maybe an interesting thing to note is that we between two steps of the algorithm we can re-use the previous multiplication to compute the next power of <span class="arithmatex">\(a\)</span>. This is because we can write it recursively as, and so it only needs to be squared:</p>
 <div class="arithmatex">\[
 a^{2^j} \pmod{N} = \left(a^{2^{j-1}}\right)^2 \pmod{N}
 \]</div>
 <p>This somewhat means that we can reuse the result of the previous computation to compute the next power of <span class="arithmatex">\(a\)</span>. This means that </p>
-<p><img src="ch5/efficient_shors_oracle.png" alt="drawing" width="100%"/></p>
-<p>Therefore if we prepare the first register in the state <span class="arithmatex">\(\sum_{x=0}^{N-1} \left|x\right&gt;\)</span>, and the second register in the state <span class="arithmatex">\(\left|1\right&gt;\)</span>, then we will end up with the state:</p>
-<div class="arithmatex">\[
-\sum_{x=0}^{N-1} \left|x\right&gt;\left|1\right&gt; \rightarrow \sum_{x=0}^{N-1} \left|x\right&gt; \left|a^x \bmod{N}\right&gt;
-\]</div>
 
 
 
