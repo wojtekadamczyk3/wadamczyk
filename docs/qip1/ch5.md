@@ -63,20 +63,27 @@ $$
 a^x\pmod{N}=\left(a^{2^{m-1}}\right)^{x_{m-1}}\left(a^{2^{m-2}}\right)^{x_{m-2}} \ldots(a)^{x_0}\pmod{N}
 $$
 
-we can write it recursively as:
+, and as each $x_i$ is either 0 or 1, therefore we will be either multiplying or not the result of the previous step by $a^{2^i}$. We can implement it as a multiplication by $a^{2^i}$ controlled on the qubit $x_i$. This is equivalent to the following circuit:
+
+<img src="ch5/efficient_shors_oracle.png" alt="drawing" width="100%"/>
+
+
+Therefore if we prepare the first register in the state $\sum_{x=0}^{N-1} \left|x\right>$, and the second register in the state $\left|1\right>$, then we will end up with the state after applicaion for the circuit above:
+
+
+$$
+\sum_{x=0}^{N-1} \left|x\right>\left|1\right> \rightarrow \sum_{x=0}^{N-1} \left|x\right> \left|a^x \bmod{N}\right>
+$$
+
+
+**Comment**:
+
+Maybe an interesting thing to note is that we between two steps of the algorithm we can re-use the previous multiplication to compute the next power of $a$. This is because we can write it recursively as, and so it only needs to be squared:
 
 $$
 a^{2^j} \pmod{N} = \left(a^{2^{j-1}}\right)^2 \pmod{N}
 $$
 
+
 This somewhat means that we can reuse the result of the previous computation to compute the next power of $a$. This means that 
 
-
-<img src="ch5/efficient_shors_oracle.png" alt="drawing" width="100%"/>
-
-
-Therefore if we prepare the first register in the state $\sum_{x=0}^{N-1} \left|x\right>$, and the second register in the state $\left|1\right>$, then we will end up with the state:
-
-$$
-\sum_{x=0}^{N-1} \left|x\right>\left|1\right> \rightarrow \sum_{x=0}^{N-1} \left|x\right> \left|a^x \bmod{N}\right>
-$$
