@@ -36,6 +36,7 @@ Consider somewhat opposite task of finding a global state $\left|\psi^{AB}\right
 ## 6.4. Quantum Operations: Evolution and allowed operations on the open quantum system:
 
 Given that we defined a more general formalism for the open quantum systems, we should also ponder over the allowed operations on such systems. For closed quantum system living in $\mathcal{H}$ the allowed operations was set of unitaries $\mathcal{U}\left(\mathcal{H}\right)$ that maps the set of pure quantum states to itself. By opening up the system we extended the quantum states from hilbert space to the set of density operators $\mathcal{H} \rightarrow \mathcal{S}\left(\mathcal{H}\right)$. We are interested in the most general maps that map this set to itself. Given that we already used up the name 'operator' to describe the operations on the closed system, we will call the operations on the open system 'superoperators', $\mathcal{E}$. $\mathcal{E}$ is expected to be:
+
 - **linear**: $\mathcal{E}(p \rho+q \sigma)=p \mathcal{E}(\rho)+q \mathcal{E}(\sigma)$
 - **trace preserving**: $\text{tr}\left(\mathcal{E}(\rho)\right) = \text{tr}(\rho)$
 - **positive**: $\mathcal{E}(\rho) \geq 0$ for all $\rho \geq 0$ - this means that the eigenvalues of $\mathcal{E}(\rho)$ are non-negative.
