@@ -16,6 +16,9 @@ theme:
 nav:
   - Abstract: index.md
   - "Teaching":
+    - "Quantum Information Processing - Conecpts 2025":
+      - "Chapter 0: Introduction": qip1_2025/ch0.md
+      - "organisation": qip1_2025/organisation.md
     - "Quantum Information Processing - Concepts 2024":
       - "Chapter 0: Introduction": qip1_2024/ch0.md
       - "Chapter 1a: Principles of Quantum Mechanics": qip1_2024/ch1a.md
@@ -30,9 +33,6 @@ nav:
       - "Chapter 6: Open Quantum Systems": qip1_2024/ch6.md
       - "Chapter 7: Quantum Error Correction": qip1_2024/ch7.md
       - "Chapter 8: Stabiliser Formalism": qip1_2024/ch8.md
-    - "Quantum Information Processing - Conecpts 2025":
-      - "Chapter 0: Introduction": qip1_2025/ch0.md
-      - "organisation": qip1_2025/organisation.md
   - "Random Walk":
     - "Quantum Optics":
       - "Light-Matter Interaction": random_walk/quantum_optics/rabi_frequencies.md
