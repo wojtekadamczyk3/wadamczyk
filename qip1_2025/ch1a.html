@@ -1137,15 +1137,11 @@
 <h1 id="chapter-1a-principles-of-quantum-mechanics">Chapter 1a: Principles of Quantum Mechanics</h1>
 <h2 id="11-hilbert-spaces">1.1. Hilbert spaces:</h2>
 <p><strong>Hilbert Space</strong>:</p>
-<ul>
-<li>Hilbert space is a <em>vector space</em> <span class="arithmatex">\(\mathcal{H}\)</span> over <span class="arithmatex">\(\mathbb{C}\)</span> that is equipped with a <em>complete</em> <em>inner product</em>. </li>
-<li>This definition has 3 keywords: <ul>
-<li>Vector space - is well known, </li>
-<li>Complete - is just a hedge against infinite Hilbert Spaces (unimportant)</li>
-<li>Inner Product is a map <span class="arithmatex">\((\quad,\quad): \mathcal{H} \times \mathcal{H} \rightarrow \mathbb{C}\)</span> that obeys</li>
-</ul>
-</li>
-</ul>
+<p>A Hilbert space is the mathematical stage on which quantum mechanics plays out. Formally, it is a vector space <span class="arithmatex">\(\mathcal{H}\)</span> over the complex numbers <span class="arithmatex">\(\mathbb{C}\)</span>, equipped with a complete inner product.
+- Vector space: This simply means we can take linear combinations of elements (called vectors) and remain within the space.
+- Inner product: A rule that allows us to compute angles and lengths, generalizing the familiar dot product. It is a map <span class="arithmatex">\((\cdot , \cdot): \mathcal{H} \times \mathcal{H} \to \mathbb{C}.\)</span>
+- Completeness: A technical requirement ensuring that limits of convergent sequences of vectors remain in the space. (For our purposes, this subtlety will not play an important role, but it guarantees the mathematical consistency of the theory.)</p>
+<p>The inner product satisfies four key properties:</p>
 <div class="arithmatex">\[
 \begin{aligned}
 \text { conjugate symmetry } &amp; (\phi, \psi)=\overline{(\psi, \phi)} \\
@@ -1154,20 +1150,18 @@
 \text { positive-definiteness } &amp; (\psi, \psi) \geq 0 \forall \psi \in \mathcal{H}
 \end{aligned}
 \]</div>
-<ul>
-<li>Metric of <span class="arithmatex">\(\mathcal{H}\)</span> is defined by the norm <span class="arithmatex">\(\|\psi\| \equiv \sqrt{(\psi, \psi)}\)</span></li>
-<li>Quantum states can be represented as a vectors <span class="arithmatex">\(\psi \in \mathcal{H}\)</span></li>
-</ul>
+<p>From the inner product we can define the norm (or length) of a vector:</p>
+<div class="arithmatex">\[
+|\psi| \equiv \sqrt{(\psi, \psi)}.
+\]</div>
+<p>This norm equips <span class="arithmatex">\(\mathcal{H}\)</span> with a metric, allowing us to measure distances between states.</p>
+<p>Finally, in quantum mechanics, states of a system are represented by vectors <span class="arithmatex">\(\psi \in \mathcal{H}\)</span>. This simple but powerful idea-representing physical states as elements of a Hilbert space-is the foundation of the entire theory.</p>
 <p><strong>Dual Spaces</strong>:</p>
-<ul>
-<li>Dual space <span class="arithmatex">\(\mathcal{H^*}\)</span> of a <span class="arithmatex">\(\mathcal{H}\)</span> is the space of linear maps <span class="arithmatex">\(\mathcal{H} \rightarrow \mathbb{C}\)</span>. That is, an element <span class="arithmatex">\(\phi \in \mathcal{H^*}\)</span> defines a map <span class="arithmatex">\(\varphi: \psi \mapsto \varphi(\psi) \in \mathbb{C}\)</span> for every <span class="arithmatex">\(\psi \in \mathcal{H}\)</span>, such that </li>
-</ul>
+<p>Dual space <span class="arithmatex">\(\mathcal{H^*}\)</span> of a <span class="arithmatex">\(\mathcal{H}\)</span> is the space of linear maps <span class="arithmatex">\(\mathcal{H} \rightarrow \mathbb{C}\)</span>. That is, an element <span class="arithmatex">\(\phi \in \mathcal{H^*}\)</span> defines a map <span class="arithmatex">\(\varphi: \psi \mapsto \varphi(\psi) \in \mathbb{C}\)</span> for every <span class="arithmatex">\(\psi \in \mathcal{H}\)</span>, such that </p>
 <div class="arithmatex">\[
 \varphi: a \psi_1+b \psi_2 \mapsto a \varphi\left(\psi_1\right)+b \varphi\left(\psi_2\right)
 \]</div>
-<ul>
-<li>One of the dual space <span class="arithmatex">\(\mathcal{H^*}\)</span> is for instance the inner product <span class="arithmatex">\((\phi, \quad) \in \mathcal{H}^*\)</span> for <span class="arithmatex">\(\phi \in \mathcal{H}\)</span>, where </li>
-</ul>
+<p>One of the dual space <span class="arithmatex">\(\mathcal{H^*}\)</span> is for instance the inner product <span class="arithmatex">\((\phi, \quad) \in \mathcal{H}^*\)</span> for <span class="arithmatex">\(\phi \in \mathcal{H}\)</span>, where </p>
 <div class="arithmatex">\[
 (\phi, \quad): \psi \mapsto(\phi, \psi)
 \]</div>
