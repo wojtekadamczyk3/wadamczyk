@@ -4,11 +4,12 @@
 
 **Hilbert Space**:
 
-- Hilbert space is a _vector space_ $\mathcal{H}$ over $\mathbb{C}$ that is equipped with a _complete_ _inner product_. 
-- This definition has 3 keywords: 
-    - Vector space - is well known, 
-    - Complete - is just a hedge against infinite Hilbert Spaces (unimportant)
-    - Inner Product is a map $(\quad,\quad): \mathcal{H} \times \mathcal{H} \rightarrow \mathbb{C}$ that obeys
+A Hilbert space is the mathematical stage on which quantum mechanics plays out. Formally, it is a vector space $\mathcal{H}$ over the complex numbers $\mathbb{C}$, equipped with a complete inner product.
+- Vector space: This simply means we can take linear combinations of elements (called vectors) and remain within the space.
+- Inner product: A rule that allows us to compute angles and lengths, generalizing the familiar dot product. It is a map $(\cdot , \cdot): \mathcal{H} \times \mathcal{H} \to \mathbb{C}.$
+- Completeness: A technical requirement ensuring that limits of convergent sequences of vectors remain in the space. (For our purposes, this subtlety will not play an important role, but it guarantees the mathematical consistency of the theory.)
+
+The inner product satisfies four key properties:
 
 $$
 \begin{aligned}
@@ -19,18 +20,25 @@ $$
 \end{aligned}
 $$
 
-- Metric of $\mathcal{H}$ is defined by the norm $\|\psi\| \equiv \sqrt{(\psi, \psi)}$
-- Quantum states can be represented as a vectors $\psi \in \mathcal{H}$
+From the inner product we can define the norm (or length) of a vector:
+
+$$
+|\psi| \equiv \sqrt{(\psi, \psi)}.
+$$
+
+This norm equips $\mathcal{H}$ with a metric, allowing us to measure distances between states.
+
+Finally, in quantum mechanics, states of a system are represented by vectors $\psi \in \mathcal{H}$. This simple but powerful idea-representing physical states as elements of a Hilbert space-is the foundation of the entire theory.
 
 **Dual Spaces**:
 
-- Dual space $\mathcal{H^*}$ of a $\mathcal{H}$ is the space of linear maps $\mathcal{H} \rightarrow \mathbb{C}$. That is, an element $\phi \in \mathcal{H^*}$ defines a map $\varphi: \psi \mapsto \varphi(\psi) \in \mathbb{C}$ for every $\psi \in \mathcal{H}$, such that 
+Dual space $\mathcal{H^*}$ of a $\mathcal{H}$ is the space of linear maps $\mathcal{H} \rightarrow \mathbb{C}$. That is, an element $\phi \in \mathcal{H^*}$ defines a map $\varphi: \psi \mapsto \varphi(\psi) \in \mathbb{C}$ for every $\psi \in \mathcal{H}$, such that 
 
 $$
 \varphi: a \psi_1+b \psi_2 \mapsto a \varphi\left(\psi_1\right)+b \varphi\left(\psi_2\right)
 $$
 
-- One of the dual space $\mathcal{H^*}$ is for instance the inner product $(\phi, \quad) \in \mathcal{H}^*$ for $\phi \in \mathcal{H}$, where 
+One of the dual space $\mathcal{H^*}$ is for instance the inner product $(\phi, \quad) \in \mathcal{H}^*$ for $\phi \in \mathcal{H}$, where 
 
 $$
 (\phi, \quad): \psi \mapsto(\phi, \psi)

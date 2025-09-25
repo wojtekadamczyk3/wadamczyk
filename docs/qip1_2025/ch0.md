@@ -20,7 +20,10 @@ So far, we have seen that quantum mechanics offers new ways to represent and pro
 - For governments, the primary interest lies in security. Much of modern cryptography relies on the assumption that certain mathematical problems (like factoring large integers) are practically impossible for classical machines. Quantum computers threaten this assumption: algorithms such as Shor’s could, in principle, break widely used encryption schemes. This potential disruption is driving intense global investment and competition.
 - For industry, the motivations are more applied. Quantum computing promises advantages in fields where nature itself is quantum mechanical: quantum chemistry, materials science, and molecular modeling. Better simulations could accelerate drug discovery, improve catalysts for clean energy, and enable the design of new materials with tailored properties. Companies also hope for breakthroughs in optimization and machine learning, although these applications are less firmly established than chemistry and physics.
 
-In short: different communities see different “killer applications.” But the unifying motivation is that a quantum computer would allow us to do things fundamentally beyond the reach of classical machines. Whether the goal is to understand nature more deeply, protect or disrupt information security, or unlock practical technologies, the reasons are compelling-and they explain why the race to build quantum computers is so intense today.
+Different communities see different “killer applications.” But the unifying motivation is that a quantum computer would allow us to do things fundamentally beyond the reach of classical machines. Whether the goal is to understand nature more deeply, protect or disrupt information security, or unlock practical technologies, the reasons are compelling-and they explain why the race to build quantum computers is so intense today.
+
+## 0.3.: What makes quantum more powerfull than classical:
+
 
 
 <!-- ## 0.3.: What is happening in the field:
