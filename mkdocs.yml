@@ -18,6 +18,8 @@ nav:
   - "Teaching":
     - "Quantum Information Processing - Conecpts 2025":
       - "Chapter 0: Introduction": qip1_2025/ch0.md
+      - "Chapter 1a: Principles of Quantum Mechanics": qip1_2025/ch1a.md
+      - "Chapter 1b: Toolbox": qip1_2025/ch1b.md
       - "organisation": qip1_2025/organisation.md
     - "Quantum Information Processing - Concepts 2024":
       - "Chapter 0: Introduction": qip1_2024/ch0.md
