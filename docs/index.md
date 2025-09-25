@@ -12,3 +12,4 @@ This website was created because of the immense joy I got from reading other peo
 
 # Nice Essays:
 - https://paulgraham.com/goodwriting.html
+- https://www.darioamodei.com/essay/machines-of-loving-grace

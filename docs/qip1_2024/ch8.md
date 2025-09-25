@@ -15,15 +15,29 @@ This is section will be expanded in the future. Good reference for this is [Surv
 
 ### 8.2.1. Size of the Stabilised space:
 
-One can then ponder about what does picking specific stabiliser mean for the space that we stabilise, and the errors that we can correct. Well let's first address the first question. If the stabiliser group defined in a space of _n-qubits_ is formed by minimal set of generators $\mathcal{S} = \left< S_1, ..., S_k \right>$ then the dimension of the stabilised space is $2^{n- k}$. This is because the stabiliser group is a subset of the Pauli group, and so $S^2=I$ for all $S \in \mathcal{S}$ (both because the S are elements of the Pauli group and because applicatiion of stabiliser twice should also stabilise the state). This means that $S^2 = I$ for all $S \in \mathcal{S}$. This means that eigenvalues of all stabilisers are $\pm 1$, which furhter means that each of the stabiliser splits the vector space into two. Therefore the stabilised space is always divided into two, and since all the stabilisers are linearly independent, they split the space into $2^k$ subspaces. Therefore the dimension of the stabilised space is $2^n - k$.
+One can then ponder about what does picking specific stabiliser mean for the space that we stabilise, and the errors that we can correct. Well let's first address the first question. If the stabiliser group defined in a space of _n-qubits_ is formed by minimal set of generators $\mathcal{S} = \left< S_1, ..., S_k \right>$ then the dimension of the stabilised space is $2^{n- k}$. This is because the stabiliser group is a subset of the Pauli group, and so $S^2=I$ for all $S \in \mathcal{S}$ (both because the S are elements of the Pauli group and because applicatiion of stabiliser twice should also stabilise the state). This means that $S^2 = I$ for all $S \in \mathcal{S}$. This means that eigenvalues of all stabilisers are $\pm 1$, which furhter means that each of the stabiliser splits the vector space into two.
+
+#### 8.2.1.1. Why does measurement of $S_1$ and $S_2$ partition the space into 4 equal subspaces?
+
+So we have shown that the measurement of the stabiliser splits the vector space into two sets, one composed of the eigenfunctions that result in eigenvalue 1, and the other composed of the eigenfunctions that result in eigenvalue -1. Now we can ask the question, why does the measurement of $S_1$ and $S_2$ partition the space into 4 equal subspaces, where results of two measurements are (1,1), (1,-1), (-1,1), (-1,-1)?
+
+Let's consider that it is not the case. We can then 
+
+
+
+Therefore the stabilised space is always divided into two, and since all the stabilisers are linearly independent, they split the space into $2^k$ subspaces. Therefore the dimension of the stabilised space is $2^n - k$.
+
+
+
 
 ### 8.2.2. Given our Stabiliser Group, what errors can we detect?
 
 Suppose that $\left|\psi\right>_L$ lies in a stabilised subspace of $\mathcal{S}=\left< S_1, ..., S_k \right>$. In order to be able to notice the error, we would like to be able to distinguish it from the logical state. This means that some sort of measurement should be able to distinguish the two. As the stabiliser stabilizes the stabilised space, the error should bring the state out of the stabilised space. Therefore the error should anticommute with at least one of the stabilisers.
 
 Ok, so now we know whether we can correct for an error, but how do we make sure that we dont learn anything about the logical state? This can be again done by reformulating the Knill-Laflamme conditions for stabiliser codes.
+
 $$
-\{E_i, S_j\} = 0 \implies \text{error is detected}
+\{ E_i, S_j \} = 0 \implies \text{error is detected}
 $$
 
 Can we refolmulate the Knill-Laflamme conditions for stabiliser codes?

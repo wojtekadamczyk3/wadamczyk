@@ -16,21 +16,23 @@ theme:
 nav:
   - Abstract: index.md
   - "Teaching":
-    - "Quantum Information Processing - Concepts":
-      - "Chapter 0: Introduction": qip1/ch0.md
-      - "Chapter 1a: Principles of Quantum Mechanics": qip1/ch1a.md
-      - "Chapter 1b: Toolbox": qip1/ch1b.md
-      - "Chapter 2a: Quantum Information Theory": qip1/ch2a.md
-      - "Chapter 3a: Computational Complexity": qip1/ch3a.md
-      - "Chapter 3b: Universal gates, Reversible irreversability, Oracle Functions": qip1/ch3b.md
-      - "Chapter 4a: DJ style algorithms": qip1/ch4a.md
-      - "Chapter 4b: Grover's algorithm": qip1/ch4b.md
-      - "Chapter 4c: Quantum Fourier Transform, Period Finding Algorithm": qip1/ch4c.md
-      - "Chapter 5: Shor's Algorithm": qip1/ch5.md
-      - "Chapter 6: Open Quantum Systems": qip1/ch6.md
-      - "Chapter 7: Quantum Error Correction": qip1/ch7.md
-      - "Chapter 8: Stabiliser Formalism": qip1/ch8.md
-      - "organisation": qip1/organisation.md
+    - "Quantum Information Processing - Concepts 2024":
+      - "Chapter 0: Introduction": qip1_2024/ch0.md
+      - "Chapter 1a: Principles of Quantum Mechanics": qip1_2024/ch1a.md
+      - "Chapter 1b: Toolbox": qip1_2024/ch1b.md
+      - "Chapter 2a: Quantum Information Theory": qip1_2024/ch2a.md
+      - "Chapter 3a: Computational Complexity": qip1_2024/ch3a.md
+      - "Chapter 3b: Universal gates, Reversible irreversability, Oracle Functions": qip1_2024/ch3b.md
+      - "Chapter 4a: DJ style algorithms": qip1_2024/ch4a.md
+      - "Chapter 4b: Grover's algorithm": qip1_2024/ch4b.md
+      - "Chapter 4c: Quantum Fourier Transform, Period Finding Algorithm": qip1_2024/ch4c.md
+      - "Chapter 5: Shor's Algorithm": qip1_2024/ch5.md
+      - "Chapter 6: Open Quantum Systems": qip1_2024/ch6.md
+      - "Chapter 7: Quantum Error Correction": qip1_2024/ch7.md
+      - "Chapter 8: Stabiliser Formalism": qip1_2024/ch8.md
+    - "Quantum Information Processing - Conecpts 2025":
+      - "Chapter 0: Introduction": qip1_2025/ch0.md
+      - "organisation": qip1_2025/organisation.md
   - "Random Walk":
     - "Quantum Optics":
       - "Light-Matter Interaction": random_walk/quantum_optics/rabi_frequencies.md
