@@ -1,11 +1,9 @@
 # About
 
-Hi, I’m Wojciech Adamczyk - a PhD student in [Jonathan Home’s](https://tiqi.ethz.ch) group at ETH Zurich, working on calcium Rydberg atoms in tweezer arrays.
-
-## Background
-Previously, I worked with [Didier Queloz](https://www.lclu.cam.ac.uk) at the University of Cambridge on measuring precipitable water vapor via remote sensing, and with Hartmut Schlums at Rolls‑Royce Deutschland on multiaxial fatigue of Allvac 718Plus. 
+Hi, I’m Wojciech Adamczyk - a PhD student in [Jonathan Home’s](https://tiqi.ethz.ch) group @ ETH Zurich, working on **calcium Rydberg atoms in tweezer arrays**. Previously, I worked with [Didier Queloz](https://www.lclu.cam.ac.uk) @ University of Cambridge on **measuring precipitable water vapor via remote sensing**, and with Hartmut Schlums @ Rolls‑Royce Deutschland on **multiaxial fatigue of Allvac 718Plus**. 
 
 I’m currently interested in:
+
 - atomic physics and motional state control
 - off‑diagonal Hamiltonian elements
 - optical aberrations
@@ -16,6 +14,7 @@ I enjoy hacking, writing, and playing the violin.
 
 ## Supervision & contact
 I deeply enjoy supervising Master’s and semester projects. And also random projects.
+
 - Master’s students: apply via email to the TIQI application list: [tiqi-application@lists.phys.ethz.ch](mailto:tiqi-application@lists.phys.ethz.ch). Please mention my name in the application.
 - If you want to work on something together: [wadamczyk@phys.ethz.ch](mailto:wadamczyk@phys.ethz.ch)
 
