@@ -23,10 +23,10 @@ So far, we have seen that quantum mechanics offers new ways to represent and pro
 In short: different communities see different “killer applications.” But the unifying motivation is that a quantum computer would allow us to do things fundamentally beyond the reach of classical machines. Whether the goal is to understand nature more deeply, protect or disrupt information security, or unlock practical technologies, the reasons are compelling-and they explain why the race to build quantum computers is so intense today.
 
 
-## 0.3.: What is happening in the field:
+<!-- ## 0.3.: What is happening in the field:
 Over the past five years we are seeing quite a serious development of many platforms. Back before I have started my PhD the focus was always on loud, but unimportant demostrations of quantum advantage, but now it seems that people are starting to demonstrate serious error-correction and fault-tolerance computing attempts. Path towards fault tolerant quantum computation was shown in all platforms [Ions](https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.133.180601), [Neutrals](https://www.nature.com/articles/s41586-023-06927-3), [Superconducting](https://www.nature.com/articles/s41586-024-08449-y), and [Bosonic Qubits](https://www.nature.com/articles/s41567-021-01487-7). 
 
-My background is on the border of ion-trapping and neutral atoms, where I am in a ion-trapping group working on Neutral atom platform. 
+My background is on the border of ion-trapping and neutral atoms, where I am in a ion-trapping group working on Neutral atom platform.  -->
 
 
 
