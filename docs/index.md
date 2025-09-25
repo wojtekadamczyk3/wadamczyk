@@ -1,4 +1,31 @@
-# Introduction:
+# About
+
+Hi, I’m Wojciech Adamczyk - a PhD student in [Jonathan Home’s](https://tiqi.ethz.ch) group at ETH Zurich, working on calcium Rydberg atoms in tweezer arrays.
+
+## Background
+Previously, I worked with [Didier Queloz](https://www.lclu.cam.ac.uk) at the University of Cambridge on measuring precipitable water vapor via remote sensing, and with Hartmut Schlums at Rolls‑Royce Deutschland on multiaxial fatigue of Allvac 718Plus. 
+
+I’m currently interested in:
+- atomic physics and motional state control
+- off‑diagonal Hamiltonian elements
+- optical aberrations
+- maximum likelihood estimation methods
+- AI safety research
+
+I enjoy hacking, writing, and playing the violin.
+
+## Supervision & contact
+I deeply enjoy supervising Master’s and semester projects. And also random projects.
+- Master’s students: apply via email to the TIQI application list: [tiqi-application@lists.phys.ethz.ch](mailto:tiqi-application@lists.phys.ethz.ch). Please mention my name in the application.
+- If you want to work on something together: [wadamczyk@phys.ethz.ch](mailto:wadamczyk@phys.ethz.ch)
+
+
+<!-- # Essays and Articles I Found Inspiring:
+- [Paul Graham - Writing, Briefly](https://paulgraham.com/goodwriting.html)
+- [Dario Amodei - Machines of Loving Grace](https://www.darioamodei.com/essay/machines-of-loving-grace)
+- [Andrej Karpathy - A Survival Guide to a PhD](https://karpathy.github.io/2016/09/07/phd/) -->
+
+# Blogs I like:
 
 This website was created because of the immense joy I got from reading other people's websites such as:
 
@@ -12,18 +39,3 @@ This website was created because of the immense joy I got from reading other peo
 - [Paul Graham](https://paulgraham.com)
 - [Dario Amodei](https://www.darioamodei.com)
 - [Andrej Karpathy](https://karpathy.ai)
-
-# About me:
-I am Wojciech Adamczyk.
-I am a PhD student in [Jonathan Home's](https://tiqi.ethz.ch) group at ETH Zurich, working on **Calcium Rydberg Atoms in Tweezer Arrays**. I have previously worked 
-with [Didier Queloz](https://www.lclu.cam.ac.uk) @ Cambridge University on measuring 
-**Precipitable Water Vapor using Remote Sensing** and with Hartmut Schlums @ Rolls 
-Royce Deutschland on **Multiaxial Fatigue of Allvac718Plus**. Currently, I'm fascinated by the intricacies of atomic physics, non-diagonal Hamiltonian elements, motional states, optical aberrations, maximum likelihood estimation methods, and AI safety research. I like hacking, writing and playing violin.
-
-I deeply enjoy supervising master and semester and random project students. If you would like to work with me as a master student apply [here](tiqi-application@lists.phys.ethz.ch), otherwise send me a direct message [here](wadamczyk@phys.ethz.ch). Please in the application mention my name.
-
-
-<!-- # Essays and Articles I Found Inspiring:
-- [Paul Graham - Writing, Briefly](https://paulgraham.com/goodwriting.html)
-- [Dario Amodei - Machines of Loving Grace](https://www.darioamodei.com/essay/machines-of-loving-grace)
-- [Andrej Karpathy - A Survival Guide to a PhD](https://karpathy.github.io/2016/09/07/phd/) -->
