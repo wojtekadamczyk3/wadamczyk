@@ -9,22 +9,22 @@
       
       
       
-        <link rel="prev" href="ch4a.html">
+        <link rel="prev" href="ch4b.html">
       
       
-        <link rel="next" href="ch4c.html">
+        <link rel="next" href="ch5.html">
       
       
       <link rel="icon" href="../assets/atom_fav.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
-        <title>Chapter 4b: Grover's algorithm - wadamczyk's space</title>
+        <title>Chapter 4c: Quantum Fourier Transform, Period Finding Algorithm - wadamczyk's space</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#chapter-4b-grovers-style-algorithms" class="md-skip">
+        <a href="#chapter-4c-quantum-fourier-transform-period-finding-algorithm" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter 4b: Grover's algorithm
+              Chapter 4c: Quantum Fourier Transform, Period Finding Algorithm
             
           </span>
         </div>
@@ -117,11 +117,13 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -153,6 +155,7 @@
     </div>
   </div>
 </div>
+      
     
     
   </nav>
@@ -173,9 +176,11 @@
   
   
   
+  
     <li class="md-tabs__item">
       <a href="../index.html" class="md-tabs__link">
         
+  
   
     
   
@@ -189,12 +194,14 @@
         
   
   
+  
     
   
   
     
     
       
+  
   
   
     
@@ -205,6 +212,7 @@
       <li class="md-tabs__item md-tabs__item--active">
         <a href="ch0.html" class="md-tabs__link">
           
+  
   
   Teaching
 
@@ -221,9 +229,11 @@
   
   
   
+  
     
     
       
+  
   
   
   
@@ -232,6 +242,7 @@
       <li class="md-tabs__item">
         <a href="../random_walk/quantum_optics/rabi_frequencies.html" class="md-tabs__link">
           
+  
   
   Random Walk
 
@@ -248,11 +259,13 @@
   
   
   
+  
     
     
       <li class="md-tabs__item">
         <a href="../courses/scientific_writing_workshop/scienfitic_writing_workshop.html" class="md-tabs__link">
           
+  
   
   Courses
 
@@ -266,9 +279,11 @@
   
   
   
+  
     <li class="md-tabs__item">
       <a href="../projects/list_of_projects.html" class="md-tabs__link">
         
+  
   
     
   
@@ -323,8 +338,10 @@
       <a href="../index.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Abstract
+    
   </span>
   
 
@@ -341,6 +358,7 @@
   
   
   
+    
     
     
     
@@ -361,8 +379,10 @@
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
+  
   <span class="md-ellipsis">
     Teaching
+    
   </span>
   
 
@@ -387,6 +407,7 @@
     
     
     
+    
       
       
     
@@ -401,8 +422,10 @@
           <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
-    Quantum Information Processing - Concepts
+    Quantum Information Processing - Concepts 2024
+    
   </span>
   
 
@@ -412,7 +435,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_1">
             <span class="md-nav__icon md-icon"></span>
-            Quantum Information Processing - Concepts
+            Quantum Information Processing - Concepts 2024
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -426,8 +449,10 @@
       <a href="ch0.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Chapter 0: Introduction
+    
   </span>
   
 
@@ -447,8 +472,10 @@
       <a href="ch1a.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Chapter 1a: Principles of Quantum Mechanics
+    
   </span>
   
 
@@ -468,8 +495,10 @@
       <a href="ch1b.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Chapter 1b: Toolbox
+    
   </span>
   
 
@@ -489,8 +518,10 @@
       <a href="ch2a.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Chapter 2a: Quantum Information Theory
+    
   </span>
   
 
@@ -510,8 +541,10 @@
       <a href="ch3a.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Chapter 3a: Computational Complexity
+    
   </span>
   
 
@@ -531,8 +564,10 @@
       <a href="ch3b.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Chapter 3b: Universal gates, Reversible irreversability, Oracle Functions
+    
   </span>
   
 
@@ -552,8 +587,33 @@
       <a href="ch4a.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Chapter 4a: DJ style algorithms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch4b.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 4b: Grover's algorithm
+    
   </span>
   
 
@@ -582,19 +642,23 @@
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
+  
   <span class="md-ellipsis">
-    Chapter 4b: Grover's algorithm
+    Chapter 4c: Quantum Fourier Transform, Period Finding Algorithm
+    
   </span>
   
 
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="ch4b.html" class="md-nav__link md-nav__link--active">
+      <a href="ch4c.html" class="md-nav__link md-nav__link--active">
         
   
+  
   <span class="md-ellipsis">
-    Chapter 4b: Grover's algorithm
+    Chapter 4c: Quantum Fourier Transform, Period Finding Algorithm
+    
   </span>
   
 
@@ -616,59 +680,38 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#42-grovers-algorithm" class="md-nav__link">
+  <a href="#43-discrete-fourier-transform-and-quantum-fourier-transform" class="md-nav__link">
     <span class="md-ellipsis">
-      4.2. Grover's algorithm:
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4.2. Grover's algorithm:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#algorithm" class="md-nav__link">
-    <span class="md-ellipsis">
-      Algorithm:
+      4.3. Discrete Fourier Transform and Quantum Fourier Transform:
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#why-it-works" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#44-efficient-implementation-of-qft" class="md-nav__link">
     <span class="md-ellipsis">
-      Why it works?:
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Why it works?:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#explanation-1-amplitude-amplification" class="md-nav__link">
-    <span class="md-ellipsis">
-      Explanation 1: Amplitude amplification:
+      4.4. Efficient Implementation of QFT:
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#explanation-2-rotations-around-2d-plane" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#45-period-finding-algorithm" class="md-nav__link">
     <span class="md-ellipsis">
-      Explanation 2: Rotations around 2D-plane:
+      4.5 Period Finding Algorithm:
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#46-phase-estimation-algorithm" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.6 Phase Estimation Algorithm:
+    </span>
+  </a>
   
 </li>
       
@@ -688,32 +731,13 @@
   
   
     <li class="md-nav__item">
-      <a href="ch4c.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Chapter 4c: Quantum Fourier Transform, Period Finding Algorithm
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="ch5.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Chapter 5: Shor's Algorithm
+    
   </span>
   
 
@@ -733,8 +757,10 @@
       <a href="ch6.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Chapter 6: Open Quantum Systems
+    
   </span>
   
 
@@ -754,8 +780,10 @@
       <a href="ch7.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Chapter 7: Quantum Error Correction
+    
   </span>
   
 
@@ -775,8 +803,82 @@
       <a href="ch8.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Chapter 8: Stabiliser Formalism
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Quantum Information Processing - Conecpts 2025
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Quantum Information Processing - Conecpts 2025
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qip1_2025/ch0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 0: Introduction
+    
   </span>
   
 
@@ -793,11 +895,13 @@
   
   
     <li class="md-nav__item">
-      <a href="organisation.html" class="md-nav__link">
+      <a href="../qip1_2025/organisation.html" class="md-nav__link">
         
+  
   
   <span class="md-ellipsis">
     organisation
+    
   </span>
   
 
@@ -828,6 +932,7 @@
   
   
   
+    
     
     
     
@@ -845,8 +950,10 @@
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
     Random Walk
+    
   </span>
   
 
@@ -869,6 +976,7 @@
     
     
     
+    
       
       
     
@@ -883,8 +991,10 @@
           <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
     Quantum Optics
+    
   </span>
   
 
@@ -908,8 +1018,10 @@
       <a href="../random_walk/quantum_optics/rabi_frequencies.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Light-Matter Interaction
+    
   </span>
   
 
@@ -936,6 +1048,7 @@
     
     
     
+    
       
       
     
@@ -950,8 +1063,10 @@
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
     Classical Optics
+    
   </span>
   
 
@@ -975,8 +1090,10 @@
       <a href="../random_walk/classical_optics/aberations/aberations_propagator.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Aberation propagator
+    
   </span>
   
 
@@ -1010,6 +1127,7 @@
     
     
     
+    
       
       
     
@@ -1024,8 +1142,10 @@
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
     Courses
+    
   </span>
   
 
@@ -1049,8 +1169,10 @@
       <a href="../courses/scientific_writing_workshop/scienfitic_writing_workshop.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Scientific Writing Workshop
+    
   </span>
   
 
@@ -1077,8 +1199,10 @@
       <a href="../projects/list_of_projects.html" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
     Projects
+    
   </span>
   
 
@@ -1102,107 +1226,119 @@
                   
 
 
-<h1 id="chapter-4b-grovers-style-algorithms">Chapter 4b: Grover's Style Algorithms:</h1>
-<h2 id="42-grovers-algorithm">4.2. Grover's algorithm:</h2>
-<p><a href="https://arxiv.org/pdf/quant-ph/9605043">Grover's paper</a></p>
-<p><strong>Problem - Unstructured search</strong>: Given an access to a computable function <span class="arithmatex">\(f(x) : \{0,1\}^n \rightarrow \{0,1\}\)</span> we want to find some <span class="arithmatex">\(x\)</span> such that <span class="arithmatex">\(f(x_0) = 1\)</span>, for a unique 'marked' element <span class="arithmatex">\(x_0\in\{1,...,N\}\)</span>.</p>
-<p>Grover's algorithm is an algorithm which has a large range of applications and is a beautiful example of how quantum mechanics allows us to speed up many problems. But, in words of Scott Aaronson,  the speed up is rather modest, as it is only quadratic. </p>
-<p>Consider above problem in the classical setting. On average one would have to query <span class="arithmatex">\(N/2\)</span> elements to find the marked one, which means that the average time complexity is <span class="arithmatex">\(O(N)\)</span>. In contrast, quantum algorithm will be able to find the marked element in <span class="arithmatex">\(O(\sqrt{N})\)</span> time. In the chapter below we will try to see how it is achieved.</p>
-<h3 id="algorithm">Algorithm:</h3>
-<p><img src="ch4/grovers_circuit.png" alt="drawing" width="100%"/></p>
-<p>This circuit corresponds to:
-1. Applying <span class="arithmatex">\(\left(-H^{\otimes n} U_0 H^{\otimes n} U_f\right)^{N_{\text {optimal }}} H^{\otimes n} \left|0\right&gt;^{\otimes n}\)</span>
-2. Measuring the resulting state</p>
-<h3 id="why-it-works">Why it works?:</h3>
-<p>I would like to present here two geometric explanations why Grover's algorithm works. I would recommend you to think about both of them, as both of them allow you to understand different things about the algorithm. Explanation 2 is the standard one and is probably a way how to think about Grover's algorithm. However I think that when Grover was trying to come up with the algorithm he was thinking about Explanation 1, which then led to Explanation 2. You will see this smooth transition in the explanation (and not so smooth transition in my writing :) ).</p>
-<h4 id="explanation-1-amplitude-amplification">Explanation 1: Amplitude amplification:</h4>
-<p><strong>Definitions</strong>:</p>
-<p>Before we start with the explanation, let's re-write the operators in Grover's algorithm in a slightly different way. </p>
-<ul>
-<li>Lets define good and bad states as:</li>
-<li><span class="arithmatex">\(\left|g\right&gt; = \left|x_0\right&gt;\)</span></li>
-<li><span class="arithmatex">\(\left|b\right&gt; = \frac{1}{\sqrt{N-1}} \sum_{x\neq x_0} \left|x\right&gt; = \frac{\sqrt{N}}{\sqrt{N-1}}\left|+\right&gt; - \frac{1}{\sqrt{N-1}} \left|g\right&gt;\)</span></li>
-<li>And let's define plus and minus states as:</li>
-<li><span class="arithmatex">\(\left|+\right&gt; = \frac{1}{\sqrt{N}} \sum_x \left|x\right&gt; = H^{\otimes n} \left|0\right&gt;^{\otimes n} = \frac{1}{\sqrt{N}}\left|g\right&gt; + \frac{\sqrt{N-1}}{\sqrt{N}}\left|b\right&gt;\)</span></li>
-<li><span class="arithmatex">\(\left|-\right&gt; = - \frac{1}{\sqrt{N}}\left|g\right&gt; + \frac{\sqrt{N-1}}{\sqrt{N}}\left|b\right&gt;\)</span></li>
-<li><span class="arithmatex">\(U_f\)</span> is just a phase oracle, which flips the phase of the marked element. We can rewrite it as <span class="arithmatex">\(U_f = I - 2 \left|x_0\right&gt;\left&lt;x_0\right|\)</span></li>
-<li><span class="arithmatex">\(U_0\)</span> flips the phase of the <span class="arithmatex">\(\left|0\right&gt;^{\otimes n}\)</span> state. This means that <span class="arithmatex">\(H^{\otimes n} U_0 H^{\otimes n} = H^{\otimes n} \left(I - 2 \left|0\right&gt;\left&lt;0\right|^{\otimes n}\right) H^{\otimes n} = I - 2 \left|+\right&gt;\left&lt;+\right|\)</span></li>
-</ul>
-<p>Therefore the circuit can be re-writen as:</p>
+
+<h1 id="chapter-4c-quantum-fourier-transform-period-finding-algorithm">Chapter 4c: Quantum Fourier Transform, Period Finding Algorithm:</h1>
+<h2 id="43-discrete-fourier-transform-and-quantum-fourier-transform">4.3. Discrete Fourier Transform and Quantum Fourier Transform:</h2>
+<p><em>Quantum Fourier Transform (QFT) in dimension N</em>: defined on the computational basis <span class="arithmatex">\(\{\left|x\right&gt; \}^{N-1}_{x=0}\)</span> as the map:</p>
 <div class="arithmatex">\[
-\left(-\underbrace{\left(I - 2\left|+\right&gt;\left&lt;+\right|\right)}_{H^{\otimes n} U_0 H^{\otimes n}}\underbrace{\left(I - 2\left|g\right&gt;\left&lt;g\right|\right)}_{U_f}\right)^{N_{\text {optimal }}} \left|+\right&gt;
+\mathcal{Q}_N\left|x\right&gt; := \frac{1}{\sqrt{N}} \sum_{y=0}^{N-1} \left( e^{2\pi i /N } \right)^{xy} \left|y\right&gt;
 \]</div>
-<p><strong>Action of the operator on the plus state</strong>:</p>
-<p>Let's consider then the action of the operator on the plus state <span class="arithmatex">\(\left|+\right&gt;\)</span>:</p>
+<p>, where <span class="arithmatex">\(xy\)</span> is a product of two integers</p>
+<p>This is rather straighforward definition, and it is not so different from the classical Discrete Fourier Transform. Few examples of the QFT matrices for different dimensions are:</p>
+<div class="arithmatex">\[
+Q_2=\frac{1}{\sqrt{2}}\left(\begin{array}{cc}
+1 &amp; 1 \\
+1 &amp; -1
+\end{array}\right), \quad Q_3=\frac{1}{\sqrt{3}}\left(\begin{array}{ccc}
+1 &amp; 1 &amp; 1 \\
+1 &amp; e^{2 \pi i / 3} &amp; e^{-2 \pi i / 3} \\
+1 &amp; e^{-2 \pi i / 3} &amp; e^{2 \pi i / 3}
+\end{array}\right), \quad Q_4=\frac{1}{2}\left(\begin{array}{cccc}
+1 &amp; 1 &amp; 1 &amp; 1 \\
+1 &amp; i &amp; -1 &amp; -i \\
+1 &amp; -1 &amp; 1 &amp; -1 \\
+1 &amp; -i &amp; -1 &amp; i
+\end{array}\right)
+\]</div>
+<p>Let's focus on the matrix <span class="arithmatex">\(\mathcal{Q}_4\)</span>, and try to understand how it transforms a vector <span class="arithmatex">\(\left|x\right&gt;\)</span>. To do this we should consider first the matrix multiplication. When one multiplies the matrix <span class="arithmatex">\(\mathcal{Q}_4\)</span> with a vector <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(\left(y = \mathcal{Q}_4 x\right)\)</span>, then for each element of <span class="arithmatex">\(y\)</span>, one performs a dot product of <span class="arithmatex">\(x\)</span> with the i-th row of the matrix. As each consecutive row of the matrix is a vector that rotates in complex space with some angular frequency, the dot product effectively picks up, the component of <span class="arithmatex">\(x\)</span> with this given angular frequency i.e. performs a Fourier Transform.</p>
+<p><img src="ch4/Q4_oscilation.png" alt="drawing" width="30%"/></p>
+<p>We can see the pattern of this matrix - first row is a vector that roates with angular frequency of <span class="arithmatex">\(0 \frac{2\pi}{4}\)</span>, second row with angular frequency of <span class="arithmatex">\(1 \frac{2\pi}{4}\)</span>, third row with angular frequency of <span class="arithmatex">\(2\frac{2\pi}{4}\)</span> and the last row with angular frequency of <span class="arithmatex">\(3\frac{2\pi}{4}\)</span>. </p>
+<p>More generally, the QFT can be written as a following matrix:</p>
+<div class="arithmatex">\[
+\mathcal{Q}_N=\frac{1}{\sqrt{N}}\left(\begin{array}{cccccc}
+1 &amp; 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\
+1 &amp; \omega &amp; \omega^2 &amp; \omega^3 &amp; \cdots &amp; \omega^{N-1} \\
+1 &amp; \omega^2 &amp; \omega^4 &amp; \omega^6 &amp; \cdots &amp; \omega^{2(N-1)} \\
+1 &amp; \omega^3 &amp; \omega^6 &amp; \omega^9 &amp; \cdots &amp; \omega^{3(N-1)} \\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\
+1 &amp; \omega^{N-1} &amp; \omega^{2(N-1)} &amp; \omega^{3(N-1)} &amp; \cdots &amp; \omega^{(N-1)(N-1)}
+\end{array}\right)
+\]</div>
+<p>, where <span class="arithmatex">\(\omega = e^{2\pi i / N}\)</span></p>
+<p>For a general <span class="arithmatex">\(\mathcal{Q}_N\)</span> the i-th row is a vector that rotates with angular frequency of <span class="arithmatex">\(i \frac{2\pi}{N}\)</span>. When multiplied with the vector the i-th element of the resulting vector is a dot product of <span class="arithmatex">\(x\)</span> with the i-th row of the matrix, hence picking up the component of <span class="arithmatex">\(x\)</span> with the angular frequency of <span class="arithmatex">\(i \frac{2\pi}{N}\)</span>.</p>
+<h2 id="44-efficient-implementation-of-qft">4.4. Efficient Implementation of QFT:</h2>
+<p>Classically Discrete Fourier Transform can be implemented on a classical computer in time <span class="arithmatex">\(O(N\log N)\)</span> using Fast Fourier Transform (FFT) algorithm. We want to show in the following that we can implement QFT applied to n qubits in time <span class="arithmatex">\(O(n^2)\)</span>. This means that the QFT can be implemented in <span class="arithmatex">\(O(\log^2N)\)</span> time complexity on a quantum computer.</p>
+<p>Let's start with the definition of QFT:</p>
+<div class="arithmatex">\[
+\mathcal{Q}_N\left|x\right&gt; := \frac{1}{\sqrt{N}} \sum_{y=0}^{N-1} \left( e^{2\pi i /N } \right)^{xy} \left|y\right&gt;
+\]</div>
+<p>Representing <span class="arithmatex">\(x\)</span>, and <span class="arithmatex">\(y\)</span> by n-bit strings:</p>
+<div class="arithmatex">\[
+x = x_{n-1}2^{n-1} + x_{n-2}2^{n-2} + ... + x_0
+\]</div>
+<div class="arithmatex">\[
+y = y_{n-1}2^{n-1} + y_{n-2}2^{n-2} + ... + y_0
+\]</div>
+<p>Now:</p>
+<div class="arithmatex">\[
+xy = \sum_{j=0}^{n-1}x\left(y_j 2^j\right)
+\]</div>
+<p>and so:</p>
 <div class="arithmatex">\[
 \begin{aligned}
--\left(I - 2\left|+\right&gt;\left&lt;+\right|\right)\left(I - 2\left|g\right&gt;\left&lt;g\right|\right)\left|+\right&gt; 
-&amp;= -\left(I - 2\left|+\right&gt;\left&lt;+\right|\right)\left(\left|+\right&gt; - \frac{2}{\sqrt{N}}\left|g\right&gt;\right) 
-\\&amp;= -\left(\left|+\right&gt; - \frac{2}{\sqrt{N}}\left|g\right&gt; - 2\left|+\right&gt; + \frac{4}{N} \left|+\right&gt;\right) 
-\\&amp;= \left(\left(1 - \frac{4}{N}\right)\left|+\right&gt; + \frac{2}{\sqrt{N}}\left|g\right&gt;\right)
+\sum_y e^{2 \pi i \frac{x y}{2^n}}\left|y\right&gt; &amp;=\sum_{y_0, \ldots, y_{n-1} \in \{0,1\}} e^{2 \pi i \frac{x y}{2^n}}\left|y_{n-1}\right&gt;\left|y_{n-2}\right&gt; \ldots\left|y_0\right&gt; \\ &amp;= 
+\left(\sum_{y_0 \in \{0,1\}} e^{2 \pi i \frac{x\left(y_0 2^0\right)}{2^n}}\left|y_0\right&gt; \right)\ldots\left(\sum_{y_{n-1} \in \{0,1\}} e^{2 \pi i \frac{x\left(y_{n-1} 2^{n-1}\right)}{2^n}}\left|y_{n-1}\right&gt; \right) \\
+&amp; = \left( \left|0\right&gt;_0 +  e^{2 \pi i \frac{x\left(2^0\right)}{2^n}}\left|1\right&gt;_0 \right)\ldots\left( \left|0\right&gt;_{n-1} +  e^{2 \pi i \frac{x\left(2^{n-1}\right)}{2^n}}\left|1\right&gt;_{n-1} \right) \\
+&amp; = \left( \left|0\right&gt;_0 +  e^{2 \pi i \frac{\left(\sum_{x_i} x_i 2^i\right)\left(2^0\right)}{2^n}}\left|1\right&gt;_0 \right)\ldots\left( \left|0\right&gt;_{n-1} +  e^{2 \pi i \frac{\left(\sum_{x_i} x_i 2^i\right)\left(2^{n-1}\right)}{2^n}}\left|1\right&gt;_{n-1} \right) 
 \end{aligned}
 \]</div>
-<p>This can be visualised as:</p>
-<p><img src="ch4/amplitude_amplification.png" alt="drawing" width="100%"/></p>
-<p>We can see how each step of the algorithm has a specific purpose. 
-- <span class="arithmatex">\(U_f\)</span> is an operation that flips the phase of the target state. 
-- <span class="arithmatex">\(H^{\otimes n} U_0 H^{\otimes n}\)</span> when applied to <span class="arithmatex">\(\left|\psi\right&gt;\)</span> performs interference between the wavefunction <span class="arithmatex">\(\left|\psi\right&gt;\)</span> and <span class="arithmatex">\(-2\left|+\right&gt;\left&lt;+|\psi\right&gt;\)</span>, effectively shifting the whole wavefunction down by <span class="arithmatex">\(2\left|+\right&gt;\left&lt;+|\psi\right&gt;\)</span>.
-- Minus sign inverts the amplitude of the wavefunction, and is done only for convenience of thinking about the algorithm, but has no real purpose. </p>
-<p><strong>Can one infinitely amplify the amplitude?</strong>:</p>
-<p>Seeing how does Grover's step affect the <span class="arithmatex">\(\left|+\right&gt;\)</span> state, we can see that the amplitude of the <span class="arithmatex">\(\left|+\right&gt;\)</span> state is attenuated by a factor of <span class="arithmatex">\(\left(1 - \frac{4}{N}\right)\)</span>. One could then get hopefull and think that we should just apply the Grover's step enough times to get rid of the amplitude completely. This is, however, not the case. One can spot now the problem with Grover's algorithm. The approach only works when the phase of marked element is the same as the phase of non-marked elements:</p>
-<p><img src="ch4/amplitude_amplification_wrong_phase.png" alt="drawing" width="100%"/></p>
-<p>Then instead of the amplitude amplification we will get amplitude destruction. Will it ever occur? Yes it will! If we keep going with the algorithm for too long then we will first attenuate the amplitude of the <span class="arithmatex">\(\left|+\right&gt;\)</span> state to zero, but we will not always decrease the amplitude of the bad state. Some amount of the amplitude in the good state <span class="arithmatex">\(\left|g\right&gt;\)</span> will contribute to the shift introducted by <span class="arithmatex">\(H^{\otimes n} U_0 H^{\otimes n}\)</span>, introducing shift of <span class="arithmatex">\(2\left&lt;+|\psi\right&gt;\)</span>. This will cause eventual overshoot and we will end up in the phase of the bad state being opposite to the phase of the good state. This will continue in a cycle.</p>
-<p><strong>Grover's step for a general state <span class="arithmatex">\(\left|\psi\right&gt;\)</span></strong>:</p>
-<p>Consider now the general case. Starting with the state: <span class="arithmatex">\(\left|\psi\right&gt; = \alpha\left|g\right&gt; + \beta\left|b\right&gt;\)</span>. Lets write it in a vector form:
-- <span class="arithmatex">\(\left|\psi\right&gt; = \begin{pmatrix}\alpha \\ \beta\end{pmatrix}\)</span>
-- <span class="arithmatex">\(U_f = \begin{pmatrix}-1 &amp; 0 \\0 &amp; 1\end{pmatrix}\)</span>
-- <span class="arithmatex">\(U_0 = \begin{pmatrix}\cos\theta &amp; \sin\theta \\-\sin\theta &amp; \cos\theta\end{pmatrix} \begin{pmatrix}-1 &amp; 0 \\0 &amp; 1\end{pmatrix} \begin{pmatrix}\cos\theta &amp; -\sin\theta \\\sin\theta &amp; \cos\theta\end{pmatrix}\)</span></p>
-<p>, where <span class="arithmatex">\(\cos\theta = \sqrt{\frac{1}{N}}\)</span> and <span class="arithmatex">\(\sin\theta = \sqrt{\frac{N-1}{N}}\)</span>.</p>
-<p>Then the Grover's step is:</p>
+<p>This would quite easy to implement on a quantum computer. We just need to apply a Haddamard gate, and then rotate phase of j'th qubit controlled on each i'th qubit by <span class="arithmatex">\(\frac{2\pi 2^j 2^i}{2^n} = \frac{\pi}{2^{n-i-j-1}}\)</span>. We can achieve this with a controlled <span class="arithmatex">\(R_d\)</span> gate which rotates a qubit in a following way:</p>
 <div class="arithmatex">\[
-\begin{aligned}
-- H^{\otimes n} U_0 H^{\otimes n} U_f \left|\psi\right&gt; &amp;= 
-\begin{pmatrix}
--1 &amp; 0 \\
-0 &amp; -1
-\end{pmatrix}
-\begin{pmatrix}
-\cos\theta &amp; \sin\theta \\
--\sin\theta &amp; \cos\theta
-\end{pmatrix}
-\begin{pmatrix}
+R_d:=\left(\begin{array}{cc}
 1 &amp; 0 \\
-0 &amp; -1
-\end{pmatrix}
-\begin{pmatrix}
-\cos\theta &amp; -\sin\theta \\
-\sin\theta &amp; \cos\theta
-\end{pmatrix}
-\begin{pmatrix}
--1 &amp; 0 \\
-0 &amp; 1
-\end{pmatrix}
-\begin{pmatrix}
-\alpha \\
-\beta
-\end{pmatrix}
-\\ &amp;=
-\begin{pmatrix}
-\cos 2\theta &amp; \sin 2\theta \\
--\sin 2\theta &amp; \cos 2\theta
-\end{pmatrix}
-\begin{pmatrix}
-\alpha \\
-\beta
-\end{pmatrix}
-\end{aligned}
+0 &amp; e^{\pi i / 2^d}
+\end{array}\right)
 \]</div>
-<p>One can then imidietely see that attenuation of the amplitude of the bad state after Grover's step is <span class="arithmatex">\(\beta' = \beta \cos 2\theta - \alpha \sin 2\theta\)</span>. This means that the amplitude of the good state and the bad state contribute with an opposite sign to the ampltiude of the bad state after Grover's step.</p>
-<p>This can be then visualised as rotation of the state <span class="arithmatex">\(\left|\psi\right&gt;\)</span> around the <span class="arithmatex">\(\left|+\right&gt;\)</span> state by an angle of <span class="arithmatex">\(2\theta\)</span> in anti-clockwise direction.</p>
-<p><img src="ch4/rotation_around_2d.png" alt="drawing" width="60%"/></p>
-<p>Why is then the complexity of the algorithm <span class="arithmatex">\(O(\sqrt{N})\)</span>? Well to get from a bad state to a good state we need to rotate the state by an angle of <span class="arithmatex">\(\pi/2\)</span>. This means that we need to rotate <span class="arithmatex">\(\frac{\pi/2}{2\theta}\)</span> times. As <span class="arithmatex">\(\theta \approx \sin \theta = \sqrt{\frac{1}{N}}\)</span> we get that we need to rotate <span class="arithmatex">\(\frac{\pi/2}{2\sqrt{\frac{1}{N}}} = \frac{\pi}{4}\sqrt{N}\)</span> times. This gives <span class="arithmatex">\(O(\sqrt{N})\)</span> iterations.</p>
-<h4 id="explanation-2-rotations-around-2d-plane">Explanation 2: Rotations around 2D-plane:</h4>
-<p>not finished</p>
+<p>The circuit would look like this.</p>
+<p><img src="ch4/not_efficient_qft_full.png" alt="drawing" width="100%"/></p>
+<p>But you might notice that for some of the controlled <span class="arithmatex">\(R_d\)</span> gates, the <span class="arithmatex">\(d &lt; 0\)</span>. For such gates the rotation is by a integer multiple of <span class="arithmatex">\(2\pi\)</span>, and so effectively such gates do not contribute to the final result. We can skip applying such gates.</p>
+<p><img src="ch4/not_efficient_qft_truncated.png" alt="drawing" width="100%"/></p>
+<p>Secondly what we can notice that applying a <span class="arithmatex">\(R_0\)</span> gate to <span class="arithmatex">\(H \left|0\right&gt;_i\)</span> controlled on a j'th qubit is equivalent to applying a <span class="arithmatex">\(H\)</span> gate directly to the j'th qubit.</p>
+<p>i.e. </p>
+<p><img src="ch4/not_efficient_qft_example.png" alt="drawing" width="60%"/></p>
+<p>This means that we can rewrite this circuit in a much simpler form, where we reuse the original qubits.</p>
+<p><img src="ch4/qft_circuit_notes.png" alt="drawing" width="100%"/></p>
+<p>As you can see the order of the outputs is reversed relative to the input. The original order can be restored by using n/2 SWAP operations.</p>
+<p>Query complexity for this circuit is <span class="arithmatex">\(\left(n\right)\left(n-1\right)\ldots\left(1\right) = O(n^2)\)</span></p>
+<h2 id="45-period-finding-algorithm">4.5 Period Finding Algorithm:</h2>
+<p><strong>Problem and promises</strong>: Suppose we are given a black box function <span class="arithmatex">\(f:\left\{0,1\right\}^n \rightarrow \left\{0,1\right\}^m\)</span> with a promise that: 
+- <span class="arithmatex">\(f\)</span> is periodic, with a period <span class="arithmatex">\(r\)</span> such that <span class="arithmatex">\(f(x+r)=f(x)\)</span> for all <span class="arithmatex">\(x\)</span>
+- <span class="arithmatex">\(f\)</span> is a one-to-one function in each period i.e. <span class="arithmatex">\(f(x_1) \neq f(x_2)\)</span>  for all <span class="arithmatex">\(0 \leq x_1, x_2 &lt; r\)</span>.</p>
+<p>The goal is to find the period <span class="arithmatex">\(r\)</span> of the function <span class="arithmatex">\(f\)</span>.</p>
+<p><strong>Algorithm</strong>:</p>
+<p><img src="ch4/period_finding_algorithm_circuit.png" alt="drawing" width="100%"/></p>
+<p>So the algorithm runs in a following way. We first start with <span class="arithmatex">\(n+m\)</span> qubits. Then we prepare a superposition of all basis states <span class="arithmatex">\(\{\left|x\right&gt; \}\)</span> on the <span class="arithmatex">\(n\)</span> qubits. We then apply a bit oracle <span class="arithmatex">\(O_f\)</span>, which entangles n qubits with m qubits - effectively grouping the <span class="arithmatex">\(\{ x_0, x_0+r, x_0+2r, ... \}\)</span> together and associating them with some value in the m-register <span class="arithmatex">\(f(x_0)\)</span>. Upon measuring the m-register we get a value of <span class="arithmatex">\(f(x_0)\)</span>, which collapses the n-register into a superposition of states <span class="arithmatex">\(\{ \left|x_0\right&gt;, \left|x_0+r\right&gt;, \left|x_0+2r\right&gt;, ... \}\)</span>.</p>
+<p>Now you might think - this is it! If I measure this n-register enough times, then I will definitely find the value of <span class="arithmatex">\(r\)</span>. You will realise upon measuring the m-register for the second time that the n-register collapses into a superposition of <span class="arithmatex">\(\{ \left|x_0'\right&gt;, \left|x_0'+r\right&gt;, \left|x_0'+2r\right&gt;, ... \}\)</span> and so on. Damn! We got different numbers! To make sure that we are insensitive to the value of <span class="arithmatex">\(x_0\)</span> we need to apply QFT to the n-register. After applying QFT we always end up in the superpiosition of the periods which are multiples of <span class="arithmatex">\(r\)</span> and invariant to the value of <span class="arithmatex">\(f(x_0)\)</span> being measured during the first measurement.</p>
+<p><strong>Step by step state evolution</strong>:</p>
+<ol>
+<li>Apply the <span class="arithmatex">\(H^{\otimes n}\)</span> gate to the n-register: $\left|0\right&gt;_m\left|+\right&gt;_n = H_n\left|0\right&gt;_m\left|0\right&gt;_n $</li>
+<li>Apply the bit oracle <span class="arithmatex">\(O_f\)</span>: <span class="arithmatex">\(\left|0\right&gt;_m\left|+\right&gt;_n \rightarrow \sum_{x_0=0}^{r-1} \left|f(x_0)\right&gt;_m\left(\left|x_0\right&gt; + \left|x_0+r\right&gt; + \left|x_0+2r\right&gt; + ... \right)_n\)</span></li>
+<li>Measure the m-register getting a result <span class="arithmatex">\(f(x_0)\)</span> and collapsing the n-register into a superposition of states <span class="arithmatex">\(\left|period\right&gt; =  \left|x_0\right&gt;+ \left|x_0+r\right&gt; + \left|x_0+2r\right&gt; + ...\)</span></li>
+<li>Apply the QFT to the n-register: <span class="arithmatex">\(\mathcal{Q}_{2^n}\left|per\right&gt; = \sum_{k=0}^{r-1} \left|kN/r\right&gt;\)</span></li>
+<li>Measure the n-register and get the value of <span class="arithmatex">\(r\)</span></li>
+</ol>
+<p><img src="ch4/jozsa_period_finding.png" alt="drawing" width="100%"/></p>
+<p><strong>Post Processing</strong>:
+So now the measurement of the n-register will give us values of <span class="arithmatex">\(c = kN/r\)</span>. Is this enough to find the value of <span class="arithmatex">\(r\)</span>? With help comes number theory.</p>
+<p>There are two options:</p>
+<ol>
+<li><em>k and r are co-prime to each other</em> -  it means that <span class="arithmatex">\(\frac{k}{r}\)</span> is the irreducible fraction, which means that by finding irreducible fraction of <span class="arithmatex">\(\frac{c}{N}\)</span> gives us directly the values of <span class="arithmatex">\(k\)</span> and <span class="arithmatex">\(r\)</span>. Simple!</li>
+<li><em>k and r aren't co-prime to each other</em> - it means that <span class="arithmatex">\(k\)</span>, and <span class="arithmatex">\(r\)</span> share a common factor, and so the irreducible fraction of <span class="arithmatex">\(\frac{c}{N}\)</span> will give us some <span class="arithmatex">\(\frac{k/m}{r/m}\)</span>.</li>
+</ol>
+<p>This means that each time we can simply test, whether <span class="arithmatex">\(f(x_0)=f(x_0+r)\)</span> and if not, discard the result and try again.</p>
+<p><strong>Theorem 1</strong>:(Coprimality theorem) The number of integers less than r that are co-prime to r grows as <span class="arithmatex">\(O(\frac{r}{\log \log r})\)</span> with increasing r. Hence if <span class="arithmatex">\(k &lt; r\)</span> is chosen at random, then the probability that <span class="arithmatex">\(k\)</span> is co-prime to <span class="arithmatex">\(r\)</span> is <span class="arithmatex">\(O(\frac{1}{\log \log r})\)</span>.</p>
+<p>As each measurement is independent then repeating the whole process <span class="arithmatex">\(O(\log \log r)&lt;O(\log \log N)\)</span> times gives us the result with constant probability.</p>
+<h2 id="46-phase-estimation-algorithm">4.6 Phase Estimation Algorithm:</h2>
 
 
 
@@ -1255,10 +1391,12 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.tabs", "toc.integrate"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.tabs", "toc.integrate"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="../javascripts/mathjax.js"></script>
       
