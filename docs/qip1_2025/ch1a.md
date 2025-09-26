@@ -1,6 +1,6 @@
 # Chapter 1a: Principles of Quantum Mechanics
 
-## 1.1. Hilbert spaces:
+## 1.1. Space which we are exploring:
 
 **Hilbert Space**:
 
@@ -32,23 +32,24 @@ Finally, in quantum mechanics, states of a system are represented by vectors $\p
 
 **Dual Spaces**:
 
-Dual space $\mathcal{H^*}$ of a $\mathcal{H}$ is the space of linear maps $\mathcal{H} \rightarrow \mathbb{C}$. That is, an element $\phi \in \mathcal{H^*}$ defines a map $\varphi: \psi \mapsto \varphi(\psi) \in \mathbb{C}$ for every $\psi \in \mathcal{H}$, such that 
+Dual space $\mathcal{H^*}$ of $\mathcal{H}$ is the space of linear maps $\mathcal{H} \rightarrow \mathbb{C}$. That is, an element $\phi \in \mathcal{H^*}$ defines a map $\varphi: \psi \mapsto \varphi(\psi) \in \mathbb{C}$ for every $\psi \in \mathcal{H}$, such that 
 
 $$
 \varphi: a \psi_1+b \psi_2 \mapsto a \varphi\left(\psi_1\right)+b \varphi\left(\psi_2\right)
 $$
 
-One of the dual space $\mathcal{H^*}$ is for instance the inner product $(\phi, \quad) \in \mathcal{H}^*$ for $\phi \in \mathcal{H}$, where 
+One can think about the objects in the dual space as rules, where they take the vectors from Hilbert space and spit out complex numbers.
+
+Example: One of the dual space $\mathcal{H^*}$ is for instance the inner product $(\phi, \quad) \in \mathcal{H}^*$ for $\phi \in \mathcal{H}$, where 
 
 $$
 (\phi, \quad): \psi \mapsto(\phi, \psi)
 $$
 
 ## 1.2. Dirac Notation:
-In quantum mechanics quite often we often switch basis. This is because intrinsically any measurement causes a collapse onto the measurement basis. Because of this we want to have a notation that allows us to work with multiple basis at the same time, and not get confused. Dirac notation (empirically) provides this clarity. It is difficult to formally define the notation, and quite often when one does it, they get confused (unless they are deep down in theory). Therefore I would propose to learn it through learning the basic few properties and then trying things out. 
+To reduce overhead we introduce more compact notation to deal with quantum mechanics. Since in the quantum mechanics we often switch basis it is useful to introduce a notation that allows us to deal with a spacific states in any basis. Dirac notation (empirically) provides this clarity. It is difficult to formally define the notation, and quite often when one does it, they get confused (unless they are deep down in theory). Therefore I would propose to learn it through learning the basic few properties and then trying things out. 
 
 Dirac denotes element of $\mathcal{H}$ as $\left|\psi\right>$ _'ket'_, and an element of the dual space is written as $\mathcal{H^*}$ as $\left<\psi\right|$ _'bra'_. The inner product between two states $\left|\psi\right>, \left|\phi\right> \in \mathcal{H}$ is written as $\left<\psi|\phi\right>$.
-> In notes the bra-ket notation is introduced using homomorphisms (linear maps). I find it unecessary.
 
 - The advantage of using bra-ket notation is:
     - We can talk about multiple things at the same time - Dirac notation is effectively just a label that points to an abstract object in the Hilbert space. We don't need to specify whether the variable is contineous, or if it is a vector or a function.
@@ -64,19 +65,19 @@ Dirac denotes element of $\mathcal{H}$ as $\left|\psi\right>$ _'ket'_, and an el
     - _Commutator_: $[A, B]=A B-B A$
 - A state $\psi \in \mathcal{H}$ is said to be an _eigenstate_ of an operator A if $A\left|\psi\right> = a_\psi\left|\psi\right>$ with an associated _eigenvalue_ '$a_\psi$'.
 - _Adjoint_ $A^\dagger$ of an operator $A$ is defined as $\left<\phi\right|A^{\dagger}\left| \psi\right>=\overline{\left<\psi\right|A\left| \phi\right>} \quad$
-- An operator $Q$ is called _Hermitian_ if $Q^\dagger=Q$
-- An operator $U$ is called _Unitary_ if $U^\dagger U= U U^\dagger = \mathbb{I}$
-- An operator $\Pi$ is called _Projector_ if $\Pi\Pi= \Pi$
+    - An operator $Q$ is called _Hermitian_ if $Q^\dagger=Q$
+    - An operator $U$ is called _Unitary_ if $U^\dagger U= U U^\dagger = \mathbb{I}$
+    - An operator $\Pi$ is called _Projector_ if $\Pi\Pi= \Pi$
 
 ## 1.4. Composite systems:
 **Tensor Product**
 
 - _Tensor product_ $\mathcal{H}_1 \otimes \mathcal{H}_2$ is a vector space over $\mathbb{C}$ spanned by all pairs of elements $\left|e_a\right> \otimes\left|f_\alpha\right>$, where $\left|e_a\right> \in \mathcal{H_1}$, $\left|f_\alpha\right> \in \mathcal{H_2}$
 - It is not true that a general element of $\mathcal{H}_1 \otimes \mathcal{H}_2$ necessarily takes the form $\left|\psi_1\right>\otimes\left|\psi_2\right>$
-- Rahter, a general element may be written as $\left|\Psi\right>=\sum_{a, \alpha} r_{a \alpha}\left|e_a\right> \otimes\left|f_\alpha\right>$
+- Rather, a general element may be written as $\left|\Psi\right>=\sum_{a, \alpha} r_{a \alpha}\left|e_a\right> \otimes\left|f_\alpha\right>$
 - Elements of the form $\left|\psi_1\right>\otimes\left|\psi_2\right>$ are called simple, and the elements of the form $\left|\Psi\right>=\sum_{a, \alpha} r_{a \alpha}\left|e_a\right> \otimes\left|f_\alpha\right>$ are refered as entangled
 - $\left<\alpha\otimes\beta|\alpha'\otimes\beta'\right> := \left<\alpha|\alpha'\right>\left<\beta|\beta'\right>$
-- $\left( S_\alpha \otimes T_\beta \right)\left(\alpha \otimes \beta\right) = \left(S_\alpha\alpha\right)\otimes\left(T_\beta\beta\right)$ - apologies for being slightly sloppy - I think it is understandable what I mean though
+- $\left( S_\alpha \otimes T_\beta \right)\left(\alpha \otimes \beta\right) = \left(S_\alpha\alpha\right)\otimes\left(T_\beta\beta\right)$
 
 **Tensor Product in action (states)**
 
