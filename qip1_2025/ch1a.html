@@ -519,9 +519,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#11-hilbert-spaces" class="md-nav__link">
+  <a href="#11-space-which-we-are-exploring" class="md-nav__link">
     <span class="md-ellipsis">
-      1.1. Hilbert spaces:
+      1.1. Space which we are exploring:
     </span>
   </a>
   
@@ -1283,7 +1283,7 @@
 
 
 <h1 id="chapter-1a-principles-of-quantum-mechanics">Chapter 1a: Principles of Quantum Mechanics</h1>
-<h2 id="11-hilbert-spaces">1.1. Hilbert spaces:</h2>
+<h2 id="11-space-which-we-are-exploring">1.1. Space which we are exploring:</h2>
 <p><strong>Hilbert Space</strong>:</p>
 <p>A Hilbert space is the mathematical stage on which quantum mechanics plays out. Formally, it is a vector space <span class="arithmatex">\(\mathcal{H}\)</span> over the complex numbers <span class="arithmatex">\(\mathbb{C}\)</span>, equipped with a complete inner product.
 - Vector space: This simply means we can take linear combinations of elements (called vectors) and remain within the space.
@@ -1305,20 +1305,18 @@
 <p>This norm equips <span class="arithmatex">\(\mathcal{H}\)</span> with a metric, allowing us to measure distances between states.</p>
 <p>Finally, in quantum mechanics, states of a system are represented by vectors <span class="arithmatex">\(\psi \in \mathcal{H}\)</span>. This simple but powerful idea-representing physical states as elements of a Hilbert space-is the foundation of the entire theory.</p>
 <p><strong>Dual Spaces</strong>:</p>
-<p>Dual space <span class="arithmatex">\(\mathcal{H^*}\)</span> of a <span class="arithmatex">\(\mathcal{H}\)</span> is the space of linear maps <span class="arithmatex">\(\mathcal{H} \rightarrow \mathbb{C}\)</span>. That is, an element <span class="arithmatex">\(\phi \in \mathcal{H^*}\)</span> defines a map <span class="arithmatex">\(\varphi: \psi \mapsto \varphi(\psi) \in \mathbb{C}\)</span> for every <span class="arithmatex">\(\psi \in \mathcal{H}\)</span>, such that </p>
+<p>Dual space <span class="arithmatex">\(\mathcal{H^*}\)</span> of <span class="arithmatex">\(\mathcal{H}\)</span> is the space of linear maps <span class="arithmatex">\(\mathcal{H} \rightarrow \mathbb{C}\)</span>. That is, an element <span class="arithmatex">\(\phi \in \mathcal{H^*}\)</span> defines a map <span class="arithmatex">\(\varphi: \psi \mapsto \varphi(\psi) \in \mathbb{C}\)</span> for every <span class="arithmatex">\(\psi \in \mathcal{H}\)</span>, such that </p>
 <div class="arithmatex">\[
 \varphi: a \psi_1+b \psi_2 \mapsto a \varphi\left(\psi_1\right)+b \varphi\left(\psi_2\right)
 \]</div>
-<p>One of the dual space <span class="arithmatex">\(\mathcal{H^*}\)</span> is for instance the inner product <span class="arithmatex">\((\phi, \quad) \in \mathcal{H}^*\)</span> for <span class="arithmatex">\(\phi \in \mathcal{H}\)</span>, where </p>
+<p>One can think about the objects in the dual space as rules, where they take the vectors from Hilbert space and spit out complex numbers.</p>
+<p>Example: One of the dual space <span class="arithmatex">\(\mathcal{H^*}\)</span> is for instance the inner product <span class="arithmatex">\((\phi, \quad) \in \mathcal{H}^*\)</span> for <span class="arithmatex">\(\phi \in \mathcal{H}\)</span>, where </p>
 <div class="arithmatex">\[
 (\phi, \quad): \psi \mapsto(\phi, \psi)
 \]</div>
 <h2 id="12-dirac-notation">1.2. Dirac Notation:</h2>
-<p>In quantum mechanics quite often we often switch basis. This is because intrinsically any measurement causes a collapse onto the measurement basis. Because of this we want to have a notation that allows us to work with multiple basis at the same time, and not get confused. Dirac notation (empirically) provides this clarity. It is difficult to formally define the notation, and quite often when one does it, they get confused (unless they are deep down in theory). Therefore I would propose to learn it through learning the basic few properties and then trying things out. </p>
+<p>To reduce overhead we introduce more compact notation to deal with quantum mechanics. Since in the quantum mechanics we often switch basis it is useful to introduce a notation that allows us to deal with a spacific states in any basis. Dirac notation (empirically) provides this clarity. It is difficult to formally define the notation, and quite often when one does it, they get confused (unless they are deep down in theory). Therefore I would propose to learn it through learning the basic few properties and then trying things out. </p>
 <p>Dirac denotes element of <span class="arithmatex">\(\mathcal{H}\)</span> as <span class="arithmatex">\(\left|\psi\right&gt;\)</span> <em>'ket'</em>, and an element of the dual space is written as <span class="arithmatex">\(\mathcal{H^*}\)</span> as <span class="arithmatex">\(\left&lt;\psi\right|\)</span> <em>'bra'</em>. The inner product between two states <span class="arithmatex">\(\left|\psi\right&gt;, \left|\phi\right&gt; \in \mathcal{H}\)</span> is written as <span class="arithmatex">\(\left&lt;\psi|\phi\right&gt;\)</span>.</p>
-<blockquote>
-<p>In notes the bra-ket notation is introduced using homomorphisms (linear maps). I find it unecessary.</p>
-</blockquote>
 <ul>
 <li>The advantage of using bra-ket notation is:<ul>
 <li>We can talk about multiple things at the same time - Dirac notation is effectively just a label that points to an abstract object in the Hilbert space. We don't need to specify whether the variable is contineous, or if it is a vector or a function.</li>
@@ -1338,20 +1336,22 @@
 </ul>
 </li>
 <li>A state <span class="arithmatex">\(\psi \in \mathcal{H}\)</span> is said to be an <em>eigenstate</em> of an operator A if <span class="arithmatex">\(A\left|\psi\right&gt; = a_\psi\left|\psi\right&gt;\)</span> with an associated <em>eigenvalue</em> '<span class="arithmatex">\(a_\psi\)</span>'.</li>
-<li><em>Adjoint</em> <span class="arithmatex">\(A^\dagger\)</span> of an operator <span class="arithmatex">\(A\)</span> is defined as <span class="arithmatex">\(\left&lt;\phi\right|A^{\dagger}\left| \psi\right&gt;=\overline{\left&lt;\psi\right|A\left| \phi\right&gt;} \quad\)</span></li>
+<li><em>Adjoint</em> <span class="arithmatex">\(A^\dagger\)</span> of an operator <span class="arithmatex">\(A\)</span> is defined as <span class="arithmatex">\(\left&lt;\phi\right|A^{\dagger}\left| \psi\right&gt;=\overline{\left&lt;\psi\right|A\left| \phi\right&gt;} \quad\)</span><ul>
 <li>An operator <span class="arithmatex">\(Q\)</span> is called <em>Hermitian</em> if <span class="arithmatex">\(Q^\dagger=Q\)</span></li>
 <li>An operator <span class="arithmatex">\(U\)</span> is called <em>Unitary</em> if <span class="arithmatex">\(U^\dagger U= U U^\dagger = \mathbb{I}\)</span></li>
 <li>An operator <span class="arithmatex">\(\Pi\)</span> is called <em>Projector</em> if <span class="arithmatex">\(\Pi\Pi= \Pi\)</span></li>
+</ul>
+</li>
 </ul>
 <h2 id="14-composite-systems">1.4. Composite systems:</h2>
 <p><strong>Tensor Product</strong></p>
 <ul>
 <li><em>Tensor product</em> <span class="arithmatex">\(\mathcal{H}_1 \otimes \mathcal{H}_2\)</span> is a vector space over <span class="arithmatex">\(\mathbb{C}\)</span> spanned by all pairs of elements <span class="arithmatex">\(\left|e_a\right&gt; \otimes\left|f_\alpha\right&gt;\)</span>, where <span class="arithmatex">\(\left|e_a\right&gt; \in \mathcal{H_1}\)</span>, <span class="arithmatex">\(\left|f_\alpha\right&gt; \in \mathcal{H_2}\)</span></li>
 <li>It is not true that a general element of <span class="arithmatex">\(\mathcal{H}_1 \otimes \mathcal{H}_2\)</span> necessarily takes the form <span class="arithmatex">\(\left|\psi_1\right&gt;\otimes\left|\psi_2\right&gt;\)</span></li>
-<li>Rahter, a general element may be written as <span class="arithmatex">\(\left|\Psi\right&gt;=\sum_{a, \alpha} r_{a \alpha}\left|e_a\right&gt; \otimes\left|f_\alpha\right&gt;\)</span></li>
+<li>Rather, a general element may be written as <span class="arithmatex">\(\left|\Psi\right&gt;=\sum_{a, \alpha} r_{a \alpha}\left|e_a\right&gt; \otimes\left|f_\alpha\right&gt;\)</span></li>
 <li>Elements of the form <span class="arithmatex">\(\left|\psi_1\right&gt;\otimes\left|\psi_2\right&gt;\)</span> are called simple, and the elements of the form <span class="arithmatex">\(\left|\Psi\right&gt;=\sum_{a, \alpha} r_{a \alpha}\left|e_a\right&gt; \otimes\left|f_\alpha\right&gt;\)</span> are refered as entangled</li>
 <li><span class="arithmatex">\(\left&lt;\alpha\otimes\beta|\alpha'\otimes\beta'\right&gt; := \left&lt;\alpha|\alpha'\right&gt;\left&lt;\beta|\beta'\right&gt;\)</span></li>
-<li><span class="arithmatex">\(\left( S_\alpha \otimes T_\beta \right)\left(\alpha \otimes \beta\right) = \left(S_\alpha\alpha\right)\otimes\left(T_\beta\beta\right)\)</span> - apologies for being slightly sloppy - I think it is understandable what I mean though</li>
+<li><span class="arithmatex">\(\left( S_\alpha \otimes T_\beta \right)\left(\alpha \otimes \beta\right) = \left(S_\alpha\alpha\right)\otimes\left(T_\beta\beta\right)\)</span></li>
 </ul>
 <p><strong>Tensor Product in action (states)</strong></p>
 <blockquote>
