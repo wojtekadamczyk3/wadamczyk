@@ -71,8 +71,8 @@ Dirac denotes element of $\mathcal{H}$ as $\left|\psi\right>$ _'ket'_, and an el
 
 ## 1.4. Composite systems:
 **Tensor Product**
-
-- _Tensor product_ $\mathcal{H}_1 \otimes \mathcal{H}_2$ is a vector space over $\mathbb{C}$ spanned by all pairs of elements $\left|e_a\right> \otimes\left|f_\alpha\right>$, where $\left|e_a\right> \in \mathcal{H_1}$, $\left|f_\alpha\right> \in \mathcal{H_2}$
+- Tensor product can be thought simply as adding a new dimension (axis) to the existing space. Consider for instance one space that is one dimensional, and the other space that is two dimensional. The tensor product of these two spaces is a three dimension space. Thats simple!  
+- Formally _Tensor product_ $\mathcal{H}_1 \otimes \mathcal{H}_2$ is a vector space over $\mathbb{C}$ spanned by all pairs of elements $\left|e_a\right> \otimes\left|f_\alpha\right>$, where $\left|e_a\right> \in \mathcal{H_1}$, $\left|f_\alpha\right> \in \mathcal{H_2}$
 - It is not true that a general element of $\mathcal{H}_1 \otimes \mathcal{H}_2$ necessarily takes the form $\left|\psi_1\right>\otimes\left|\psi_2\right>$
 - Rather, a general element may be written as $\left|\Psi\right>=\sum_{a, \alpha} r_{a \alpha}\left|e_a\right> \otimes\left|f_\alpha\right>$
 - Elements of the form $\left|\psi_1\right>\otimes\left|\psi_2\right>$ are called simple, and the elements of the form $\left|\Psi\right>=\sum_{a, \alpha} r_{a \alpha}\left|e_a\right> \otimes\left|f_\alpha\right>$ are refered as entangled
