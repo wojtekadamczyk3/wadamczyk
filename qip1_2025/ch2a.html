@@ -1,0 +1,1378 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/atom_fav.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>Chapter 2a: Quantum Information - wadamczyk's space</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2a3383ac.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-2a-quantum-information" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="wadamczyk&#39;s space" class="md-header__button md-logo" aria-label="wadamczyk's space" data-md-component="logo">
+      
+  <img src="../assets/atom.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            wadamczyk's space
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 2a: Quantum Information
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Abstract
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="ch0.html" class="md-tabs__link">
+          
+  
+  
+  Teaching
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../random_walk/quantum_optics/rabi_frequencies.html" class="md-tabs__link">
+          
+  
+  
+  Random Walk
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../courses/scientific_writing_workshop/scienfitic_writing_workshop.html" class="md-tabs__link">
+          
+  
+  
+  Courses
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../projects/list_of_projects.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Projects
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="wadamczyk&#39;s space" class="md-nav__button md-logo" aria-label="wadamczyk's space" data-md-component="logo">
+      
+  <img src="../assets/atom.png" alt="logo">
+
+    </a>
+    wadamczyk's space
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Abstract
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Teaching
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Teaching
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Quantum Information Processing - Concepts 2025
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Quantum Information Processing - Concepts 2025
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 0: Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch1a.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 1a: Principles of Quantum Mechanics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ch1b.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 1b: Toolbox
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="organisation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    organisation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Quantum Information Processing - Concepts 2024
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Quantum Information Processing - Concepts 2024
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qip1_2024/ch0.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 0: Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qip1_2024/ch1a.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 1a: Principles of Quantum Mechanics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qip1_2024/ch1b.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 1b: Toolbox
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qip1_2024/ch2a.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 2a: Quantum Information Theory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qip1_2024/ch3a.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 3a: Computational Complexity
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qip1_2024/ch3b.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 3b: Universal gates, Reversible irreversability, Oracle Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qip1_2024/ch4a.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 4a: DJ style algorithms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qip1_2024/ch4b.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 4b: Grover's algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qip1_2024/ch4c.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 4c: Quantum Fourier Transform, Period Finding Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qip1_2024/ch5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 5: Shor's Algorithm
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qip1_2024/ch6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 6: Open Quantum Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qip1_2024/ch7.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 7: Quantum Error Correction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qip1_2024/ch8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 8: Stabiliser Formalism
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Random Walk
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Random Walk
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Quantum Optics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Quantum Optics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../random_walk/quantum_optics/rabi_frequencies.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Light-Matter Interaction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Classical Optics
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Classical Optics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../random_walk/classical_optics/aberations/aberations_propagator.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Aberation propagator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Courses
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Courses
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../courses/scientific_writing_workshop/scienfitic_writing_workshop.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scientific Writing Workshop
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/list_of_projects.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Projects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="chapter-2a-quantum-information">Chapter 2a: Quantum Information</h1>
+<h2 id="21-nature-of-quantum-information">2.1. Nature of Quantum Information:</h2>
+<ul>
+<li>Quantum information is different from the classical information in a sense that the measurements change the state itself</li>
+<li>We can prepare any desired <em>pure</em> state, but if we receive such pure state we cannot identify it with certainty (if we dont know how to measure it)</li>
+<li>But also after measuring the state, we know with certainty in which state the system is (this will be useful)</li>
+<li>Given a unknown quantum state <span class="arithmatex">\(\left|\psi\right&gt;\)</span> there are three basic operations that we can perform:<ul>
+<li><strong>Ancilla</strong> - take a second, known, quantum system <span class="arithmatex">\(\left|A\right&gt;\)</span> and join it with <span class="arithmatex">\(\left|\psi\right&gt;\)</span> and treat it as a composite system <span class="arithmatex">\(\left|\psi\right&gt; \otimes \left|A\right&gt;\)</span></li>
+<li><strong>Unitary</strong> - we can perform a unitary on <span class="arithmatex">\(\left|\psi\right&gt;\)</span> and obtain <span class="arithmatex">\(\left|\psi^{\prime}\right&gt; = U\left|\psi\right&gt;\)</span> - i.e. all your gates</li>
+<li><strong>Measurement</strong> - we can perform a measurement on <span class="arithmatex">\(\left|\psi\right&gt;\)</span>, or sub-system of it, record the outcome and retain the post-measurement state for further processing</li>
+</ul>
+</li>
+<li>Any quantum operation can be described as a composition of these three operations. Quite often the algorithms used to manipulate information use all of those operations and not just gates</li>
+</ul>
+<h2 id="22-no-cloning-theorem">2.2. No-Cloning Theorem:</h2>
+<ul>
+<li>Cloning operation of a quantum state <span class="arithmatex">\(\left|\psi\right&gt;\)</span> is defined as a map <span class="arithmatex">\(\left|\psi\right&gt;_A \left|0\right&gt;_B \rightarrow \left|\psi\right&gt;_A \left|\psi\right&gt;_B\)</span></li>
+<li>We can extend it to a larger system, by adjoining ancilla to it. In this case the cloning operations can be defined as <span class="arithmatex">\(\left|\psi\right&gt;_A \left|0\right&gt;_B \left|M_0\right&gt;_M \rightarrow \left|\psi\right&gt;_A \left|\psi\right&gt;_B \left|M_\psi\right&gt;_M\)</span></li>
+<li><strong>No-Cloning Theorem</strong>: Let <span class="arithmatex">\(\mathcal{S}\)</span> be any set of states of A that contains at least one non-orthogonal state. Then there is no unitary cloning process that achieves cloning for all states in <span class="arithmatex">\(\mathcal{S}\)</span>.</li>
+<li><strong>Remark</strong>: I am only presenting a proof of '<em>no-cloning theorem</em>' for the case where the agent is only allowed to perform unitary operations. There exists an extention of this theorem for any 3 basic operations (Ancilla, Unitary, Measurement).</li>
+</ul>
+<h3 id="proof">Proof:</h3>
+<p>Let <span class="arithmatex">\(\left|\psi\right&gt;\)</span> and <span class="arithmatex">\(\left|\phi\right&gt;\)</span> be two distinct non-orthogonal states in <span class="arithmatex">\(\mathcal{S}\)</span>. Lets assume that there exist a unitary <span class="arithmatex">\(U\)</span> that clone the states in <span class="arithmatex">\(\mathcal{S}\)</span>.</p>
+<p>then</p>
+<div class="arithmatex">\[
+U\left|\psi\right&gt;_A \left|0\right&gt;_B \left|M_0\right&gt;_M = \left|\psi\right&gt;_A \left|\psi\right&gt;_B \left|M_\psi\right&gt;_M
+\]</div>
+<div class="arithmatex">\[
+U\left|\phi\right&gt;_A \left|0\right&gt;_B \left|M_0\right&gt;_M = \left|\phi\right&gt;_A \left|\phi\right&gt;_B \left|M_\phi\right&gt;_M
+\]</div>
+<p>then </p>
+<div class="arithmatex">\[
+\left&lt;M_0\right|_M\left&lt;0\right|_B\left&lt;\psi\right|_A U^\dagger U\left|\phi\right&gt;_A \left|0\right&gt;_B \left|M_0\right&gt;_M = \left&lt;M_\psi\right|_M \left&lt;\psi\right|_B \left&lt;\psi\right|_A \left|\phi\right&gt;_A \left|\phi\right&gt;_B \left|M_\phi\right&gt;_M
+\]</div>
+<div class="arithmatex">\[
+\left&lt;M_0|M_0\right&gt;_M\left&lt;0|0\right&gt;_B\left&lt;\psi|\phi\right&gt;_A = \left&lt;M_\psi|M_\psi\right&gt;_M\left&lt;\psi|\phi\right&gt;_A\left&lt;\psi|\phi\right&gt;_B
+\]</div>
+<div class="arithmatex">\[
+\left&lt;\psi|\phi\right&gt;_A = \left&lt;M_\psi|M_\phi\right&gt;_M\left&lt;\psi|\phi\right&gt;_A\left&lt;\psi|\phi\right&gt;_B
+\]</div>
+<p>since <span class="arithmatex">\(\left|\psi\right&gt;\)</span> and <span class="arithmatex">\(\left|\phi\right&gt;\)</span> are non-orthogonal, we can divide both sides by <span class="arithmatex">\(\left&lt;\psi|\phi\right&gt;_A\)</span> and get:</p>
+<div class="arithmatex">\[
+1 = |\left&lt;M_\psi|M_\phi\right&gt;_M\left&lt;\psi|\phi\right&gt;_B|
+\]</div>
+<ul>
+<li><span class="arithmatex">\(M_\psi\)</span> and <span class="arithmatex">\(M_\phi\)</span> are quantum states: <span class="arithmatex">\(|\left&lt;M_\psi|M_\phi\right&gt;_M| \leq 1\)</span>,  </li>
+<li><span class="arithmatex">\(\left|\psi\right&gt;\)</span> and <span class="arithmatex">\(\left|\phi\right&gt;\)</span> are distinct states and so: <span class="arithmatex">\(|\left&lt;\psi|\phi\right&gt;_B| &lt; 1\)</span></li>
+<li>Therefore we arrive to a contradiction, which <strong>completes the proof</strong></li>
+</ul>
+<h3 id="herberts-method-of-superluminal-communication">Herbert's method of superluminal communication:</h3>
+<ul>
+<li>The no-cloning theorem was crucial for debugging the protocol of superluminal communication proposed by Herbert. See more in Richard's Jozsa notes [4].</li>
+</ul>
+<h2 id="23-quantum-teleportation">2.3. Quantum Teleportation:</h2>
+<p>Consider that Alice and Bob share an entangled Bell state <span class="arithmatex">\(\left|\phi^{+}\right&gt;_{23} = \frac{1}{\sqrt{2}}(\left|00\right&gt; + \left|11\right&gt;)_{23}\)</span>, such that each of them has one qubit of the pair. Additionally Alice has a qubit in a state <span class="arithmatex">\(\left|\alpha\right&gt;_1 = a\left|0\right&gt; + b \left|1\right&gt;\)</span>. </p>
+<p>This means that the combined state of the system is:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\left|\psi\right&gt;_{AB} &amp;= \left|\alpha\right&gt;_1 \left|\phi^{+}\right&gt;_{23} = \left(a\left|0\right&gt; + b\left|1\right&gt;\right)_1 \frac{1}{\sqrt{2}}(\left|00\right&gt; + \left|11\right&gt;)_{23} \\
+&amp; = \frac{a}{\sqrt{2}}\left|000\right&gt; + \frac{a}{\sqrt{2}}\left|011\right&gt; + \frac{b}{\sqrt{2}}\left|100\right&gt; + \frac{b}{\sqrt{2}}\left|111\right&gt;
+\end{aligned}
+\]</div>
+<p><strong>Task</strong>: of the quantum teleportation is to transfer the state of <span class="arithmatex">\(\left|\alpha\right&gt;_1\)</span> to <span class="arithmatex">\(\left|\beta\right&gt;_3\)</span> by performing local operations and classical communication.</p>
+<h3 id="algorithm">Algorithm:</h3>
+<ol>
+<li>Alice performs a Bell measurement on the two qubits (Performs a projective measurement in the Bell basis)
+    &lt;!-- 1. Alice applies CX to her qubits 1 and 2<ol>
+<li>Alice applies H to her qubit 1</li>
+<li>Alice measures her two qbits to obtain a 2-bit string 00, 01, 10 or 11 --&gt;</li>
+</ol>
+</li>
+<li>Alice sends a 2-bit measurement outcome ij to Bob</li>
+<li>On receiving ij Bob applies the unitary operation <span class="arithmatex">\(Z^iX^j\)</span> to his qubit, which is then guaranteed to be in the state <span class="arithmatex">\(\left|\alpha\right&gt;_3\)</span></li>
+</ol>
+<p><strong>Remark</strong>: No information about <span class="arithmatex">\(\left|\alpha\right&gt;_2\)</span> is left with Alice</p>
+<h3 id="why-it-works">Why it works:</h3>
+<h4 id="explanation-1">Explanation 1:</h4>
+<p><em>(From explanation 1 we would like to learn about how local operations on single qubits can affect the measurement outcome of the measurement of the second qubit.)</em></p>
+<p>We can write <span class="arithmatex">\(\left|\psi\right&gt;_{AB}\)</span> as:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\left|\psi\right&gt;_{AB} &amp;= \frac{a}{\sqrt{2}}\left|000\right&gt;_{123} + \frac{a}{\sqrt{2}}\left|011\right&gt;_{123} + \frac{b}{\sqrt{2}}\left|100\right&gt;_{123} + \frac{b}{\sqrt{2}}\left|111\right&gt;_{123}\\
+&amp;= \frac{a}{2}\left(\left|\psi_{00}\right&gt;_{12} + \left|\psi_{01}\right&gt;_{12}\right)\left|0\right&gt;_{3} + \frac{a}{2}\left(\left|\psi_{10}\right&gt;_{12} + \left|\psi_{11}\right&gt;_{12}\right)\left|1\right&gt;_{3} + \frac{b}{2}\left(\left|\psi_{10}\right&gt;_{12} - \left|\psi_{11}\right&gt;_{12}\right)\left|0\right&gt;_{3} + \frac{b}{2}\left(\left|\psi_{00}\right&gt;_{12} - \left|\psi_{01}\right&gt;_{12}\right)\left|1\right&gt;_{3} \\
+&amp;= \left|\psi_{00}\right&gt;_{12}\left(\frac{a}{2}\left|0\right&gt;_{3} + \frac{b}{2}\left|1\right&gt;_{3}\right) + \left|\psi_{01}\right&gt;_{12}\left(\frac{a}{2}\left|0\right&gt;_{3} - \frac{b}{2}\left|1\right&gt;_{3}\right) + \left|\psi_{10}\right&gt;_{12}\left(\frac{a}{2}\left|1\right&gt;_{3} + \frac{b}{2}\left|0\right&gt;_{3}\right) + \left|\psi_{11}\right&gt;_{12}\left(\frac{a}{2}\left|1\right&gt;_{3} - \frac{b}{2}\left|0\right&gt;_{3}\right)\\
+\end{aligned}
+\]</div>
+<p>Therefore when we measure in which bell state the first two qubits are then we get the following post-measurement states:</p>
+<div class="arithmatex">\[
+\begin{array}{cc}
+\text { mmt outcome } &amp; \text { post-mmt state } \\
+00 &amp; \left|00\right&gt;_{12}\left|\alpha\right&gt;_3 \\
+01 &amp; \left|01\right&gt;_{12}X\left|\alpha\right&gt;_3 \\
+10 &amp; \left|10\right&gt;_{12}Z\left|\alpha\right&gt;_3 \\
+11 &amp; \left|11\right&gt;_{12}XZ\left|\alpha\right&gt;_3
+\end{array}
+\]</div>
+<p>Therefore knowing the outcome of the measurement Alice can send a 2-bit string to Bob, who then applies the corresponding operation to his qubit and recovers the state <span class="arithmatex">\(\left|\alpha\right&gt;_3\)</span></p>
+<h4 id="explanation-2">Explanation 2:</h4>
+<p><em>(From this explanation we would like to learn how to perform an operation that depends on the measurement outcome.)</em></p>
+<p>What I would like to do here is to provide slightly different explanation. I don't like Explanation 1 because it feels very brute forcy, and it doesn't provide any additional intuition about why things are, like they are. The following explanation is perhaps slightly more tricky to grasp, but I think it provides more insight.</p>
+<p><strong>E.2.1.</strong></p>
+<p>I would like to start with a simple observation. When we project the first two qubits into the state <span class="arithmatex">\(\left|\psi_{00}\right&gt;_{12}\)</span> then we get:</p>
+<div class="arithmatex">\[
+\left&lt;\psi_{00}\right|_{12}\left|\alpha\right&gt;_1\left|\psi_{00}\right&gt;_{23} = \left|\alpha\right&gt;_3
+\]</div>
+<p>One might then ask is it true for more general case? Is this statement true for any state <span class="arithmatex">\(\left|\psi_{ij}\right&gt;_{23}\)</span>:</p>
+<div class="arithmatex">\[
+\left&lt;\psi_{ij}\right|_{12}\left|\alpha\right&gt;_1\left|\psi_{ij}\right&gt;_{23} \stackrel{?}{=} \left|\alpha\right&gt;_3
+\]</div>
+<p>This must be true as we can write </p>
+<div class="arithmatex">\[
+\left&lt;\psi_{ij}\right|_{12}\left|\alpha\right&gt;_1\left|\psi_{ij}\right&gt;_{23} = \left(\left&lt;\psi_{00}\right|_{12} X_2^j Z_2^i\right)\left|\alpha\right&gt;_1\left(Z_2^i X_2^j\left|\psi_{00}\right&gt;_{23}\right) = \left&lt;\psi_{00}\right|_{12}\left|\alpha\right&gt;_1\left|\psi_{00}\right&gt;_{23}= \left|\alpha\right&gt;_3
+\]</div>
+<p>Wow! This means that quantum teleportation is trivial. If we could perform a projection operation on the first two qubits onto the bell state in which we prepared the pair of second and third qubit, we would simply teleport the state from a qubit 1 to a qubit 3. However, the projection operation is non-unitary and we cannot do it in a unitary way. We need to find workaround. </p>
+<p>Something that performs a projection operation on the first two qubits is the Bell measurement. This will, however, perform a projective measurement to an arbitrary state and not just the <span class="arithmatex">\(\left|\psi_{00}\right&gt;_{12}\)</span>. The measurement projects the first two qubits into {<span class="arithmatex">\(\left|\psi_{00}\right&gt;_{12}\)</span>, <span class="arithmatex">\(\left|\psi_{01}\right&gt;_{12}\)</span>, <span class="arithmatex">\(\left|\psi_{10}\right&gt;_{12}\)</span>, <span class="arithmatex">\(\left|\psi_{11}\right&gt;_{12}\)</span>}. Can we somehow know into which state it will project and perform a corresponding operation on the third qubit prior to the measurement?</p>
+<p>We know it after the measurement, but not before. Before the measurement we cannot know the state into which the measurement will project us (no hidden-variables :)). </p>
+<p><strong>E.2.2.</strong></p>
+<p>And here comes the step two: perhaps it doesn't really matter whether we do the operation on the third qubit prior to the measurement or after the measurement. And this I am showing below.</p>
+<div class="arithmatex">\[
+\left( \left&lt;\psi_{ij}\right|_{12} \otimes \mathbb{I}_3\right) \left( \mathbb{I}_{12} \otimes X_3^i Z_3^j\right) \left|\psi\right&gt;_{AB} = \left( \mathbb{I}_{12} \otimes X_3^i Z_3^j\right) \left( \left&lt;\psi_{ij}\right|_{12} \otimes \mathbb{I}_3\right) \left|\psi\right&gt;_{AB}  = \left|\alpha\right&gt;_3
+\]</div>
+<p>Et voilà! It doesn't matter. This is great news, because after the measurement we know into which state we projected the Bell basis. And if we then can perform the unitaries on the qubit 3, we can achieve the same result as if we did it before the measurement.</p>
+<p><strong>E.2.3.</strong></p>
+<p>This completes the explanation. What I want to show with this explanation, that you can try to think how to build non-unitary operations on your quantum system if you include the measurement and ancilla as part of your allowed operations. This can quite often suprise you.</p>
+<p><strong>Feedback</strong>:
+<em>The explanation was coined by me through talking to others and thinking. I haven't seen it anywhere else, so I would love to refine it if you have any ideas how to improve the clarity of the delivery wadamczyk@phys.ethz.ch</em>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.tabs", "toc.integrate"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../javascripts/collapse-nav.js"></script>
+      
+    
+  </body>
+</html>
