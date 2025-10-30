@@ -45,7 +45,6 @@ nav:
   - "Projects":
     - "ekoAcademic":
       - "about": projects/ekoacademic/index.md
-      - "Building ekoAcademic": projects/ekoacademic/building.md
     - "Atomphys":
       - "about": projects/atomphys/index.md
     - "MUD":
