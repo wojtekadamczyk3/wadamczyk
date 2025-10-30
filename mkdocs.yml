@@ -42,7 +42,14 @@ nav:
       - "Aberation propagator": random_walk/classical_optics/aberations/aberations_propagator.md
   - "Courses":
     - "Scientific Writing Workshop": courses/scientific_writing_workshop/scienfitic_writing_workshop.md
-  - "Projects": projects/list_of_projects.md
+  - "Projects":
+    - "ekoAcademic":
+      - "about": projects/ekoacademic/index.md
+      - "Building ekoAcademic": projects/ekoacademic/building.md
+    - "Atomphys":
+      - "about": projects/atomphys/index.md
+    - "MUD":
+      - "about": projects/mud/index.md
 
 # Plugins (optional)
 plugins:
