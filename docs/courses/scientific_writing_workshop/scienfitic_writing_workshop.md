@@ -1,4 +1,4 @@
-_This summary is based on the workshop on Scientific Writing given by Gaia Doneti. It is a paraphrased note, written together with Moritz Fontboté Schmidt, and extended with additional thoughts. Feel free to contribute directly via GitLab or contact wadamczyk@phys.ethz.ch_.
+_This summary is based on the workshop on Scientific Writing given by Gaia Donati. It is a paraphrased note, written together with Moritz Fontboté Schmidt, and extended with additional thoughts. Feel free to contribute directly via GitLab or contact wadamczyk@phys.ethz.ch_.
 
 ## Chapter 1: Why write about your research?
 Before starting with the course, it is important to reflect on why writing matters. As humans, and especially as scientists, our role is to deeply understand ideas, experiment with them, and share them with others. Writing enables us to:
@@ -61,7 +61,9 @@ Initially when writing a paper it is useful to follow some sort of structure. On
   - Context: What is known, and what isn't. Where your study comes in?
   - Focus: Literature review, rationale and objectives of your work?
   - Findings: A preview (optional)
-- If you're stuck, a useful trick is to start off by plagiarizing (if others do work very similar to yours). You can collect the patches, and then you can be inspired by them to write your own introduction. But here you need to be very careful about it. It is easy to forget what you have copied and then you can end up plagarising other people's work. It is useful to mark what you have copied and what you have written yourself.
+- If you're stuck with your writing, you can try to open a document and use it as a temporary noteboard where you collect pieces of information you read and found closely related to your work as well as useful. These snippets of text may serve as writing inspiration: they may remind you of a particular aspect you'd like to mention in your text, for example, or of a specific explanation you found helpful. Here's a key warning though: you must be extremely careful with keeping track of what snippets come from where, because it's all too easy to forget what you copied and pasted quickly in a document... and to end up plagiarising other people's work, which really shouldn't happen. If you try this approach, then, always remember to mark clearly what information comes from where and from whom.
+
+
 
 #### Methods
 
