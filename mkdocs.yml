@@ -25,7 +25,7 @@ nav:
       - "Chapter 0: Introduction": qip1_2024/ch0.md
       - "Chapter 1a: Principles of Quantum Mechanics": qip1_2024/ch1a.md
       - "Chapter 1b: Toolbox": qip1_2024/ch1b.md
-      - "Chapter 2a: Quantum Information Theory": qip1_2024/ch2a.md
+      # - "Chapter 2a: Quantum Information Theory": qip1_2024/ch2a.md
       - "Chapter 3a: Computational Complexity": qip1_2024/ch3a.md
       - "Chapter 3b: Universal gates, Reversible irreversability, Oracle Functions": qip1_2024/ch3b.md
       - "Chapter 4a: DJ style algorithms": qip1_2024/ch4a.md
