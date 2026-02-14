@@ -40,6 +40,8 @@ nav:
       - "Light-Matter Interaction": random_walk/quantum_optics/rabi_frequencies.md
     - "Classical Optics":
       - "Aberation propagator": random_walk/classical_optics/aberations/aberations_propagator.md
+    - "Simulations":
+      - "EMCCD Camera": random_walk/simulations/emccd_camera.md
   - "Courses":
     - "Scientific Writing Workshop": courses/scientific_writing_workshop/scienfitic_writing_workshop.md
   - "Projects":
