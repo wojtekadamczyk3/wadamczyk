@@ -13,7 +13,7 @@
   "qip1_2024/ch6.html": "teaching/quantum_information_processing/chapters/06_open_quantum_systems.html",
   "qip1_2024/ch7.html": "teaching/quantum_information_processing/chapters/07_quantum_error_correction.html",
   "qip1_2024/ch8.html": "teaching/quantum_information_processing/chapters/08_stabiliser_formalism.html",
-  "qip1_2024/organisation.html": "teaching/quantum_information_processing/organisation.html",
+  "qip1_2024/organisation.html": "teaching/quantum_information_processing/index.html",
   "qip1_2025/ch0.html": "teaching/quantum_information_processing/index.html",
   "qip1_2025/ch1a.html": "teaching/quantum_information_processing/chapters/01a_principles_of_quantum_mechanics.html",
   "qip1_2025/ch1b.html": "teaching/quantum_information_processing/chapters/01b_toolbox.html",
@@ -25,6 +25,7 @@
   "qip1_2025/ch4c.html": "teaching/quantum_information_processing/chapters/04c_quantum_fourier_transform.html",
   "qip1_2025/ch5.html": "teaching/quantum_information_processing/chapters/05_shors_algorithm.html",
   "qip1_2025/ch6.html": "teaching/quantum_information_processing/chapters/06_open_quantum_systems.html",
-  "qip1_2025/organisation.html": "teaching/quantum_information_processing/organisation.html",
-  "random_walk/classical_optics/aberations/aberations_propagator.html": "random_walk/classical_optics/aberrations/index.html"
+  "qip1_2025/organisation.html": "teaching/quantum_information_processing/index.html",
+  "random_walk/classical_optics/aberations/aberations_propagator.html": "random_walk/classical_optics/aberrations/index.html",
+  "teaching/quantum_information_processing/organisation.html": "teaching/quantum_information_processing/index.html"
 }

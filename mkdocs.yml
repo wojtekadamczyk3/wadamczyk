@@ -30,7 +30,6 @@ nav:
       - "Chapter 6: Open Quantum Systems": teaching/quantum_information_processing/chapters/06_open_quantum_systems.md
       - "Chapter 7: Quantum Error Correction": teaching/quantum_information_processing/chapters/07_quantum_error_correction.md
       - "Chapter 8: Stabiliser Formalism": teaching/quantum_information_processing/chapters/08_stabiliser_formalism.md
-      - "Organisation and resources": teaching/quantum_information_processing/organisation.md
   - "Random Walk":
     - "Quantum Optics":
       - "Light-Matter Interaction": random_walk/quantum_optics/rabi_frequencies.md

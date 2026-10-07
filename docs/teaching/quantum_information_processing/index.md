@@ -1,7 +1,5 @@
 # Chapter 0: Introduction
 
-[Course organisation and resources](organisation.md)
-
 Welcome to Quantum Information Processing. It is a course that wants to introduce you to many elegant and beautiful concepts surrounding the field that has a potential to massively increase human understanding of quantum mechanics and many body physics. You are taking it at a very special time, because it seems that we start to see some early signs that the whole venture of quantum computing is perhaps not that hopeless. And I am also sure many of you are precisely here because of that, so we will talk about quantum computation.
 
 In my notes I will largely _"ignore small formal subtleties, not because they're not interesting, but because they're a distraction from all the interesting physics we want to learn!"_ [1]. I will actually skip some of the formalism introduced in the lecture if I feel like it hinders my own understanding of Quantum Mechanics. I am open to being criticised for it. 
@@ -34,7 +32,6 @@ Different communities see different “killer applications.” But the unifying 
 Over the past five years we are seeing quite a serious development of many platforms. Back before I have started my PhD the focus was always on loud, but unimportant demostrations of quantum advantage, but now it seems that people are starting to demonstrate serious error-correction and fault-tolerance computing attempts. Path towards fault tolerant quantum computation was shown in all platforms [Ions](https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.133.180601), [Neutrals](https://www.nature.com/articles/s41586-023-06927-3), [Superconducting](https://www.nature.com/articles/s41586-024-08449-y), and [Bosonic Qubits](https://www.nature.com/articles/s41567-021-01487-7). 
 
 My background is on the border of ion-trapping and neutral atoms, where I am in a ion-trapping group working on Neutral atom platform.  -->
-
 
 
 
