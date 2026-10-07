@@ -2,8 +2,8 @@ site_name: wadamczyk's space
 use_directory_urls: false
 theme: 
   name: material
-  logo: 'assets/atom.png'
-  favicon: 'assets/atom_fav.png'
+  logo: 'assets/images/atom.png'
+  favicon: 'assets/images/atom_fav.png'
   palette:
     primary: 'white'
     accent: 'blue'
@@ -16,34 +16,30 @@ theme:
 nav:
   - Abstract: index.md
   - "Teaching":
-    - "Quantum Information Processing - Concepts 2025":
-      - "Chapter 0: Introduction": qip1_2025/ch0.md
-      - "Chapter 1a: Principles of Quantum Mechanics": qip1_2025/ch1a.md
-      - "Chapter 1b: Toolbox": qip1_2025/ch1b.md
-      - "organisation": qip1_2025/organisation.md
-    - "Quantum Information Processing - Concepts 2024":
-      - "Chapter 0: Introduction": qip1_2024/ch0.md
-      - "Chapter 1a: Principles of Quantum Mechanics": qip1_2024/ch1a.md
-      - "Chapter 1b: Toolbox": qip1_2024/ch1b.md
-      # - "Chapter 2a: Quantum Information Theory": qip1_2024/ch2a.md
-      - "Chapter 3a: Computational Complexity": qip1_2024/ch3a.md
-      - "Chapter 3b: Universal gates, Reversible irreversability, Oracle Functions": qip1_2024/ch3b.md
-      - "Chapter 4a: DJ style algorithms": qip1_2024/ch4a.md
-      - "Chapter 4b: Grover's algorithm": qip1_2024/ch4b.md
-      - "Chapter 4c: Quantum Fourier Transform, Period Finding Algorithm": qip1_2024/ch4c.md
-      - "Chapter 5: Shor's Algorithm": qip1_2024/ch5.md
-      - "Chapter 6: Open Quantum Systems": qip1_2024/ch6.md
-      - "Chapter 7: Quantum Error Correction": qip1_2024/ch7.md
-      - "Chapter 8: Stabiliser Formalism": qip1_2024/ch8.md
+    - "Quantum Information Processing - Concepts":
+      - "Chapter 0: Introduction": teaching/quantum_information_processing/index.md
+      - "Chapter 1a: Principles of Quantum Mechanics": teaching/quantum_information_processing/chapters/01a_principles_of_quantum_mechanics.md
+      - "Chapter 1b: Toolbox": teaching/quantum_information_processing/chapters/01b_toolbox.md
+      # - "Chapter 2a: Quantum Information Theory": teaching/quantum_information_processing/chapters/02a_quantum_information.md
+      - "Chapter 3a: Computational Complexity": teaching/quantum_information_processing/chapters/03a_computational_complexity.md
+      - "Chapter 3b: Universal gates, Reversible irreversability, Oracle Functions": teaching/quantum_information_processing/chapters/03b_universal_gates_and_oracles.md
+      - "Chapter 4a: DJ style algorithms": teaching/quantum_information_processing/chapters/04a_deutsch_jozsa_algorithms.md
+      - "Chapter 4b: Grover's algorithm": teaching/quantum_information_processing/chapters/04b_grovers_algorithm.md
+      - "Chapter 4c: Quantum Fourier Transform, Period Finding Algorithm": teaching/quantum_information_processing/chapters/04c_quantum_fourier_transform.md
+      - "Chapter 5: Shor's Algorithm": teaching/quantum_information_processing/chapters/05_shors_algorithm.md
+      - "Chapter 6: Open Quantum Systems": teaching/quantum_information_processing/chapters/06_open_quantum_systems.md
+      - "Chapter 7: Quantum Error Correction": teaching/quantum_information_processing/chapters/07_quantum_error_correction.md
+      - "Chapter 8: Stabiliser Formalism": teaching/quantum_information_processing/chapters/08_stabiliser_formalism.md
+      - "Organisation and resources": teaching/quantum_information_processing/organisation.md
   - "Random Walk":
     - "Quantum Optics":
       - "Light-Matter Interaction": random_walk/quantum_optics/rabi_frequencies.md
     - "Classical Optics":
-      - "Aberation propagator": random_walk/classical_optics/aberations/aberations_propagator.md
+      - "Aberration propagator": random_walk/classical_optics/aberrations/index.md
     - "Simulations":
       - "EMCCD Camera": random_walk/simulations/emccd_camera.md
   - "Courses":
-    - "Scientific Writing Workshop": courses/scientific_writing_workshop/scienfitic_writing_workshop.md
+    - "Scientific Writing Workshop": courses/scientific_writing_workshop/index.md
   - "Projects":
     - "ekoAcademic":
       - "about": projects/ekoacademic/index.md
@@ -56,8 +52,11 @@ nav:
 plugins:
   - search
 
+hooks:
+  - hooks/redirects.py
+
 extra_css:
-  - 'extra.css'
+  - 'assets/stylesheets/extra.css'
 
 
 # Markdown Extensions
@@ -71,7 +70,6 @@ markdown_extensions:
       generic: true
 
 extra_javascript:
-  - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-  - javascripts/collapse-nav.js
+  - assets/javascripts/collapse-nav.js

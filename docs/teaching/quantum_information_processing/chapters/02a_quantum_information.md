@@ -3,8 +3,9 @@
 Initially I didn't want to talk much about quantum information theory. In my mind there is another course that deals with it in much more detail (Quantum Information Theory). However, because the lecture course covers these topics, I decided to include few ideas. I will try to keep them at a very high level and focus on their relevance to quantum algorithms.
 
 ## 2.1. Nature of Quantum Information:
-- Quantum information is different from the classical information in a sense that the measurements corrupts the state itself
+- Quantum information is different from the classical information in a sense that the measurements change the state itself
 - We can prepare any desired _pure_ state, but if we receive such pure state we cannot identify it with certainty (if we dont know how to measure it)
+- But also after measuring the state, we know with certainty in which state the system is (this will be useful)
 - Given a unknown quantum state $\left|\psi\right>$ there are three basic operations that we can perform:
     - **Ancilla** - take a second, known, quantum system $\left|A\right>$ and join it with $\left|\psi\right>$ and treat it as a composite system $\left|\psi\right> \otimes \left|A\right>$
     - **Unitary** - we can perform a unitary on $\left|\psi\right>$ and obtain $\left|\psi^{\prime}\right> = U\left|\psi\right>$ - i.e. all your gates
@@ -136,7 +137,7 @@ $$
 This must be true as we can write 
 
 $$
-\left<\psi_{ij}\right|_{12}\left|\alpha\right>_1\left|\psi_{ij}\right>_{23} = \left(\left<\psi_{00}\right|_{12} X_2^i Z_2^j\right)\left|\alpha\right>_1\left(Z_2^i X_2^j\left|\psi_{00}\right>_{23}\right) = \left<\psi_{00}\right|_{12}\left|\alpha\right>_1\left|\psi_{00}\right>_{23}= \left|\alpha\right>_3
+\left<\psi_{ij}\right|_{12}\left|\alpha\right>_1\left|\psi_{ij}\right>_{23} = \left(\left<\psi_{00}\right|_{12} X_2^j Z_2^i\right)\left|\alpha\right>_1\left(Z_2^i X_2^j\left|\psi_{00}\right>_{23}\right) = \left<\psi_{00}\right|_{12}\left|\alpha\right>_1\left|\psi_{00}\right>_{23}= \left|\alpha\right>_3
 $$
 
 Wow! This means that quantum teleportation is trivial. If we could perform a projection operation on the first two qubits onto the bell state in which we prepared the pair of second and third qubit, we would simply teleport the state from a qubit 1 to a qubit 3. However, the projection operation is non-unitary and we cannot do it in a unitary way. We need to find workaround. 

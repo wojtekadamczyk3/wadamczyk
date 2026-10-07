@@ -9,7 +9,7 @@
 
 To gain intuition about aberrations, lets follow the analysis from the Physics III notes by Jonathan Home @ ETH Zurich. Consider a collimated beam hitting a single-surface lens perpendicularly to the lens normal.
 
-![image info](single_surface_lens.png) 
+![image info](assets/single_surface_lens.png)
 
 The total optical path taken for the ray starting at hieght _h_ is:
 

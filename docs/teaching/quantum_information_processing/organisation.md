@@ -1,8 +1,10 @@
 # Organisation
 
+My plan is to share my edited notes that I made whilst preparing for the teaching. I am doing it mainly in order to make sure I understand the topics, and motivate myself to be clear with explanations. I hope to give different intuition, which perhaps will be useful to some.
+
 ## Group Chat:
 
-<img src="groupchat.JPG" alt="drawing" width="30%"/>
+<img src="assets/group_chat.jpg" alt="drawing" width="30%"/>
 
 In case of any queries and feedback, don't hesitate to contact me (wadamczyk@phys.ethz.ch)
 

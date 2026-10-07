@@ -12,7 +12,7 @@ Consider above problem in the classical setting. On average one would have to qu
 
 
 ### Algorithm:
-<img src="ch4/grovers_circuit.png" alt="drawing" width="100%"/>
+<img src="../assets/chapter_04/grovers_circuit.png" alt="drawing" width="100%"/>
 
 This circuit corresponds to:
 1. Applying $\left(-H^{\otimes n} U_0 H^{\otimes n} U_f\right)^{N_{\text {optimal }}} H^{\otimes n} \left|0\right>^{\otimes n}$
@@ -58,7 +58,7 @@ $$
 
 This can be visualised as:
 
-<img src="ch4/amplitude_amplification.png" alt="drawing" width="100%"/>
+<img src="../assets/chapter_04/amplitude_amplification.png" alt="drawing" width="100%"/>
 
 We can see how each step of the algorithm has a specific purpose. 
 - $U_f$ is an operation that flips the phase of the target state. 
@@ -69,7 +69,7 @@ We can see how each step of the algorithm has a specific purpose.
 
 Seeing how does Grover's step affect the $\left|+\right>$ state, we can see that the amplitude of the $\left|+\right>$ state is attenuated by a factor of $\left(1 - \frac{4}{N}\right)$. One could then get hopefull and think that we should just apply the Grover's step enough times to get rid of the amplitude completely. This is, however, not the case. One can spot now the problem with Grover's algorithm. The approach only works when the phase of marked element is the same as the phase of non-marked elements:
 
-<img src="ch4/amplitude_amplification_wrong_phase.png" alt="drawing" width="100%"/>
+<img src="../assets/chapter_04/amplitude_amplification_wrong_phase.png" alt="drawing" width="100%"/>
 
 Then instead of the amplitude amplification we will get amplitude destruction. Will it ever occur? Yes it will! If we keep going with the algorithm for too long then we will first attenuate the amplitude of the $\left|+\right>$ state to zero, but we will not always decrease the amplitude of the bad state. Some amount of the amplitude in the good state $\left|g\right>$ will contribute to the shift introducted by $H^{\otimes n} U_0 H^{\otimes n}$, introducing shift of $2\left<+|\psi\right>$. This will cause eventual overshoot and we will end up in the phase of the bad state being opposite to the phase of the good state. This will continue in a cycle.
 
@@ -127,7 +127,7 @@ One can then imidietely see that attenuation of the amplitude of the bad state a
 
 This can be then visualised as rotation of the state $\left|\psi\right>$ around the $\left|+\right>$ state by an angle of $2\theta$ in anti-clockwise direction.
 
-<img src="ch4/rotation_around_2d.png" alt="drawing" width="60%"/>
+<img src="../assets/chapter_04/rotation_around_2d.png" alt="drawing" width="60%"/>
 
 Why is then the complexity of the algorithm $O(\sqrt{N})$? Well to get from a bad state to a good state we need to rotate the state by an angle of $\pi/2$. This means that we need to rotate $\frac{\pi/2}{2\theta}$ times. As $\theta \approx \sin \theta = \sqrt{\frac{1}{N}}$ we get that we need to rotate $\frac{\pi/2}{2\sqrt{\frac{1}{N}}} = \frac{\pi}{4}\sqrt{N}$ times. This gives $O(\sqrt{N})$ iterations.
 

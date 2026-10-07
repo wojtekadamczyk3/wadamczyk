@@ -1,5 +1,7 @@
 # Chapter 4c: Quantum Fourier Transform, Period Finding Algorithm:
 
+Note to myself: This chapter caused some confusion for me. And I developed a new way of explaining and thinking about it. In the future I should include it in the notes.
+
 ## 4.3. Discrete Fourier Transform and Quantum Fourier Transform:
 _Quantum Fourier Transform (QFT) in dimension N_: defined on the computational basis $\{\left|x\right> \}^{N-1}_{x=0}$ as the map:
 
@@ -29,7 +31,7 @@ $$
 
 Let's focus on the matrix $\mathcal{Q}_4$, and try to understand how it transforms a vector $\left|x\right>$. To do this we should consider first the matrix multiplication. When one multiplies the matrix $\mathcal{Q}_4$ with a vector $x$, $\left(y = \mathcal{Q}_4 x\right)$, then for each element of $y$, one performs a dot product of $x$ with the i-th row of the matrix. As each consecutive row of the matrix is a vector that rotates in complex space with some angular frequency, the dot product effectively picks up, the component of $x$ with this given angular frequency i.e. performs a Fourier Transform.
 
-<img src="ch4/Q4_oscilation.png" alt="drawing" width="30%"/>
+<img src="../assets/chapter_04/q4_oscillation.png" alt="drawing" width="30%"/>
 
 We can see the pattern of this matrix - first row is a vector that roates with angular frequency of $0 \frac{2\pi}{4}$, second row with angular frequency of $1 \frac{2\pi}{4}$, third row with angular frequency of $2\frac{2\pi}{4}$ and the last row with angular frequency of $3\frac{2\pi}{4}$. 
 
@@ -99,21 +101,21 @@ $$
 
 The circuit would look like this.
 
-<img src="ch4/not_efficient_qft_full.png" alt="drawing" width="100%"/>
+<img src="../assets/chapter_04/not_efficient_qft_full.png" alt="drawing" width="100%"/>
 
 But you might notice that for some of the controlled $R_d$ gates, the $d < 0$. For such gates the rotation is by a integer multiple of $2\pi$, and so effectively such gates do not contribute to the final result. We can skip applying such gates.
 
-<img src="ch4/not_efficient_qft_truncated.png" alt="drawing" width="100%"/>
+<img src="../assets/chapter_04/not_efficient_qft_truncated.png" alt="drawing" width="100%"/>
 
 Secondly what we can notice that applying a $R_0$ gate to $H \left|0\right>_i$ controlled on a j'th qubit is equivalent to applying a $H$ gate directly to the j'th qubit.
 
 i.e. 
 
-<img src="ch4/not_efficient_qft_example.png" alt="drawing" width="60%"/>
+<img src="../assets/chapter_04/not_efficient_qft_example.png" alt="drawing" width="60%"/>
 
 This means that we can rewrite this circuit in a much simpler form, where we reuse the original qubits.
 
-<img src="ch4/qft_circuit_notes.png" alt="drawing" width="100%"/>
+<img src="../assets/chapter_04/qft_circuit_notes.png" alt="drawing" width="100%"/>
 
 As you can see the order of the outputs is reversed relative to the input. The original order can be restored by using n/2 SWAP operations.
 
@@ -122,6 +124,7 @@ Query complexity for this circuit is $\left(n\right)\left(n-1\right)\ldots\left(
 ## 4.5 Period Finding Algorithm:
 
 **Problem and promises**: Suppose we are given a black box function $f:\left\{0,1\right\}^n \rightarrow \left\{0,1\right\}^m$ with a promise that: 
+
 - $f$ is periodic, with a period $r$ such that $f(x+r)=f(x)$ for all $x$
 - $f$ is a one-to-one function in each period i.e. $f(x_1) \neq f(x_2)$  for all $0 \leq x_1, x_2 < r$.
 
@@ -129,7 +132,7 @@ The goal is to find the period $r$ of the function $f$.
 
 **Algorithm**:
 
-<img src="ch4/period_finding_algorithm_circuit.png" alt="drawing" width="100%"/>
+<img src="../assets/chapter_04/period_finding_algorithm_circuit.png" alt="drawing" width="100%"/>
 
 So the algorithm runs in a following way. We first start with $n+m$ qubits. Then we prepare a superposition of all basis states $\{\left|x\right> \}$ on the $n$ qubits. We then apply a bit oracle $O_f$, which entangles n qubits with m qubits - effectively grouping the $\{ x_0, x_0+r, x_0+2r, ... \}$ together and associating them with some value in the m-register $f(x_0)$. Upon measuring the m-register we get a value of $f(x_0)$, which collapses the n-register into a superposition of states $\{ \left|x_0\right>, \left|x_0+r\right>, \left|x_0+2r\right>, ... \}$.
 
@@ -137,14 +140,14 @@ Now you might think - this is it! If I measure this n-register enough times, the
 
 **Step by step state evolution**:
 
-1. Apply the $H^{\otimes n}$ gate to the n-register: $\left|0\right>_m\left|+\right>_n = H_n\left|0\right>_m\left|0\right>_n $
+1. Apply the $H^{\otimes n}$ gate to the n-register: $\left|0\right>_m\left|+\right>_n = H_n\left|0\right>_m\left|0\right>_n$
 2. Apply the bit oracle $O_f$: $\left|0\right>_m\left|+\right>_n \rightarrow \sum_{x_0=0}^{r-1} \left|f(x_0)\right>_m\left(\left|x_0\right> + \left|x_0+r\right> + \left|x_0+2r\right> + ... \right)_n$
 3. Measure the m-register getting a result $f(x_0)$ and collapsing the n-register into a superposition of states $\left|period\right> =  \left|x_0\right>+ \left|x_0+r\right> + \left|x_0+2r\right> + ...$
 4. Apply the QFT to the n-register: $\mathcal{Q}_{2^n}\left|per\right> = \sum_{k=0}^{r-1} \left|kN/r\right>$
 5. Measure the n-register and get the value of $r$
 
 
-<img src="ch4/jozsa_period_finding.png" alt="drawing" width="100%"/>
+<img src="../assets/chapter_04/jozsa_period_finding.png" alt="drawing" width="100%"/>
 
 
 **Post Processing**:

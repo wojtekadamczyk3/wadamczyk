@@ -2,7 +2,7 @@
 
 ## 6.0. Extending the closed quantum system formalism to consider the open quantum systems:
 
-The necessity for density matrix formalism arises from two reasons. Firstly, sometimes we are not quite sure about the state of the system. When this happens we dont want to be constrained to the pure states only. We need to describe such system with a probability distribution over the states. Secondly even if we are sure about the state of the system, then the unitary evolution of the larger system can be seen as non-unitary evolution on its subsystem. We would like to describe such evolution as well, as quite often we are not interested in the whole system, but only in some part of it. I will only briefly touch upon the formalism of the density matrices.
+The necessity for density matrix formalism arises from two reasons. Firstly, sometimes we are not quite sure about the state of the system. When this happens we don't want to be constrained to the pure states only. We want to describe such system with a probability distribution over the states. Secondly even if we are sure about the state of the system, then the unitary evolution of the larger system can be seen as non-unitary evolution on its subsystem. We would like to describe such evolution as well, as quite often we are not interested in the whole system, but only in some part of it. I will only briefly touch upon the formalism of the density matrices.
 
 ## 6.1. Density Matrix:
 
@@ -35,14 +35,14 @@ Consider somewhat opposite task of finding a global state $\left|\psi^{AB}\right
 
 ## 6.4. Quantum Operations: Evolution and allowed operations on the open quantum system:
 
-Given that we defined a more general formalism for the open quantum systems, we should also ponder over the allowed operations on such systems. For closed quantum system living in $\mathcal{H}$ the allowed operations was set of unitaries $\mathcal{U}\left(\mathcal{H}\right)$ that maps the set of pure quantum states to itself. By opening up the system we extended the quantum states from hilbert space to the set of density operators $\mathcal{H} \rightarrow \mathcal{S}\left(\mathcal{H}\right)$. We are interested in the most general maps that map this set to itself. Given that we already used up the name 'operator' to describe the operations on the closed system, we will call the operations on the open system 'superoperators', $\mathcal{E}$. $\mathcal{E}$ is expected to be:
+Given that we defined a more general formalism for the open quantum systems, we should also ponder over the allowed operations on such systems. For closed quantum system living in $\mathcal{H}$ the allowed operations was a set of unitaries $\mathcal{U}\left(\mathcal{H}\right)$ that map the set of pure quantum states to itself. By opening up the system we extended the quantum states from hilbert space to the set of density operators $\mathcal{H} \rightarrow \mathcal{S}\left(\mathcal{H}\right)$. We are interested in the most general maps that map this set to itself. Given that we already used up the name 'operator' to describe the operations on the closed system, we will call the operations on the open system 'superoperators', $\mathcal{E}$. $\mathcal{E}$ is expected to be:
 
 - **linear**: $\mathcal{E}(p \rho+q \sigma)=p \mathcal{E}(\rho)+q \mathcal{E}(\sigma)$
 - **trace preserving**: $\text{tr}\left(\mathcal{E}(\rho)\right) = \text{tr}(\rho)$
 - **positive**: $\mathcal{E}(\rho) \geq 0$ for all $\rho \geq 0$ - this means that the eigenvalues of $\mathcal{E}(\rho)$ are non-negative.
 - **completely positive**: We also would like for $\mathcal{E}_A \otimes \mathcal{I}_B\left(\rho_{A B}\right) \geq 0$ for all $\rho_{A B} \geq 0$.
 
-To know that an superoperator is valid we somehow need to understand the overall global system.
+To know that an superoperator is valid we somehow need to understand the overall global system. This leads to Sinespring dilation theorem.
 
 ## 6.5. The Stinespring dilation theorem: Purification of superoperators:
 
