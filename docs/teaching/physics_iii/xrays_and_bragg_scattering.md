@@ -1,0 +1,828 @@
+# X-Rays and Bragg Scattering
+
+A monochromatic X-ray beam comes in horizontally from the left and hits a two-dimensional crystal. A detector ring around the crystal records the scattered intensity as a function of the scattering angle $2\theta$, measured from the forward direction (positive = upwards, i.e. anticlockwise). Panel (c) is that ring cut open at $2\theta = \pm 180^\circ$ and unrolled into a straight line. A peak appears whenever a reciprocal lattice vector $\mathbf G_{hk}$ lies on the Ewald circle, which is the same as the Bragg condition $2d\sin\theta = n\lambda$ for one family of lattice planes. Rotate the crystal to bring different reflections into the Bragg condition. Hover over a peak to see which planes it comes from.
+
+<style>
+  .xr-app {
+    --xr-accent: #2f6bd8;
+    --xr-atom-b: #e08a1e;
+    --xr-beam: #e4572e;
+    --xr-planes: #13917f;
+    --xr-border: color-mix(in srgb, var(--md-default-fg-color, #000) 14%, transparent);
+    --xr-soft: color-mix(in srgb, var(--md-default-fg-color, #000) 5%, transparent);
+    border: 1px solid var(--xr-border);
+    border-radius: 14px;
+    padding: 18px;
+    margin: 12px 0 20px;
+    background: var(--md-default-bg-color, #fff);
+    box-shadow: 0 10px 26px -18px rgba(0, 0, 0, 0.45);
+  }
+  .xr-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 6px 12px;
+    margin-bottom: 12px;
+  }
+  .xr-head strong { font-size: 1rem; }
+  .xr-head span { font-size: 0.8rem; opacity: 0.7; }
+  .xr-grid {
+    display: grid;
+    grid-template-columns: 210px 1fr 110px;
+    gap: 10px 14px;
+    align-items: center;
+  }
+  .xr-label { font-size: 0.85rem; }
+  .xr-grid input[type="range"] { width: 100%; accent-color: var(--xr-accent); }
+  .xr-grid input[type="range"]:disabled { opacity: 0.35; }
+  .xr-grid select {
+    font: inherit;
+    font-size: 0.82rem;
+    padding: 3px 6px;
+    border-radius: 8px;
+    border: 1px solid var(--xr-border);
+    background: var(--md-default-bg-color, #fff);
+    color: var(--md-default-fg-color, #111);
+  }
+  .xr-value {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: right;
+    background: var(--xr-soft);
+    border: 1px solid var(--xr-border);
+    border-radius: 8px;
+    padding: 3px 8px;
+    white-space: nowrap;
+  }
+  .xr-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 10px;
+    margin-top: 14px;
+  }
+  .xr-actions button {
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid color-mix(in srgb, var(--xr-accent) 35%, transparent);
+    border-radius: 10px;
+    padding: 6px 12px;
+    cursor: pointer;
+    background: color-mix(in srgb, var(--xr-accent) 10%, var(--md-default-bg-color, #fff));
+    color: var(--md-default-fg-color, #111);
+  }
+  .xr-actions button:active { transform: translateY(1px); }
+  .xr-actions button.xr-primary { background: var(--xr-accent); color: #fff; min-width: 100px; }
+  .xr-actions label { font-size: 0.8rem; display: inline-flex; align-items: center; gap: 5px; cursor: pointer; }
+  .xr-actions input[type="checkbox"] { accent-color: var(--xr-accent); }
+  .xr-panels {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 14px;
+    margin-top: 14px;
+  }
+  .xr-app .xr-panels figure,
+  .xr-app .xr-plot figure { display: block; width: auto; max-width: none; margin: 0; min-width: 0; }
+  .xr-app canvas {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--xr-border);
+    border-radius: 10px;
+    background: var(--md-default-bg-color, #fff);
+  }
+  #xr-crystal, #xr-ewald { aspect-ratio: 1 / 1; }
+  .xr-plot { position: relative; margin-top: 14px; }
+  #xr-plot { aspect-ratio: 16 / 7; cursor: crosshair; touch-action: none; }
+  .xr-app figcaption { font-size: 0.75rem; opacity: 0.7; margin-top: 4px; text-align: center; }
+  .xr-tip {
+    position: absolute;
+    pointer-events: none;
+    display: none;
+    min-width: 190px;
+    max-width: 260px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    background: var(--md-default-bg-color, #fff);
+    color: var(--md-default-fg-color, #111);
+    border: 1px solid var(--xr-border);
+    box-shadow: 0 8px 22px -10px rgba(0, 0, 0, 0.45);
+    z-index: 2;
+  }
+  .xr-tip b { font-size: 0.85rem; }
+  .xr-tip .xr-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+  .xr-ob { text-decoration: overline; }
+  .xr-readout {
+    margin-top: 12px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.78rem;
+    line-height: 1.6;
+    background: var(--xr-soft);
+    border: 1px solid var(--xr-border);
+  }
+  @media (max-width: 760px) {
+    .xr-app { padding: 12px; }
+    .xr-grid { grid-template-columns: 1fr auto; grid-auto-flow: row dense; gap: 4px 10px; }
+    .xr-grid .xr-label { grid-column: 1; }
+    .xr-grid .xr-value { grid-column: 2; }
+    .xr-grid input[type="range"], .xr-grid select { grid-column: 1 / -1; }
+    .xr-panels { grid-template-columns: 1fr; }
+    #xr-plot { aspect-ratio: 4 / 3; }
+  }
+</style>
+
+<div class="xr-app" id="xr-app">
+  <div class="xr-head">
+    <strong>2D crystal diffraction: Bragg peaks vs scattering angle</strong>
+    <span>Rotate the crystal, then hover over a peak</span>
+  </div>
+  <div class="xr-grid">
+    <div class="xr-label">Crystal structure</div>
+    <select id="xr-struct">
+      <option value="square">Square</option>
+      <option value="rect">Rectangular (b = 1.5 a)</option>
+      <option value="checker">Square, A–B basis (checkerboard)</option>
+      <option value="hex">Hexagonal (triangular)</option>
+      <option value="honeycomb">Honeycomb, A–B basis (graphene / hBN)</option>
+      <option value="oblique">Oblique (b = 1.25 a, γ = 75°)</option>
+    </select>
+    <div class="xr-value" id="xr-struct-v"></div>
+    <div class="xr-label">Crystal rotation φ</div>
+    <input id="xr-phi" type="range" min="-180" max="180" step="0.1" value="110.5" />
+    <div class="xr-value" id="xr-phi-v"></div>
+    <div class="xr-label">Wavelength λ</div>
+    <input id="xr-lambda" type="range" min="0.2" max="1.6" step="0.01" value="0.7" />
+    <div class="xr-value" id="xr-lambda-v"></div>
+    <div class="xr-label">Crystal size</div>
+    <input id="xr-size" type="range" min="4" max="40" step="1" value="15" />
+    <div class="xr-value" id="xr-size-v"></div>
+    <div class="xr-label">Scattering strength f<sub>B</sub> / f<sub>A</sub></div>
+    <input id="xr-fb" type="range" min="0" max="2" step="0.01" value="0.5" />
+    <div class="xr-value" id="xr-fb-v"></div>
+    <div class="xr-label">Rotation speed</div>
+    <input id="xr-speed" type="range" min="1" max="60" step="1" value="8" />
+    <div class="xr-value" id="xr-speed-v"></div>
+  </div>
+  <div class="xr-actions">
+    <button id="xr-play" class="xr-primary">⟳ Rotate</button>
+    <label><input id="xr-powder" type="checkbox" /> Powder (average over all orientations)</label>
+    <label><input id="xr-log" type="checkbox" /> Log intensity</label>
+  </div>
+  <div class="xr-panels">
+    <figure>
+      <canvas id="xr-crystal"></canvas>
+      <figcaption>(a) Real space: crystal, incident beam from the left, scattered beams, and the detector ring with the measured intensity drawn outwards</figcaption>
+    </figure>
+    <figure>
+      <canvas id="xr-ewald"></canvas>
+      <figcaption>(b) Reciprocal space: lattice points G<sub>hk</sub> and the Ewald circle</figcaption>
+    </figure>
+  </div>
+  <div class="xr-plot">
+    <figure>
+      <canvas id="xr-plot"></canvas>
+      <figcaption>(c) The detector ring from (a), cut at ±180° (back towards the source) and unrolled; the colour band matches the ring. Hover over (or tap) a peak here or on the ring.</figcaption>
+    </figure>
+    <div class="xr-tip" id="xr-tip"></div>
+  </div>
+  <div class="xr-readout" id="xr-readout"></div>
+</div>
+
+<script>
+(() => {
+  const el = (id) => document.getElementById(id);
+  const TAU = 2 * Math.PI, DEG = Math.PI / 180;
+  const S3 = Math.sqrt(3) / 2;
+  const A = "A", B = "B";
+  const STRUCTURES = {
+    square:    { a1: [1, 0], a2: [0, 1],   basis: [[0, 0, A]] },
+    rect:      { a1: [1, 0], a2: [0, 1.5], basis: [[0, 0, A]] },
+    checker:   { a1: [1, 0], a2: [0, 1],   basis: [[0, 0, A], [0.5, 0.5, B]] },
+    hex:       { a1: [1, 0], a2: [0.5, S3], basis: [[0, 0, A]] },
+    honeycomb: { a1: [1, 0], a2: [0.5, S3], basis: [[0, 0, A], [1 / 3, 1 / 3, B]] },
+    oblique:   { a1: [1, 0], a2: [1.25 * Math.cos(75 * DEG), 1.25 * Math.sin(75 * DEG)], basis: [[0, 0, A]] }
+  };
+  const NSTEP = 7200;                 // detector samples over 360° (0.05° each)
+  const STEP = TAU / NSTEP;
+
+  const ui = {
+    struct: el("xr-struct"), phi: el("xr-phi"), lambda: el("xr-lambda"), size: el("xr-size"),
+    fb: el("xr-fb"), speed: el("xr-speed"), play: el("xr-play"), powder: el("xr-powder"), log: el("xr-log"),
+    crystal: el("xr-crystal"), ewald: el("xr-ewald"), plot: el("xr-plot"), tip: el("xr-tip"), readout: el("xr-readout")
+  };
+  const state = {
+    struct: "square", phi: 110.5, lambda: 0.7, size: 15, fb: 0.5, speed: 8,
+    playing: false, lastTime: null, mouseX: null,
+    refl: [], Fmax: 1, b1: [0, 0], b2: [0, 0],
+    I: new Float64Array(NSTEP + 1), peaks: [], hover: null
+  };
+
+  const k = () => TAU / state.lambda;
+  const sigma = () => 0.376 * TAU / state.size;   // Gaussian width of a reciprocal-lattice spot for N cells
+  const hasB = () => STRUCTURES[state.struct].basis.some((b) => b[2] === B);
+  function css(name, fallback) {
+    const v = getComputedStyle(ui.crystal).getPropertyValue(name).trim();
+    return v || fallback;
+  }
+  function gcd(a, b) { a = Math.abs(a); b = Math.abs(b); while (b) { const t = a % b; a = b; b = t; } return a; }
+  const bar = (n) => n < 0 ? '<span class="xr-ob">' + (-n) + "</span>" : String(n);
+  const hkl = (h, kk, open, close) => (open || "(") + bar(h) + " " + bar(kk) + (close || ")");
+  const hklText = (h, kk) => "(" + h + " " + kk + ")";
+  // representative of a powder family: prefer non-negative, then smallest indices, then larger h
+  function famRep(ms) {
+    const score = (m) => (m.h >= 0 && m.k >= 0 ? 2 : m.h > 0 ? 1 : 0) * 1e6 - (Math.abs(m.h) + Math.abs(m.k)) * 1000 + m.h;
+    return ms.reduce((a, b) => (score(b) > score(a) ? b : a));
+  }
+
+  // ---------- reciprocal lattice and structure factors ----------
+  function buildReflections() {
+    const S = STRUCTURES[state.struct];
+    const [a1x, a1y] = S.a1, [a2x, a2y] = S.a2;
+    const det = a1x * a2y - a1y * a2x;
+    const b1 = [TAU * a2y / det, -TAU * a2x / det], b2 = [-TAU * a1y / det, TAU * a1x / det];
+    const Gmax = 2.7 * k();
+    const sinG = Math.abs(det) / (Math.hypot(a1x, a1y) * Math.hypot(a2x, a2y));
+    const n = Math.ceil(Gmax * Math.max(Math.hypot(a1x, a1y), Math.hypot(a2x, a2y)) / TAU / sinG) + 1;
+    const refl = [];
+    let Fmax = 0;
+    for (let h = -n; h <= n; h++) {
+      for (let kk = -n; kk <= n; kk++) {
+        if (h === 0 && kk === 0) continue;
+        const gx = h * b1[0] + kk * b2[0], gy = h * b1[1] + kk * b2[1], g = Math.hypot(gx, gy);
+        if (g > Gmax) continue;
+        let re = 0, im = 0;
+        for (const [u, v, s] of S.basis) {
+          const f = s === A ? 1 : state.fb, ph = -TAU * (h * u + kk * v);
+          re += f * Math.cos(ph); im += f * Math.sin(ph);
+        }
+        let F2 = re * re + im * im;
+        if (F2 < 1e-9) F2 = 0;
+        Fmax = Math.max(Fmax, F2);
+        refl.push({ h, k: kk, gx, gy, g, F2 });
+      }
+    }
+    state.refl = refl; state.Fmax = Fmax || 1; state.b1 = b1; state.b2 = b2;
+  }
+
+  // ---------- detector curve ----------
+  function addWindow(center, half, fn) {
+    const j0 = Math.floor((center - half + Math.PI) / STEP), j1 = Math.ceil((center + half + Math.PI) / STEP);
+    for (let j = j0; j <= j1; j++) {
+      const i = ((j % NSTEP) + NSTEP) % NSTEP;
+      state.I[i] += fn(-Math.PI + i * STEP);
+    }
+  }
+  function computeSingle() {
+    const K = k(), sg = sigma(), c = Math.cos(state.phi * DEG), s = Math.sin(state.phi * DEG);
+    const peaks = [];
+    for (const r of state.refl) {
+      if (r.F2 === 0) continue;
+      const gx = c * r.gx - s * r.gy, gy = s * r.gx + c * r.gy;
+      const radial = Math.hypot(gx + K, gy) - K;          // distance of G from the Ewald circle
+      if (Math.abs(radial) > 5 * sg) continue;
+      const alpha = Math.atan2(gy, gx + K);                 // direction of k_out = scattering angle 2θ
+      const rel = r.F2 / state.Fmax;
+      peaks.push({ r, gx, gy, alpha, w: rel * Math.exp(-radial * radial / (2 * sg * sg)), match: Math.exp(-radial * radial / (2 * sg * sg)) });
+      addWindow(alpha, Math.min(Math.PI, 5 * sg / K), (t) => {
+        const qx = K * (Math.cos(t) - 1) - gx, qy = K * Math.sin(t) - gy;
+        return rel * Math.exp(-(qx * qx + qy * qy) / (2 * sg * sg));
+      });
+    }
+    return peaks;
+  }
+  function computePowder() {
+    const K = k(), sg = sigma();
+    const groups = new Map();
+    for (const r of state.refl) {
+      if (r.F2 === 0 || r.g > 2 * K + 5 * sg) continue;
+      const key = r.g.toFixed(5);
+      if (!groups.has(key)) groups.set(key, { g: r.g, members: [], F2sum: 0 });
+      const grp = groups.get(key);
+      grp.members.push(r); grp.F2sum += r.F2;
+    }
+    const peaks = [];
+    for (const grp of groups.values()) {
+      // orientation-averaged 2D spot: ring at |q| = |G| with weight ∝ σ / |G|
+      const amp = grp.F2sum / state.Fmax * sg / grp.g;
+      const qLo = Math.max(0, grp.g - 5 * sg), qHi = Math.min(2 * K, grp.g + 5 * sg);
+      const tLo = 2 * Math.asin(qLo / (2 * K)), tHi = 2 * Math.asin(qHi / (2 * K));
+      for (const sign of [1, -1]) {
+        addWindow(sign * (tLo + tHi) / 2, (tHi - tLo) / 2 + STEP, (t) => {
+          const dq = 2 * K * Math.sin(Math.abs(t) / 2) - grp.g;
+          return amp * Math.exp(-dq * dq / (2 * sg * sg));
+        });
+      }
+      if (grp.g <= 2 * K) {
+        const alpha = 2 * Math.asin(grp.g / (2 * K));
+        peaks.push({ grp, alpha, w: amp }, { grp, alpha: -alpha, w: amp });
+      }
+    }
+    return peaks;
+  }
+  function compute() {
+    state.I.fill(0);
+    state.peaks = ui.powder.checked ? computePowder() : computeSingle();
+    state.I[NSTEP] = state.I[0];
+    let m = 0;
+    for (let i = 0; i <= NSTEP; i++) m = Math.max(m, state.I[i]);
+    state.norm = ui.powder.checked ? (m || 1) : Math.max(1, m);   // single crystal: 1 = perfect hit of the strongest reflection
+    for (const p of state.peaks) p.y = Math.min(1, p.w / state.norm);
+  }
+
+  // ---------- drawing helpers ----------
+  function fitCanvas(canvas) {
+    const dpr = window.devicePixelRatio || 1;
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    if (canvas.width !== Math.round(w * dpr) || canvas.height !== Math.round(h * dpr)) {
+      canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+    }
+    const ctx = canvas.getContext("2d");
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+    return { ctx, w, h };
+  }
+  function arrow(ctx, x0, y0, x1, y1, colour, width, head) {
+    const dx = x1 - x0, dy = y1 - y0, len = Math.hypot(dx, dy);
+    if (len < 1) return;
+    const ux = dx / len, uy = dy / len, hd = Math.min(head || 9, 0.45 * len);
+    ctx.strokeStyle = colour; ctx.fillStyle = colour; ctx.lineWidth = width;
+    ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1 - ux * hd * 0.7, y1 - uy * hd * 0.7); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(x1, y1);
+    ctx.lineTo(x1 - ux * hd - uy * hd * 0.45, y1 - uy * hd + ux * hd * 0.45);
+    ctx.lineTo(x1 - ux * hd + uy * hd * 0.45, y1 - uy * hd - ux * hd * 0.45);
+    ctx.closePath(); ctx.fill();
+  }
+  // reflection whose planes / G vector are highlighted (rotated into the lab frame)
+  function hoverG() {
+    const hv = state.hover;
+    if (!hv) return null;
+    const r = hv.r || famRep(hv.grp.members);
+    let phi = state.phi * DEG;
+    if (!hv.r) {
+      // powder: the grain orientation that puts this G on the Ewald circle at the hovered 2θ
+      const target = hv.alpha / 2 + Math.sign(hv.alpha) * Math.PI / 2;
+      phi = target - Math.atan2(r.gy, r.gx);
+    }
+    const c = Math.cos(phi), s = Math.sin(phi);
+    return { r, gx: c * r.gx - s * r.gy, gy: s * r.gx + c * r.gy, alpha: hv.alpha, phi };
+  }
+
+  // ---------- real-space panel ----------
+  // Cyclic colour for the detector angle, shared by the ring in (a) and the strip under plot (c).
+  const hueOf = (t) => "hsl(" + Math.round((t / DEG + 180) % 360) + ", 60%, 58%)";
+  function crystalGeom() {
+    const w = ui.crystal.clientWidth, h = ui.crystal.clientHeight, half = Math.min(w, h) / 2;
+    return { w, h, cx: w / 2, cy: h / 2, rPatch: 0.56 * half, rDet: 0.72 * half, hDet: 0.25 * half };
+  }
+  function mouseAngle() {
+    if (state.mouseX === null) return null;
+    const { pw } = plotGeom();
+    return (state.mouseX - PAD.l) / pw * TAU - Math.PI;
+  }
+  function drawCrystal() {
+    const { ctx, w, h } = fitCanvas(ui.crystal);
+    const { cx, cy, rPatch, rDet, hDet } = crystalGeom();
+    const fg = css("--md-default-fg-color", "#222");
+    const accent = css("--xr-accent", "#2f6bd8"), beam = css("--xr-beam", "#e4572e");
+    const S = STRUCTURES[state.struct];
+    const R = 4.3, sc = rPatch / R;
+    const hg = hoverG();
+    const phiR = hg ? hg.phi : state.phi * DEG;
+    const c = Math.cos(phiR), s = Math.sin(phiR);
+    const P = (x, y) => [cx + (c * x - s * y) * sc, cy - (s * x + c * y) * sc];
+    const ring = (t, r) => [cx + r * Math.cos(t), cy - r * Math.sin(t)];
+
+    // detector ring: the same intensity as plot (c), drawn radially outwards
+    const trace = new Path2D(), n = state.norm, every = 4;
+    for (let i = 0; i <= NSTEP; i += every) {
+      let v = 0;
+      for (let j = i; j < Math.min(NSTEP + 1, i + every); j++) v = Math.max(v, state.I[j]);
+      const [x, y] = ring(-Math.PI + i * STEP, rDet + hDet * Math.min(1, yOf(v / n)));
+      if (i === 0) trace.moveTo(x, y); else trace.lineTo(x, y);
+    }
+    trace.closePath();
+    const band = new Path2D(trace);
+    band.moveTo(cx + rDet, cy); band.arc(cx, cy, rDet, 0, TAU);
+    ctx.fillStyle = accent; ctx.globalAlpha = 0.16; ctx.fill(band, "evenodd");
+    ctx.globalAlpha = 1; ctx.strokeStyle = accent; ctx.lineWidth = 1.5; ctx.stroke(trace);
+    ctx.lineWidth = 5;
+    for (let d = -180; d < 180; d += 2) {
+      const [x0, y0] = ring(d * DEG, rDet), [x1, y1] = ring((d + 2.2) * DEG, rDet);
+      ctx.strokeStyle = hueOf((d + 1) * DEG);
+      ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke();
+    }
+    ctx.font = "10.5px sans-serif"; ctx.textAlign = "center"; ctx.fillStyle = fg; ctx.strokeStyle = fg; ctx.lineWidth = 1;
+    for (let d = -150; d <= 180; d += 30) {
+      const [x0, y0] = ring(d * DEG, rDet - 3), [x1, y1] = ring(d * DEG, rDet - 8);
+      ctx.globalAlpha = 0.6; ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke();
+      if (d % 90 === 0) {
+        const [lx, ly] = ring(d * DEG, rDet - 17);
+        ctx.globalAlpha = 0.8;
+        ctx.fillText(d === 180 ? "±180°" : (d > 0 ? "+" : d < 0 ? "−" : "") + Math.abs(d) + "°", lx, ly + (d === 180 ? -8 : 4));
+      }
+    }
+    ctx.globalAlpha = 0.7; ctx.textAlign = "left";
+    const [dx, dy] = ring(128 * DEG, rDet + hDet * 0.45);
+    ctx.fillText("detector 2θ", dx - 40, dy);
+    ctx.globalAlpha = 1;
+
+    // scattered beams end on the detector
+    for (const p of state.peaks) {
+      if (p.y < 0.02) continue;
+      const [x, y] = ring(p.alpha, rDet);
+      ctx.globalAlpha = 0.12 + 0.6 * p.y;
+      ctx.strokeStyle = beam; ctx.lineWidth = 1 + 2 * p.y;
+      ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(x, y); ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+
+    // highlighted planes (primitive family h'k', atoms lie on these lines)
+    ctx.save();
+    ctx.beginPath(); ctx.arc(cx, cy, rPatch, 0, TAU); ctx.clip();
+    if (hg) {
+      const nn = gcd(hg.r.h, hg.r.k);
+      const g = Math.hypot(hg.gx, hg.gy) / nn, d = TAU / g;
+      const ux = hg.gx / (g * nn), uy = hg.gy / (g * nn);
+      ctx.strokeStyle = css("--xr-planes", "#13917f");
+      for (let m = -Math.ceil(R / d); m <= Math.ceil(R / d); m++) {
+        const px = ux * m * d, py = uy * m * d;
+        ctx.lineWidth = m === 0 ? 2.4 : 1.4; ctx.globalAlpha = m === 0 ? 0.95 : 0.6;
+        ctx.beginPath();
+        ctx.moveTo(cx + (px - uy * R) * sc, cy - (py + ux * R) * sc);
+        ctx.lineTo(cx + (px + uy * R) * sc, cy - (py - ux * R) * sc);
+        ctx.stroke();
+      }
+      ctx.globalAlpha = 1;
+    }
+    // atoms
+    const na = 8;
+    for (let i = -na; i <= na; i++) {
+      for (let j = -na; j <= na; j++) {
+        for (const [u, v, sp] of S.basis) {
+          const x = (i + u) * S.a1[0] + (j + v) * S.a2[0], y = (i + u) * S.a1[1] + (j + v) * S.a2[1];
+          if (Math.hypot(x, y) > R + 0.3) continue;
+          const f = sp === A ? 1 : state.fb;
+          if (f <= 0.001) continue;
+          const [X, Y] = P(x, y);
+          ctx.fillStyle = sp === A ? accent : css("--xr-atom-b", "#e08a1e");
+          ctx.beginPath(); ctx.arc(X, Y, Math.max(1.5, 0.11 * sc * Math.sqrt(f)), 0, TAU); ctx.fill();
+        }
+      }
+    }
+    ctx.restore();
+    ctx.globalAlpha = 0.3; ctx.strokeStyle = fg; ctx.lineWidth = 1; ctx.setLineDash([3, 4]);
+    ctx.beginPath(); ctx.arc(cx, cy, rPatch, 0, TAU); ctx.stroke(); ctx.setLineDash([]); ctx.globalAlpha = 1;
+
+    // lattice vectors
+    const [o0, o1] = P(0, 0);
+    [[S.a1, "a₁"], [S.a2, "a₂"]].forEach(([a, lab]) => {
+      const [X, Y] = P(a[0], a[1]);
+      arrow(ctx, o0, o1, X, Y, fg, 1.6, 7);
+      ctx.fillStyle = fg; ctx.font = "12px sans-serif";
+      ctx.fillText(lab, X + 4, Y - 4);
+    });
+
+    // incident beam (passes the detector through a gap at ±180°) and the straight-through direction
+    arrow(ctx, 4, cy, cx - rPatch - 4, cy, beam, 3, 11);
+    ctx.globalAlpha = 0.35; ctx.setLineDash([5, 5]); ctx.strokeStyle = beam; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(cx - rPatch, cy); ctx.lineTo(cx + rDet, cy); ctx.stroke();
+    ctx.setLineDash([]); ctx.globalAlpha = 1;
+    ctx.fillStyle = beam; ctx.font = "12px sans-serif";
+    ctx.fillText("incident", 6, cy + 17);
+
+    // cursor position from plot (c) and hovered peak
+    const tm = mouseAngle();
+    if (tm !== null) {
+      const [x0, y0] = ring(tm, rDet - 8), [x1, y1] = ring(tm, rDet + hDet);
+      ctx.strokeStyle = fg; ctx.globalAlpha = 0.45; ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke();
+      ctx.globalAlpha = 1;
+    }
+    if (hg) {
+      const [ex, ey] = ring(hg.alpha, rDet);
+      arrow(ctx, cx, cy, ex, ey, beam, 3, 11);
+      const yv = state.hover ? state.hover.y : 0;
+      const [mx, my] = ring(hg.alpha, rDet + hDet * Math.min(1, yOf(yv)));
+      ctx.fillStyle = beam; ctx.beginPath(); ctx.arc(mx, my, 4.5, 0, TAU); ctx.fill();
+      ctx.fillStyle = fg; ctx.font = "12px sans-serif";
+      const nn = gcd(hg.r.h, hg.r.k);
+      ctx.fillText("planes " + hklText(hg.r.h / nn, hg.r.k / nn) + "   2θ = " + (hg.alpha / DEG).toFixed(1) + "°", 8, h - 10);
+      if (ui.powder.checked) ctx.fillText("grain shown at φ = " + ((((hg.phi / DEG) + 540) % 360) - 180).toFixed(1) + "°", 8, h - 26);
+    }
+    if (hasB()) {
+      ctx.font = "11px sans-serif";
+      ctx.fillStyle = accent; ctx.fillText("● A", w - 64, 16);
+      ctx.fillStyle = css("--xr-atom-b", "#e08a1e"); ctx.fillText("● B", w - 32, 16);
+    }
+  }
+
+  // ---------- reciprocal-space panel ----------
+  function drawEwald() {
+    const { ctx, w, h } = fitCanvas(ui.ewald);
+    const fg = css("--md-default-fg-color", "#222");
+    const accent = css("--xr-accent", "#2f6bd8"), beam = css("--xr-beam", "#e4572e");
+    const K = k(), sg = sigma(), H = 1.32 * K, sc = (Math.min(w, h) / 2 - 8) / H;
+    const cx = w / 2, cy = h / 2;
+    const X = (qx) => cx + (qx + K) * sc, Y = (qy) => cy - qy * sc;   // view centred on the Ewald-circle centre (−k, 0)
+    const c = Math.cos(state.phi * DEG), s = Math.sin(state.phi * DEG);
+    const powder = ui.powder.checked;
+
+    // Ewald circle with a band of ±σ (finite crystal size)
+    ctx.strokeStyle = beam; ctx.globalAlpha = 0.12; ctx.lineWidth = Math.max(1, 2 * sg * sc);
+    ctx.beginPath(); ctx.arc(X(-K), Y(0), K * sc, 0, TAU); ctx.stroke();
+    ctx.globalAlpha = 0.8; ctx.lineWidth = 1.2;
+    ctx.beginPath(); ctx.arc(X(-K), Y(0), K * sc, 0, TAU); ctx.stroke();
+    ctx.globalAlpha = 1;
+
+    if (powder) {
+      const seen = new Set();
+      for (const p of state.peaks) {
+        if (seen.has(p.grp)) continue;
+        seen.add(p.grp);
+        ctx.strokeStyle = accent; ctx.globalAlpha = 0.15 + 0.6 * p.y; ctx.lineWidth = 1.2;
+        ctx.beginPath(); ctx.arc(X(0), Y(0), p.grp.g * sc, 0, TAU); ctx.stroke();
+      }
+      ctx.globalAlpha = 1;
+    }
+    const exc = new Map();
+    if (!powder) for (const p of state.peaks) exc.set(p.r, p.match);
+    for (const r of state.refl) {
+      const gx = c * r.gx - s * r.gy, gy = s * r.gx + c * r.gy;
+      const px = X(gx), py = Y(gy);
+      if (px < -5 || px > w + 5 || py < -5 || py > h + 5) continue;
+      if (r.F2 === 0) {
+        ctx.strokeStyle = fg; ctx.globalAlpha = 0.35; ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.arc(px, py, 2.5, 0, TAU); ctx.stroke();
+        continue;
+      }
+      const rad = 1.8 + 4.2 * Math.sqrt(r.F2 / state.Fmax);
+      ctx.fillStyle = accent; ctx.globalAlpha = powder ? 0.25 : 0.45;
+      ctx.beginPath(); ctx.arc(px, py, rad, 0, TAU); ctx.fill();
+      const e = exc.get(r) || 0;
+      if (e > 0.02) {
+        ctx.fillStyle = beam; ctx.globalAlpha = e;
+        ctx.beginPath(); ctx.arc(px, py, rad + 1.5, 0, TAU); ctx.fill();
+      }
+    }
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = fg; ctx.beginPath(); ctx.arc(X(0), Y(0), 3, 0, TAU); ctx.fill();
+    ctx.font = "12px sans-serif"; ctx.fillText("O", X(0) + 5, Y(0) + 14);
+
+    arrow(ctx, X(-K), Y(0), X(0), Y(0), beam, 2, 9);
+    ctx.fillStyle = beam; ctx.fillText("k_in", X(-K / 2) - 12, Y(0) - 6);
+
+    const hg = hoverG();
+    if (hg) {
+      const gx = hg.gx, gy = hg.gy;
+      arrow(ctx, X(-K), Y(0), X(gx), Y(gy), beam, 2, 9);
+      arrow(ctx, X(0), Y(0), X(gx), Y(gy), css("--xr-planes", "#13917f"), 2.4, 9);
+      ctx.fillStyle = css("--xr-planes", "#13917f");
+      ctx.fillText("G " + hklText(hg.r.h, hg.r.k), X(gx) + 6, Y(gy) - 6);
+    }
+    ctx.fillStyle = fg; ctx.globalAlpha = 0.7; ctx.font = "11px sans-serif";
+    ctx.fillText("Ewald circle: radius k = 2π/λ", 8, h - 10);
+    ctx.globalAlpha = 1;
+  }
+
+  // ---------- intensity plot ----------
+  const PAD = { l: 50, r: 12, t: 14, b: 42 };
+  function plotGeom() {
+    const w = ui.plot.clientWidth, h = ui.plot.clientHeight;
+    return { w, h, pw: w - PAD.l - PAD.r, ph: h - PAD.t - PAD.b };
+  }
+  const yOf = (v) => {
+    if (ui.log.checked) return Math.max(0, (Math.log10(Math.max(v, 1e-5)) + 4) / 4.1);
+    return v / 1.05;
+  };
+  function drawPlot() {
+    const { ctx, w, h } = fitCanvas(ui.plot);
+    const { pw, ph } = plotGeom();
+    const fg = css("--md-default-fg-color", "#222"), accent = css("--xr-accent", "#2f6bd8");
+    const X = (t) => PAD.l + (t + Math.PI) / TAU * pw;
+    const Y = (v) => PAD.t + ph * (1 - yOf(v));
+
+    ctx.font = "11px sans-serif"; ctx.fillStyle = fg; ctx.strokeStyle = fg; ctx.lineWidth = 1;
+    ctx.textAlign = "center";
+    const xstep = pw < 420 ? 90 : 30;
+    for (let d = -180; d <= 180; d += xstep) {
+      ctx.globalAlpha = d === 0 ? 0.3 : 0.12;
+      ctx.beginPath(); ctx.moveTo(X(d * DEG), PAD.t); ctx.lineTo(X(d * DEG), PAD.t + ph); ctx.stroke();
+      ctx.globalAlpha = 0.7; ctx.fillText(d + "°", X(d * DEG), PAD.t + ph + 20);
+    }
+    ctx.textAlign = "right";
+    const yt = ui.log.checked ? [1e-4, 1e-3, 1e-2, 1e-1, 1] : [0, 0.25, 0.5, 0.75, 1];
+    for (const v of yt) {
+      ctx.globalAlpha = 0.12; ctx.beginPath(); ctx.moveTo(PAD.l, Y(v)); ctx.lineTo(PAD.l + pw, Y(v)); ctx.stroke();
+      ctx.globalAlpha = 0.7; ctx.fillText(ui.log.checked ? "1e" + Math.round(Math.log10(v)) : v.toFixed(2), PAD.l - 6, Y(v) + 4);
+    }
+    ctx.globalAlpha = 1;
+    for (let d = -180; d < 180; d += 2) {        // same colour band as the detector ring in (a)
+      ctx.fillStyle = hueOf((d + 1) * DEG);
+      ctx.fillRect(X(d * DEG), PAD.t + ph + 1, X((d + 2) * DEG) - X(d * DEG) + 0.6, 5);
+    }
+    ctx.fillStyle = fg;
+    ctx.globalAlpha = 0.3; ctx.strokeRect(PAD.l, PAD.t, pw, ph);
+    ctx.globalAlpha = 0.85; ctx.textAlign = "center";
+    ctx.fillText("scattering angle 2θ  (0° = straight through, + = upwards)", PAD.l + pw / 2, h - 4);
+    ctx.save(); ctx.translate(13, PAD.t + ph / 2); ctx.rotate(-Math.PI / 2);
+    ctx.fillText(ui.powder.checked ? "intensity (norm.)" : "intensity (rel.)", 0, 0); ctx.restore();
+    ctx.globalAlpha = 1;
+
+    // curve
+    ctx.save();
+    ctx.beginPath(); ctx.rect(PAD.l, PAD.t, pw, ph); ctx.clip();
+    const n = state.norm, every = Math.max(1, Math.floor(NSTEP / (pw * 3)));
+    ctx.beginPath(); ctx.moveTo(X(-Math.PI), Y(0));
+    for (let i = 0; i <= NSTEP; i += every) {
+      // keep narrow peaks: take the max over the decimated block
+      let v = 0;
+      for (let j = i; j < Math.min(NSTEP + 1, i + every); j++) v = Math.max(v, state.I[j]);
+      ctx.lineTo(X(-Math.PI + i * STEP), Y(v / n));
+    }
+    ctx.lineTo(X(Math.PI), Y(0)); ctx.closePath();
+    ctx.fillStyle = accent; ctx.globalAlpha = 0.14; ctx.fill();
+    ctx.globalAlpha = 1; ctx.strokeStyle = accent; ctx.lineWidth = 1.6; ctx.stroke();
+
+    // peak labels
+    ctx.font = "10.5px sans-serif"; ctx.textAlign = "center"; ctx.fillStyle = fg;
+    const labelled = [];
+    const sorted = state.peaks.filter((p) => p.y > (ui.log.checked ? 1e-3 : 0.06)).sort((a, b) => b.y - a.y);
+    for (const p of sorted) {
+      const x = X(p.alpha);
+      if (labelled.some((lx) => Math.abs(lx - x) < 30) || labelled.length >= 14) continue;
+      labelled.push(x);
+      const r = p.r || famRep(p.grp.members);
+      const txt = p.grp ? "{" + r.h + " " + r.k + "}" : hklText(r.h, r.k);
+      ctx.globalAlpha = 0.75;
+      ctx.fillText(txt, x, Math.max(PAD.t + 10, Y(p.y) - 6));
+    }
+    ctx.globalAlpha = 1;
+
+    const tm = mouseAngle();
+    if (tm !== null && !state.hover) {
+      ctx.strokeStyle = fg; ctx.globalAlpha = 0.35; ctx.setLineDash([3, 3]);
+      ctx.beginPath(); ctx.moveTo(X(tm), PAD.t); ctx.lineTo(X(tm), PAD.t + ph); ctx.stroke();
+      ctx.setLineDash([]); ctx.globalAlpha = 1;
+    }
+    if (state.hover) {
+      const x = X(state.hover.alpha);
+      ctx.strokeStyle = css("--xr-beam", "#e4572e"); ctx.globalAlpha = 0.7; ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(x, PAD.t); ctx.lineTo(x, PAD.t + ph); ctx.stroke();
+      ctx.globalAlpha = 1; ctx.fillStyle = css("--xr-beam", "#e4572e");
+      ctx.beginPath(); ctx.arc(x, Y(state.hover.y), 4.5, 0, TAU); ctx.fill();
+    }
+    ctx.restore();
+  }
+
+  // ---------- hover ----------
+  function updateHover() {
+    state.hover = null;
+    if (state.mouseX === null) { ui.tip.style.display = "none"; return; }
+    const { pw } = plotGeom();
+    const X = (t) => PAD.l + (t + Math.PI) / TAU * pw;
+    const floor = ui.log.checked ? 2e-4 : 0.01;
+    let best = null, bestD = 16;
+    for (const p of state.peaks) {
+      if (p.y < floor) continue;
+      const d = Math.abs(X(p.alpha) - state.mouseX);
+      if (d < bestD - 0.5 || (Math.abs(d - bestD) <= 0.5 && best && p.y > best.y)) { best = p; bestD = d; }
+    }
+    state.hover = best;
+    if (!best) { ui.tip.style.display = "none"; return; }
+
+    const lam = state.lambda, theta = Math.abs(best.alpha) / 2;
+    let html;
+    if (best.r) {
+      const r = best.r, n = gcd(r.h, r.k), d = TAU / r.g * n;
+      html = "<b>" + hkl(r.h, r.k) + " reflection</b><br>" +
+        "planes " + hkl(r.h / n, r.k / n) + (n > 1 ? ", order n = " + n : ", first order") + "<br>" +
+        '<span class="xr-mono">d = ' + d.toFixed(3) + " a &nbsp; 2θ = " + (best.alpha / DEG).toFixed(2) + "°</span><br>" +
+        '<span class="xr-mono">2d sinθ = ' + (2 * d * Math.sin(theta)).toFixed(3) + " a, nλ = " + (n * lam).toFixed(3) + " a</span><br>" +
+        "|F|² = " + (r.F2 / state.Fmax).toFixed(3) + " (rel.) · on Ewald circle: " + Math.round(100 * best.match) + "%";
+    } else {
+      const ms = best.grp.members, r = famRep(ms), n = gcd(r.h, r.k), d = TAU / r.g * n;
+      const list = ms.slice(0, 6).map((m) => hkl(m.h, m.k)).join(" ") + (ms.length > 6 ? " …" : "");
+      html = "<b>|G| = " + r.g.toFixed(3) + " / a ring</b><br>" +
+        "reflections (" + ms.length + "): " + list + "<br>" +
+        "planes " + hkl(r.h / n, r.k / n) + (n > 1 ? ", order n = " + n : "") + "<br>" +
+        '<span class="xr-mono">d = ' + d.toFixed(3) + " a &nbsp; 2θ = ±" + (Math.abs(best.alpha) / DEG).toFixed(2) + "°</span><br>" +
+        '<span class="xr-mono">2d sinθ = ' + (2 * d * Math.sin(theta)).toFixed(3) + " a, nλ = " + (n * lam).toFixed(3) + " a</span>";
+    }
+    ui.tip.innerHTML = html;
+    ui.tip.style.display = "block";
+    const cw = ui.plot.clientWidth, tw = ui.tip.offsetWidth;
+    let left = X(best.alpha) + 14;
+    if (left + tw > cw) left = X(best.alpha) - tw - 14;
+    ui.tip.style.left = Math.max(0, left) + "px";
+    ui.tip.style.top = (PAD.t + 6) + "px";
+  }
+
+  // ---------- readout / labels ----------
+  function updateLabels() {
+    el("xr-phi-v").textContent = state.phi.toFixed(1) + "°";
+    el("xr-lambda-v").textContent = state.lambda.toFixed(2) + " a";
+    el("xr-size-v").textContent = state.size + " cells";
+    el("xr-fb-v").textContent = hasB() ? state.fb.toFixed(2) : "—";
+    el("xr-speed-v").textContent = state.speed + " °/s";
+    const S = STRUCTURES[state.struct];
+    el("xr-struct-v").textContent = S.basis.length + (S.basis.length > 1 ? " atoms" : " atom");
+    ui.fb.disabled = !hasB();
+  }
+  function updateReadout() {
+    const K = k();
+    const reach = state.refl.filter((r) => r.g <= 2 * K);
+    const ext = reach.filter((r) => r.F2 === 0).length;
+    const dmax = Math.max(...state.refl.map((r) => TAU / r.g));
+    ui.readout.innerHTML =
+      "k = 2π/λ = " + K.toFixed(2) + " / a &nbsp;·&nbsp; reflections with |G| ≤ 2k: " + reach.length +
+      (ext ? " (" + ext + " extinct, hollow circles)" : "") + "<br>" +
+      "largest plane spacing d = " + dmax.toFixed(3) + " a → Bragg peaks need λ ≤ 2d = " + (2 * dmax).toFixed(3) + " a" +
+      " &nbsp;·&nbsp; spot width σ ≈ 0.38 · 2π/(N a) = " + sigma().toFixed(3) + " / a";
+  }
+
+  function render() {
+    compute();
+    updateHover();
+    drawCrystal();
+    drawEwald();
+    drawPlot();
+  }
+  function rebuild() { buildReflections(); updateLabels(); updateReadout(); render(); }
+
+  // ---------- events ----------
+  ui.struct.addEventListener("change", () => { state.struct = ui.struct.value; rebuild(); });
+  ui.phi.addEventListener("input", () => { state.phi = Number(ui.phi.value); updateLabels(); render(); });
+  ui.lambda.addEventListener("input", () => { state.lambda = Number(ui.lambda.value); rebuild(); });
+  ui.size.addEventListener("input", () => { state.size = Number(ui.size.value); updateLabels(); updateReadout(); render(); });
+  ui.fb.addEventListener("input", () => { state.fb = Number(ui.fb.value); rebuild(); });
+  ui.speed.addEventListener("input", () => { state.speed = Number(ui.speed.value); updateLabels(); });
+  ui.powder.addEventListener("change", render);
+  ui.log.addEventListener("change", render);
+  ui.play.addEventListener("click", () => {
+    state.playing = !state.playing; state.lastTime = null;
+    ui.play.textContent = state.playing ? "❚❚ Pause" : "⟳ Rotate";
+    if (state.playing) requestAnimationFrame(tick);
+  });
+  function tick(now) {
+    if (!state.playing) return;
+    if (state.lastTime !== null) {
+      const dt = Math.min(0.1, (now - state.lastTime) / 1000);
+      let phi = state.phi + state.speed * dt;
+      if (phi > 180) phi -= 360;
+      state.phi = phi; ui.phi.value = phi;
+      updateLabels(); render();
+    }
+    state.lastTime = now;
+    requestAnimationFrame(tick);
+  }
+  function redrawHover() { updateHover(); drawCrystal(); drawEwald(); drawPlot(); }
+  function pointer(e) {
+    const rect = ui.plot.getBoundingClientRect();
+    state.mouseX = e.clientX - rect.left;
+    redrawHover();
+  }
+  // hovering the detector ring in (a) is the same as hovering that angle in (c)
+  function ringPointer(e) {
+    const rect = ui.crystal.getBoundingClientRect();
+    const { cx, cy, rPatch } = crystalGeom();
+    const x = e.clientX - rect.left - cx, y = cy - (e.clientY - rect.top);
+    if (Math.hypot(x, y) < rPatch) {
+      if (state.mouseX !== null) { state.mouseX = null; redrawHover(); }
+      return;
+    }
+    state.mouseX = PAD.l + (Math.atan2(y, x) + Math.PI) / TAU * plotGeom().pw;
+    redrawHover();
+  }
+  ui.crystal.addEventListener("pointermove", ringPointer);
+  ui.crystal.addEventListener("pointerdown", ringPointer);
+  ui.crystal.addEventListener("pointerleave", (e) => {
+    if (e.pointerType === "touch") return;
+    state.mouseX = null; redrawHover();
+  });
+  ui.plot.addEventListener("pointermove", pointer);
+  ui.plot.addEventListener("pointerdown", pointer);
+  ui.plot.addEventListener("pointerleave", (e) => {
+    if (e.pointerType === "touch") return;
+    state.mouseX = null; redrawHover();
+  });
+  if (window.ResizeObserver) new ResizeObserver(() => render()).observe(ui.plot);
+  window.addEventListener("resize", render);
+
+  rebuild();
+})();
+</script>
+
+## Things to try
+
+1. **A single crystal rarely diffracts.** Pick the square lattice and press *Rotate*. For most orientations the detector sees nothing. A peak flashes up only when a reciprocal lattice point crosses the Ewald circle, i.e. when some family of planes makes exactly the Bragg angle with the beam. This is the rotating-crystal method.
+2. **Which planes?** Hover over a peak. The reflecting planes light up in the crystal, and the tooltip checks $2d\sin\theta = n\lambda$. Peaks such as $(2\,0)$ are the second order of the $(1\,0)$ planes.
+3. **Extinctions.** Choose *Square, A–B basis* and set $f_B/f_A = 1$. Every reflection with $h + k$ odd disappears (hollow circles in the Ewald panel), because the lattice is really a smaller, centred square lattice. Lower $f_B$ and these "superlattice" peaks come back with $|F|^2 \propto (f_A - f_B)^2$. Turn on *Log intensity* to see the weak ones.
+4. **Honeycomb.** With $f_B = f_A$ (graphene), some reflections cancel. With $f_B \neq f_A$ (hBN) they reappear.
+5. **Powder diffraction.** Tick *Powder*. Averaging over all orientations, every reflection with $|\mathbf G| \le 2k$ shows up at once, at $2\theta = 2\arcsin(\lambda / 2d)$. That is why powder patterns are easy to measure but lose the orientation information. Hover to see which reflections overlap in one ring.
+6. **Wavelength and crystal size.** If $\lambda > 2d_{\max}$ there are no Bragg peaks at all, because the Ewald circle is too small to reach any reciprocal lattice point. Shrinking the crystal makes the reciprocal lattice spots larger. The peaks get broader and are easier to hit (Scherrer broadening).

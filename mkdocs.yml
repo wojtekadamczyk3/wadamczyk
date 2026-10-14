@@ -32,6 +32,7 @@ nav:
       - "Chapter 8: Stabiliser Formalism": teaching/quantum_information_processing/chapters/08_stabiliser_formalism.md
     - "Physics III - ETH Zurich":
       - "Spatial measurements of light": teaching/physics_iii/spatial_measurements_of_light.md
+      - "X-Rays and Bragg Scattering": teaching/physics_iii/xrays_and_bragg_scattering.md
   - "Random Walk":
     - "Quantum Optics":
       - "Light-Matter Interaction": random_walk/quantum_optics/rabi_frequencies.md
