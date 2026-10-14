@@ -1,0 +1,2362 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../quantum_information_processing/chapters/08_stabiliser_formalism.html">
+      
+      
+        <link rel="next" href="../../random_walk/quantum_optics/rabi_frequencies.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/atom_fav.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Spatial measurements of light - wadamczyk's space</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#spatial-measurements-of-light" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="wadamczyk&#39;s space" class="md-header__button md-logo" aria-label="wadamczyk's space" data-md-component="logo">
+      
+  <img src="../../assets/images/atom.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            wadamczyk's space
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Spatial measurements of light
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Abstract
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../quantum_information_processing/index.html" class="md-tabs__link">
+          
+  
+  
+  Teaching
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../random_walk/quantum_optics/rabi_frequencies.html" class="md-tabs__link">
+          
+  
+  
+  Random Walk
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../courses/scientific_writing_workshop/index.html" class="md-tabs__link">
+          
+  
+  
+  Courses
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../projects/ekoacademic/index.html" class="md-tabs__link">
+          
+  
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="wadamczyk&#39;s space" class="md-nav__button md-logo" aria-label="wadamczyk's space" data-md-component="logo">
+      
+  <img src="../../assets/images/atom.png" alt="logo">
+
+    </a>
+    wadamczyk's space
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Abstract
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teaching
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Teaching
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Information Processing - Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quantum Information Processing - Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum_information_processing/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 0: Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum_information_processing/chapters/01a_principles_of_quantum_mechanics.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 1a: Principles of Quantum Mechanics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum_information_processing/chapters/01b_toolbox.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 1b: Toolbox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum_information_processing/chapters/03a_computational_complexity.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3a: Computational Complexity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum_information_processing/chapters/03b_universal_gates_and_oracles.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 3b: Universal gates, Reversible irreversability, Oracle Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum_information_processing/chapters/04a_deutsch_jozsa_algorithms.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4a: DJ style algorithms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum_information_processing/chapters/04b_grovers_algorithm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4b: Grover's algorithm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum_information_processing/chapters/04c_quantum_fourier_transform.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 4c: Quantum Fourier Transform, Period Finding Algorithm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum_information_processing/chapters/05_shors_algorithm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 5: Shor's Algorithm
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum_information_processing/chapters/06_open_quantum_systems.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 6: Open Quantum Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum_information_processing/chapters/07_quantum_error_correction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 7: Quantum Error Correction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quantum_information_processing/chapters/08_stabiliser_formalism.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chapter 8: Stabiliser Formalism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Physics III - ETH Zurich
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Physics III - ETH Zurich
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spatial measurements of light
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="spatial_measurements_of_light.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Spatial measurements of light
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#interactive-phasor-simulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interactive phasor simulation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#things-to-try" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Things to try
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Random Walk
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Random Walk
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quantum Optics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Quantum Optics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../random_walk/quantum_optics/rabi_frequencies.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Light-Matter Interaction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Classical Optics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Classical Optics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../random_walk/classical_optics/aberrations/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aberration propagator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simulations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Simulations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../random_walk/simulations/emccd_camera.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EMCCD Camera
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Courses
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Courses
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../courses/scientific_writing_workshop/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scientific Writing Workshop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ekoAcademic
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ekoAcademic
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/ekoacademic/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    about
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Atomphys
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Atomphys
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/atomphys/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    about
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MUD
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MUD
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/mud/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    about
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="spatial-measurements-of-light">Spatial measurements of light</h1>
+<h2 id="interactive-phasor-simulation">Interactive phasor simulation</h2>
+<p>By default every curve is divided by its own peak value <span class="arithmatex">\((1-R^N)^2\)</span>, so you compare line <em>shapes</em>. Untick <em>Normalise each curve to its peak</em> to see the absolute transmission. For a few phasors and high <span class="arithmatex">\(R\)</span> that number is tiny, because most of the light is still bouncing inside the etalon.</p>
+<style>
+  .fp-app {
+    --fp-accent: #2f6bd8;
+    --fp-resultant: #e4572e;
+    --fp-border: color-mix(in srgb, var(--md-default-fg-color, #000) 14%, transparent);
+    --fp-soft: color-mix(in srgb, var(--md-default-fg-color, #000) 5%, transparent);
+    border: 1px solid var(--fp-border);
+    border-radius: 14px;
+    padding: 18px;
+    margin: 12px 0 20px;
+    background: var(--md-default-bg-color, #fff);
+    box-shadow: 0 10px 26px -18px rgba(0, 0, 0, 0.45);
+  }
+  .fp-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 6px 12px;
+    margin-bottom: 12px;
+  }
+  .fp-head strong { font-size: 1rem; }
+  .fp-head span { font-size: 0.8rem; opacity: 0.7; }
+  .fp-grid {
+    display: grid;
+    grid-template-columns: 210px 1fr 110px;
+    gap: 10px 14px;
+    align-items: center;
+  }
+  .fp-label { font-size: 0.85rem; }
+  .fp-grid input[type="range"] { width: 100%; accent-color: var(--fp-accent); }
+  .fp-grid select {
+    font: inherit;
+    font-size: 0.82rem;
+    padding: 3px 6px;
+    border-radius: 8px;
+    border: 1px solid var(--fp-border);
+    background: var(--md-default-bg-color, #fff);
+    color: var(--md-default-fg-color, #111);
+  }
+  .fp-value {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: right;
+    background: var(--fp-soft);
+    border: 1px solid var(--fp-border);
+    border-radius: 8px;
+    padding: 3px 8px;
+    white-space: nowrap;
+  }
+  .fp-num {
+    width: 100%;
+    box-sizing: border-box;
+    color: inherit;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+  .fp-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 10px;
+    margin-top: 14px;
+  }
+  .fp-actions button {
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid color-mix(in srgb, var(--fp-accent) 35%, transparent);
+    border-radius: 10px;
+    padding: 6px 12px;
+    cursor: pointer;
+    background: color-mix(in srgb, var(--fp-accent) 10%, var(--md-default-bg-color, #fff));
+    color: var(--md-default-fg-color, #111);
+  }
+  .fp-actions button:hover { filter: brightness(0.97); }
+  .fp-actions button:active { transform: translateY(1px); }
+  .fp-actions button.fp-primary { background: var(--fp-accent); color: #fff; min-width: 92px; }
+  .fp-actions label { font-size: 0.8rem; display: inline-flex; align-items: center; gap: 5px; cursor: pointer; }
+  .fp-actions input[type="checkbox"] { accent-color: var(--fp-accent); }
+  .fp-panels {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr);
+    gap: 14px;
+    margin-top: 14px;
+  }
+  .fp-app .fp-panels figure { display: block; width: auto; max-width: none; margin: 0; min-width: 0; }
+  .fp-panels canvas {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--fp-border);
+    border-radius: 10px;
+    background: var(--md-default-bg-color, #fff);
+  }
+  #fp-phasor { aspect-ratio: 1 / 1; }
+  #fp-spectrum { aspect-ratio: 16 / 10; cursor: crosshair; touch-action: none; }
+  .fp-panels figcaption { font-size: 0.75rem; opacity: 0.7; margin-top: 4px; text-align: center; }
+  .fp-readout {
+    margin-top: 12px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.78rem;
+    line-height: 1.6;
+    background: var(--fp-soft);
+    border: 1px solid var(--fp-border);
+  }
+  .fp-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px; font-size: 0.78rem; }
+  .fp-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .fp-legend i { display: inline-block; width: 18px; height: 3px; border-radius: 2px; }
+  .fp-legend i.fp-dashed { height: 0; border-top: 2px dashed currentColor; background: none !important; opacity: 0.7; }
+  .fp-legend button {
+    border: none; background: none; cursor: pointer; padding: 0 2px;
+    color: inherit; opacity: 0.55; font-size: 0.9rem; line-height: 1;
+  }
+  .fp-legend button:hover { opacity: 1; }
+  @media (max-width: 760px) {
+    .fp-app { padding: 12px; }
+    .fp-grid { grid-template-columns: 1fr auto; grid-auto-flow: row dense; gap: 4px 10px; }
+    .fp-grid .fp-label { grid-column: 1; }
+    .fp-grid .fp-value { grid-column: 2; }
+    .fp-grid input[type="range"], .fp-grid select { grid-column: 1 / -1; }
+    .fp-panels { grid-template-columns: 1fr; }
+    #fp-phasor { max-width: 360px; margin: 0 auto; }
+  }
+</style>
+
+<div class="fp-app" id="fp-app">
+  <div class="fp-head">
+    <strong>Fabry–Pérot etalon: phasor sum and transmission spectrum</strong>
+    <span>Move the sliders, press Scan, or click and drag on the spectrum</span>
+  </div>
+  <div class="fp-grid">
+    <div class="fp-label">Number of phasors N <small>(log scale)</small></div>
+    <input id="fp-N" type="range" min="0" max="1000" step="1" value="301" />
+    <input class="fp-value fp-num" id="fp-N-v" type="number" min="1" max="1000" step="1" value="8" />
+    <div class="fp-label">Reflectivity R</div>
+    <input id="fp-R" type="range" min="0" max="0.99" step="0.01" value="0.8" />
+    <div class="fp-value" id="fp-R-v"></div>
+    <div class="fp-label">OPD between successive phasors</div>
+    <input id="fp-opd" type="range" min="0" max="3" step="0.0015" value="0.15" />
+    <div class="fp-value" id="fp-opd-v"></div>
+    <div class="fp-label">Scan window</div>
+    <select id="fp-window">
+      <option value="full">0 – 3 λ (three orders)</option>
+      <option value="one">0 – 1 λ (one order)</option>
+      <option value="zoom">0.9 – 1.1 λ (zoom on a peak)</option>
+    </select>
+    <div class="fp-value" id="fp-window-v"></div>
+    <div class="fp-label">Scan duration (one sweep)</div>
+    <input id="fp-speed" type="range" min="2" max="30" step="1" value="8" />
+    <div class="fp-value" id="fp-speed-v"></div>
+  </div>
+  <div class="fp-actions">
+    <button id="fp-play" class="fp-primary">▶ Scan</button>
+    <button id="fp-hold">Hold curve</button>
+    <button id="fp-clear-held">Clear held</button>
+    <button id="fp-clear-trace">Clear trace</button>
+    <label><input id="fp-theory" type="checkbox" checked /> Show predicted spectrum</label>
+    <label><input id="fp-airy" type="checkbox" checked /> Airy limit (N → ∞)</label>
+    <label><input id="fp-norm" type="checkbox" checked /> Normalise each curve to its peak</label>
+  </div>
+  <div class="fp-panels">
+    <figure>
+      <canvas id="fp-phasor"></canvas>
+      <figcaption>Phasors in the complex plane: chain (blue) and resultant (red)</figcaption>
+    </figure>
+    <figure>
+      <canvas id="fp-spectrum"></canvas>
+      <figcaption>Transmitted intensity as a function of OPD. The solid line is the scanned trace.</figcaption>
+    </figure>
+  </div>
+  <div class="fp-legend" id="fp-legend"></div>
+  <div class="fp-readout" id="fp-readout"></div>
+</div>
+
+<script>
+(() => {
+  const el = (id) => document.getElementById(id);
+  const ui = {
+    N: el("fp-N"), Nbox: el("fp-N-v"), R: el("fp-R"), opd: el("fp-opd"), win: el("fp-window"), speed: el("fp-speed"),
+    play: el("fp-play"), hold: el("fp-hold"), clearHeld: el("fp-clear-held"), clearTrace: el("fp-clear-trace"),
+    theory: el("fp-theory"), airy: el("fp-airy"), norm: el("fp-norm"),
+    phasor: el("fp-phasor"), spectrum: el("fp-spectrum"), legend: el("fp-legend"), readout: el("fp-readout")
+  };
+
+  const WINDOWS = { full: [0, 3], one: [0, 1], zoom: [0.9, 1.1] };
+  const HOLD_COLOURS = ["#d9822b", "#2a9d8f", "#9b5de5", "#d6336c", "#6c757d", "#7a9a3a"];
+  const MAX_HELD = HOLD_COLOURS.length;
+  const N_MAX = 1000;
+  const TRACE_BINS = 1500;
+  const CURVE_SAMPLES = 3000;
+
+  const state = {
+    N: 8, R: 0.8, opd: 0.15, win: WINDOWS.full,
+    playing: false, scanSeconds: 8, lastTime: null,
+    held: [], nextColour: 0,
+    trace: new Float64Array(TRACE_BINS).fill(NaN)
+  };
+  const curveCache = new Map();
+
+  function css(name, fallback) {
+    const v = getComputedStyle(ui.phasor).getPropertyValue(name).trim();
+    return v || fallback;
+  }
+
+  // ---------- physics ----------
+  // Transmitted field: (1-R) * sum_{k<N} (R e^{i delta})^k, built by repeated complex multiplication.
+  function field(N, R, delta) {
+    const wr = R * Math.cos(delta), wi = R * Math.sin(delta);
+    let pr = 1 - R, pi = 0, re = 0, im = 0;
+    for (let k = 0; k < N; k++) {
+      re += pr; im += pi;
+      const t = pr * wr - pi * wi;
+      pi = pr * wi + pi * wr;
+      pr = t;
+    }
+    return [re, im];
+  }
+  function transmission(N, R, delta) {
+    const [re, im] = field(N, R, delta);
+    return re * re + im * im;
+  }
+  function airy(R, delta) {
+    const F = 4 * R / ((1 - R) * (1 - R));
+    const s = Math.sin(delta / 2);
+    return 1 / (1 + F * s * s);
+  }
+  const peakFinite = (N, R) => Math.pow(1 - Math.pow(R, N), 2);
+  // Log-scale N slider: position 0..1000 maps to N = 1..N_MAX.
+  const sliderToN = (pos) => Math.max(1, Math.min(N_MAX, Math.round(Math.pow(N_MAX, pos / 1000))));
+  const nToSlider = (N) => Math.round(1000 * Math.log(N) / Math.log(N_MAX));
+  const phase = (opd) => 2 * Math.PI * opd;
+
+  function curve(N, R) {
+    const [x0, x1] = state.win;
+    const key = N + "|" + R + "|" + x0 + "|" + x1;
+    let ys = curveCache.get(key);
+    if (!ys) {
+      ys = new Float64Array(CURVE_SAMPLES);
+      for (let i = 0; i < CURVE_SAMPLES; i++) {
+        const x = x0 + (x1 - x0) * i / (CURVE_SAMPLES - 1);
+        ys[i] = transmission(N, R, phase(x));
+      }
+      if (curveCache.size > 40) curveCache.clear();
+      curveCache.set(key, ys);
+    }
+    return ys;
+  }
+  function airyCurve(R) {
+    const [x0, x1] = state.win;
+    const key = "airy|" + R + "|" + x0 + "|" + x1;
+    let ys = curveCache.get(key);
+    if (!ys) {
+      ys = new Float64Array(CURVE_SAMPLES);
+      for (let i = 0; i < CURVE_SAMPLES; i++) {
+        ys[i] = airy(R, phase(x0 + (x1 - x0) * i / (CURVE_SAMPLES - 1)));
+      }
+      curveCache.set(key, ys);
+    }
+    return ys;
+  }
+
+  // ---------- recorded trace ----------
+  function binOf(x) {
+    const [x0, x1] = state.win;
+    return Math.round((x - x0) / (x1 - x0) * (TRACE_BINS - 1));
+  }
+  function binX(i) {
+    const [x0, x1] = state.win;
+    return x0 + (x1 - x0) * i / (TRACE_BINS - 1);
+  }
+  function record(from, to) {
+    let a = binOf(to), b = from === null ? a : binOf(from);
+    if (a > b) { const t = a; a = b; b = t; }
+    a = Math.max(0, a); b = Math.min(TRACE_BINS - 1, b);
+    for (let i = a; i <= b; i++) state.trace[i] = transmission(state.N, state.R, phase(binX(i)));
+  }
+  function clearTrace() { state.trace.fill(NaN); }
+
+  // ---------- canvas helpers ----------
+  function fitCanvas(canvas) {
+    const dpr = window.devicePixelRatio || 1;
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    if (canvas.width !== Math.round(w * dpr) || canvas.height !== Math.round(h * dpr)) {
+      canvas.width = Math.round(w * dpr);
+      canvas.height = Math.round(h * dpr);
+    }
+    const ctx = canvas.getContext("2d");
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return { ctx, w, h };
+  }
+  function arrow(ctx, x0, y0, x1, y1, colour, width) {
+    const dx = x1 - x0, dy = y1 - y0, len = Math.hypot(dx, dy);
+    if (len < 0.4) return;
+    const head = Math.min(9, 0.4 * len);
+    const ux = dx / len, uy = dy / len;
+    ctx.strokeStyle = colour; ctx.fillStyle = colour; ctx.lineWidth = width;
+    ctx.beginPath();
+    ctx.moveTo(x0, y0);
+    ctx.lineTo(x1 - ux * head * 0.6, y1 - uy * head * 0.6);
+    ctx.stroke();
+    if (len > 3) {
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x1 - ux * head - uy * head * 0.45, y1 - uy * head + ux * head * 0.45);
+      ctx.lineTo(x1 - ux * head + uy * head * 0.45, y1 - uy * head - ux * head * 0.45);
+      ctx.closePath();
+      ctx.fill();
+    }
+  }
+  function niceStep(span, target) {
+    const raw = span / target, p = Math.pow(10, Math.floor(Math.log10(raw))), m = raw / p;
+    return (m < 1.5 ? 1 : m < 3.5 ? 2 : m < 7.5 ? 5 : 10) * p;
+  }
+
+  // ---------- phasor diagram ----------
+  function drawPhasors() {
+    const { ctx, w, h } = fitCanvas(ui.phasor);
+    const fg = css("--md-default-fg-color", "#222");
+    ctx.clearRect(0, 0, w, h);
+    const { N, R } = state, delta = phase(state.opd);
+    const L = Math.max(1 - Math.pow(R, N), 1e-9);  // total chain length = largest possible resultant
+    const cx = w / 2, cy = h / 2, scale = (Math.min(w, h) / 2 - 16) / L;
+
+    ctx.save();
+    ctx.globalAlpha = 0.25; ctx.strokeStyle = fg; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(8, cy); ctx.lineTo(w - 8, cy); ctx.moveTo(cx, 8); ctx.lineTo(cx, h - 8); ctx.stroke();
+    ctx.setLineDash([4, 4]);
+    ctx.beginPath(); ctx.arc(cx, cy, L * scale, 0, 2 * Math.PI); ctx.stroke();
+    ctx.restore();
+    ctx.fillStyle = fg; ctx.globalAlpha = 0.55; ctx.font = "11px sans-serif";
+    ctx.fillText("Re", w - 24, cy - 6); ctx.fillText("Im", cx + 6, 18);
+    ctx.globalAlpha = 1;
+
+    let x = 0, y = 0, a = 1 - R;
+    for (let k = 0; k < N; k++) {
+      const nx = x + a * Math.cos(k * delta), ny = y + a * Math.sin(k * delta);
+      const t = N > 1 ? k / (N - 1) : 0;
+      const colour = "hsl(" + (215 + 55 * t) + ", 70%, " + (45 + 15 * t) + "%)";
+      arrow(ctx, cx + x * scale, cy - y * scale, cx + nx * scale, cy - ny * scale, colour, 1.6);
+      x = nx; y = ny; a *= R;
+    }
+    arrow(ctx, cx, cy, cx + x * scale, cy - y * scale, css("--fp-resultant", "#e4572e"), 2.6);
+
+    ctx.fillStyle = fg; ctx.font = "12px sans-serif";
+    ctx.fillText("|E|² = " + (x * x + y * y).toFixed(3), 10, h - 12);
+  }
+
+  // ---------- spectrum ----------
+  function drawSpectrum() {
+    const { ctx, w, h } = fitCanvas(ui.spectrum);
+    const fg = css("--md-default-fg-color", "#222");
+    const accent = css("--fp-accent", "#2f6bd8");
+    const norm = ui.norm.checked;
+    const [x0, x1] = state.win;
+    const pad = { l: 44, r: 12, t: 12, b: 34 };
+    const pw = w - pad.l - pad.r, ph = h - pad.t - pad.b;
+    const yMax = 1.05;
+    const X = (x) => pad.l + (x - x0) / (x1 - x0) * pw;
+    const Y = (v) => pad.t + ph * (1 - v / yMax);
+    ctx.clearRect(0, 0, w, h);
+
+    // grid + ticks
+    ctx.font = "11px sans-serif"; ctx.fillStyle = fg; ctx.strokeStyle = fg; ctx.lineWidth = 1;
+    ctx.textAlign = "right";
+    for (let v = 0; v <= 1.0001; v += 0.25) {
+      ctx.globalAlpha = 0.12; ctx.beginPath(); ctx.moveTo(pad.l, Y(v)); ctx.lineTo(pad.l + pw, Y(v)); ctx.stroke();
+      ctx.globalAlpha = 0.7; ctx.fillText(v.toFixed(2), pad.l - 6, Y(v) + 4);
+    }
+    const step = niceStep(x1 - x0, Math.max(3, Math.floor(pw / 80)));
+    const digits = Math.max(0, -Math.floor(Math.log10(step) + 1e-9));
+    ctx.textAlign = "center";
+    for (let x = Math.ceil(x0 / step - 1e-9) * step; x <= x1 + 1e-9; x += step) {
+      ctx.globalAlpha = 0.12; ctx.beginPath(); ctx.moveTo(X(x), pad.t); ctx.lineTo(X(x), pad.t + ph); ctx.stroke();
+      ctx.globalAlpha = 0.7; ctx.fillText(x.toFixed(digits), X(x), pad.t + ph + 15);
+    }
+    ctx.globalAlpha = 0.3; ctx.strokeRect(pad.l, pad.t, pw, ph);
+    ctx.globalAlpha = 0.85;
+    ctx.fillText("OPD / λ", pad.l + pw / 2, h - 4);
+    ctx.save(); ctx.translate(12, pad.t + ph / 2); ctx.rotate(-Math.PI / 2);
+    ctx.fillText(norm ? "I / I_peak" : "I_t / I_0", 0, 0); ctx.restore();
+    ctx.globalAlpha = 1; ctx.textAlign = "left";
+
+    ctx.save();
+    ctx.beginPath(); ctx.rect(pad.l, pad.t, pw, ph); ctx.clip();
+    const line = (ys, scaleBy, colour, width, alpha, dash) => {
+      ctx.strokeStyle = colour; ctx.lineWidth = width; ctx.globalAlpha = alpha; ctx.setLineDash(dash || []);
+      ctx.beginPath();
+      let pen = false;
+      for (let i = 0; i < ys.length; i++) {
+        if (Number.isNaN(ys[i])) { pen = false; continue; }
+        const px = pad.l + pw * i / (ys.length - 1), py = Y(ys[i] / scaleBy);
+        if (pen) ctx.lineTo(px, py); else { ctx.moveTo(px, py); pen = true; }
+      }
+      ctx.stroke();
+      ctx.globalAlpha = 1; ctx.setLineDash([]);
+    };
+
+    for (const hc of state.held) {
+      line(curve(hc.N, hc.R), norm ? peakFinite(hc.N, hc.R) : 1, hc.colour, 1.6, 0.9);
+    }
+    if (ui.airy.checked) line(airyCurve(state.R), 1, fg, 1.3, 0.55, [6, 4]);
+    const peak = norm ? Math.max(peakFinite(state.N, state.R), 1e-12) : 1;
+    if (ui.theory.checked) line(curve(state.N, state.R), peak, accent, 1.5, 0.3);
+    line(state.trace, peak, accent, 2.2, 1);
+
+    // marker
+    const T = transmission(state.N, state.R, phase(state.opd));
+    ctx.strokeStyle = css("--fp-resultant", "#e4572e"); ctx.globalAlpha = 0.6; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(X(state.opd), pad.t); ctx.lineTo(X(state.opd), pad.t + ph); ctx.stroke();
+    ctx.globalAlpha = 1; ctx.fillStyle = css("--fp-resultant", "#e4572e");
+    ctx.beginPath(); ctx.arc(X(state.opd), Y(T / peak), 4.5, 0, 2 * Math.PI); ctx.fill();
+    ctx.restore();
+  }
+
+  // ---------- readouts ----------
+  function updateLabels() {
+    el("fp-R-v").textContent = state.R.toFixed(2);
+    el("fp-opd-v").textContent = state.opd.toFixed(4) + " λ";
+    el("fp-speed-v").textContent = state.scanSeconds + " s";
+    el("fp-window-v").textContent = "δ: " + (2 * state.win[0]).toFixed(1).replace(".0", "") + "π – " + (2 * state.win[1]).toFixed(1).replace(".0", "") + "π";
+  }
+  function updateReadout() {
+    const { N, R } = state, delta = phase(state.opd);
+    const T = transmission(N, R, delta);
+    const dmod = ((delta % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+    const finesse = R > 0 ? Math.PI * Math.sqrt(R) / (1 - R) : 0;
+    ui.readout.innerHTML =
+      "δ = 2π·OPD/λ = " + (dmod / Math.PI).toFixed(3) + " π (mod 2π) &nbsp;·&nbsp; " +
+      "I<sub>t</sub>/I<sub>0</sub> (N = " + N + ") = " + T.toFixed(4) + " &nbsp;·&nbsp; " +
+      "Airy (N → ∞) = " + airy(R, delta).toFixed(4) + "<br>" +
+      "peak (1 − R<sup>N</sup>)² = " + peakFinite(N, R).toFixed(4) + " &nbsp;·&nbsp; " +
+      "first neglected phasor / first phasor = R<sup>N</sup> = " + Math.pow(R, N).toExponential(2) + " &nbsp;·&nbsp; " +
+      "finesse π√R/(1−R) = " + finesse.toFixed(1) + "<br>" +
+      (R > 0 && R < 1
+        ? "phasors needed to reach the Airy limit (R<sup>N</sup> &lt; 5%): N ≈ " + Math.ceil(Math.log(0.05) / Math.log(R))
+        : "R = 0: a single phasor carries all the light") +
+      (N === 2 ? " &nbsp;·&nbsp; N = 2 is a two-beam (Michelson-type) interferometer" : "");
+  }
+  function updateLegend() {
+    const accent = css("--fp-accent", "#2f6bd8");
+    let html = '<span><i style="background:' + accent + '"></i>N = ' + state.N + ", R = " + state.R.toFixed(2) + " (current)</span>";
+    if (ui.airy.checked) html += '<span><i class="fp-dashed"></i>Airy, R = ' + state.R.toFixed(2) + "</span>";
+    state.held.forEach((hc, i) => {
+      html += '<span><i style="background:' + hc.colour + '"></i>N = ' + hc.N + ", R = " + hc.R.toFixed(2) +
+        '<button data-i="' + i + '" title="Remove">×</button></span>';
+    });
+    ui.legend.innerHTML = html;
+  }
+
+  function render() {
+    drawPhasors();
+    drawSpectrum();
+    updateReadout();
+  }
+
+  // ---------- interaction ----------
+  function setOpd(x, fromScan) {
+    const [x0, x1] = state.win;
+    const prev = state.opd;
+    state.opd = Math.min(x1, Math.max(x0, x));
+    record(fromScan === "wrap" ? null : prev, state.opd);
+    ui.opd.value = state.opd;
+    updateLabels();
+  }
+  function setWindow(key) {
+    state.win = WINDOWS[key];
+    const [x0, x1] = state.win;
+    ui.opd.min = x0; ui.opd.max = x1; ui.opd.step = (x1 - x0) / 2000;
+    state.opd = Math.min(x1, Math.max(x0, state.opd));
+    ui.opd.value = state.opd;
+    clearTrace();
+    record(null, state.opd);
+  }
+  function setPlaying(on) {
+    state.playing = on;
+    state.lastTime = null;
+    ui.play.textContent = on ? "❚❚ Pause" : "▶ Scan";
+    if (on) requestAnimationFrame(tick);
+  }
+  function tick(now) {
+    if (!state.playing) return;
+    if (state.lastTime !== null) {
+      const [x0, x1] = state.win;
+      const dt = Math.min(0.1, (now - state.lastTime) / 1000);
+      let x = state.opd + (x1 - x0) * dt / state.scanSeconds;
+      if (x > x1) setOpd(x0 + (x - x1), "wrap");
+      else setOpd(x);
+      render();
+    }
+    state.lastTime = now;
+    requestAnimationFrame(tick);
+  }
+
+  function setN(N) {
+    if (!Number.isFinite(N)) return;
+    N = Math.max(1, Math.min(N_MAX, Math.round(N)));
+    if (N === state.N) return;
+    state.N = N;
+    clearTrace(); record(null, state.opd);
+    updateLegend(); render();
+  }
+  ui.N.addEventListener("input", () => {
+    setN(sliderToN(Number(ui.N.value)));
+    ui.Nbox.value = state.N;
+  });
+  ui.Nbox.addEventListener("input", () => {
+    setN(Number(ui.Nbox.value));
+    ui.N.value = nToSlider(state.N);
+  });
+  ui.Nbox.addEventListener("change", () => { ui.Nbox.value = state.N; });
+  ui.R.addEventListener("input", () => {
+    state.R = Number(ui.R.value); clearTrace(); record(null, state.opd);
+    updateLabels(); updateLegend(); render();
+  });
+  ui.opd.addEventListener("input", () => { setOpd(Number(ui.opd.value)); render(); });
+  ui.win.addEventListener("change", () => { setWindow(ui.win.value); updateLabels(); render(); });
+  ui.speed.addEventListener("input", () => { state.scanSeconds = Number(ui.speed.value); updateLabels(); });
+  ui.play.addEventListener("click", () => setPlaying(!state.playing));
+  ui.hold.addEventListener("click", () => {
+    if (state.held.some((hc) => hc.N === state.N && hc.R === state.R)) return;
+    if (state.held.length >= MAX_HELD) state.held.shift();
+    state.held.push({ N: state.N, R: state.R, colour: HOLD_COLOURS[state.nextColour++ % HOLD_COLOURS.length] });
+    updateLegend(); render();
+  });
+  ui.clearHeld.addEventListener("click", () => { state.held = []; updateLegend(); render(); });
+  ui.clearTrace.addEventListener("click", () => { clearTrace(); record(null, state.opd); render(); });
+  ui.theory.addEventListener("change", render);
+  ui.airy.addEventListener("change", () => { updateLegend(); render(); });
+  ui.norm.addEventListener("change", render);
+  ui.legend.addEventListener("click", (e) => {
+    const i = e.target.getAttribute && e.target.getAttribute("data-i");
+    if (i === null || i === undefined) return;
+    state.held.splice(Number(i), 1);
+    updateLegend(); render();
+  });
+
+  let dragging = false;
+  function opdFromPointer(e) {
+    const rect = ui.spectrum.getBoundingClientRect();
+    const [x0, x1] = state.win;
+    const pw = rect.width - 44 - 12;
+    return x0 + (e.clientX - rect.left - 44) / pw * (x1 - x0);
+  }
+  ui.spectrum.addEventListener("pointerdown", (e) => {
+    dragging = true; setPlaying(false);
+    ui.spectrum.setPointerCapture(e.pointerId);
+    setOpd(opdFromPointer(e)); render();
+  });
+  ui.spectrum.addEventListener("pointermove", (e) => {
+    if (!dragging) return;
+    setOpd(opdFromPointer(e)); render();
+  });
+  ui.spectrum.addEventListener("pointerup", () => { dragging = false; });
+  ui.spectrum.addEventListener("pointercancel", () => { dragging = false; });
+
+  if (window.ResizeObserver) new ResizeObserver(render).observe(ui.spectrum);
+  window.addEventListener("resize", render);
+
+  setWindow("full");
+  updateLabels();
+  updateLegend();
+  render();
+})();
+</script>
+
+<h2 id="things-to-try">Things to try</h2>
+<ol>
+<li><strong>Michelson limit.</strong> Set <span class="arithmatex">\(N = 2\)</span> and <span class="arithmatex">\(R = 0.99\)</span>. The two phasors are almost equal in length, so the spectrum is a full-contrast <span class="arithmatex">\(\cos^2\)</span> fringe, exactly what a Michelson interferometer gives. The dashed line is what the <em>same mirrors</em> give once all reflections are included. (At lower <span class="arithmatex">\(R\)</span> the two phasors differ in length and the fringe contrast <span class="arithmatex">\(2R/(1+R^2)\)</span> drops.)</li>
+<li><strong>From Michelson to Fabry–Pérot.</strong> Keep <span class="arithmatex">\(R = 0.99\)</span> and click <em>Hold curve</em> at <span class="arithmatex">\(N = 2, 10, 50, 300\)</span>. Each extra phasor sharpens the peak. The curve only lands on the dashed Airy line once <span class="arithmatex">\(R^N \ll 1\)</span>, here after a few hundred round trips (the readout gives the number). The finesse is really a count of how many beams interfere.</li>
+<li><strong>Weakly decaying phasors.</strong> At <span class="arithmatex">\(R = 0.99\)</span> and <span class="arithmatex">\(N = 10\)</span> the phasors hardly decay, so the chain is close to a regular polygon. You get <span class="arithmatex">\(N-2\)</span> small secondary maxima between the main orders, just like an <span class="arithmatex">\(N\)</span>-slit grating.</li>
+<li><strong>Watch the chain while you scan.</strong> On resonance the chain is a straight line. At <span class="arithmatex">\(\delta = \pi\)</span> it zig-zags back and forth. Close to resonance it curls into a spiral. A high-<span class="arithmatex">\(R\)</span> chain is long, so a very small phase error per step is enough to close the spiral. That is why high finesse means narrow peaks.</li>
+<li><strong>Zoom in.</strong> At high finesse the peaks are narrower than one pixel of the 3-order view. Use the <em>0.9 – 1.1 λ</em> window to resolve them.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.tabs", "toc.integrate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../assets/javascripts/collapse-nav.js"></script>
+      
+    
+  </body>
+</html>
