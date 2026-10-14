@@ -20,7 +20,7 @@ nav:
       - "Chapter 0: Introduction": teaching/quantum_information_processing/index.md
       - "Chapter 1a: Principles of Quantum Mechanics": teaching/quantum_information_processing/chapters/01a_principles_of_quantum_mechanics.md
       - "Chapter 1b: Toolbox": teaching/quantum_information_processing/chapters/01b_toolbox.md
-      # - "Chapter 2a: Quantum Information Theory": teaching/quantum_information_processing/chapters/02a_quantum_information.md
+      - "Chapter 2a: Quantum Information Theory": teaching/quantum_information_processing/chapters/02a_quantum_information.md
       - "Chapter 3a: Computational Complexity": teaching/quantum_information_processing/chapters/03a_computational_complexity.md
       - "Chapter 3b: Universal gates, Reversible irreversability, Oracle Functions": teaching/quantum_information_processing/chapters/03b_universal_gates_and_oracles.md
       - "Chapter 4a: DJ style algorithms": teaching/quantum_information_processing/chapters/04a_deutsch_jozsa_algorithms.md
