@@ -30,6 +30,8 @@ nav:
       - "Chapter 6: Open Quantum Systems": teaching/quantum_information_processing/chapters/06_open_quantum_systems.md
       - "Chapter 7: Quantum Error Correction": teaching/quantum_information_processing/chapters/07_quantum_error_correction.md
       - "Chapter 8: Stabiliser Formalism": teaching/quantum_information_processing/chapters/08_stabiliser_formalism.md
+    - "Physics III - ETH Zurich":
+      - "Spatial measurements of light": teaching/physics_iii/spatial_measurements_of_light.md
   - "Random Walk":
     - "Quantum Optics":
       - "Light-Matter Interaction": random_walk/quantum_optics/rabi_frequencies.md
